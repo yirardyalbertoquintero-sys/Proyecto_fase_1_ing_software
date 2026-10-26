@@ -1,0 +1,16 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Secretos y configuración local
+appsettings.Development.json
+appsettings.Local.json
+.env
+*.pfx
+
+# Archivos temporales
+~$*
+Thumbs.db
