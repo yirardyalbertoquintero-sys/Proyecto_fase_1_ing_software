@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1200" viewBox="0 0 1560 1200">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#41556b"/></marker></defs>
+<rect width="1560" height="1200" fill="white"/>
+<text x="40" y="40" font-family="Arial" font-size="27" font-weight="bold" fill="#172b40">Modelo relacional 1 de 3</text>
+<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">Núcleo y entrega. PK: clave primaria; FK: referencia; UK: clave alternativa.</text>
+<polyline points="360,145 600,145" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="130" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">cliente: 1 → 0..*</text>
+<polyline points="360,220 600,220" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="205" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">archivo: 0..1 → 0..*</text>
+<polyline points="360,270 440,270 440,795 600,795" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="570" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">revisor: 0..1 → 0..*</text>
+<polyline points="200,286 200,640 1100,640 1100,830 1160,830" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="820" y="625" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">responsable: 1 → 0..*</text>
+<polyline points="920,180 1160,180" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="165" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">1 → 1..* detalles</text>
+<polyline points="360,790 390,790 390,580 1520,580 1520,290 1480,290" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1310" y="565" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">producto: 1 → 0..*</text>
+<polyline points="760,447 760,740" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="850" y="525" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">1 → 0..* pagos</text>
+<polyline points="920,390 1030,390 1030,780 1160,780" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1030" y="470" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">1 → 0..* constancias</text>
+<rect x="40" y="100" width="320" height="186" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">Usuario</text>
+<text x="54" y="157" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
+<text x="54" y="180" font-family="Arial" font-size="16" fill="#172b40">UK correo</text>
+<text x="54" y="203" font-family="Arial" font-size="16" fill="#172b40">nombre; passwordHash</text>
+<text x="54" y="226" font-family="Arial" font-size="16" fill="#172b40">rol; activo</text>
+<text x="54" y="249" font-family="Arial" font-size="16" fill="#172b40">aceptacionTerminos</text>
+<text x="54" y="272" font-family="Arial" font-size="16" fill="#172b40">fechaAceptacion</text>
+<rect x="600" y="100" width="320" height="347" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pedido</text>
+<text x="614" y="157" font-family="Arial" font-size="16" fill="#172b40">PK id; UK codigo</text>
+<text x="614" y="180" font-family="Arial" font-size="16" fill="#172b40">FK cliente</text>
+<text x="614" y="203" font-family="Arial" font-size="16" fill="#172b40">fechaOrden</text>
+<text x="614" y="226" font-family="Arial" font-size="16" fill="#172b40">fechaEntregaAcordada</text>
+<text x="614" y="249" font-family="Arial" font-size="16" fill="#172b40">fechaEntregaReal</text>
+<text x="614" y="272" font-family="Arial" font-size="16" fill="#172b40">estado; modalidadEntrega</text>
+<text x="614" y="295" font-family="Arial" font-size="16" fill="#172b40">direccionEntrega</text>
+<text x="614" y="318" font-family="Arial" font-size="16" fill="#172b40">FK versionCotizacionVigente</text>
+<text x="614" y="341" font-family="Arial" font-size="16" fill="#172b40">condicionAdministrativa</text>
+<text x="614" y="364" font-family="Arial" font-size="16" fill="#172b40">motivoArchivo; fechaArchivo</text>
+<text x="614" y="387" font-family="Arial" font-size="16" fill="#172b40">FK responsableArchivo</text>
+<text x="614" y="410" font-family="Arial" font-size="16" fill="#172b40">confirmacion; huellaSolicitud</text>
+<text x="614" y="433" font-family="Arial" font-size="16" fill="#172b40">controlConcurrencia</text>
+<rect x="1160" y="100" width="320" height="209" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">DetallePedido</text>
+<text x="1174" y="157" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
+<text x="1174" y="180" font-family="Arial" font-size="16" fill="#172b40">FK pedido; FK producto</text>
+<text x="1174" y="203" font-family="Arial" font-size="16" fill="#172b40">cantidad; talla; color; tela</text>
+<text x="1174" y="226" font-family="Arial" font-size="16" fill="#172b40">empaque; observaciones</text>
+<text x="1174" y="249" font-family="Arial" font-size="16" fill="#172b40">ideaDiseno; archivoDisenoURL</text>
+<text x="1174" y="272" font-family="Arial" font-size="16" fill="#172b40">precioBaseReferencia</text>
+<text x="1174" y="295" font-family="Arial" font-size="16" fill="#172b40">FK versionDisenoVigente</text>
+<rect x="40" y="740" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="740" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="764" font-family="Arial" font-size="18" font-weight="bold" fill="white">Producto</text>
+<text x="54" y="797" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
+<text x="54" y="820" font-family="Arial" font-size="16" fill="#172b40">nombre; color; talla; tela</text>
+<text x="54" y="843" font-family="Arial" font-size="16" fill="#172b40">imagenURL; precioBase; activo</text>
+<rect x="600" y="740" width="320" height="232" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="740" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="764" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pago</text>
+<text x="614" y="797" font-family="Arial" font-size="16" fill="#172b40">PK id; FK pedido</text>
+<text x="614" y="820" font-family="Arial" font-size="16" fill="#172b40">monto; fecha; medio</text>
+<text x="614" y="843" font-family="Arial" font-size="16" fill="#172b40">referencia; estadoVerificacion</text>
+<text x="614" y="866" font-family="Arial" font-size="16" fill="#172b40">comprobanteURL</text>
+<text x="614" y="889" font-family="Arial" font-size="16" fill="#172b40">fechaVerificacion</text>
+<text x="614" y="912" font-family="Arial" font-size="16" fill="#172b40">FK responsableVerificacion</text>
+<text x="614" y="935" font-family="Arial" font-size="16" fill="#172b40">confirmacion</text>
+<text x="614" y="958" font-family="Arial" font-size="16" fill="#172b40">controlConcurrencia</text>
+<rect x="1160" y="740" width="320" height="140" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="740" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="764" font-family="Arial" font-size="18" font-weight="bold" fill="white">ConstanciaEntrega</text>
+<text x="1174" y="797" font-family="Arial" font-size="16" fill="#172b40">PK id; FK pedido</text>
+<text x="1174" y="820" font-family="Arial" font-size="16" fill="#172b40">decision; fecha</text>
+<text x="1174" y="843" font-family="Arial" font-size="16" fill="#172b40">FK responsable</text>
+<text x="1174" y="866" font-family="Arial" font-size="16" fill="#172b40">referencia</text>
+<text x="40" y="1176" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>

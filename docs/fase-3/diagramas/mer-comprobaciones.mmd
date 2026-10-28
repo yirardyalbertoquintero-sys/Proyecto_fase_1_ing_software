@@ -1,0 +1,16 @@
+erDiagram
+    VersionCotizacion ||--o{ ComprobacionSublimacion : contexto
+    Usuario ||--o{ ComprobacionSublimacion : responsable
+    ComprobacionSublimacion ||--|{ DisenoComprobado : revisa
+    VersionDiseno ||--o{ DisenoComprobado : version_exacta
+    ComprobacionSublimacion {
+        int id PK
+        int versionCotizacion FK
+        datetimeoffset fecha
+        int responsable FK
+        decimal montoVerificado
+    }
+    DisenoComprobado {
+        int comprobacion PK,FK
+        int versionDiseno PK,FK
+    }
