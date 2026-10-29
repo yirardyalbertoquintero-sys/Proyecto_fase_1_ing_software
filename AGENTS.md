@@ -70,5 +70,7 @@ Aplicación web de pedidos de camisetas personalizadas por sublimación. Proyect
 - Ejecutar: `dotnet run --project src/backend/ImpactoTextil.Api --launch-profile https`.
 - Generar paquete: `dotnet publish src/backend/ImpactoTextil.Api -c Release -o artifacts/publicacion --no-restore`.
 - La conexión se lee de `ConnectionStrings__ImpactoTextil`; nunca incorporar credenciales al repositorio.
-- La API solo implementa disponibilidad técnica. No existen aún pantallas, servicios de negocio, entidades mapeadas ni migraciones. Ver README y `docs/seguimiento/avance-yirardy.md` antes de afirmar otro estado.
-- El SQL de fase 3 es un prototipo comprobable. Tras acordar el diseño, generar una única migración EF Core y su SQL de distribución; no mantener dos autoridades independientes del esquema.
+- CU-01 y disponibilidad están implementados localmente. Hay formulario, entidades y migración inicial; CU-02 y los demás CU siguen pendientes. Ver README y `docs/fase-3/08-registro-clientes.md`.
+- Iniciar aplicación y preparar base: `./scripts/Iniciar-Local.ps1`. Suite con SQL real: `./scripts/Test-Registro.ps1`.
+- La política de contraseña confirmada por Yirardy el 28 de octubre de 2026 exige al menos 15 caracteres Unicode, admite espacios y no exige símbolos. Rechazar más de 72 bytes UTF-8 antes de BCrypt; no modificar ni recortar la contraseña.
+- El SQL inicial se conserva como antecedente. Las migraciones EF Core y su snapshot son la autoridad actual. El script `database/002_migracion_inicial.sql` es una salida generada, no una segunda fuente editable del esquema.

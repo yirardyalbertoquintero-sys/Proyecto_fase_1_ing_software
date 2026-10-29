@@ -4,7 +4,7 @@
 
 La base se deriva de Fase 2, secciones 3.1 a 3.3, 4.1 a 4.6 y RF-01 a RF-16. Conserva los nombres del dominio y los significados del diccionario. El análisis describe atributos lógicos: en el diseño, algunos se obtienen mediante vistas en lugar de columnas duplicadas. No se pierde ningún dato observable por esa decisión.
 
-El detalle físico de columnas, tipos, nulabilidad, claves, índices y comprobaciones está en `database/001_modelo_fase3.sql`. El archivo es un prototipo de integridad para una base vacía; las migraciones definitivas corresponden a la construcción con EF Core.
+El prototipo original está en `database/001_modelo_fase3.sql`. La implementación actual de columnas, tipos, nulabilidad, claves, índices y comprobaciones está en el modelo y las migraciones de `src/backend/ImpactoTextil.Api`; `database/002_migracion_inicial.sql` se genera desde ellas. Se conservan las once tablas y sus reglas. La migración utiliza índices únicos para las claves candidatas y nombres deterministas para las restricciones; el significado de la unicidad no cambia.
 
 ## Relaciones del núcleo
 

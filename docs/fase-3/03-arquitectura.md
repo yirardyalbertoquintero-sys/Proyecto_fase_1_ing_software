@@ -13,13 +13,13 @@ La aplicación mantiene HTML, CSS y JavaScript puro y ASP.NET Core Web API. Se p
 | Almacenamiento privado | Validar archivos, generar identificadores y servir descargas autorizadas. | Contrato acordado entre Dylan y Carlos; coordinación de despliegue de Yirardy. |
 | SQL Server | Integridad referencial, unicidad y persistencia. | Yirardy y revisión de los tres. |
 
-Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. La aplicación completa utiliza las clases de dominio del SRS; el pequeño DbContext inicial solo prueba conectividad y todavía no mapea esas entidades.
+Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. Los servicios de los demás CU siguen pendientes.
 
 ## Sesión y permisos
 
 La propuesta del SRS es cookie de sesión Secure y HttpOnly, mismo origen y protección antifalsificación para operaciones que modifican datos. El servicio de acceso verificará BCrypt y cuenta activa. Los permisos se consultan en el servidor: el cliente no puede asignarse rol administrativo ni elegir el titular de un pedido ajeno.
 
-La duración de sesión y la política de contraseña siguen pendientes de concretar en diseño, como declara 5.5. No se ha implementado una política inventada. El alta controlada del primer administrador se realizará mediante configuración o comando de inicialización sin credenciales incorporadas a Git.
+La duración de sesión sigue pendiente de concretar para CU-02. Yirardy confirmó el 28 de octubre de 2026 la política de contraseña de al menos 15 caracteres, permitiendo espacios y sin exigir símbolos; se valida además el límite de 72 bytes de BCrypt. El alta controlada del primer administrador se realizará mediante configuración o comando de inicialización sin credenciales incorporadas a Git.
 
 Las rutas privadas de archivos validarán rol o titularidad cada vez. Un código de pedido o una URL difícil de adivinar no sustituyen esa comprobación. La imagen pública de Producto se mantiene separada de los originales privados y comprobantes.
 
@@ -33,7 +33,7 @@ CU-12 comprueba todas las prendas, versiones aprobadas y cotización vigente ant
 
 ## Contratos iniciales para acordar con Carlos
 
-Las rutas siguientes son propuestas técnicas para los CU de Yirardy, no operaciones implementadas:
+La ruta POST /api/clientes ya está implementada; las demás rutas de esta tabla son propuestas técnicas para los siguientes CU de Yirardy:
 
 | Operación propuesta | Alcance y resultado |
 | --- | --- |
@@ -46,12 +46,12 @@ Las rutas siguientes son propuestas técnicas para los CU de Yirardy, no operaci
 | GET y POST /api/administracion/productos | CU-09; consulta administrativa y creación controlada. |
 | PATCH /api/administracion/productos/{id} | CU-09; modificación o baja lógica con validación y control de concurrencia acordado. |
 
-El mecanismo para entregar y devolver el token antifalsificación se fijará con el cliente HTTP común. La propuesta de rutas deberá acordarse antes de conectar las pantallas; no modifica los identificadores CU ni RF.
+GET /api/seguridad/token entrega el token antifalsificación; el navegador lo conserva durante el envío y lo devuelve en X-CSRF-TOKEN, junto con una cookie técnica Secure, HttpOnly y SameSite=Strict. No se guarda el token en almacenamiento local. Los contratos de las rutas restantes deben coordinarse antes de conectar sus pantallas; no cambian los identificadores CU ni RF.
 
 ## Base ejecutable de esta entrega
 
 `GET /api/disponibilidad` consulta si EF Core puede conectarse al SQL Server configurado. Devuelve 200 si puede hacerlo y 503 cuando no está configurado o no está disponible. No devuelve servidor, credenciales ni datos de clientes. Un manejador central devuelve un error comprensible con referencia ante una excepción inesperada.
 
-Esta base prepara RNF-06, pero no mide la disponibilidad mensual ni acredita un CU completo. No crea bases, ejecuta migraciones ni incorpora datos de prueba al arrancar. La autorización de los endpoints de negocio se incorporará con CU-01 y CU-02.
+La disponibilidad técnica prepara RNF-06, pero no mide su resultado mensual. El proceso web no ejecuta migraciones al arrancar; el script local las aplica de manera explícita antes de iniciar. CU-01 ya registra clientes con consentimiento y rechazo de roles enviados por el navegador. Las sesiones y permisos de operaciones privadas se incorporarán con CU-02.
 
 Referencias técnicas: [cookies en ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-10.0), [proveedor SQL Server de EF Core](https://learn.microsoft.com/en-us/ef/core/providers/sql-server/). Las políticas comerciales proceden exclusivamente del DOCX.

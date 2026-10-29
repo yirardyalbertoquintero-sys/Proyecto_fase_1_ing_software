@@ -4,7 +4,19 @@ Proyecto ing software
 
 Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
 
-**Estado:** prototipo SQL y API mínima comprobados localmente. Registro, acceso, catálogo, pedidos, pagos y pantallas siguen pendientes de implementación. La aplicación todavía no está publicada.
+**Estado al 28 de octubre de 2026:** CU-01 implementado y probado localmente: formulario adaptable, registro de clientes, contraseña BCrypt, consentimiento fechado y control de duplicados. Las entidades, restricciones y migración inicial EF Core están incorporadas. Acceso, catálogo, pedidos, pagos y publicación siguen pendientes.
+
+## Abrir el registro
+
+Desde PowerShell, en la raíz de esta carpeta:
+
+```powershell
+.\scripts\Iniciar-Local.ps1
+```
+
+El comando restaura las herramientas, aplica las migraciones a la base propia `ImpactoTextil` e inicia la aplicación. Abre **https://localhost:7105/**. Deja la consola abierta y usa Ctrl+C para detenerla. Si ya existe una instancia ejecutándose en ese puerto, detenla antes de iniciar otra. Para una instancia Express, pasa `-Servidor '.\SQLEXPRESS'`.
+
+Usa datos ficticios: el aviso incluido describe exclusivamente la demostración académica. El registro todavía no inicia sesión; CU-02 es el siguiente módulo. [Detalle del registro y evidencias](docs/fase-3/08-registro-clientes.md).
 
 ## Empezar por aquí
 
@@ -16,7 +28,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 ## Herramientas necesarias
 
 - SDK .NET 10.0.402, fijado en `global.json` con actualización de parches permitida.
-- SQL Server y `sqlcmd` para ensayar el modelo. Las pruebas HTTP se ejecutan sin SQL Server.
+- SQL Server y `sqlcmd` para ensayar el modelo. Las pruebas rápidas se ejecutan sin SQL Server; la suite de integración utiliza una base temporal real.
 - PowerShell para `scripts/Test-Modelo.ps1`.
 - Python 3 solo si se desea regenerar los SVG y el archivo draw.io; ese generador no requiere paquetes externos.
 
@@ -31,6 +43,14 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
+Para ejecutar **las 20 pruebas**, incluidas las 11 de integración con SQL Server:
+
+```powershell
+.\scripts\Test-Registro.ps1
+```
+
+Sin ese script, las 11 pruebas que requieren SQL se muestran como omitidas. Una prueba de integración también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`.
+
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
 ## Ensayar el modelo de datos
@@ -41,24 +61,24 @@ Los archivos `packages.lock.json` fijan también las dependencias transitivas. S
 
 El usuario de Windows necesita permiso para crear una base de prueba. Para Express, usar el nombre real de su instancia, por ejemplo `-Servidor '.\SQLEXPRESS'`. El script crea una base temporal con nombre único, aplica el modelo, ejecuta 29 comprobaciones y elimina únicamente esa base al finalizar. Usa datos ficticios; no sirve para cargar datos de producción.
 
-`database/001_modelo_fase3.sql` es un **prototipo de diseño**. Aún no existen entidades mapeadas ni migraciones EF Core. Después de revisar el diseño con el equipo, la migración inicial acordada será la autoridad del esquema de la aplicación. No ejecutar este prototipo encima de una base existente.
+`database/001_modelo_fase3.sql` se conserva como antecedente del **prototipo de diseño**. La autoridad actual está en `src/backend/ImpactoTextil.Api/Migrations`, incluido su snapshot y los complementos de vistas y disparadores. `database/002_migracion_inicial.sql` es la distribución idempotente generada desde esa migración. No combinar ambos scripts sobre una misma base ni editar el archivo generado como si fuera una segunda autoridad.
 
 ## Ejecutar la comprobación de disponibilidad
 
 ```powershell
-dotnet run --project src/backend/ImpactoTextil.Api --launch-profile https
+.\scripts\Iniciar-Local.ps1
 ```
 
-La ruta es `https://localhost:7105/api/disponibilidad`. Sin conexión configurada responde **503** con un mensaje comprensible; eso indica que la API arrancó, pero SQL aún no está disponible para ella. Si falta el certificado de desarrollo, generarlo con `dotnet dev-certs https`; la confianza del certificado local se gestiona en cada equipo.
+La ruta técnica es `https://localhost:7105/api/disponibilidad`; el formulario está en `/`. Sin conexión configurada la comprobación técnica responde **503**. Si falta el certificado de desarrollo, generarlo con `dotnet dev-certs https`; la confianza del certificado local se gestiona en cada equipo.
 
-Para una prueba técnica de conectividad con la instancia local, antes de arrancar se puede definir en la misma consola:
+Si la base ya está preparada y prefieres iniciar manualmente, define la conexión **en la misma consola** desde la que ejecutas la aplicación:
 
 ```powershell
-$env:ConnectionStrings__ImpactoTextil = 'Server=localhost;Database=master;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5'
+$env:ConnectionStrings__ImpactoTextil = 'Server=localhost;Database=ImpactoTextil;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5'
 dotnet run --project src/backend/ImpactoTextil.Api --launch-profile https
 ```
 
-Esta comprobación solo consulta conectividad (`SELECT 1`); no crea tablas ni escribe en `master`. Para la aplicación de negocio se utilizará una base propia. `TrustServerCertificate=True` se limita a esta prueba local y no se copia a la configuración pública. Nunca guardar contraseñas o conexiones del proveedor en Git.
+El registro utiliza la base propia `ImpactoTextil`. `master` solo se utilizó en la comprobación inicial de conectividad. `TrustServerCertificate=True` se limita al desarrollo local y no se copia a la configuración pública. Nunca guardar contraseñas o conexiones del proveedor en Git.
 
 ## Generar el paquete
 
@@ -76,13 +96,14 @@ Generar el paquete no lo publica. La compatibilidad del alojamiento, HTTPS públ
 | `docs/fase-3` | Modelo, 3FN, arquitectura, diagramas, decisiones y reparto. |
 | `docs/seguimiento` | Evidencia de avances y pendientes. |
 | `database` | Prototipo SQL y comprobaciones de integridad. |
-| `src/backend/ImpactoTextil.Api` | API inicial. |
-| `tests/ImpactoTextil.Api.Tests` | Tres pruebas HTTP de disponibilidad y errores. |
+| `src/backend/ImpactoTextil.Api` | API, entidades, Repository, servicio, DTO y migraciones. |
+| `src/frontend` | Formulario de registro y aviso de la demostración; HTML, CSS y JavaScript puro. |
+| `tests/ImpactoTextil.Api.Tests` | Disponibilidad, validación, BCrypt, integración HTTP/SQL y migración. |
 | `scripts` | Ensayo del modelo y generación de diagramas. |
 | `artifacts` | Salidas locales ignoradas por Git. |
 
-El frontend se incorporará bajo `src/frontend` al construir las pantallas; no se presenta una carpeta vacía como interfaz terminada.
+El frontend se copia a `wwwroot` de la compilación y del paquete de publicación. La API lo sirve desde el mismo origen. No necesita npm ni un framework de JavaScript.
 
 ## Próxima tarea de Yirardy
 
-Cerrar con el equipo las decisiones del modelo y los contratos; convertir el modelo acordado en migración EF Core; construir **CU-01 completo** con pantalla, validación, consentimiento, BCrypt, persistencia y pruebas. Resolver antes la política de contraseña pendiente en el SRS. Continuar con CU-02, CU-09 y CU-04, integrando con las tareas de Dylan y Carlos.
+Revisar CU-01 con el equipo y continuar con **CU-02: inicio y cierre de sesión**, acordando la duración de sesión pendiente en el SRS. Después CU-09 y CU-04. La contraseña mínima de 15 caracteres fue confirmada por Yirardy en esta conversación el 28 de octubre de 2026; el límite de BCrypt se valida sin recorte silencioso.

@@ -69,7 +69,7 @@ pages = [
         edge('u','c','responsable: 1 → 0..*',[(760,600),(760,260)],(890,420)),
         edge('vd','d','versión: 1 → 0..*',[(1320,600),(1320,215)],(1410,420)),
     ]),
-    dict(name='arquitectura',title='Arquitectura de Impacto Textil',subtitle='MVC con servicios, repositorios y DTO. Propuesta de fase 3; la API inicial solo comprueba disponibilidad.',width=1560,height=950,
+    dict(name='arquitectura',title='Arquitectura de Impacto Textil',subtitle='MVC con servicios, repositorios y DTO. Implementados: registro y disponibilidad; los demás módulos están pendientes.',width=1560,height=950,
     nodes=[
         node('b','Vista en el navegador',40,140,['HTML, CSS y JavaScript','Cliente o Administrador','Mismo origen; interfaz adaptable']),
         node('c','Controladores ASP.NET Core',600,140,['DTO de entrada y salida','Autenticación y autorización','Errores comprensibles']),

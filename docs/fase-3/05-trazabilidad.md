@@ -4,7 +4,7 @@ Esta tabla vincula el diseño con los requisitos, sin confundir modelo preparado
 
 | CU y RF | Responsable de construcción | Datos principales | Estado de esta entrega |
 | --- | --- | --- | --- |
-| CU-01 / RF-01 | Yirardy | Usuario, consentimiento y hash | Modelo preparado; registro pendiente. |
+| CU-01 / RF-01 | Yirardy | Usuario, consentimiento y hash | Implementado y probado localmente: formulario, API, BCrypt, consentimiento y duplicados. Revisión del equipo pendiente. |
 | CU-02 / RF-02 | Yirardy | Usuario, sesión y permisos | Arquitectura preparada; acceso pendiente. |
 | CU-04 / RF-03 | Yirardy | Producto activo | Modelo preparado; catálogo público pendiente. |
 | CU-09 / RF-14 | Yirardy | Producto y baja lógica | Modelo preparado; administración de catálogo pendiente. |
