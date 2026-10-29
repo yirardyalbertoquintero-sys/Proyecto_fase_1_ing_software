@@ -12,7 +12,7 @@ Antes de organizar se copiaron ambas carpetas completas a `C:\Users\USER\Documen
 
 Se archivaron 23 archivos anteriores en `docs/archivo/`, con correspondencia de contenido comprobada contra las copias originales. Los archivos que estaban sin seguimiento en la carpeta original se preservan bajo `local-original/`; los Word históricos registrados se conservan bajo `documentacion-anterior/`. El gitlink anidado vacío, sin `.gitmodules`, se documentó con su modo y commit en `repositorio-anidado/REFERENCIA.md`; el historial y el respaldo conservan su procedencia.
 
-El documento de requisitos aceptado continúa intacto en `docs/Impacto textil fase 1 y 2.docx`, SHA-256 `9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821`. El ejemplar externo está respaldado; aún requiere cerrar Word para trasladarlo fuera de `C:\proyectos` sin interferir con ediciones abiertas.
+El documento de requisitos aceptado continúa intacto en `docs/Impacto textil fase 1 y 2.docx`, SHA-256 `9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821`. Después de que el usuario cerrara Word se trasladó el ejemplar externo a `fuente-original/` dentro del respaldo y se comprobó su huella. En `C:\proyectos` queda únicamente la carpeta definitiva del proyecto.
 
 Los PDF del docente y el plan del equipo se copiaron sin cambiar su contenido a `docs/guias/` y `docs/planes/`. Sus ejemplares originales de Descargas se conservan. `docs/INDICE.md` permite distinguir la documentación activa del archivo histórico.
 
