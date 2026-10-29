@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -32,6 +33,10 @@ builder.Services.AddAntiforgery(opciones =>
 });
 builder.Services.AddRateLimiter(opciones =>
 {
+    opciones.AddPolicy("acceso", contexto => RateLimitPartition.GetFixedWindowLimiter(
+        contexto.Connection.RemoteIpAddress?.ToString() ?? "local",
+        _ => new FixedWindowRateLimiterOptions
+        { PermitLimit = 12, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
     opciones.AddPolicy("registro", contexto => RateLimitPartition.GetFixedWindowLimiter(
         contexto.Connection.RemoteIpAddress?.ToString() ?? "local",
         _ => new FixedWindowRateLimiterOptions
@@ -57,6 +62,33 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<RegistroClienteService>();
 builder.Services.AddSingleton<IProtectorContrasena, ProtectorContrasena>();
 builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddSingleton<AlmacenSesiones>();
+builder.Services.AddScoped<AccesoService>();
+builder.Services.AddScoped<ValidarSesion>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(opciones =>
+{
+    opciones.Cookie.Name = "__Host-ImpactoTextil.Sesion";
+    opciones.Cookie.HttpOnly = true;
+    opciones.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    opciones.Cookie.SameSite = SameSiteMode.Strict;
+    opciones.SlidingExpiration = true;
+    opciones.EventsType = typeof(ValidarSesion);
+});
+builder.Services.AddOptions<CookieAuthenticationOptions>(CookieAuthenticationDefaults.AuthenticationScheme)
+    .Configure<AlmacenSesiones, TimeProvider>((opciones, almacen, reloj) =>
+    {
+        var minutos = builder.Configuration.GetValue<int>("Sesion:MinutosInactividad");
+        if (minutos is < 1 or > 1440)
+            throw new InvalidOperationException("Configura la duración de sesión acordada, entre 1 y 1440 minutos.");
+        opciones.ExpireTimeSpan = TimeSpan.FromMinutes(minutos);
+        opciones.SessionStore = almacen;
+        opciones.TimeProvider = reloj;
+    });
+builder.Services.AddAuthorization(opciones =>
+{
+    opciones.AddPolicy("Cliente", politica => politica.RequireAuthenticatedUser().RequireRole("Cliente"));
+    opciones.AddPolicy("Administrador", politica => politica.RequireAuthenticatedUser().RequireRole("Administrador"));
+});
 
 var app = builder.Build();
 app.UseExceptionHandler();
@@ -73,6 +105,8 @@ app.Use(async (contexto, siguiente) =>
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseRateLimiter();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();
 

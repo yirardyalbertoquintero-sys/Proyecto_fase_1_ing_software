@@ -5,7 +5,7 @@ Esta tabla vincula el diseño con los requisitos, sin confundir modelo preparado
 | CU y RF | Responsable de construcción | Datos principales | Estado de esta entrega |
 | --- | --- | --- | --- |
 | CU-01 / RF-01 | Yirardy | Usuario, consentimiento y hash | Implementado y probado localmente: formulario, API, BCrypt, consentimiento y duplicados. Revisión del equipo pendiente. |
-| CU-02 / RF-02 | Yirardy | Usuario, sesión y permisos | Arquitectura preparada; acceso pendiente. |
+| CU-02 / RF-02 | Yirardy | Usuario, sesión y permisos | Implementado y probado localmente: BCrypt, cuenta activa, cookies seguras, CSRF, roles, revocación y caducidad de 10 minutos. Revisión de Dylan e integración en main pendientes; ver 09-acceso-sesiones.md. |
 | CU-04 / RF-03 | Yirardy | Producto activo | Modelo preparado; catálogo público pendiente. |
 | CU-09 / RF-14 | Yirardy | Producto y baja lógica | Modelo preparado; administración de catálogo pendiente. |
 | CU-05 y CU-06 / RF-04, RF-05, RF-06 y RF-15 | Dylan | Pedido, DetallePedido, primera VersionDiseno y archivo privado | Contrato de persistencia propuesto; implementación pendiente. |

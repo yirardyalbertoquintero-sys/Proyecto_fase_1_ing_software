@@ -12,6 +12,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Estado funcional por caso de uso | [Matriz de construcción](fase-3/05-trazabilidad.md). |
 | Ejecutar y depurar | [VS Code](ejecutar-en-vscode.md) y [README del proyecto](../README.md). |
 | Registro de clientes y pruebas realizadas | [CU-01](fase-3/08-registro-clientes.md). |
+| Acceso, cierre, permisos y duración de sesión | [CU-02](fase-3/09-acceso-sesiones.md). |
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |
 | Historial de preparación y organización | `seguimiento/`. |

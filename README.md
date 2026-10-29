@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Estado al 29 de octubre de 2026:** CU-01 implementado y probado localmente: formulario adaptable, registro de clientes, contraseña BCrypt, consentimiento fechado y control de duplicados. Las entidades, restricciones y migración inicial EF Core están incorporadas. Acceso, catálogo, pedidos, pagos y alojamiento en MonsterASP.NET siguen pendientes. La organización y los avances ya están publicados en la rama `Yirardy_Quintero` de GitHub; ver [registro de publicación](docs/seguimiento/publicacion-2026-10-29.md).
+**Estado al 29 de octubre de 2026:** CU-01 y CU-02 implementados y probados localmente: registro, inicio y cierre de sesión, BCrypt, consentimiento, duplicados y permisos. La sesión vence tras 10 minutos de inactividad, conforme a lo confirmado por Yirardy. Las entidades, restricciones y migración inicial EF Core están incorporadas. Catálogo, pedidos, pagos y alojamiento en MonsterASP.NET siguen pendientes. El hito anterior publicado está en el [registro de publicación](docs/seguimiento/publicacion-2026-10-29.md); el nuevo avance de acceso se documenta en [CU-02](docs/fase-3/09-acceso-sesiones.md).
 
 ## Abrir el registro
 
@@ -20,7 +20,7 @@ Desde PowerShell, en la raíz de esta carpeta:
 
 El comando restaura las herramientas, aplica las migraciones a la base propia `ImpactoTextil` e inicia la aplicación. Abre **https://localhost:7105/**. Deja la consola abierta y usa Ctrl+C para detenerla. Si ya existe una instancia ejecutándose en ese puerto, detenla antes de iniciar otra. Para una instancia Express, pasa `-Servidor '.\SQLEXPRESS'`.
 
-Usa datos ficticios: el aviso incluido describe exclusivamente la demostración académica. El registro todavía no inicia sesión; CU-02 es el siguiente módulo. [Detalle del registro y evidencias](docs/fase-3/08-registro-clientes.md).
+Usa datos ficticios: el aviso incluido describe exclusivamente la demostración académica. Después del registro pulsa **Inicia sesión para entrar a tu cuenta**; también está el enlace **Inicia sesión** debajo del formulario. El acceso muestra tu identidad y permite cerrar la sesión. El registro no inicia sesión automáticamente. [Registro](docs/fase-3/08-registro-clientes.md) · [Acceso, contratos y pruebas](docs/fase-3/09-acceso-sesiones.md).
 
 ## Empezar por aquí
 

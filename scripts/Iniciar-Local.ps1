@@ -31,7 +31,7 @@ try {
         Write-Output 'Preparacion completada. VS Code puede iniciar la aplicacion.'
         return
     }
-    Write-Output 'Abre https://localhost:7105 para utilizar el registro. Ctrl+C detiene la aplicacion.'
+    Write-Output 'Abre https://localhost:7105 para registrarte y usa Inicia sesion para acceder. Ctrl+C detiene la aplicacion.'
     dotnet run --project $proyectoApi --no-build --launch-profile https
 } finally {
     Pop-Location

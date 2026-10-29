@@ -74,8 +74,9 @@ La única carpeta activa es `C:/proyectos/Proyecto_fase_1_ing_software`, en la r
 - Ejecutar: `dotnet run --project src/backend/ImpactoTextil.Api --launch-profile https`.
 - Generar paquete: `dotnet publish src/backend/ImpactoTextil.Api -c Release -o artifacts/publicacion --no-restore`.
 - La conexión se lee de `ConnectionStrings__ImpactoTextil`; nunca incorporar credenciales al repositorio.
-- CU-01 y disponibilidad están implementados localmente. Hay formulario, entidades y migración inicial; CU-02 y los demás CU siguen pendientes. Ver README y `docs/fase-3/08-registro-clientes.md`.
+- CU-01, CU-02 y disponibilidad están implementados localmente. Hay registro, acceso/cierre, permisos, entidades y migración inicial; catálogo y los demás CU siguen pendientes. Ver README, `docs/fase-3/08-registro-clientes.md` y `09-acceso-sesiones.md`.
 - Iniciar aplicación y preparar base: `./scripts/Iniciar-Local.ps1`. Suite con SQL real: `./scripts/Test-Registro.ps1`.
 - VS Code: configuración `Impacto Textil: ejecutar aplicación` en `.vscode/launch.json`, con tarea previa de preparación. Requiere la extensión C# de Microsoft; ver `docs/ejecutar-en-vscode.md`. La conexión local se genera en `.env.vscode`, ignorado por Git.
 - La política de contraseña confirmada por Yirardy el 28 de octubre de 2026 exige al menos 15 caracteres Unicode, admite espacios y no exige símbolos. Rechazar más de 72 bytes UTF-8 antes de BCrypt; no modificar ni recortar la contraseña.
+- Yirardy confirmó el 29 de octubre de 2026 una sesión de 10 minutos de inactividad, renovable con el uso, sin «recordarme». La configuración está en `Sesion:MinutosInactividad`. Cookies Secure/HttpOnly/SameSite=Strict, CSRF y políticas `Cliente`/`Administrador`. Las sesiones se revocan en servidor; el almacén actual es para una instancia y se vacía al reiniciar.
 - El SQL inicial se conserva como antecedente. Las migraciones EF Core y su snapshot son la autoridad actual. El script `database/002_migracion_inicial.sql` es una salida generada, no una segunda fuente editable del esquema.

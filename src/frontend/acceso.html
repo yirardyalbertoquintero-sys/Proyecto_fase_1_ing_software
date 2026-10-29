@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Inicia sesión · Impacto Textil</title>
+  <link rel="icon" type="image/svg+xml" href="/marca.svg">
+  <link rel="stylesheet" href="/estilos.css">
+  <script src="/acceso.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#acceso">Ir al formulario</a>
+  <main class="pagina">
+    <section class="presentacion" aria-labelledby="marca-titulo">
+      <a class="marca" href="/" aria-label="Impacto Textil, inicio"><img src="/marca.svg" width="44" height="44" alt=""><span>IMPACTO<br><strong>TEXTIL</strong></span></a>
+      <div class="mensaje-marca">
+        <p class="ceja">HECHO PARA TUS IDEAS</p>
+        <h1 id="marca-titulo">Tus ideas.<br> <span>Siempre contigo.</span></h1>
+        <p>Entra a tu cuenta de Impacto Textil.</p>
+      </div>
+      <div class="muestra-textil" aria-hidden="true"><div class="estampa"><span>CREA<br>ALGO<br>TUYO.</span><i></i></div><span class="etiqueta">IMPACTO TEXTIL · SUBLIMACIÓN</span></div>
+      <p class="pie-marca">Camisetas personalizadas, ideas con identidad.</p>
+    </section>
+    <section class="registro" id="acceso" aria-labelledby="titulo-acceso">
+      <div class="contenedor-formulario">
+        <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+        <p class="ceja ceja-oscura">QUÉ BUENO VERTE DE NUEVO</p>
+        <h2 id="titulo-acceso">Inicia sesión</h2>
+        <p class="introduccion">Ingresa con el correo y la contraseña de tu cuenta.</p>
+        <noscript><p class="aviso">Activa JavaScript para iniciar sesión.</p></noscript>
+        <div id="resultado" class="resultado" role="alert" tabindex="-1" hidden></div>
+        <form id="formulario-acceso" novalidate>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="username" inputmode="email" maxlength="150" required aria-describedby="error-correo" placeholder="tu.correo@ejemplo.com">
+            <span id="error-correo" class="error-campo"></span>
+          </div>
+          <div class="campo">
+            <label for="contrasena">Contraseña</label>
+            <div class="entrada-contrasena">
+              <input id="contrasena" name="contrasena" type="password" autocomplete="current-password" required aria-describedby="error-contrasena" placeholder="Tu contraseña">
+              <button class="mostrar" id="mostrar-contrasena" type="button" aria-controls="contrasena" aria-pressed="false">Mostrar</button>
+            </div>
+            <span id="error-contrasena" class="error-campo"></span>
+          </div>
+          <button class="boton-principal" id="iniciar-sesion" type="submit">Entrar a mi cuenta <span aria-hidden="true">↗</span></button>
+          <p class="nota-formulario">¿Aún no tienes cuenta? <a href="/">Regístrate aquí</a>.</p>
+        </form>
+        <section id="cuenta" class="exito" tabindex="-1" hidden aria-labelledby="titulo-cuenta">
+          <div class="icono-exito" aria-hidden="true">✓</div>
+          <h3 id="titulo-cuenta">Tu cuenta</h3>
+          <p id="nombre-cuenta"></p>
+          <p id="rol-cuenta"></p>
+          <button class="boton-secundario" id="cerrar-sesion" type="button">Cerrar sesión</button>
+        </section>
+        <footer class="pie-formulario">Impacto Textil <span>·</span> Proyecto académico UNI</footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

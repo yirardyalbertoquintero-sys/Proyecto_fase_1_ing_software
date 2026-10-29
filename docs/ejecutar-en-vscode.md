@@ -24,6 +24,7 @@ Para usar SQL Express u otra instancia, agregar `-Servidor` y el nombre de insta
 - `src/frontend/index.html`: estructura de la pantalla de registro.
 - `src/frontend/estilos.css`: colores, tamaños y adaptación a móvil.
 - `src/frontend/registro.js`: validaciones e interacción con la API.
+- `src/frontend/acceso.html` y `acceso.js`: inicio y cierre de sesión, consulta de identidad y errores de acceso. Se llega con **Inicia sesión**, desde el registro.
 
 Los archivos del frontend se copian a la salida al compilar. Para ver un cambio, detener y volver a ejecutar con F5 y actualizar la página. Las pantallas posteriores se incorporarán cuando se implementen sus casos de uso.
 

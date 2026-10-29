@@ -13,13 +13,13 @@ La aplicación mantiene HTML, CSS y JavaScript puro y ASP.NET Core Web API. Se p
 | Almacenamiento privado | Validar archivos, generar identificadores y servir descargas autorizadas. | Contrato acordado entre Dylan y Carlos; coordinación de despliegue de Yirardy. |
 | SQL Server | Integridad referencial, unicidad y persistencia. | Yirardy y revisión de los tres. |
 
-Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. Los servicios de los demás CU siguen pendientes.
+Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. CU-02 añade IniciarSesionDto, SesionController, AccesoService, ValidarSesion y AlmacenSesiones; comparte el repositorio y el verificador BCrypt. Los servicios de los demás CU siguen pendientes.
 
 ## Sesión y permisos
 
-La propuesta del SRS es cookie de sesión Secure y HttpOnly, mismo origen y protección antifalsificación para operaciones que modifican datos. El servicio de acceso verificará BCrypt y cuenta activa. Los permisos se consultan en el servidor: el cliente no puede asignarse rol administrativo ni elegir el titular de un pedido ajeno.
+La propuesta del SRS de cookie Secure y HttpOnly, mismo origen y protección antifalsificación está implementada en CU-02. El acceso verifica BCrypt y cuenta activa; las políticas Cliente y Administrador se comprueban en servidor. No se acepta un rol enviado por el navegador. La titularidad de pedidos y archivos se verificará en sus futuros servicios, sin confiar en identificadores aportados por el cliente.
 
-La duración de sesión sigue pendiente de concretar para CU-02. Yirardy confirmó el 28 de octubre de 2026 la política de contraseña de al menos 15 caracteres, permitiendo espacios y sin exigir símbolos; se valida además el límite de 72 bytes de BCrypt. El alta controlada del primer administrador se realizará mediante configuración o comando de inicialización sin credenciales incorporadas a Git.
+Yirardy confirmó el 29 de octubre de 2026 una sesión de 10 minutos de inactividad, renovable con el uso y sin «recordarme». El ticket revocable se conserva en memoria de una instancia; reiniciar el servidor cierra las sesiones. La cuenta, el rol y la versión de credencial se revalidan por petición. La política de contraseña confirmada el 28 de octubre exige al menos 15 caracteres, permite espacios y no exige símbolos; se valida el límite de 72 bytes de BCrypt. El alta controlada del primer administrador todavía se realizará mediante inicialización sin credenciales incorporadas a Git.
 
 Las rutas privadas de archivos validarán rol o titularidad cada vez. Un código de pedido o una URL difícil de adivinar no sustituyen esa comprobación. La imagen pública de Producto se mantiene separada de los originales privados y comprobantes.
 
@@ -33,14 +33,14 @@ CU-12 comprueba todas las prendas, versiones aprobadas y cotización vigente ant
 
 ## Contratos iniciales para acordar con Carlos
 
-La ruta POST /api/clientes ya está implementada; las demás rutas de esta tabla son propuestas técnicas para los siguientes CU de Yirardy:
+El registro y las tres operaciones de sesión están implementados; las rutas del catálogo siguen como propuestas para los siguientes CU de Yirardy:
 
 | Operación propuesta | Alcance y resultado |
 | --- | --- |
 | POST /api/clientes | CU-01; nombre, correo, contraseña y consentimiento; devuelve id y rol Cliente, nunca hash. |
-| POST /api/sesiones | CU-02; valida correo y contraseña y emite cookie segura. |
-| GET /api/sesiones/actual | Identidad mínima necesaria para la interfaz; sin secretos. |
-| DELETE /api/sesiones/actual | Cierre de sesión previsto por la propuesta de seguridad. |
+| POST /api/sesion | CU-02; valida correo y contraseña y emite cookie segura. Implementado. |
+| GET /api/sesion | Identidad mínima para la interfaz; sin secretos. Implementado. |
+| DELETE /api/sesion | Cierre con CSRF y revocación en servidor. Implementado. |
 | GET /api/productos | CU-04; variantes activas y precio identificado como referencial. |
 | GET /api/productos/{id} | CU-04; detalle de una variante disponible. |
 | GET y POST /api/administracion/productos | CU-09; consulta administrativa y creación controlada. |
@@ -52,6 +52,6 @@ GET /api/seguridad/token entrega el token antifalsificación; el navegador lo co
 
 `GET /api/disponibilidad` consulta si EF Core puede conectarse al SQL Server configurado. Devuelve 200 si puede hacerlo y 503 cuando no está configurado o no está disponible. No devuelve servidor, credenciales ni datos de clientes. Un manejador central devuelve un error comprensible con referencia ante una excepción inesperada.
 
-La disponibilidad técnica prepara RNF-06, pero no mide su resultado mensual. El proceso web no ejecuta migraciones al arrancar; el script local las aplica de manera explícita antes de iniciar. CU-01 ya registra clientes con consentimiento y rechazo de roles enviados por el navegador. Las sesiones y permisos de operaciones privadas se incorporarán con CU-02.
+La disponibilidad técnica prepara RNF-06, pero no mide su resultado mensual. El proceso web no ejecuta migraciones al arrancar; el script local las aplica de manera explícita antes de iniciar. CU-01 registra clientes con consentimiento y rechazo de roles enviados por el navegador. CU-02 incorpora sesión y políticas de acceso. Su aplicación a pedidos y archivos se realizará al construir sus servicios; ver [contratos y pruebas de CU-02](09-acceso-sesiones.md).
 
 Referencias técnicas: [cookies en ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-10.0), [proveedor SQL Server de EF Core](https://learn.microsoft.com/en-us/ef/core/providers/sql-server/). Las políticas comerciales proceden exclusivamente del DOCX.

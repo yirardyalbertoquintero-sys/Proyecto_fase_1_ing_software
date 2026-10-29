@@ -7,6 +7,12 @@ namespace ImpactoTextil.Api.Repositories;
 
 public sealed class UsuarioRepository(ImpactoTextilDbContext contexto) : IUsuarioRepository
 {
+    public Task<Usuario?> BuscarPorCorreoAsync(string correo, CancellationToken cancelacion) =>
+        contexto.Usuario.AsNoTracking().SingleOrDefaultAsync(u => u.correo == correo, cancelacion);
+
+    public Task<Usuario?> BuscarPorIdAsync(int id, CancellationToken cancelacion) =>
+        contexto.Usuario.AsNoTracking().SingleOrDefaultAsync(u => u.id == id, cancelacion);
+
     public async Task<bool> IntentarCrearAsync(Usuario usuario, CancellationToken cancelacion)
     {
         contexto.Set<Usuario>().Add(usuario);
