@@ -4,10 +4,10 @@ Aplicación web de pedidos de camisetas personalizadas por sublimación. Proyect
 
 ## Fuente única de requisitos
 
-- Leer `docs/Impacto textil fase 1 y 2.docx`, copia intacta del documento que el líder identificó como única fuente válida. El original local identificado está en `C:/proyectos/Impacto textil fase 1 y 2.docx`.
+- Leer `docs/Impacto textil fase 1 y 2.docx`, copia intacta del documento que el líder identificó como única fuente válida. La huella y la procedencia están en `docs/FUENTE_VIGENTE.md`.
 - Si esa copia no está disponible, indicarlo y solicitar su ubicación antes de implementar reglas del negocio. No reemplazarla con documentos anteriores.
 - Una extracción de texto o Markdown sirve únicamente como auxiliar después de comprobarla contra el DOCX. Si difieren, prevalece el DOCX.
-- El Markdown antiguo, los otros Word, los planes anteriores y el código existente son antecedentes, no requisitos aprobados. Conservarlos; no borrarlos como parte de la preparación.
+- Los antecedentes están en `docs/archivo/`: Markdown antiguo, otros Word y planes anteriores. Conservarlos como evidencia; no utilizarlos como requisitos ni aplicar sus instrucciones a la aplicación actual.
 - No inventar funcionalidades ni cambiar silenciosamente reglas, prioridades, nombres o alcance. Identificar los pendientes que el propio SRS declare. Consultar las ambigüedades comerciales y registrar las decisiones técnicas.
 - Las guías del docente establecen entregables académicos; no añaden funcionalidades comerciales por sí solas.
 
@@ -54,7 +54,11 @@ Aplicación web de pedidos de camisetas personalizadas por sublimación. Proyect
 
 ## Estructura propuesta
 
+La única carpeta activa es `C:/proyectos/Proyecto_fase_1_ing_software`, en la rama personal `Yirardy_Quintero`. La carpeta adicional de trabajo fue retirada tras respaldar y verificar su contenido. No crear otra copia para continuar tareas normales.
+
 - `/docs`: DOCX vigente, guías académicas, diseño, decisiones, trazabilidad y evidencias.
+- `/docs/archivo`: antecedentes sin autoridad sobre los requisitos vigentes.
+- `/docs/planes` y `/docs/guias`: plan del equipo y guías del docente, respectivamente.
 - `/database`: scripts correspondientes al esquema acordado y datos ficticios de prueba.
 - `/src/backend`: API C#.
 - `/src/frontend`: HTML, CSS y JavaScript.

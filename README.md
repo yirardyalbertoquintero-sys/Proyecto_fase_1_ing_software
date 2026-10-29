@@ -4,6 +4,8 @@ Proyecto ing software
 
 Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
 
+**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+
 **Estado al 28 de octubre de 2026:** CU-01 implementado y probado localmente: formulario adaptable, registro de clientes, contraseña BCrypt, consentimiento fechado y control de duplicados. Las entidades, restricciones y migración inicial EF Core están incorporadas. Acceso, catálogo, pedidos, pagos y publicación siguen pendientes.
 
 ## Abrir el registro
@@ -23,6 +25,7 @@ Usa datos ficticios: el aviso incluido describe exclusivamente la demostración 
 ## Empezar por aquí
 
 1. Leer [la fuente vigente](docs/FUENTE_VIGENTE.md) y `AGENTS.md`. El DOCX aprobado se conserva intacto. Los archivos anteriores del repositorio no sustituyen sus requisitos.
+   El [índice de documentos](docs/INDICE.md) distingue requisitos, guías, plan, diseño, evidencias y archivo histórico.
 2. Revisar [el diseño de fase 3](docs/fase-3/00-inicio.md), el [flujo del equipo](docs/fase-3/07-flujo-equipo.md) y el [avance comprobado](docs/seguimiento/avance-yirardy.md).
 3. Abrir [las cinco páginas editables](docs/fase-3/diagramas/Impacto_Textil_Fase_3.drawio) en draw.io. Las versiones SVG y Mermaid están en la misma carpeta.
 4. Ejecutar las comprobaciones siguientes desde la raíz del repositorio.

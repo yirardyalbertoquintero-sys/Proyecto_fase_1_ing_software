@@ -9,7 +9,7 @@ Trazabilidad: **CU-01, RF-01, HU-01, RNF-03 y el consentimiento de RNF-04**. La 
 ## Cómo ejecutarlo
 
 ```powershell
-cd C:\proyectos\Impacto_Textil_Yirardy
+cd C:\proyectos\Proyecto_fase_1_ing_software
 .\scripts\Iniciar-Local.ps1
 ```
 

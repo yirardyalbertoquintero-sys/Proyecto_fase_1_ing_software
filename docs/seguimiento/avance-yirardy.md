@@ -2,6 +2,8 @@
 
 Este registro conserva el primer hito de preparación. El estado posterior, con migración y CU-01 implementado, está en [Registro de clientes](../fase-3/08-registro-clientes.md).
 
+La ubicación de trabajo se unificó después en `C:/proyectos/Proyecto_fase_1_ing_software`. Las rutas de los párrafos siguientes describen el hito original; para continuar se utiliza la carpeta única y las instrucciones actuales de README.
+
 ## Ubicación y alcance
 
 Trabajo local en `C:/proyectos/Impacto_Textil_Yirardy`, rama `Yirardy_Quintero`, partiendo de la referencia local de `origin/main` en `1fbb780`. Se utilizó una carpeta de trabajo separada para preservar los archivos y cambios existentes en `C:/proyectos/Proyecto_fase_1_ing_software`.

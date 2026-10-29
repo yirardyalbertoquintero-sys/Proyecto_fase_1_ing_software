@@ -1,7 +1,7 @@
 # Ejecutar Impacto Textil desde VS Code
 
 1. Abrir VS Code y seleccionar **Archivo → Abrir carpeta**.
-2. Elegir la carpeta completa `C:\proyectos\Impacto_Textil_Yirardy`. Deben verse `ImpactoTextil.slnx`, `src` y `.vscode` en el explorador.
+2. Elegir la carpeta completa `C:\proyectos\Proyecto_fase_1_ing_software`. Deben verse `ImpactoTextil.slnx`, `src` y `.vscode` en el explorador.
 3. Abrir **Ejecutar y depurar**, con el icono de triángulo y un insecto, o presionar **Ctrl+Shift+D**.
 4. Seleccionar **Impacto Textil: ejecutar aplicación** y presionar **F5** o el triángulo verde.
 5. Esperar la preparación de la base y la compilación. Cuando el servidor arranque, VS Code abrirá el formulario en el navegador automáticamente.

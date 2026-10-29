@@ -1,0 +1,5 @@
+# Conservar los antecedentes tal como se recibieron, sin normalizar su contenido.
+docs/archivo/** -text -whitespace
+docs/planes/Plan_Fases_3_y_4_Impacto_Textil.md -text -whitespace
+*.docx -text
+*.pdf -text
