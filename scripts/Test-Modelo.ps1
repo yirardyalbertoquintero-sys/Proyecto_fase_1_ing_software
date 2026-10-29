@@ -1,4 +1,4 @@
-param([string]$Servidor = 'localhost')
+﻿param([string]$Servidor = 'localhost')
 $ErrorActionPreference = 'Stop'
 $raizProyecto = Split-Path -Parent $PSScriptRoot
 $baseTemporal = 'ImpactoTextil_Prueba_' + [Guid]::NewGuid().ToString('N')
