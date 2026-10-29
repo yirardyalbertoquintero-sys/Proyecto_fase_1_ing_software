@@ -48,6 +48,6 @@ Capturas: [sesión en escritorio](../evidencias/acceso-escritorio.png), [credenc
 
 ## Siguiente responsabilidad
 
-Preparar la inicialización controlada del primer Administrador y construir CU-09, gestión del catálogo; después CU-04, catálogo público. La cuenta Administrador usada en pruebas es ficticia y existe únicamente en la base temporal: no hay credenciales iniciales incorporadas al repositorio ni se creó un administrador operativo.
+La inicialización controlada del primer Administrador y CU-09 ya se implementaron en el avance posterior, documentado en [Administración del catálogo](10-catalogo-administracion.md). Continúa CU-04, catálogo público. Las cuentas Administrador usadas en pruebas son ficticias y existen únicamente en bases temporales: no hay credenciales iniciales incorporadas al repositorio ni se creó un administrador operativo.
 
 Referencias de implementación: [autenticación por cookies de ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-10.0) y [antifalsificación](https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-10.0). Los requisitos proceden del DOCX y la duración fue confirmada por el líder.

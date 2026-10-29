@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Estado al 29 de octubre de 2026:** CU-01 y CU-02 implementados y probados localmente: registro, inicio y cierre de sesión, BCrypt, consentimiento, duplicados y permisos. La sesión vence tras 10 minutos de inactividad, conforme a lo confirmado por Yirardy. Las entidades, restricciones y migración inicial EF Core están incorporadas. Catálogo, pedidos, pagos y alojamiento en MonsterASP.NET siguen pendientes. El hito anterior publicado está en el [registro de publicación](docs/seguimiento/publicacion-2026-10-29.md); el nuevo avance de acceso se documenta en [CU-02](docs/fase-3/09-acceso-sesiones.md).
+**Estado al 29 de octubre de 2026:** CU-01, CU-02 y CU-09 implementados y probados localmente: registro, acceso/cierre, permisos y administración del catálogo con fotos y baja lógica. La sesión vence tras 10 minutos de inactividad, conforme a lo confirmado por Yirardy. Hay un comando controlado para crear el primer Administrador. Catálogo público CU-04, pedidos, pagos y alojamiento en MonsterASP.NET siguen pendientes. Los hitos están en [CU-01](docs/fase-3/08-registro-clientes.md), [CU-02](docs/fase-3/09-acceso-sesiones.md) y [CU-09](docs/fase-3/10-catalogo-administracion.md). La revisión de Dylan y la integración en main siguen pendientes.
 
 ## Abrir el registro
 
@@ -21,6 +21,14 @@ Desde PowerShell, en la raíz de esta carpeta:
 El comando restaura las herramientas, aplica las migraciones a la base propia `ImpactoTextil` e inicia la aplicación. Abre **https://localhost:7105/**. Deja la consola abierta y usa Ctrl+C para detenerla. Si ya existe una instancia ejecutándose en ese puerto, detenla antes de iniciar otra. Para una instancia Express, pasa `-Servidor '.\SQLEXPRESS'`.
 
 Usa datos ficticios: el aviso incluido describe exclusivamente la demostración académica. Después del registro pulsa **Inicia sesión para entrar a tu cuenta**; también está el enlace **Inicia sesión** debajo del formulario. El acceso muestra tu identidad y permite cerrar la sesión. El registro no inicia sesión automáticamente. [Registro](docs/fase-3/08-registro-clientes.md) · [Acceso, contratos y pruebas](docs/fase-3/09-acceso-sesiones.md).
+
+## Probar la administración del catálogo
+
+1. Detén la ejecución anterior con **Shift+F5** para que VS Code compile la versión nueva.
+2. Si todavía no existe Administrador, abre **Terminal → Ejecutar tarea → Impacto Textil: crear primer Administrador**. Escribe nombre, correo y contraseña en esa terminal; la contraseña no se muestra. También puedes ejecutar `./scripts/Crear-Administrador.ps1` desde la raíz. La base debe estar preparada mediante F5 o `Iniciar-Local.ps1 -SoloPreparar`.
+3. Ejecuta de nuevo con **F5**, pulsa **Inicia sesión** y entra con esa cuenta. Aparecerá **Gestionar catálogo**.
+
+Puedes crear variantes, consultar y filtrar el listado, cambiar datos/precio/foto y desactivar la disponibilidad. No se elimina físicamente ningún producto. No hay cuentas ni contraseñas predeterminadas. El catálogo empieza vacío; las fotos y productos de las evidencias se generaron solo en bases temporales.
 
 ## Empezar por aquí
 

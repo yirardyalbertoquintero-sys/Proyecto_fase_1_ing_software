@@ -7,9 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
+var crearAdministrador = args.Contains("--crear-administrador", StringComparer.Ordinal);
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
-    Args = args,
+    Args = args.Where(a => a != "--crear-administrador").ToArray(),
     WebRootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot")
 });
 builder.Services.AddControllers(opciones => opciones.Filters.Add<FiltroAntifalsificacion>())
@@ -37,6 +38,10 @@ builder.Services.AddRateLimiter(opciones =>
         contexto.Connection.RemoteIpAddress?.ToString() ?? "local",
         _ => new FixedWindowRateLimiterOptions
         { PermitLimit = 12, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
+    opciones.AddPolicy("imagenes-catalogo", contexto => RateLimitPartition.GetFixedWindowLimiter(
+        contexto.Connection.RemoteIpAddress?.ToString() ?? "local",
+        _ => new FixedWindowRateLimiterOptions
+        { PermitLimit = 12, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
     opciones.AddPolicy("registro", contexto => RateLimitPartition.GetFixedWindowLimiter(
         contexto.Connection.RemoteIpAddress?.ToString() ?? "local",
         _ => new FixedWindowRateLimiterOptions
@@ -60,6 +65,10 @@ builder.Services.AddDbContext<ImpactoTextilDbContext>(opciones =>
 builder.Services.AddScoped<IConsultaDisponibilidad, ConsultaDisponibilidadSql>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<RegistroClienteService>();
+builder.Services.AddScoped<AdministradorInicialService>();
+builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped<CatalogoService>();
+builder.Services.AddSingleton<ImagenCatalogoStore>();
 builder.Services.AddSingleton<IProtectorContrasena, ProtectorContrasena>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<AlmacenSesiones>();
@@ -91,6 +100,11 @@ builder.Services.AddAuthorization(opciones =>
 });
 
 var app = builder.Build();
+if (crearAdministrador)
+{
+    Environment.ExitCode = await InicializarAdministrador.EjecutarAsync(app.Services);
+    return;
+}
 app.UseExceptionHandler();
 if (!app.Environment.IsDevelopment())
     app.UseHsts();
@@ -99,7 +113,7 @@ app.Use(async (contexto, siguiente) =>
 {
     contexto.Response.Headers.XContentTypeOptions = "nosniff";
     contexto.Response.Headers["Referrer-Policy"] = "same-origin";
-    contexto.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'";
+    contexto.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'";
     await siguiente();
 });
 app.UseDefaultFiles();

@@ -1,0 +1,42 @@
+classDiagram
+    class CatalogoAdministracionController {
+        +Listar()
+        +Obtener(id)
+        +Crear(GuardarProductoDto)
+        +Editar(id, GuardarProductoDto)
+    }
+    class CatalogoService {
+        +ListarAsync()
+        +ObtenerAsync(id)
+        +GuardarAsync(id, datos)
+    }
+    class IProductoRepository {
+        <<interface>>
+        +ListarAsync()
+        +ObtenerAsync(id)
+        +CrearAsync(Producto)
+        +ActualizarAsync(id, version, Producto)
+        +UsaImagenAsync(referencia)
+    }
+    class ProductoRepository
+    class ProductoVersion {
+        +Calcular(Producto) string
+    }
+    class ImagenCatalogoController {
+        +Subir(archivo)
+        +Ver(archivo)
+    }
+    class ImagenCatalogoStore {
+        +GuardarAsync(archivo) string
+        +Existe(referencia) bool
+        +Ruta(referencia) string
+    }
+    CatalogoAdministracionController --> CatalogoService
+    CatalogoService --> IProductoRepository
+    ProductoRepository ..|> IProductoRepository
+    ProductoRepository --> ImpactoTextilDbContext
+    ProductoRepository ..> ProductoVersion
+    CatalogoService ..> ProductoVersion
+    CatalogoService --> ImagenCatalogoStore
+    ImagenCatalogoController --> ImagenCatalogoStore
+    ImagenCatalogoController --> IProductoRepository

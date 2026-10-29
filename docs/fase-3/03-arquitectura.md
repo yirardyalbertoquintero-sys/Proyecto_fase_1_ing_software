@@ -13,7 +13,7 @@ La aplicación mantiene HTML, CSS y JavaScript puro y ASP.NET Core Web API. Se p
 | Almacenamiento privado | Validar archivos, generar identificadores y servir descargas autorizadas. | Contrato acordado entre Dylan y Carlos; coordinación de despliegue de Yirardy. |
 | SQL Server | Integridad referencial, unicidad y persistencia. | Yirardy y revisión de los tres. |
 
-Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. CU-02 añade IniciarSesionDto, SesionController, AccesoService, ValidarSesion y AlmacenSesiones; comparte el repositorio y el verificador BCrypt. Los servicios de los demás CU siguen pendientes.
+Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. CU-02 añade IniciarSesionDto, SesionController, AccesoService, ValidarSesion y AlmacenSesiones; comparte el repositorio y el verificador BCrypt. CU-09 añade GuardarProductoDto/ProductoDto, CatalogoAdministracionController, CatalogoService y ProductoRepository; ImagenCatalogoController/ImagenCatalogoStore validan y conservan fotos públicas separadas. ProductoVersion calcula la huella técnica del contenido. Los servicios de los demás CU siguen pendientes.
 
 ## Sesión y permisos
 
@@ -33,7 +33,7 @@ CU-12 comprueba todas las prendas, versiones aprobadas y cotización vigente ant
 
 ## Contratos iniciales para acordar con Carlos
 
-El registro y las tres operaciones de sesión están implementados; las rutas del catálogo siguen como propuestas para los siguientes CU de Yirardy:
+El registro, las tres operaciones de sesión y la administración del catálogo están implementados; las rutas públicas del catálogo CU-04 siguen como propuestas:
 
 | Operación propuesta | Alcance y resultado |
 | --- | --- |
@@ -43,8 +43,10 @@ El registro y las tres operaciones de sesión están implementados; las rutas de
 | DELETE /api/sesion | Cierre con CSRF y revocación en servidor. Implementado. |
 | GET /api/productos | CU-04; variantes activas y precio identificado como referencial. |
 | GET /api/productos/{id} | CU-04; detalle de una variante disponible. |
-| GET y POST /api/administracion/productos | CU-09; consulta administrativa y creación controlada. |
-| PATCH /api/administracion/productos/{id} | CU-09; modificación o baja lógica con validación y control de concurrencia acordado. |
+| GET y POST /api/administracion/productos | CU-09; consulta administrativa y creación controlada. Implementado. |
+| GET y PUT /api/administracion/productos/{id} | CU-09; consulta y edición completa, incluida la disponibilidad, con huella de versión y bloqueo transaccional. Implementado. Sustituye la propuesta PATCH. |
+| POST /api/imagenes-catalogo | Subida de foto pública validada; solo Administrador y CSRF. Implementado. |
+| GET /api/imagenes-catalogo/{archivo} | Foto pública existente y referenciada por un Producto; sin acceso a archivos privados. Implementado. |
 
 GET /api/seguridad/token entrega el token antifalsificación; el navegador lo conserva durante el envío y lo devuelve en X-CSRF-TOKEN, junto con una cookie técnica Secure, HttpOnly y SameSite=Strict. No se guarda el token en almacenamiento local. Los contratos de las rutas restantes deben coordinarse antes de conectar sus pantallas; no cambian los identificadores CU ni RF.
 

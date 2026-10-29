@@ -559,6 +559,11 @@
         "resolved": "13.0.3",
         "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
       },
+      "StbImageSharp": {
+        "type": "Transitive",
+        "resolved": "2.30.16",
+        "contentHash": "qg1i+NHihXVKLKYacGKrauhSQIGL31eBWcTC4Vc7jnGmBFj87LkRuCdXB5aDZisWMRnB6x2mcfwYXQxMWEG/lw=="
+      },
       "System.ClientModel": {
         "type": "Transitive",
         "resolved": "1.8.0",
@@ -651,6 +656,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "[4.2.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.14, )",
+          "StbImageSharp": "[2.30.16, )",
           "System.Security.Cryptography.Pkcs": "[10.0.14, )"
         }
       }

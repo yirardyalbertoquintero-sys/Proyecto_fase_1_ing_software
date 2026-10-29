@@ -28,4 +28,10 @@ Para usar SQL Express u otra instancia, agregar `-Servidor` y el nombre de insta
 
 Los archivos del frontend se copian a la salida al compilar. Para ver un cambio, detener y volver a ejecutar con F5 y actualizar la página. Las pantallas posteriores se incorporarán cuando se implementen sus casos de uso.
 
+## Primer Administrador y catálogo
+
+Detén la depuración con **Shift+F5**. Con la base local preparada, usa **Terminal → Ejecutar tarea → Impacto Textil: crear primer Administrador**. La tarea solicita nombre, correo y contraseña en una terminal interactiva. No muestra ni guarda la contraseña; el comando solo crea el primero y no modifica cuentas existentes.
+
+Después ejecuta con **F5**, inicia sesión con la cuenta Administrador y pulsa **Gestionar catálogo**. El registro público continúa creando únicamente Clientes. La pantalla está en `src/frontend/administracion.html`, con `catalogo-admin.js` y `catalogo-admin.css`.
+
 Referencias: [configuración del depurador C#](https://code.visualstudio.com/docs/csharp/debugger-settings) y [extensión C# de Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).

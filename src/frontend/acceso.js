@@ -37,6 +37,7 @@ function mostrarCuenta(datos) {
   cuenta.hidden = false;
   document.getElementById('nombre-cuenta').textContent = `Bienvenido, ${datos.nombre}.`;
   document.getElementById('rol-cuenta').textContent = `Acceso: ${datos.rol}.`;
+  document.getElementById('opcion-administracion').hidden = datos.rol !== 'Administrador';
   cuenta.focus();
 }
 
@@ -47,6 +48,7 @@ function mostrarFormulario() {
   formulario.hidden = false;
   document.getElementById('nombre-cuenta').textContent = '';
   document.getElementById('rol-cuenta').textContent = '';
+  document.getElementById('opcion-administracion').hidden = true;
 }
 
 async function token() {
