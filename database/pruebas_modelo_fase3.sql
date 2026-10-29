@@ -28,7 +28,7 @@ VALUES (N'Cliente de prueba',N'cliente@example.test',@hash,N'Cliente',1,1,@ahora
 DECLARE @cliente int = (SELECT id FROM dbo.Usuario WHERE correo=N'cliente@example.test');
 DECLARE @admin int = (SELECT id FROM dbo.Usuario WHERE correo=N'admin@example.test');
 EXEC dbo.EsperarError N'correo único sin distinguir mayúsculas',
-    N'INSERT dbo.Usuario(nombre,correo,passwordHash,rol,activo,aceptacionTerminos,fechaAceptacion) SELECT nombre,N''CLIENTE@example.test'',passwordHash,rol,activo,aceptacionTerminos,fechaAceptacion FROM dbo.Usuario WHERE correo=N''cliente@example.test'';',2627;
+    N'INSERT dbo.Usuario(nombre,correo,passwordHash,rol,activo,aceptacionTerminos,fechaAceptacion) SELECT nombre,N''CLIENTE@example.test'',passwordHash,rol,activo,aceptacionTerminos,fechaAceptacion FROM dbo.Usuario WHERE correo=N''cliente@example.test'';',2627,2601;
 EXEC dbo.EsperarError N'consentimiento obligatorio del Cliente',
     N'INSERT dbo.Usuario(nombre,correo,passwordHash,rol,activo,aceptacionTerminos) SELECT N''Otro'',N''otro@example.test'',passwordHash,N''Cliente'',1,0 FROM dbo.Usuario WHERE correo=N''cliente@example.test'';',547;
 
@@ -44,7 +44,7 @@ DECLARE @pedido int = (SELECT id FROM dbo.Pedido WHERE codigo=N'PRUEBA-1');
 DECLARE @otro int = (SELECT id FROM dbo.Pedido WHERE codigo=N'PRUEBA-2');
 DECLARE @centavo int = (SELECT id FROM dbo.Pedido WHERE codigo=N'PRUEBA-CENTAVO');
 EXEC dbo.EsperarError N'confirmación repetida no crea otro pedido',
-    N'INSERT dbo.Pedido(codigo,cliente,fechaOrden,modalidadEntrega,confirmacion,huellaSolicitud) SELECT N''DUPLICADO'',cliente,fechaOrden,modalidadEntrega,confirmacion,huellaSolicitud FROM dbo.Pedido WHERE codigo=N''PRUEBA-1'';',2627;
+    N'INSERT dbo.Pedido(codigo,cliente,fechaOrden,modalidadEntrega,confirmacion,huellaSolicitud) SELECT N''DUPLICADO'',cliente,fechaOrden,modalidadEntrega,confirmacion,huellaSolicitud FROM dbo.Pedido WHERE codigo=N''PRUEBA-1'';',2627,2601;
 EXEC dbo.EsperarError N'domicilio exige dirección',
     N'UPDATE dbo.Pedido SET modalidadEntrega=N''Domicilio'' WHERE codigo=N''PRUEBA-1'';',547;
 

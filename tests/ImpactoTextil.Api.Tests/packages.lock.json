@@ -66,6 +66,11 @@
           "Microsoft.Identity.Client.Extensions.Msal": "4.78.0"
         }
       },
+      "BCrypt.Net-Next": {
+        "type": "Transitive",
+        "resolved": "4.2.0",
+        "contentHash": "gwLD2KfCuwQesP17aVh4h6lpiMPEVt5Lbpndo0ej903hNUUTtyxt3ARdDjmuydBRTAUICc7OVKVbaOvc6SQYXA=="
+      },
       "Microsoft.AspNetCore.TestHost": {
         "type": "Transitive",
         "resolved": "10.0.14",
@@ -644,6 +649,7 @@
       "impactotextil.api": {
         "type": "Project",
         "dependencies": {
+          "BCrypt.Net-Next": "[4.2.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.14, )",
           "System.Security.Cryptography.Pkcs": "[10.0.14, )"
         }
