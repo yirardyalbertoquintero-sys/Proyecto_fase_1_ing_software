@@ -30,4 +30,4 @@ Los PDF del docente y el plan del equipo se copiaron sin cambiar su contenido a 
 
 La conexión del complemento GitHub devolvió 404 para el repositorio privado y Git local no disponía de una cuenta autenticada. Se inició el flujo oficial de acceso de Git Credential Manager, que requiere que el usuario complete su autenticación y autorización.
 
-La actualización de referencias remotas y la subida están pendientes de ese acceso. No se declara que esta copia esté sincronizada con el `main` publicado. Cualquier envío se limitará a `Yirardy_Quintero`; no se autorizan cambios en `main` ni en las ramas de los compañeros.
+En este hito la actualización de referencias remotas y la subida quedaron pendientes de ese acceso. El 29 de octubre de 2026 se completó la autorización, se incorporó `origin/main` a la rama personal y se publicó exclusivamente `Yirardy_Quintero`. Se conservó la copia idéntica del DOCX recibida desde main bajo `docs/archivo/copia-desde-main/`, ampliando el inventario a 24 archivos. La comprobación posterior confirmó que main y las ramas de los compañeros no cambiaron; ver [registro de publicación](publicacion-2026-10-29.md).

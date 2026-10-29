@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Estado al 28 de octubre de 2026:** CU-01 implementado y probado localmente: formulario adaptable, registro de clientes, contraseña BCrypt, consentimiento fechado y control de duplicados. Las entidades, restricciones y migración inicial EF Core están incorporadas. Acceso, catálogo, pedidos, pagos y publicación siguen pendientes.
+**Estado al 29 de octubre de 2026:** CU-01 implementado y probado localmente: formulario adaptable, registro de clientes, contraseña BCrypt, consentimiento fechado y control de duplicados. Las entidades, restricciones y migración inicial EF Core están incorporadas. Acceso, catálogo, pedidos, pagos y alojamiento en MonsterASP.NET siguen pendientes. La organización y los avances ya están publicados en la rama `Yirardy_Quintero` de GitHub; ver [registro de publicación](docs/seguimiento/publicacion-2026-10-29.md).
 
 ## Abrir el registro
 
