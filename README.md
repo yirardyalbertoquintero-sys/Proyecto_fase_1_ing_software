@@ -8,6 +8,8 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 ## Abrir el registro
 
+**Desde VS Code:** abre esta carpeta, entra en **Ejecutar y depurar**, selecciona **Impacto Textil: ejecutar aplicación** y presiona **F5**. El formulario se abrirá automáticamente al arrancar el servidor. [Instrucciones de VS Code](docs/ejecutar-en-vscode.md).
+
 Desde PowerShell, en la raíz de esta carpeta:
 
 ```powershell
