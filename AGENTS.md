@@ -22,6 +22,8 @@ Aplicación web de pedidos de camisetas personalizadas por sublimación. Proyect
 
 ## Organización y alcance
 
+- Reparto actualizado por el usuario el 30 de octubre de 2026: Yirardy asume también la implementación pendiente de CU-10/CU-11/CU-12/CU-13 a partir de los avances de Carlos. Está autorizado expresamente a trabajar en Yirardy_Quintero y Carlos_Borrell. Ver docs/planes/REPARTO_ACTUAL.md; la asignación original se conserva como antecedente del plan. Se mantienen aplazados contratos/migraciones hasta los cambios de Dylan, pruebas funcionales de pagos, main, despliegue e informe final. No avanzar esas etapas por la sola reasignación de responsable.
+
 - Fase 3: MER, normalización, clases de diseño, arquitectura y despliegue, contratos de API y prototipo navegable en escritorio y móvil.
 - Fase 4: construir, integrar, probar, publicar y preparar documentación y defensa.
 - Alcance mínimo propuesto: CU-01, CU-02, CU-04, CU-05, CU-06, CU-07, CU-08, CU-09, CU-10, CU-11, CU-12 y CU-13.
