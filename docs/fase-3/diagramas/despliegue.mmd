@@ -1,0 +1,12 @@
+flowchart LR
+    subgraph Desarrollo[Estación de desarrollo]
+        G[Git y rama personal] --> B[SDK .NET 10]
+        B --> L[(SQL Server local)]
+    end
+    subgraph Destino[MonsterASP.NET Free - por verificar]
+        H[Subdominio con HTTPS] --> W[Aplicación ASP.NET Core y frontend]
+        W --> DB[(SQL Server del proveedor)]
+        W --> F[(Ubicación privada persistente)]
+    end
+    N[Navegador escritorio o móvil] -->|HTTPS| H
+    B -->|Paquete publicado y configuración| W

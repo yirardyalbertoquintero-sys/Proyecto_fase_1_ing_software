@@ -1,0 +1,46 @@
+classDiagram
+    class SesionController {
+        +Iniciar(IniciarSesionDto) IActionResult
+        +Actual() SesionDto
+        +Cerrar() IActionResult
+    }
+    class AccesoService {
+        +AutenticarAsync(IniciarSesionDto) Usuario
+    }
+    class IUsuarioRepository {
+        <<interface>>
+        +BuscarPorCorreoAsync(correo) Usuario
+        +BuscarPorIdAsync(id) Usuario
+        +IntentarCrearAsync(Usuario) bool
+    }
+    class IProtectorContrasena {
+        <<interface>>
+        +CrearHash(contrasena) string
+        +Verificar(contrasena, hash) bool
+    }
+    class ValidarSesion {
+        +ValidatePrincipal(context) Task
+    }
+    class AlmacenSesiones {
+        +StoreAsync(ticket) string
+        +RetrieveAsync(clave) AuthenticationTicket
+        +RenewAsync(clave, ticket) Task
+        +RemoveAsync(clave) Task
+    }
+    class IniciarSesionDto {
+        +string correo
+        +string contrasena
+    }
+    class SesionDto {
+        +int id
+        +string nombre
+        +string rol
+    }
+    SesionController --> AccesoService
+    SesionController ..> IniciarSesionDto
+    SesionController ..> SesionDto
+    AccesoService --> IUsuarioRepository
+    AccesoService --> IProtectorContrasena
+    ValidarSesion --> IUsuarioRepository
+    SesionController ..> ValidarSesion : identidad
+    AlmacenSesiones ..> AuthenticationTicket : ticket revocable

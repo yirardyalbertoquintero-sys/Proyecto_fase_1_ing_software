@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestionar catálogo · Impacto Textil</title>
+  <link rel="icon" type="image/svg+xml" href="/marca.svg">
+  <link rel="stylesheet" href="/estilos.css">
+  <link rel="stylesheet" href="/catalogo-admin.css">
+  <script src="/catalogo-admin.js" defer></script>
+</head>
+<body class="admin">
+  <a class="saltar" href="#contenido">Ir al catálogo</a>
+  <header class="cabecera-admin">
+    <a class="marca" href="/acceso.html"><img src="/marca.svg" width="40" height="40" alt=""><span>IMPACTO<br><strong>TEXTIL</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="/catalogo.html">Ver catálogo</a><a href="/acceso.html">Mi sesión</a></nav>
+  </header>
+  <main id="contenido" class="contenido-admin">
+    <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+    <p class="ceja ceja-oscura">ADMINISTRACIÓN</p>
+    <h1>Tu catálogo, al día.</h1>
+    <p class="introduccion">Gestiona las variantes disponibles para nuevas solicitudes.</p>
+    <div id="resultado" class="resultado" role="alert" tabindex="-1" hidden></div>
+    <section id="acceso-denegado" class="aviso" hidden><p>Necesitas una sesión de Administrador para gestionar el catálogo.</p><a href="/acceso.html">Ir a mi sesión</a></section>
+    <div id="espacio-catalogo" hidden>
+      <div class="resumen-catalogo" aria-label="Resumen del catálogo">
+        <p><strong id="total-variantes">0</strong><span>Variantes</span></p>
+        <p><strong id="total-activas">0</strong><span>Disponibles</span></p>
+        <p><strong id="total-inactivas">0</strong><span>Inactivas</span></p>
+      </div>
+      <div class="distribucion-catalogo">
+        <section aria-labelledby="titulo-listado">
+          <div class="titulo-listado"><h2 id="titulo-listado">Variantes del catálogo</h2><button id="nueva-variante" class="boton-secundario" type="button">+ Nueva variante</button></div>
+          <div class="filtros-catalogo">
+            <div class="campo"><label for="buscar">Buscar prenda o característica</label><input id="buscar" type="search" placeholder="Nombre, color, talla o tela"></div>
+            <div class="campo"><label for="filtro-estado">Disponibilidad</label><select id="filtro-estado"><option value="todas">Todas</option><option value="activas">Disponibles</option><option value="inactivas">Inactivas</option></select></div>
+          </div>
+          <p id="estado-listado" role="status">Cargando variantes…</p>
+          <div id="lista-variantes" class="lista-variantes"></div>
+          <button id="recargar" class="boton-secundario" type="button">Actualizar listado</button>
+        </section>
+        <section id="editor" class="editor-catalogo" aria-labelledby="titulo-editor">
+          <p class="ceja ceja-oscura">UNA VARIANTE POR COMBINACIÓN</p>
+          <h2 id="titulo-editor" tabindex="-1">Nueva variante</h2>
+          <p class="introduccion">Cada talla, color y tela se registra como una variante independiente.</p>
+          <form id="formulario-producto" novalidate>
+            <div class="campo"><label for="nombre">Nombre de la prenda</label><input id="nombre" name="nombre" maxlength="100" required placeholder="Ej. Camiseta básica"><span id="error-nombre" class="error-campo"></span></div>
+            <div class="campos-pareados">
+              <div class="campo"><label for="color">Color</label><input id="color" name="color" maxlength="50" required placeholder="Ej. Blanco"><span id="error-color" class="error-campo"></span></div>
+              <div class="campo"><label for="talla">Talla</label><input id="talla" name="talla" maxlength="30" required placeholder="Ej. M"><span id="error-talla" class="error-campo"></span></div>
+            </div>
+            <div class="campo"><label for="tela">Tela</label><input id="tela" name="tela" maxlength="100" required placeholder="Tipo de tela"><span id="error-tela" class="error-campo"></span></div>
+            <div class="campo"><label for="precioBase">Precio de referencia (C$)</label><input id="precioBase" name="precioBase" type="text" inputmode="decimal" required placeholder="0.00" aria-describedby="ayuda-precio error-precioBase"><span id="ayuda-precio" class="ayuda">Usa punto para los decimales. Este precio no es una cotización definitiva.</span><span id="error-precioBase" class="error-campo"></span></div>
+            <div class="campo"><label for="imagen">Foto pública de la prenda</label><input id="imagen" name="imagen" type="file" accept="image/jpeg,image/png" aria-describedby="ayuda-imagen error-imagenURL"><span id="ayuda-imagen" class="ayuda">JPG o PNG, hasta 10 MB y 12 millones de píxeles. Incluye solo fotos públicas del catálogo; no diseños ni comprobantes de clientes.</span><span id="error-imagenURL" class="error-campo"></span><img id="vista-imagen" class="vista-imagen" alt="Vista previa de la prenda" hidden></div>
+            <div class="fila-consentimiento disponibilidad"><input id="activo" name="activo" type="checkbox" checked><label for="activo">Disponible para nuevas solicitudes</label></div>
+            <p class="ayuda">Desactivar conserva la variante y los datos históricos de pedidos.</p>
+            <button id="guardar-producto" class="boton-principal" type="submit">Crear variante</button>
+            <button id="cancelar-edicion" class="boton-secundario" type="button">Limpiar formulario</button>
+          </form>
+        </section>
+      </div>
+    </div>
+    <noscript><p class="aviso">Activa JavaScript para gestionar el catálogo.</p></noscript>
+  </main>
+  <footer class="pie-formulario">Impacto Textil · Proyecto académico UNI</footer>
+</body>
+</html>

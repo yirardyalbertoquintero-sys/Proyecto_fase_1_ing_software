@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1000" viewBox="0 0 1560 1000">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#41556b"/></marker></defs>
+<rect width="1560" height="1000" fill="white"/>
+<text x="40" y="40" font-family="Arial" font-size="27" font-weight="bold" fill="#172b40">Despliegue previsto</text>
+<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">MonsterASP.NET Free y HTTPS público pendientes de prueba. No se afirma un sitio ya publicado.</text>
+<polyline points="360,195 600,195" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="180" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">HTTPS</text>
+<polyline points="920,195 1160,195" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="180" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Mismo origen</text>
+<polyline points="1320,245 1320,520" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1420" y="385" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Conexión SQL segura</text>
+<polyline points="1160,230 1040,230 1040,565 920,565" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="400" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Archivos privados</text>
+<polyline points="360,825 1515,825 1515,200 1480,200" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="880" y="850" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Paquete generado y configuración</text>
+<rect x="40" y="150" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="150" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="174" font-family="Arial" font-size="18" font-weight="bold" fill="white">Navegador</text>
+<text x="54" y="207" font-family="Arial" font-size="16" fill="#172b40">Escritorio y móvil</text>
+<text x="54" y="230" font-family="Arial" font-size="16" fill="#172b40">Usuario del sistema</text>
+<rect x="600" y="150" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="150" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="174" font-family="Arial" font-size="18" font-weight="bold" fill="white">Subdominio y HTTPS</text>
+<text x="614" y="207" font-family="Arial" font-size="16" fill="#172b40">Proveedor MonsterASP.NET</text>
+<text x="614" y="230" font-family="Arial" font-size="16" fill="#172b40">Certificado por verificar</text>
+<rect x="1160" y="150" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="150" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="174" font-family="Arial" font-size="18" font-weight="bold" fill="white">Aplicación publicada</text>
+<text x="1174" y="207" font-family="Arial" font-size="16" fill="#172b40">ASP.NET Core y frontend</text>
+<text x="1174" y="230" font-family="Arial" font-size="16" fill="#172b40">Runtime .NET 10 por comprobar</text>
+<rect x="1160" y="520" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="520" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="544" font-family="Arial" font-size="18" font-weight="bold" fill="white">SQL Server del proveedor</text>
+<text x="1174" y="577" font-family="Arial" font-size="16" fill="#172b40">Conexión configurada como secreto</text>
+<text x="1174" y="600" font-family="Arial" font-size="16" fill="#172b40">Cuota y compatibilidad por probar</text>
+<rect x="600" y="520" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="520" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="544" font-family="Arial" font-size="18" font-weight="bold" fill="white">Ruta privada del proveedor</text>
+<text x="614" y="577" font-family="Arial" font-size="16" fill="#172b40">Persistencia por comprobar</text>
+<text x="614" y="600" font-family="Arial" font-size="16" fill="#172b40">Acceso desde la aplicación</text>
+<rect x="40" y="780" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="780" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="804" font-family="Arial" font-size="18" font-weight="bold" fill="white">Estación de desarrollo</text>
+<text x="54" y="837" font-family="Arial" font-size="16" fill="#172b40">Git; rama Yirardy_Quintero</text>
+<text x="54" y="860" font-family="Arial" font-size="16" fill="#172b40">SDK .NET 10; SQL Server local</text>
+<text x="40" y="976" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>

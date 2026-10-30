@@ -1,0 +1,50 @@
+classDiagram
+    class RegistrarClienteDto {
+        +string nombre
+        +string correo
+        +string contrasena
+        +bool aceptacionTerminos
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ClienteCreadoDto {
+        +int id
+        +string rol
+    }
+    class ClientesController {
+        +Registrar(RegistrarClienteDto, CancellationToken) Task~IActionResult~
+    }
+    class RegistroClienteService {
+        +RegistrarAsync(RegistrarClienteDto, CancellationToken) Task~ClienteCreadoDto~
+    }
+    class IUsuarioRepository {
+        <<interface>>
+        +IntentarCrearAsync(Usuario, CancellationToken) Task~bool~
+    }
+    class UsuarioRepository
+    class IProtectorContrasena {
+        <<interface>>
+        +CrearHash(string) string
+    }
+    class ProtectorContrasena
+    class ImpactoTextilDbContext {
+        +DbSet~Usuario~ Usuario
+    }
+    class Usuario {
+        +int id
+        +string nombre
+        +string correo
+        +string passwordHash
+        +string rol
+        +bool activo
+        +bool aceptacionTerminos
+        +DateTimeOffset fechaAceptacion
+    }
+    ClientesController ..> RegistrarClienteDto : recibe
+    ClientesController --> RegistroClienteService : invoca
+    RegistroClienteService ..> ClienteCreadoDto : devuelve sin secretos
+    RegistroClienteService --> IUsuarioRepository : persiste
+    RegistroClienteService --> IProtectorContrasena : protege
+    UsuarioRepository ..|> IUsuarioRepository
+    ProtectorContrasena ..|> IProtectorContrasena
+    UsuarioRepository --> ImpactoTextilDbContext
+    ImpactoTextilDbContext --> Usuario : mapea

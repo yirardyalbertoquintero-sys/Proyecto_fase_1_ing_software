@@ -1,0 +1,6 @@
+@ImpactoTextil.Api_HostAddress = https://localhost:7105
+
+GET {{ImpactoTextil.Api_HostAddress}}/api/disponibilidad
+Accept: application/json
+
+###

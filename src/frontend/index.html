@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Crea tu cuenta · Impacto Textil</title>
+  <link rel="icon" type="image/svg+xml" href="/marca.svg">
+  <link rel="stylesheet" href="/estilos.css">
+  <script src="/registro.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#registro">Ir al formulario</a>
+  <main class="pagina">
+    <section class="presentacion" aria-labelledby="marca-titulo">
+      <a class="marca" href="/" aria-label="Impacto Textil, inicio">
+        <img src="/marca.svg" width="44" height="44" alt="">
+        <span>IMPACTO<br><strong>TEXTIL</strong></span>
+      </a>
+      <div class="mensaje-marca">
+        <p class="ceja">HECHO PARA TUS IDEAS</p>
+        <h1 id="marca-titulo">Tu idea.<br> Tu estilo.<br> <span>Tu próxima prenda.</span></h1>
+        <p>El primer paso para darle forma a lo que imaginas empieza aquí.</p>
+      </div>
+      <div class="muestra-textil" aria-hidden="true">
+        <div class="estampa"><span>CREA<br>ALGO<br>TUYO.</span><i></i></div>
+        <span class="etiqueta">IMPACTO TEXTIL · SUBLIMACIÓN</span>
+      </div>
+      <p class="pie-marca">Camisetas personalizadas, ideas con identidad.</p>
+    </section>
+
+    <section class="registro" id="registro" aria-labelledby="titulo-registro">
+      <div class="contenedor-formulario">
+        <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+        <p class="ceja ceja-oscura">BIENVENIDO A IMPACTO TEXTIL</p>
+        <h2 id="titulo-registro">Crea tu cuenta</h2>
+        <p class="introduccion">Completa tus datos para registrarte como cliente.</p>
+
+        <noscript><p class="aviso">Activa JavaScript en tu navegador para completar el registro.</p></noscript>
+        <div id="resultado" class="resultado" role="alert" tabindex="-1" hidden></div>
+
+        <form id="formulario-registro" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" maxlength="100" placeholder="Ej. Alex Pérez" required aria-describedby="error-nombre">
+            <span id="error-nombre" class="error-campo"></span>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" inputmode="email" maxlength="150" placeholder="tu.correo@ejemplo.com" required aria-describedby="error-correo">
+            <span id="error-correo" class="error-campo"></span>
+          </div>
+          <div class="campo">
+            <label for="contrasena">Contraseña</label>
+            <div class="entrada-contrasena">
+              <input id="contrasena" name="contrasena" type="password" autocomplete="new-password" placeholder="Una frase que puedas recordar" required aria-describedby="ayuda-contrasena error-contrasena">
+              <button class="mostrar" id="mostrar-contrasena" type="button" aria-controls="contrasena" aria-pressed="false">Mostrar</button>
+            </div>
+            <span id="ayuda-contrasena" class="ayuda">Al menos 15 caracteres. Puedes usar espacios; no necesitas símbolos.</span>
+            <span id="error-contrasena" class="error-campo"></span>
+          </div>
+          <div class="campo">
+            <label for="confirmacion">Confirma tu contraseña</label>
+            <input id="confirmacion" name="confirmacion" type="password" autocomplete="new-password" placeholder="Escríbela una vez más" required aria-describedby="error-confirmacion">
+            <span id="error-confirmacion" class="error-campo"></span>
+          </div>
+          <div class="consentimiento">
+            <div class="fila-consentimiento">
+              <input id="aceptacionTerminos" name="aceptacionTerminos" type="checkbox" required aria-describedby="error-aceptacionTerminos">
+              <label for="aceptacionTerminos">He leído y acepto los <a href="/aviso.html" target="_blank" rel="noopener">términos y el aviso de privacidad de esta demostración<span class="solo-lectores"> (abre en otra pestaña)</span></a>.</label>
+            </div>
+            <span id="error-aceptacionTerminos" class="error-campo"></span>
+          </div>
+          <button id="crear-cuenta" class="boton-principal" type="submit">Crear mi cuenta <span aria-hidden="true">↗</span></button>
+          <p class="nota-formulario">Tu contraseña se guarda protegida. La aceptación del aviso queda registrada con su fecha.</p>
+          <p class="nota-formulario">¿Ya tienes cuenta? <a href="/acceso.html">Inicia sesión</a>.</p>
+        </form>
+
+        <section id="exito" class="exito" aria-labelledby="titulo-exito" tabindex="-1" hidden>
+          <div class="icono-exito" aria-hidden="true">✓</div>
+          <h3 id="titulo-exito">Tu cuenta está creada</h3>
+          <p id="mensaje-exito"></p>
+          <p>El registro se completó correctamente. <a href="/acceso.html">Inicia sesión para entrar a tu cuenta</a>.</p>
+          <button id="otro-registro" class="boton-secundario" type="button">Volver al formulario</button>
+        </section>
+        <p class="nota-formulario"><a href="/catalogo.html">Explorar el catálogo de prendas</a></p>
+        <footer class="pie-formulario">Impacto Textil <span>·</span> Proyecto académico UNI</footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

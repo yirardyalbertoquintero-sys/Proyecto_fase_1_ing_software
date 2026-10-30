@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="950" viewBox="0 0 1560 950">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#41556b"/></marker></defs>
+<rect width="1560" height="950" fill="white"/>
+<text x="40" y="40" font-family="Arial" font-size="27" font-weight="bold" fill="#172b40">Arquitectura de Impacto Textil</text>
+<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">MVC con servicios, repositorios y DTO. Implementados: registro y disponibilidad; los demás módulos están pendientes.</text>
+<polyline points="360,190 600,190" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="175" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">HTTPS · JSON / archivos</text>
+<polyline points="920,190 1160,190" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="175" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Invoca el servicio</text>
+<polyline points="1320,260 1320,500" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1415" y="390" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Consulta / persiste</text>
+<polyline points="1160,555 920,555" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="540" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">SQL</text>
+<polyline points="1480,230 1520,230 1520,800 1480,800" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1425" y="690" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Archivos autorizados</text>
+<polyline points="1160,810 920,810" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="795" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">Referencia privada</text>
+<rect x="40" y="140" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="140" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Vista en el navegador</text>
+<text x="54" y="197" font-family="Arial" font-size="16" fill="#172b40">HTML, CSS y JavaScript</text>
+<text x="54" y="220" font-family="Arial" font-size="16" fill="#172b40">Cliente o Administrador</text>
+<text x="54" y="243" font-family="Arial" font-size="16" fill="#172b40">Mismo origen; interfaz adaptable</text>
+<rect x="600" y="140" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="140" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Controladores ASP.NET Core</text>
+<text x="614" y="197" font-family="Arial" font-size="16" fill="#172b40">DTO de entrada y salida</text>
+<text x="614" y="220" font-family="Arial" font-size="16" fill="#172b40">Autenticación y autorización</text>
+<text x="614" y="243" font-family="Arial" font-size="16" fill="#172b40">Errores comprensibles</text>
+<rect x="1160" y="140" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="140" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Servicios del modelo</text>
+<text x="1174" y="197" font-family="Arial" font-size="16" fill="#172b40">Reglas del SRS</text>
+<text x="1174" y="220" font-family="Arial" font-size="16" fill="#172b40">Transacciones y concurrencia</text>
+<text x="1174" y="243" font-family="Arial" font-size="16" fill="#172b40">Titularidad y versiones vigentes</text>
+<rect x="1160" y="500" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="500" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="524" font-family="Arial" font-size="18" font-weight="bold" fill="white">Repositorios y EF Core</text>
+<text x="1174" y="557" font-family="Arial" font-size="16" fill="#172b40">Persistencia y consultas</text>
+<text x="1174" y="580" font-family="Arial" font-size="16" fill="#172b40">DbContext compartido</text>
+<text x="1174" y="603" font-family="Arial" font-size="16" fill="#172b40">Migraciones coordinadas</text>
+<rect x="600" y="500" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="500" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="524" font-family="Arial" font-size="18" font-weight="bold" fill="white">SQL Server</text>
+<text x="614" y="557" font-family="Arial" font-size="16" fill="#172b40">Relaciones y restricciones</text>
+<text x="614" y="580" font-family="Arial" font-size="16" fill="#172b40">Historial y pagos</text>
+<text x="614" y="603" font-family="Arial" font-size="16" fill="#172b40">Datos privados</text>
+<rect x="1160" y="760" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="760" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="784" font-family="Arial" font-size="18" font-weight="bold" fill="white">Servicio de archivos</text>
+<text x="1174" y="817" font-family="Arial" font-size="16" fill="#172b40">Validar contenido y tamaño</text>
+<text x="1174" y="840" font-family="Arial" font-size="16" fill="#172b40">Descarga autorizada</text>
+<rect x="600" y="760" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="760" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="784" font-family="Arial" font-size="18" font-weight="bold" fill="white">Almacenamiento privado</text>
+<text x="614" y="817" font-family="Arial" font-size="16" fill="#172b40">Fuera del contenido público</text>
+<text x="614" y="840" font-family="Arial" font-size="16" fill="#172b40">Originales y comprobantes</text>
+<text x="40" y="926" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>
