@@ -480,3 +480,33 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Exclusiones especificas de Impacto Textil
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Secretos y configuración local
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+.env
+*.pfx
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Archivos temporales
+~$*
+Thumbs.db
+
+# Resultados locales y archivos privados
+TestResults/
+artifacts/
+storage/
+*.log
+.env.*
+!.env.example
