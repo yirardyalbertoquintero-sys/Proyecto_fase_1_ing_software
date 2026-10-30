@@ -17,6 +17,10 @@ La tarea previa llama a `scripts/Iniciar-Local.ps1 -SoloPreparar -PrepararVSCode
 
 Si existe otra ejecución del proyecto, detenerla antes de presionar F5 para liberar el puerto y los archivos de compilación. Si esa ejecución está en PowerShell, usar Ctrl+C en su consola.
 
+Si aparecen varias sesiones en **Call Stack / Pila de llamadas**, detener cada una con el botón cuadrado. Una ejecución anterior puede bloquear la DLL al compilar y ocupar los puertos 7105/5138; una segunda ejecución entonces puede lanzar `System.IO.IOException`. No seleccionar **Debug Anyway / Depurar de todos modos** cuando falla la tarea previa. Detener las sesiones, corregir el error indicado y pulsar F5 una sola vez.
+
+La preparación comprueba instancias Debug y puertos ocupados antes de compilar, sin cerrar procesos automáticamente. La compilación y la actualización de la base tienen mensajes separados: un `Build failed` no prueba un problema de SQL Server. Si solo estaba bloqueada la DLL o el puerto, no hace falta borrar ni recrear la base.
+
 Para usar SQL Express u otra instancia, agregar `-Servidor` y el nombre de instancia a los argumentos de la tarea de preparación en `.vscode/tasks.json`; la tarea generará la configuración local correspondiente.
 
 ## Dónde editar la interfaz
