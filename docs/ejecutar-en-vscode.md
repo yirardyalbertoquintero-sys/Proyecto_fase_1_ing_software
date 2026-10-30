@@ -34,4 +34,8 @@ Detén la depuración con **Shift+F5**. Con la base local preparada, usa **Termi
 
 Después ejecuta con **F5**, inicia sesión con la cuenta Administrador y pulsa **Gestionar catálogo**. El registro público continúa creando únicamente Clientes. La pantalla está en `src/frontend/administracion.html`, con `catalogo-admin.js` y `catalogo-admin.css`.
 
+## Ver el catálogo público
+
+Desde el registro o la pantalla de acceso, pulsa **Explorar el catálogo de prendas**. En administración está el enlace **Ver catálogo**. La consulta es pública y muestra las variantes activas que se hayan creado, con búsqueda, filtros y detalle. Sus archivos son `src/frontend/catalogo.html`, `catalogo.js` y `catalogo.css`. No se necesitan Live Server ni una segunda aplicación.
+
 Referencias: [configuración del depurador C#](https://code.visualstudio.com/docs/csharp/debugger-settings) y [extensión C# de Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).

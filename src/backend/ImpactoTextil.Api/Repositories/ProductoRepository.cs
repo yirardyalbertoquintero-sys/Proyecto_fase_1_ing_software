@@ -13,6 +13,13 @@ public sealed class ProductoRepository(ImpactoTextilDbContext contexto) : IProdu
     public Task<Producto?> ObtenerAsync(int id, CancellationToken cancelacion) =>
         contexto.Producto.AsNoTracking().SingleOrDefaultAsync(p => p.id == id, cancelacion);
 
+    public async Task<IReadOnlyList<Producto>> ListarActivosAsync(CancellationToken cancelacion) =>
+        await contexto.Producto.AsNoTracking().Where(p => p.activo)
+            .OrderBy(p => p.nombre).ThenBy(p => p.id).ToListAsync(cancelacion);
+
+    public Task<Producto?> ObtenerActivoAsync(int id, CancellationToken cancelacion) =>
+        contexto.Producto.AsNoTracking().SingleOrDefaultAsync(p => p.id == id && p.activo, cancelacion);
+
     public async Task<Producto> CrearAsync(Producto producto, CancellationToken cancelacion)
     {
         contexto.Producto.Add(producto);

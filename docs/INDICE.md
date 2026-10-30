@@ -14,6 +14,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Registro de clientes y pruebas realizadas | [CU-01](fase-3/08-registro-clientes.md). |
 | Acceso, cierre, permisos y duración de sesión | [CU-02](fase-3/09-acceso-sesiones.md). |
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
+| Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |
 | Historial de preparación y organización | `seguimiento/`. |

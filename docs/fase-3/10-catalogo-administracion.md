@@ -63,6 +63,6 @@ Subir una foto y guardar la variante son dos operaciones. Cancelar o fallar desp
 
 Capturas: [escritorio](../evidencias/catalogo-admin-escritorio.png) y [móvil 320 px](../evidencias/catalogo-admin-movil-320.png). Los datos y la imagen de esas capturas son ficticios y solo existieron en la base temporal de navegador. La compilación Debug anterior permaneció abierta en VS Code durante las comprobaciones; las pruebas se ejecutaron en Release para no detenerla.
 
-Siguiente CU de Yirardy: **CU-04**, catálogo público de variantes activas, seguido de su coordinación con la selección de Dylan. El alojamiento y la aceptación del equipo siguen pendientes.
+El avance posterior de **CU-04** ya está implementado y documentado en [Catálogo público](11-catalogo-publico.md). Continúa la coordinación con la configuración/solicitud de Dylan, la revisión humana y la comprobación del alojamiento. No se acredita todavía el envío de pedidos.
 
 Referencias técnicas: [concurrencia en EF Core](https://learn.microsoft.com/en-us/ef/core/saving/concurrency), [StbImageSharp y su licencia dual Public Domain/MIT](https://github.com/StbSharp/StbImageSharp) y [paquete fijado](https://www.nuget.org/packages/StbImageSharp/2.30.16). Se eligió su distribución bajo Unlicense; no añade un framework de frontend ni cambia el stack del proyecto.

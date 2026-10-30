@@ -15,6 +15,8 @@ La aplicación mantiene HTML, CSS y JavaScript puro y ASP.NET Core Web API. Se p
 
 Los DTO son contratos de entrada y salida de la API. No se dibujan como una capa posterior al repositorio. El DbContext ya mapea las once tablas y las cinco vistas del diseño. CU-01 utiliza RegistrarClienteDto, ClientesController, RegistroClienteService, IUsuarioRepository/UsuarioRepository y ProtectorContrasena. CU-02 añade IniciarSesionDto, SesionController, AccesoService, ValidarSesion y AlmacenSesiones; comparte el repositorio y el verificador BCrypt. CU-09 añade GuardarProductoDto/ProductoDto, CatalogoAdministracionController, CatalogoService y ProductoRepository; ImagenCatalogoController/ImagenCatalogoStore validan y conservan fotos públicas separadas. ProductoVersion calcula la huella técnica del contenido. Los servicios de los demás CU siguen pendientes.
 
+CU-04 reutiliza CatalogoService y el repositorio: ProductosController solicita únicamente variantes activas y devuelve ProductoPublicoDto. El filtrado de disponibilidad se aplica en SQL tanto en listado como en detalle. El DTO público omite la huella administrativa y no transmite referencias privadas o externas de imágenes.
+
 ## Sesión y permisos
 
 La propuesta del SRS de cookie Secure y HttpOnly, mismo origen y protección antifalsificación está implementada en CU-02. El acceso verifica BCrypt y cuenta activa; las políticas Cliente y Administrador se comprueban en servidor. No se acepta un rol enviado por el navegador. La titularidad de pedidos y archivos se verificará en sus futuros servicios, sin confiar en identificadores aportados por el cliente.
@@ -33,7 +35,7 @@ CU-12 comprueba todas las prendas, versiones aprobadas y cotización vigente ant
 
 ## Contratos iniciales para acordar con Carlos
 
-El registro, las tres operaciones de sesión y la administración del catálogo están implementados; las rutas públicas del catálogo CU-04 siguen como propuestas:
+El registro, las tres operaciones de sesión y las consultas públicas y administrativas del catálogo están implementados:
 
 | Operación propuesta | Alcance y resultado |
 | --- | --- |
@@ -41,8 +43,8 @@ El registro, las tres operaciones de sesión y la administración del catálogo 
 | POST /api/sesion | CU-02; valida correo y contraseña y emite cookie segura. Implementado. |
 | GET /api/sesion | Identidad mínima para la interfaz; sin secretos. Implementado. |
 | DELETE /api/sesion | Cierre con CSRF y revocación en servidor. Implementado. |
-| GET /api/productos | CU-04; variantes activas y precio identificado como referencial. |
-| GET /api/productos/{id} | CU-04; detalle de una variante disponible. |
+| GET /api/productos | CU-04; solo variantes activas y precio identificado como referencial, sin caché. Implementado. |
+| GET /api/productos/{id} | CU-04; detalle reconsultado de una variante activa; 404 si no existe o fue desactivada. Implementado. |
 | GET y POST /api/administracion/productos | CU-09; consulta administrativa y creación controlada. Implementado. |
 | GET y PUT /api/administracion/productos/{id} | CU-09; consulta y edición completa, incluida la disponibilidad, con huella de versión y bloqueo transaccional. Implementado. Sustituye la propuesta PATCH. |
 | POST /api/imagenes-catalogo | Subida de foto pública validada; solo Administrador y CSRF. Implementado. |

@@ -16,6 +16,15 @@ public sealed class CatalogoService(IProductoRepository productos, ImagenCatalog
     public async Task<ProductoDto?> ObtenerAsync(int id, CancellationToken cancelacion) =>
         await productos.ObtenerAsync(id, cancelacion) is { } p ? Salida(p) : null;
 
+    private ProductoPublicoDto SalidaPublica(Producto p) => new(p.id, p.nombre, p.color, p.talla, p.tela,
+        imagenes.Ruta(p.imagenURL) is not null ? p.imagenURL : null, p.precioBase);
+
+    public async Task<IReadOnlyList<ProductoPublicoDto>> ListarPublicosAsync(CancellationToken cancelacion) =>
+        (await productos.ListarActivosAsync(cancelacion)).Select(SalidaPublica).ToArray();
+
+    public async Task<ProductoPublicoDto?> ObtenerPublicoAsync(int id, CancellationToken cancelacion) =>
+        await productos.ObtenerActivoAsync(id, cancelacion) is { } p ? SalidaPublica(p) : null;
+
     public async Task<ProductoDto?> GuardarAsync(int? id, GuardarProductoDto datos, CancellationToken cancelacion)
     {
         if (!imagenes.Existe(datos.imagenURL!)) throw new ImagenCatalogoInvalidaException("Sube una imagen válida antes de guardar la variante.");
