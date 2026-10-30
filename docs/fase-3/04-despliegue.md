@@ -21,6 +21,8 @@ El entorno publicado usará Production y HTTPS. En desarrollo se puede emplear e
 
 ## Secuencia de publicación
 
+La preparación reproducible está implementada en `scripts/Preparar-Publicacion.ps1`. Produce la aplicación, SQL idempotente, manifiesto, pruebas y huellas en una carpeta nueva; no publica automáticamente ni incluye secretos o almacenamiento persistente. El procedimiento y la distinción entre la raíz del proveedor y el wwwroot de ASP.NET están en [Instalar en MonsterASP.NET](../despliegue/INSTALAR-MONSTERASP.md).
+
 1. Obtener acceso a la cuenta y al sitio de MonsterASP.NET autorizado para el proyecto.
 2. Confirmar runtime .NET 10, características del SQL Server, límites de archivos y una ruta privada persistente.
 3. Configurar la base y la conexión como secreto; acordar y probar el esquema o la migración que se publicará.
@@ -32,6 +34,6 @@ El entorno publicado usará Production y HTTPS. En desarrollo se puede emplear e
 
 ## Estado real
 
-La publicación en MonsterASP.NET, HTTPS público y archivos privados en ese proveedor están pendientes: esta entrega no dispone de una cuenta o sitio configurado para efectuar esas operaciones. El servicio HTTP y la conectividad local se comprueban por separado y no sustituyen esa prueba.
+La publicación en MonsterASP.NET, HTTPS público y archivos privados en ese proveedor siguen pendientes. Yirardy confirmó el 29 de octubre de 2026 que todavía no tiene cuenta. Se preparó y ejecutó la DLL publicada en Production local: SQL generado aplicado dos veces en base temporal, 14 comprobaciones de lectura y persistencia de producto/foto después de reiniciar, con invalidación de la sesión anterior. Esto no demuestra compatibilidad efectiva con IIS, permisos, cuotas o certificados del proveedor. Ver [evidencia y límites de la preparación](12-preparacion-publicacion.md).
 
 RNF-02 requiere medir transferencias de archivos completas; RNF-05 requiere el ensayo concurrente acordado; RNF-06 necesita un mes de observación. Ninguno se marca cumplido por compilar o responder al endpoint de disponibilidad.

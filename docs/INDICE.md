@@ -15,6 +15,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Acceso, cierre, permisos y duración de sesión | [CU-02](fase-3/09-acceso-sesiones.md). |
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
 | Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
+| Preparar e instalar la publicación | [Paquete y pruebas](fase-3/12-preparacion-publicacion.md) y [guía de MonsterASP.NET](despliegue/INSTALAR-MONSTERASP.md). |
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |
 | Historial de preparación y organización | `seguimiento/`. |

@@ -8,8 +8,12 @@ obj/
 # Secretos y configuración local
 appsettings.Development.json
 appsettings.Local.json
+appsettings.*.json
 .env
 *.pfx
+*.publishsettings
+*.pubxml
+*.pubxml.user
 
 # Archivos temporales
 ~$*

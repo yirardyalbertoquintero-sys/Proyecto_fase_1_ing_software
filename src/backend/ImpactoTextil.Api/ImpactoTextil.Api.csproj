@@ -25,4 +25,11 @@
              CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Los secretos locales y los archivos persistentes nunca forman parte de una actualización. -->
+    <Content Remove="storage/**/*;**/*.pfx;**/*.publishsettings;**/*.pubxml;**/*.pubxml.user;**/.env*" />
+    <None Remove="storage/**/*;**/*.pfx;**/*.publishsettings;**/*.pubxml;**/*.pubxml.user;**/.env*" />
+    <Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
 </Project>

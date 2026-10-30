@@ -38,4 +38,10 @@ Después ejecuta con **F5**, inicia sesión con la cuenta Administrador y pulsa 
 
 Desde el registro o la pantalla de acceso, pulsa **Explorar el catálogo de prendas**. En administración está el enlace **Ver catálogo**. La consulta es pública y muestra las variantes activas que se hayan creado, con búsqueda, filtros y detalle. Sus archivos son `src/frontend/catalogo.html`, `catalogo.js` y `catalogo.css`. No se necesitan Live Server ni una segunda aplicación.
 
+## Preparar el paquete para alojamiento
+
+Usa **Terminal → Ejecutar tarea → Impacto Textil: preparar publicacion**. Genera una carpeta nueva en `artifacts/entregas` después de restaurar y ejecutar todas las pruebas con SQL real. Requiere cambios de construcción guardados en Git; una carpeta que conserve NO-PUBLICAR.txt no está lista. El proceso usa Release, por lo que no necesita reemplazar la ejecución Debug abierta en VS Code.
+
+Subir el paquete y activar HTTPS requieren la cuenta del proveedor; no son efectos de esta tarea. Ver la [guía de instalación](despliegue/INSTALAR-MONSTERASP.md).
+
 Referencias: [configuración del depurador C#](https://code.visualstudio.com/docs/csharp/debugger-settings) y [extensión C# de Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).

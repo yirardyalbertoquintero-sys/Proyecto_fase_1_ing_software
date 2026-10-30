@@ -36,6 +36,12 @@ Ejecuta con **F5** y pulsa **Explorar el catálogo de prendas**, desde el regist
 
 Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. La configuración de prendas y el envío de solicitudes corresponden a CU-05/CU-06 y aún no están implementados.
 
+## Preparar publicación
+
+En **Terminal → Ejecutar tarea**, seleccionar **Impacto Textil: preparar publicacion**, o ejecutar `./scripts/Preparar-Publicacion.ps1`. Requiere SQL Server local y cambios de construcción guardados en Git. El resultado queda en una carpeta nueva de `artifacts/entregas`, con sitio.zip, SQL separado, manifiesto, pruebas y huellas. Una carpeta con NO-PUBLICAR.txt no es una entrega terminada.
+
+El ensayo de la aplicación publicada en modo Production local pasó las comprobaciones de lectura y persistencia tras reinicio. MonsterASP.NET sigue pendiente: todavía no hay cuenta del proyecto. [Guía de instalación](docs/despliegue/INSTALAR-MONSTERASP.md) · [Evidencia y límites](docs/fase-3/12-preparacion-publicacion.md).
+
 ## Empezar por aquí
 
 1. Leer [la fuente vigente](docs/FUENTE_VIGENTE.md) y `AGENTS.md`. El DOCX aprobado se conserva intacto. Los archivos anteriores del repositorio no sustituyen sus requisitos.
