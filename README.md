@@ -1,10 +1,12 @@
 Proyecto ing software
 
-# Impacto Textil — inicio de las fases 3 y 4
+# Impacto Textil — fases 3 y 4, rama Carlos_Borrell
 
 Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
 
-**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+
+**Corrección del 30 de octubre de 2026:** el historial de Carlos vuelve a compartir la base de Yirardy sin reescribir commits anteriores. Hay servicios administrativos preparatorios, almacenamiento privado con validación de contenido y DTO monetarios coherentes con el catálogo. **Todavía no hay endpoints ni pantallas de pedidos, pagos o producción.** Ver [correcciones y comprobaciones](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
 **Estado al 29 de octubre de 2026:** CU-01, CU-02, CU-04 y CU-09 implementados y probados localmente: registro, acceso/cierre, permisos, catálogo público y administración de variantes con fotos y baja lógica. La sesión vence tras 10 minutos de inactividad. Hay un comando controlado para crear el primer Administrador. Pedidos, pagos, producción y alojamiento en MonsterASP.NET siguen pendientes. Los hitos están en [CU-01](docs/fase-3/08-registro-clientes.md), [CU-02](docs/fase-3/09-acceso-sesiones.md), [CU-09](docs/fase-3/10-catalogo-administracion.md) y [CU-04](docs/fase-3/11-catalogo-publico.md). La revisión de Dylan y la integración en main siguen pendientes.
 
@@ -68,13 +70,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-Para ejecutar **las 20 pruebas**, incluidas las 11 de integración con SQL Server:
+La base heredada contiene 51 pruebas; esta rama añade 18 de archivos privados y serialización. El último cierre de esta rama ejecutó únicamente esas 18, todas aprobadas; la suite SQL completa queda para el paso posterior autorizado. Para ejecutar la suite completa con SQL Server cuando corresponda:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin ese script, las 11 pruebas que requieren SQL se muestran como omitidas. Una prueba de integración también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`.
+Sin configurar SQL, las 39 pruebas de integración se omiten. Una prueba de integración también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe de correcciones incluye el comando filtrado que no ejecuta SQL ni pagos.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
@@ -129,6 +131,6 @@ Generar el paquete no lo publica. La compatibilidad del alojamiento, HTTPS públ
 
 El frontend se copia a `wwwroot` de la compilación y del paquete de publicación. La API lo sirve desde el mismo origen. No necesita npm ni un framework de JavaScript.
 
-## Próxima tarea de Yirardy
+## Próximo paso del bloque administrativo
 
-Revisar CU-01 con el equipo y continuar con **CU-02: inicio y cierre de sesión**, acordando la duración de sesión pendiente en el SRS. Después CU-09 y CU-04. La contraseña mínima de 15 caracteres fue confirmada por Yirardy en esta conversación el 28 de octubre de 2026; el límite de BCrypt se valida sin recorte silencioso.
+CU-01, CU-02, CU-09 y CU-04 ya están implementados en la base. Carlos debe conectar posteriormente sus servicios con controladores y pantallas autorizadas, en coordinación con las solicitudes de Dylan. El líder aplazó contratos, migraciones, pruebas funcionales de pagos, integración en main, alojamiento e informe final. Este cierre corrige únicamente la preparación existente. La política confirmada conserva contraseña mínima de 15 caracteres e inactividad de sesión de 10 minutos.

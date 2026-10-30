@@ -11,10 +11,10 @@ Esta tabla vincula el diseño con los requisitos, sin confundir modelo preparado
 | CU-05 y CU-06 / RF-04, RF-05, RF-06 y RF-15 | Dylan | Pedido, DetallePedido, primera VersionDiseno y archivo privado | Contrato de persistencia propuesto; implementación pendiente. |
 | CU-07 / RF-07 | Dylan | Pago Pendiente y comprobante | Integridad propuesta; interfaz y API pendientes. |
 | CU-08 / RF-12 | Dylan | Vistas de pedidos propios y condición administrativa | Consultas del modelo preparadas; autorización e interfaz pendientes. |
-| CU-10 / RF-06 y RF-08 | Carlos | VersionCotizacion, DetalleCotizacion, VersionDiseno y Constancia | Historial modelado; servicios administrativos pendientes. |
-| CU-11 / RF-09 | Carlos | Archivo original y permisos | Arquitectura propuesta; descarga pendiente. |
-| CU-13 / RF-07 y RF-11 | Carlos con apoyo de Yirardy | Pago, saldo y cotización vigente | Parte de integridad probada; transacción y API pendientes. |
-| CU-12 / RF-10 y RF-11 | Carlos | Estado, versiones, comprobaciones y ConstanciaEntrega | Modelo propuesto; autorización de producción y entrega pendiente. |
+| CU-10 / RF-06 y RF-08 | Carlos | VersionCotizacion, DetalleCotizacion, VersionDiseno y Constancia | Servicios y repositorio preparatorios presentes en esta rama Carlos_Borrell. Lectura de expediente protegida y formato monetario corregido; API, pantalla y pruebas funcionales pendientes. |
+| CU-11 / RF-09 | Carlos | Archivo original y permisos | Servicio y almacén privado presentes; validación completa de imágenes/PDF y conservación de originales comprobadas. Sin endpoint/pantalla de descarga; autorización de extremo a extremo pendiente. |
+| CU-13 / RF-07 y RF-11 | Carlos con apoyo de Yirardy | Pago, saldo y cotización vigente | Servicio y control transaccional preparatorios presentes; no se ejecutaron pruebas funcionales de pagos en este cierre. API, pantalla y comprobación SQL/concurrencia pendientes. |
+| CU-12 / RF-10 y RF-11 | Carlos | Estado, versiones, comprobaciones y ConstanciaEntrega | Servicio preparatorio presente; conserva el mínimo del 50 % y los cuatro estados. API, pantalla y validación funcional de producción/entrega pendientes. |
 | CU-03 / RF-13 | Fuera del mínimo declarado | Recuperación, token y servicio de correo | Diferido conforme al SRS; no se implementa su tabla en este prototipo. |
 | CU-14 / RF-16 | Opcional | Entregas y pagos verificados por fechas distintas | El modelo conserva datos para el reporte; función pendiente. |
 

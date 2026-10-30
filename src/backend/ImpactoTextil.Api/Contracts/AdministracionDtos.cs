@@ -28,6 +28,7 @@ public sealed class FiltroPedidosAdminDto : IValidatableObject
 public sealed class LineaCotizacionPropuestaDto : IValidatableObject
 {
     public int detalle { get; init; }
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
     public decimal precioUnitarioAcordado { get; init; }
     public int? versionDiseno { get; init; }
 
@@ -165,6 +166,7 @@ public sealed class ResolverPagoPendienteDto : IValidatableObject
 [JsonUnmappedMemberHandling(JsonUnmappedMemberHandling.Disallow)]
 public sealed class RegistrarCobroDirectoDto : IValidatableObject
 {
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
     public decimal monto { get; init; }
     public DateTimeOffset fecha { get; init; }
     public string? medio { get; init; }
@@ -247,12 +249,12 @@ public sealed record ResumenPedidoAdminDto(
     string estado,
     string modalidadEntrega,
     string condicionAdministrativa,
-    decimal totalReferencial,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal totalReferencial,
     bool cotizacionAceptada,
-    decimal? total,
-    decimal porcentajeAnticipo,
-    decimal? anticipoExigible,
-    decimal? saldoPendiente);
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? total,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal porcentajeAnticipo,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? anticipoExigible,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? saldoPendiente);
 
 public sealed record DetallePedidoAdminDto(
     int id,
@@ -265,19 +267,19 @@ public sealed record DetallePedidoAdminDto(
     string? observaciones,
     string? ideaDiseno,
     bool tieneArchivoOriginal,
-    decimal precioBaseReferencia,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal precioBaseReferencia,
     int? versionDisenoVigente,
     bool disenoAprobado,
     DateTimeOffset? fechaAprobacionDiseno,
     int? responsableAprobacionDiseno,
-    decimal? precioUnitarioAcordado,
-    decimal? subtotal);
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? precioUnitarioAcordado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? subtotal);
 
 public sealed record LineaCotizacionAdminDto(
     int detalle,
     int cantidad,
-    decimal precioUnitarioAcordado,
-    decimal subtotal,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal precioUnitarioAcordado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal subtotal,
     int? versionDiseno);
 
 public sealed record VersionCotizacionAdminDto(
@@ -289,7 +291,7 @@ public sealed record VersionCotizacionAdminDto(
     DateTimeOffset? fechaDecision,
     int? responsableDecision,
     string? referenciaDecision,
-    decimal total,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal total,
     IReadOnlyList<LineaCotizacionAdminDto> detalleImportes);
 
 public sealed record VersionDisenoAdminDto(
@@ -307,7 +309,7 @@ public sealed record VersionDisenoAdminDto(
 
 public sealed record PagoAdminDto(
     int id,
-    decimal monto,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal monto,
     DateTimeOffset fecha,
     string medio,
     string? referencia,
@@ -330,7 +332,7 @@ public sealed record ComprobacionSublimacionAdminDto(
     int versionCotizacion,
     DateTimeOffset fecha,
     int responsable,
-    decimal montoVerificado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal montoVerificado,
     IReadOnlyList<int> versionesDiseno);
 
 public sealed record ExpedientePedidoAdminDto(
@@ -340,7 +342,7 @@ public sealed record ExpedientePedidoAdminDto(
     DateTimeOffset? fechaArchivo,
     int? responsableArchivo,
     int? versionCotizacionVigente,
-    decimal pagosVerificadosAcumulados,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal pagosVerificadosAcumulados,
     IReadOnlyList<DetallePedidoAdminDto> detalles,
     IReadOnlyList<VersionCotizacionAdminDto> versionesCotizacion,
     IReadOnlyList<VersionDisenoAdminDto> versionesDiseno,
@@ -353,11 +355,11 @@ public sealed record ResultadoCotizacionAdminDto(
     int versionCotizacionId,
     int numeroVersion,
     string decision,
-    decimal totalPropuesto,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal totalPropuesto,
     int? versionCotizacionVigente,
-    decimal? totalVigente,
-    decimal? anticipoExigible,
-    decimal? saldoPendiente,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? totalVigente,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? anticipoExigible,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal? saldoPendiente,
     DateOnly? fechaEntregaAcordada);
 
 public sealed record ResultadoVersionDisenoAdminDto(
@@ -382,15 +384,15 @@ public sealed record ResultadoPagoAdminDto(
     int pedidoId,
     int pagoId,
     string estadoVerificacion,
-    decimal monto,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal monto,
     string medio,
     string? referencia,
     DateTimeOffset fechaVerificacion,
     int responsableVerificacion,
-    decimal totalAceptado,
-    decimal pagosVerificadosAcumulados,
-    decimal anticipoExigible,
-    decimal saldoPendiente,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal totalAceptado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal pagosVerificadosAcumulados,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal anticipoExigible,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal saldoPendiente,
     bool esCreacionNueva);
 
 public sealed record ResultadoAutorizacionSublimacionDto(
@@ -398,9 +400,9 @@ public sealed record ResultadoAutorizacionSublimacionDto(
     int comprobacionId,
     int versionCotizacion,
     IReadOnlyList<int> versionesDisenoComprobadas,
-    decimal totalAceptado,
-    decimal anticipoExigible,
-    decimal montoVerificado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal totalAceptado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal anticipoExigible,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal montoVerificado,
     DateTimeOffset fecha,
     int responsable);
 
@@ -411,9 +413,9 @@ public sealed record ResultadoEstadoProduccionDto(
     string estadoActual,
     DateTimeOffset? fechaEntregaReal,
     int? constanciaEntregaId,
-    decimal totalAceptado,
-    decimal anticipoExigible,
-    decimal saldoPendiente);
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal totalAceptado,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal anticipoExigible,
+    [property: JsonNumberHandling(JsonNumberHandling.WriteAsString | JsonNumberHandling.AllowReadingFromString)] decimal saldoPendiente);
 
 public sealed record ArchivoDescargaDto(
     Stream contenido,

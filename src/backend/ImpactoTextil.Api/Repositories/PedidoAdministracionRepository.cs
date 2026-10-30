@@ -54,6 +54,34 @@ public sealed class PedidoAdministracionRepository(ImpactoTextilDbContext contex
         int pedidoId,
         CancellationToken cancelacion)
     {
+        var estrategia = contexto.Database.CreateExecutionStrategy();
+        return await estrategia.ExecuteAsync(async ct =>
+        {
+            // Mantener una sola lectura coherente de cabecera, versiones y pagos.
+            // El bloqueo inicial sigue el mismo orden que los servicios escritores.
+            await using var transaccion = await contexto.Database.BeginTransactionAsync(IsolationLevel.Serializable, ct);
+            if (contexto.Database.IsSqlServer())
+            {
+                var pedidos = await contexto.Database
+                    .SqlQueryRaw<int>("SELECT [id] AS [Value] FROM [dbo].[Pedido] WITH (UPDLOCK, ROWLOCK, HOLDLOCK) WHERE [id] = {0}", pedidoId)
+                    .ToListAsync(ct);
+                if (pedidos.Count == 0)
+                {
+                    await transaccion.CommitAsync(ct);
+                    return null;
+                }
+            }
+
+            var expediente = await LeerExpedienteAsync(pedidoId, ct);
+            await transaccion.CommitAsync(ct);
+            return expediente;
+        }, cancelacion);
+    }
+
+    private async Task<ExpedientePedidoAdminDto?> LeerExpedienteAsync(
+        int pedidoId,
+        CancellationToken cancelacion)
+    {
         var cabecera = await (
             from p in contexto.vPedido.AsNoTracking()
             join u in contexto.Usuario.AsNoTracking() on p.cliente equals u.id
