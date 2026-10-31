@@ -1,0 +1,100 @@
+classDiagram
+    direction TB
+    %% DTO existentes; no fija contratos ni rutas HTTP nuevos.
+    %% Propiedades seleccionadas; el codigo conserva los miembros restantes.
+    class FiltroPedidosAdminDto {
+        <<DTO_entrada>>
+        +string? estado
+        +string? condicionAdministrativa
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ProponerCotizacionDto {
+        <<DTO_entrada>>
+        +IReadOnlyList~LineaCotizacionPropuestaDto~? lineas
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class LineaCotizacionPropuestaDto {
+        <<DTO_entrada>>
+        +int detalle
+        +decimal precioUnitarioAcordado
+        +int? versionDiseno
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class DecidirCotizacionDto {
+        <<DTO_entrada>>
+        +string? decision
+        +string? referenciaDecision
+        +DateOnly? fechaEntregaAcordada
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class DecidirVersionDisenoDto {
+        <<DTO_entrada>>
+        +string? decision
+        +string? referenciaDecision
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class RegistrarVersionDisenoTextoDto {
+        <<DTO_entrada>>
+        +string? descripcion
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ArchivarPedidoDto {
+        <<DTO_entrada>>
+        +string? motivoArchivo
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ResultadoCotizacionAdminDto {
+        <<DTO_salida>>
+        +int pedidoId
+        +int versionCotizacionId
+        +int numeroVersion
+        +string decision
+        +decimal totalPropuesto
+        +int? versionCotizacionVigente
+        +decimal? totalVigente
+        +decimal? anticipoExigible
+        +decimal? saldoPendiente
+    }
+    class ResultadoVersionDisenoAdminDto {
+        <<DTO_salida>>
+        +int pedidoId
+        +int detalleId
+        +int versionDisenoId
+        +int numeroVersion
+        +string decision
+        +int? versionDisenoVigente
+        +bool disenoAprobado
+    }
+    class ResultadoArchivoPedidoDto {
+        <<DTO_salida>>
+        +int pedidoId
+        +string codigo
+        +string estado
+        +string condicionAdministrativa
+        +string motivoArchivo
+        +DateTimeOffset fechaArchivo
+        +int responsableArchivo
+    }
+    class ResumenPedidoAdminDto {
+        <<DTO_salida>>
+        +int id
+        +string codigo
+        +string estado
+        +string condicionAdministrativa
+        +decimal totalReferencial
+        +bool cotizacionAceptada
+        +decimal? total
+        +decimal? anticipoExigible
+        +decimal? saldoPendiente
+    }
+    class ExpedientePedidoAdminDto {
+        <<DTO_salida>>
+        +ResumenPedidoAdminDto pedido
+        +int? versionCotizacionVigente
+        +decimal pagosVerificadosAcumulados
+        +IReadOnlyList~DetallePedidoAdminDto~ detalles
+        +IReadOnlyList~VersionCotizacionAdminDto~ versionesCotizacion
+        +IReadOnlyList~VersionDisenoAdminDto~ versionesDiseno
+    }
+    ProponerCotizacionDto "1" *-- "1..*" LineaCotizacionPropuestaDto : lineas validas
+    ExpedientePedidoAdminDto "1" *-- "1" ResumenPedidoAdminDto : cabecera

@@ -42,6 +42,8 @@ Se muestran las variantes activas y sus precios de referencia. Puedes buscar, fi
 
 En esta rama Carlos_Borrell, ejecutar con F5, iniciar sesión como Administrador y abrir **Gestionar catálogo → Pedidos · prototipo**. Permite recorrer solicitudes, versiones, propuestas y decisiones con datos ficticios. El aviso indica que las acciones son simulaciones en memoria: no guardan pedidos/acuerdos ni registran pagos. Al recargar se reinician. [Alcance, capturas y comprobaciones](docs/fase-3/13-prototipo-revision-pedidos.md). CU-10 sigue pendiente de conexión con la API y SQL cuando se revisen las solicitudes de Dylan y los contratos.
 
+El [diseño de clases de CU-10](docs/fase-3/14-diseno-clases-cu10.md) explica los tipos, operaciones, Repository/DTO y relaciones del historial. Incluye [tres páginas editables en draw.io](docs/fase-3/diagramas/Clases_CU10.drawio) y fuentes Mermaid. El controlador se señala como pendiente; las figuras no acreditan una conexión funcional de pedidos.
+
 ## Preparar publicación
 
 En **Terminal → Ejecutar tarea**, seleccionar **Impacto Textil: preparar publicacion**, o ejecutar `./scripts/Preparar-Publicacion.ps1`. Requiere SQL Server local y cambios de construcción guardados en Git. El resultado queda en una carpeta nueva de `artifacts/entregas`, con sitio.zip, SQL separado, manifiesto, pruebas y huellas. Una carpeta con NO-PUBLICAR.txt no es una entrega terminada.

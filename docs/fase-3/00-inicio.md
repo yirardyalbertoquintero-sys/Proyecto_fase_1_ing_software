@@ -17,6 +17,7 @@ Esta entrega desarrolla el trabajo inicial de Yirardy: fuente e instrucciones co
 11. [Catálogo público y detalle de variantes activas](11-catalogo-publico.md).
 12. [Preparación de publicación y comprobación local en Production](12-preparacion-publicacion.md).
 13. [Prototipo navegable de CU-10: revisión y cotización con datos ficticios](13-prototipo-revision-pedidos.md).
+14. [Clases de diseño de CU-10, firmas existentes e historial](14-diseno-clases-cu10.md).
 
 Los resultados ejecutados y sus límites están en el [registro de avance de Yirardy](../seguimiento/avance-yirardy.md).
 

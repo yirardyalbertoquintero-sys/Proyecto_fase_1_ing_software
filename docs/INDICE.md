@@ -17,6 +17,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
 | Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
 | Prototipo navegable de revisión y cotización, sin guardado real | [CU-10 en preparación](fase-3/13-prototipo-revision-pedidos.md). |
+| Clases de CU-10, tipos y correspondencia con el código | [Diseño y explicación](fase-3/14-diseno-clases-cu10.md) y [tres páginas draw.io](fase-3/diagramas/Clases_CU10.drawio). |
 | Preparar e instalar la publicación | [Paquete y pruebas](fase-3/12-preparacion-publicacion.md) y [guía de MonsterASP.NET](despliegue/INSTALAR-MONSTERASP.md). |
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |

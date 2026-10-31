@@ -1,0 +1,80 @@
+classDiagram
+    direction TB
+    %% Firmas de parametros abreviadas; inventario completo en 14-diseno-clases-cu10.md.
+    %% Las dos cajas de vista/frontera son roles de diseno, no clases C# implementadas.
+    class VistaPrototipoCU10["Vista HTML y JavaScript"] {
+        <<prototipo>>
+        -dibujarLista()
+        -dibujarExpediente()
+        -dibujarPrenda(...)
+        -dibujarPropuesta(...)
+        -dibujarArchivo(...)
+        -iniciar()
+    }
+    class FronteraHttpCU10["Controlador CU-10 pendiente"] {
+        <<pendiente>>
+        Nombre y operaciones por acordar
+        Sin rutas HTTP definidas
+    }
+    class SesionController {
+        <<existente>>
+        +Actual() ActionResult~SesionDto~
+    }
+    class RevisionCotizacionAdminService {
+        <<servicio_existente>>
+        +ListarPedidosAsync(...) Task~ResultadoOperacionAdmin~IReadOnlyList~ResumenPedidoAdminDto~~~
+        +ObtenerExpedienteAsync(...) Task~ResultadoOperacionAdmin~ExpedientePedidoAdminDto~~
+        +IncorporarVersionDisenoAsync(...) Task~ResultadoOperacionAdmin~ResultadoVersionDisenoAdminDto~~
+        +DecidirVersionDisenoAsync(...) Task~ResultadoOperacionAdmin~ResultadoVersionDisenoAdminDto~~
+        +ProponerCotizacionAsync(...) Task~ResultadoOperacionAdmin~ResultadoCotizacionAdminDto~~
+        +DecidirCotizacionAsync(...) Task~ResultadoOperacionAdmin~ResultadoCotizacionAdminDto~~
+        +ArchivarSolicitudAsync(...) Task~ResultadoOperacionAdmin~ResultadoArchivoPedidoDto~~
+    }
+    class IPedidoAdministracionRepository {
+        <<interface>>
+        +ObtenerAdministradorActivoAsync(...) Task~Usuario?~
+        +ListarPedidosAsync(...) Task~IReadOnlyList~ResumenPedidoAdminDto~~
+        +ObtenerExpedienteAsync(...) Task~ExpedientePedidoAdminDto?~
+        +EjecutarEnPedidoBloqueadoAsync(...) Task~ResultadoOperacionAdmin~T~~
+    }
+    class PedidoAdministracionRepository {
+        <<Repository>>
+        -LeerExpedienteAsync(...) Task~ExpedientePedidoAdminDto?~
+        -MapearResumen(...) ResumenPedidoAdminDto$
+    }
+    class ImpactoTextilDbContext {
+        <<EF_Core>>
+        +DbSet~Pedido~ Pedido
+        +DbSet~DetallePedido~ DetallePedido
+        +DbSet~VersionCotizacion~ VersionCotizacion
+        +DbSet~DetalleCotizacion~ DetalleCotizacion
+        +DbSet~VersionDiseno~ VersionDiseno
+        +DbSet~vPedido~ vPedido
+    }
+    class ReglasAdministrativasPedido {
+        <<reglas_estaticas>>
+        +CalcularAnticipoExigible(decimal) decimal$
+        +CalcularSaldoPendiente(decimal, decimal) decimal$
+        +EvaluarArchivoAdministrativo(...) ErrorOperacionAdmin?$
+    }
+    class ResultadoOperacionAdmin~T~ {
+        <<resultado>>
+        +bool EsExito
+        +T? Valor
+        +ErrorOperacionAdmin? Error
+        +Exito(T) ResultadoOperacionAdmin~T~$
+        +Fallo(...) ResultadoOperacionAdmin~T~$
+    }
+    class TimeProvider {
+        <<framework>>
+        +GetUtcNow() DateTimeOffset
+    }
+    VistaPrototipoCU10 --> SesionController : GET de sesion existente
+    VistaPrototipoCU10 ..> FronteraHttpCU10 : conexion pendiente
+    FronteraHttpCU10 ..> RevisionCotizacionAdminService : orquestacion pendiente
+    RevisionCotizacionAdminService --> IPedidoAdministracionRepository : inyeccion
+    PedidoAdministracionRepository ..|> IPedidoAdministracionRepository : implementa
+    PedidoAdministracionRepository --> ImpactoTextilDbContext : consulta y persistencia
+    RevisionCotizacionAdminService ..> ReglasAdministrativasPedido : reglas del SRS
+    RevisionCotizacionAdminService ..> ResultadoOperacionAdmin : devuelve resultado
+    RevisionCotizacionAdminService --> TimeProvider : reloj inyectado

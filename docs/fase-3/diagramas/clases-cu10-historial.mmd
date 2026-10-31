@@ -1,0 +1,97 @@
+classDiagram
+    direction TB
+    %% Entidades C# con miembros seleccionados; configuracion EF mediante Fluent API.
+    %% Totales, saldo y anticipo son proyecciones: no se agregan columnas a Pedido.
+    class Pedido {
+        <<entidad>>
+        +int id
+        +string codigo
+        +int cliente
+        +string estado
+        +string condicionAdministrativa
+        +DateOnly? fechaEntregaAcordada
+        +int? versionCotizacionVigente
+        +ICollection~DetallePedido~ DetallePedido
+        +ICollection~VersionCotizacion~ VersionCotizacion
+    }
+    class DetallePedido {
+        <<entidad>>
+        +int id
+        +int pedido
+        +int cantidad
+        +string talla
+        +string color
+        +string tela
+        +string empaque
+        +decimal precioBaseReferencia
+        +int? versionDisenoVigente
+    }
+    class VersionDiseno {
+        <<historial>>
+        +int id
+        +int detalle
+        +int numeroVersion
+        +string? archivoURL
+        +string? descripcion
+        +DateTimeOffset fechaRegistro
+        +int responsableRegistro
+        +string decision
+        +DateTimeOffset? fechaDecision
+        +int? responsableDecision
+        +string? referenciaDecision
+    }
+    class VersionCotizacion {
+        <<historial>>
+        +int id
+        +int pedido
+        +int numeroVersion
+        +DateTimeOffset fechaRegistro
+        +int responsableRegistro
+        +string decision
+        +DateTimeOffset? fechaDecision
+        +int? responsableDecision
+        +string? referenciaDecision
+    }
+    class DetalleCotizacion {
+        <<entidad>>
+        +int versionCotizacion
+        +int detalle
+        +decimal precioUnitarioAcordado
+        +int? versionDiseno
+    }
+    class Usuario {
+        <<contexto>>
+        +int id
+        +string nombre
+        +string rol
+        +bool activo
+    }
+    class Pago {
+        <<consulta_CU10>>
+        +int id
+        +int pedido
+        +decimal monto
+        +string estadoVerificacion
+    }
+    class vPedido {
+        <<vista_sin_clave>>
+        +int id
+        +decimal? totalReferencial
+        +bool? cotizacionAceptada
+        +decimal? total
+        +decimal? anticipoExigible
+        +decimal? saldoPendiente
+    }
+    Pedido "1" *-- "1..*" DetallePedido : detalles
+    Pedido "1" *-- "0..*" VersionCotizacion : historial
+    DetallePedido "1" *-- "0..*" VersionDiseno : historial
+    VersionCotizacion "1" *-- "1..*" DetalleCotizacion : importes
+    DetalleCotizacion "0..*" --> "1" DetallePedido : cantidad original
+    Pedido "0..1" --> "0..1" VersionCotizacion : vigente aceptada
+    DetallePedido "0..1" --> "0..1" VersionDiseno : vigente aprobada
+    DetalleCotizacion "0..*" --> "0..1" VersionDiseno : arte cotizado
+    Usuario "1" --> "0..*" VersionDiseno : registra
+    Usuario "1" --> "0..*" VersionCotizacion : registra
+    Pedido "1" --> "0..*" Pago : consulta verificados
+    vPedido ..> Pedido : proyeccion
+    vPedido ..> Pago : suma verificados

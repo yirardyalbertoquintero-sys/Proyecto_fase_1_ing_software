@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2340" height="1518" viewBox="0 0 2340 1518">
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#42556b"/></marker>
+<marker id="triangle" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M1 1 L12 7 L1 13 Z" fill="white" stroke="#42556b"/></marker>
+<marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1 6 L8 1 L15 6 L8 11 Z" fill="#42556b"/></marker></defs>
+<rect width="2340" height="1518" fill="white"/>
+<text x="60" y="51" text-anchor="start" font-family="Arial" font-size="28" font-weight="bold" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">CU-10 · Aplicación y persistencia</text>
+<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes.</text>
+<polyline points="468.0,360 580.0,480" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="524.0" y="404.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">GET de</text>
+<text x="524.0" y="423.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">sesion</text>
+<text x="524.0" y="442.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">existente</text>
+<polyline points="860,195.0 980,172.0" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="920.0" y="177.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">conexion</text>
+<text x="920.0" y="196.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">pendiente</text>
+<polyline points="1540,216.8 1660,225.4" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="1600.0" y="215.10000000000002" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">orquestacion</text>
+<text x="1600.0" y="234.10000000000002" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">pendiente</text>
+<polyline points="1660,481.6 1610,481.6 1610,700 1428.0,700 1428.0,765" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1610.0" y="594.8" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">inyeccion</text>
+<polyline points="860,810.3 980,837.9" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#triangle)" stroke-dasharray="7 5"/>
+<text x="920.0" y="828.0999999999999" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">implementa</text>
+<polyline points="580.0,916 580.0,1188" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="580.0" y="1046.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">consulta y</text>
+<text x="580.0" y="1065.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">persistencia</text>
+<polyline points="1940.0,567 1940.0,765" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="1940.0" y="660.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">reglas del</text>
+<text x="1940.0" y="679.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">SRS</text>
+<polyline points="1660,541.38 1585,541.38 1585,1306.2 1540,1306.2" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="1585.0" y="917.79" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">devuelve</text>
+<text x="1585.0" y="936.79" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">resultado</text>
+<polyline points="2220,332.15 2275,332.15 2275,1240.5 2220,1240.5" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="2275.0" y="780.325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">reloj</text>
+<text x="2275.0" y="799.325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">inyectado</text>
+<rect x="300" y="140" width="560" height="220" fill="#f7f9fc" stroke="#845b1c" stroke-width="1.5"/>
+<rect x="300" y="140" width="560" height="65" fill="#845b1c"/>
+<text x="316" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Vista HTML y JavaScript</text>
+<text x="316" y="189" font-family="Arial" font-size="15" fill="white">«prototipo»</text>
+<text x="314" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarLista()</text>
+<text x="314" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarExpediente()</text>
+<text x="314" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarPrenda(...)</text>
+<text x="314" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarPropuesta(...)</text>
+<text x="314" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarArchivo(...)</text>
+<text x="314" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">-iniciar()</text>
+<rect x="980" y="140" width="560" height="128" fill="#f7f9fc" stroke="#845b1c" stroke-width="1.5"/>
+<rect x="980" y="140" width="560" height="65" fill="#845b1c"/>
+<text x="996" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Controlador CU-10 pendiente</text>
+<text x="996" y="189" font-family="Arial" font-size="15" fill="white">«pendiente»</text>
+<text x="994" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">Nombre y operaciones por acordar</text>
+<text x="994" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">Sin rutas HTTP definidas</text>
+<rect x="300" y="480" width="560" height="105" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="480" width="560" height="65" fill="#193c58"/>
+<text x="316" y="504" font-family="Arial" font-size="18" font-weight="bold" fill="white">SesionController</text>
+<text x="316" y="529" font-family="Arial" font-size="15" fill="white">«existente»</text>
+<text x="314" y="566" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Actual() ActionResult&lt;SesionDto&gt;</text>
+<rect x="1660" y="140" width="560" height="427" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="140" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">RevisionCotizacionAdminService</text>
+<text x="1676" y="189" font-family="Arial" font-size="15" fill="white">«servicio_existente»</text>
+<text x="1674" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ListarPedidosAsync(...) Task&lt;ResultadoOperacionAdmin&lt;I</text>
+<text x="1674" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">  ReadOnlyList&lt;ResumenPedidoAdminDto&gt;&gt;&gt;</text>
+<text x="1674" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ObtenerExpedienteAsync(...)</text>
+<text x="1674" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Task&lt;ResultadoOperacionAdmin&lt;ExpedientePedidoAdminDto</text>
+<text x="1674" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">  &gt;&gt;</text>
+<text x="1674" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">+IncorporarVersionDisenoAsync(...) Task&lt;ResultadoOperac</text>
+<text x="1674" y="364" font-family="Consolas,monospace" font-size="16" fill="#172b40">  ionAdmin&lt;ResultadoVersionDisenoAdminDto&gt;&gt;</text>
+<text x="1674" y="387" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DecidirVersionDisenoAsync(...) Task&lt;ResultadoOperacion</text>
+<text x="1674" y="410" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Admin&lt;ResultadoVersionDisenoAdminDto&gt;&gt;</text>
+<text x="1674" y="433" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ProponerCotizacionAsync(...) Task&lt;ResultadoOperacionAd</text>
+<text x="1674" y="456" font-family="Consolas,monospace" font-size="16" fill="#172b40">  min&lt;ResultadoCotizacionAdminDto&gt;&gt;</text>
+<text x="1674" y="479" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DecidirCotizacionAsync(...) Task&lt;ResultadoOperacionAdm</text>
+<text x="1674" y="502" font-family="Consolas,monospace" font-size="16" fill="#172b40">  in&lt;ResultadoCotizacionAdminDto&gt;&gt;</text>
+<text x="1674" y="525" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ArchivarSolicitudAsync(...) Task&lt;ResultadoOperacionAdm</text>
+<text x="1674" y="548" font-family="Consolas,monospace" font-size="16" fill="#172b40">  in&lt;ResultadoArchivoPedidoDto&gt;&gt;</text>
+<rect x="980" y="765" width="560" height="243" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="765" width="560" height="65" fill="#193c58"/>
+<text x="996" y="789" font-family="Arial" font-size="18" font-weight="bold" fill="white">IPedidoAdministracionRepository</text>
+<text x="996" y="814" font-family="Arial" font-size="15" fill="white">«interface»</text>
+<text x="994" y="851" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ObtenerAdministradorActivoAsync(...) Task&lt;Usuario?&gt;</text>
+<text x="994" y="874" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ListarPedidosAsync(...)</text>
+<text x="994" y="897" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Task&lt;IReadOnlyList&lt;ResumenPedidoAdminDto&gt;&gt;</text>
+<text x="994" y="920" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ObtenerExpedienteAsync(...)</text>
+<text x="994" y="943" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Task&lt;ExpedientePedidoAdminDto?&gt;</text>
+<text x="994" y="966" font-family="Consolas,monospace" font-size="16" fill="#172b40">+EjecutarEnPedidoBloqueadoAsync(...)</text>
+<text x="994" y="989" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Task&lt;ResultadoOperacionAdmin&lt;T&gt;&gt;</text>
+<rect x="300" y="765" width="560" height="151" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="765" width="560" height="65" fill="#193c58"/>
+<text x="316" y="789" font-family="Arial" font-size="18" font-weight="bold" fill="white">PedidoAdministracionRepository</text>
+<text x="316" y="814" font-family="Arial" font-size="15" fill="white">«Repository»</text>
+<text x="314" y="851" font-family="Consolas,monospace" font-size="16" fill="#172b40">-LeerExpedienteAsync(...)</text>
+<text x="314" y="874" font-family="Consolas,monospace" font-size="16" fill="#172b40">  Task&lt;ExpedientePedidoAdminDto?&gt;</text>
+<text x="314" y="897" font-family="Consolas,monospace" font-size="16" fill="#172b40">-MapearResumen(...) ResumenPedidoAdminDto [static]</text>
+<rect x="300" y="1188" width="560" height="220" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="1188" width="560" height="65" fill="#193c58"/>
+<text x="316" y="1212" font-family="Arial" font-size="18" font-weight="bold" fill="white">ImpactoTextilDbContext</text>
+<text x="316" y="1237" font-family="Arial" font-size="15" fill="white">«EF_Core»</text>
+<text x="314" y="1274" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;Pedido&gt; Pedido</text>
+<text x="314" y="1297" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;DetallePedido&gt; DetallePedido</text>
+<text x="314" y="1320" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;VersionCotizacion&gt; VersionCotizacion</text>
+<text x="314" y="1343" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;DetalleCotizacion&gt; DetalleCotizacion</text>
+<text x="314" y="1366" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;VersionDiseno&gt; VersionDiseno</text>
+<text x="314" y="1389" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DbSet&lt;vPedido&gt; vPedido</text>
+<rect x="1660" y="765" width="560" height="197" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="765" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="789" font-family="Arial" font-size="18" font-weight="bold" fill="white">ReglasAdministrativasPedido</text>
+<text x="1676" y="814" font-family="Arial" font-size="15" fill="white">«reglas_estaticas»</text>
+<text x="1674" y="851" font-family="Consolas,monospace" font-size="16" fill="#172b40">+CalcularAnticipoExigible(decimal) decimal [static]</text>
+<text x="1674" y="874" font-family="Consolas,monospace" font-size="16" fill="#172b40">+CalcularSaldoPendiente(decimal, decimal) decimal</text>
+<text x="1674" y="897" font-family="Consolas,monospace" font-size="16" fill="#172b40">  [static]</text>
+<text x="1674" y="920" font-family="Consolas,monospace" font-size="16" fill="#172b40">+EvaluarArchivoAdministrativo(...) ErrorOperacionAdmin?</text>
+<text x="1674" y="943" font-family="Consolas,monospace" font-size="16" fill="#172b40">  [static]</text>
+<rect x="980" y="1188" width="560" height="197" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="1188" width="560" height="65" fill="#193c58"/>
+<text x="996" y="1212" font-family="Arial" font-size="18" font-weight="bold" fill="white">ResultadoOperacionAdmin&lt;T&gt;</text>
+<text x="996" y="1237" font-family="Arial" font-size="15" fill="white">«resultado»</text>
+<text x="994" y="1274" font-family="Consolas,monospace" font-size="16" fill="#172b40">+bool EsExito</text>
+<text x="994" y="1297" font-family="Consolas,monospace" font-size="16" fill="#172b40">+T? Valor</text>
+<text x="994" y="1320" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ErrorOperacionAdmin? Error</text>
+<text x="994" y="1343" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Exito(T) ResultadoOperacionAdmin&lt;T&gt; [static]</text>
+<text x="994" y="1366" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Fallo(...) ResultadoOperacionAdmin&lt;T&gt; [static]</text>
+<rect x="1660" y="1188" width="560" height="105" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="1188" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="1212" font-family="Arial" font-size="18" font-weight="bold" fill="white">TimeProvider</text>
+<text x="1676" y="1237" font-family="Arial" font-size="15" fill="white">«framework»</text>
+<text x="1674" y="1274" font-family="Consolas,monospace" font-size="16" fill="#172b40">+GetUtcNow() DateTimeOffset</text>
+<text x="60" y="1482" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md.</text>
+</svg>

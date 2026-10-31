@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2340" height="1762" viewBox="0 0 2340 1762">
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#42556b"/></marker>
+<marker id="triangle" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M1 1 L12 7 L1 13 Z" fill="white" stroke="#42556b"/></marker>
+<marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1 6 L8 1 L15 6 L8 11 Z" fill="#42556b"/></marker></defs>
+<rect width="2340" height="1762" fill="white"/>
+<text x="60" y="51" text-anchor="start" font-family="Arial" font-size="28" font-weight="bold" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">CU-10 · DTO existentes (miembros seleccionados)</text>
+<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes.</text>
+<polyline points="1540,215.5 1660,238.5" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="1600.0" y="211.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">lineas</text>
+<text x="1600.0" y="230.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">validas</text>
+<text x="1600.0" y="249.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 1..*</text>
+<polyline points="1660,1484.5 1540,1507.5" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="1600.0" y="1490.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">cabecera</text>
+<text x="1600.0" y="1509.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 1</text>
+<rect x="300" y="140" width="560" height="174" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="140" width="560" height="65" fill="#193c58"/>
+<text x="316" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">FiltroPedidosAdminDto</text>
+<text x="316" y="189" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="314" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? estado</text>
+<text x="314" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? condicionAdministrativa</text>
+<text x="314" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="314" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="980" y="140" width="560" height="151" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="140" width="560" height="65" fill="#193c58"/>
+<text x="996" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">ProponerCotizacionDto</text>
+<text x="996" y="189" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="994" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+IReadOnlyList&lt;LineaCotizacionPropuestaDto&gt;? lineas</text>
+<text x="994" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="994" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="1660" y="140" width="560" height="197" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="140" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">LineaCotizacionPropuestaDto</text>
+<text x="1676" y="189" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="1674" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int detalle</text>
+<text x="1674" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal precioUnitarioAcordado</text>
+<text x="1674" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionDiseno</text>
+<text x="1674" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="1674" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="300" y="517" width="560" height="197" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="517" width="560" height="65" fill="#193c58"/>
+<text x="316" y="541" font-family="Arial" font-size="18" font-weight="bold" fill="white">DecidirCotizacionDto</text>
+<text x="316" y="566" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="314" y="603" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? decision</text>
+<text x="314" y="626" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? referenciaDecision</text>
+<text x="314" y="649" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateOnly? fechaEntregaAcordada</text>
+<text x="314" y="672" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="314" y="695" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="980" y="517" width="560" height="174" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="517" width="560" height="65" fill="#193c58"/>
+<text x="996" y="541" font-family="Arial" font-size="18" font-weight="bold" fill="white">DecidirVersionDisenoDto</text>
+<text x="996" y="566" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="994" y="603" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? decision</text>
+<text x="994" y="626" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? referenciaDecision</text>
+<text x="994" y="649" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="994" y="672" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="1660" y="517" width="560" height="151" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="517" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="541" font-family="Arial" font-size="18" font-weight="bold" fill="white">RegistrarVersionDisenoTextoDto</text>
+<text x="1676" y="566" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="1674" y="603" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? descripcion</text>
+<text x="1674" y="626" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="1674" y="649" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="300" y="894" width="560" height="151" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="894" width="560" height="65" fill="#193c58"/>
+<text x="316" y="918" font-family="Arial" font-size="18" font-weight="bold" fill="white">ArchivarPedidoDto</text>
+<text x="316" y="943" font-family="Arial" font-size="15" fill="white">«DTO_entrada»</text>
+<text x="314" y="980" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? motivoArchivo</text>
+<text x="314" y="1003" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Validate(ValidationContext)</text>
+<text x="314" y="1026" font-family="Consolas,monospace" font-size="16" fill="#172b40">  IEnumerable&lt;ValidationResult&gt;</text>
+<rect x="980" y="894" width="560" height="289" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="894" width="560" height="65" fill="#193c58"/>
+<text x="996" y="918" font-family="Arial" font-size="18" font-weight="bold" fill="white">ResultadoCotizacionAdminDto</text>
+<text x="996" y="943" font-family="Arial" font-size="15" fill="white">«DTO_salida»</text>
+<text x="994" y="980" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedidoId</text>
+<text x="994" y="1003" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int versionCotizacionId</text>
+<text x="994" y="1026" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int numeroVersion</text>
+<text x="994" y="1049" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string decision</text>
+<text x="994" y="1072" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal totalPropuesto</text>
+<text x="994" y="1095" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionCotizacionVigente</text>
+<text x="994" y="1118" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? totalVigente</text>
+<text x="994" y="1141" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? anticipoExigible</text>
+<text x="994" y="1164" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? saldoPendiente</text>
+<rect x="1660" y="894" width="560" height="243" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="894" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="918" font-family="Arial" font-size="18" font-weight="bold" fill="white">ResultadoVersionDisenoAdminDto</text>
+<text x="1676" y="943" font-family="Arial" font-size="15" fill="white">«DTO_salida»</text>
+<text x="1674" y="980" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedidoId</text>
+<text x="1674" y="1003" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int detalleId</text>
+<text x="1674" y="1026" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int versionDisenoId</text>
+<text x="1674" y="1049" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int numeroVersion</text>
+<text x="1674" y="1072" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string decision</text>
+<text x="1674" y="1095" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionDisenoVigente</text>
+<text x="1674" y="1118" font-family="Consolas,monospace" font-size="16" fill="#172b40">+bool disenoAprobado</text>
+<rect x="300" y="1363" width="560" height="243" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="1363" width="560" height="65" fill="#193c58"/>
+<text x="316" y="1387" font-family="Arial" font-size="18" font-weight="bold" fill="white">ResultadoArchivoPedidoDto</text>
+<text x="316" y="1412" font-family="Arial" font-size="15" fill="white">«DTO_salida»</text>
+<text x="314" y="1449" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedidoId</text>
+<text x="314" y="1472" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string codigo</text>
+<text x="314" y="1495" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string estado</text>
+<text x="314" y="1518" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string condicionAdministrativa</text>
+<text x="314" y="1541" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string motivoArchivo</text>
+<text x="314" y="1564" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateTimeOffset fechaArchivo</text>
+<text x="314" y="1587" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int responsableArchivo</text>
+<rect x="980" y="1363" width="560" height="289" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="1363" width="560" height="65" fill="#193c58"/>
+<text x="996" y="1387" font-family="Arial" font-size="18" font-weight="bold" fill="white">ResumenPedidoAdminDto</text>
+<text x="996" y="1412" font-family="Arial" font-size="15" fill="white">«DTO_salida»</text>
+<text x="994" y="1449" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="994" y="1472" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string codigo</text>
+<text x="994" y="1495" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string estado</text>
+<text x="994" y="1518" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string condicionAdministrativa</text>
+<text x="994" y="1541" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal totalReferencial</text>
+<text x="994" y="1564" font-family="Consolas,monospace" font-size="16" fill="#172b40">+bool cotizacionAceptada</text>
+<text x="994" y="1587" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? total</text>
+<text x="994" y="1610" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? anticipoExigible</text>
+<text x="994" y="1633" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? saldoPendiente</text>
+<rect x="1660" y="1363" width="560" height="243" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="1363" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="1387" font-family="Arial" font-size="18" font-weight="bold" fill="white">ExpedientePedidoAdminDto</text>
+<text x="1676" y="1412" font-family="Arial" font-size="15" fill="white">«DTO_salida»</text>
+<text x="1674" y="1449" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ResumenPedidoAdminDto pedido</text>
+<text x="1674" y="1472" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionCotizacionVigente</text>
+<text x="1674" y="1495" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal pagosVerificadosAcumulados</text>
+<text x="1674" y="1518" font-family="Consolas,monospace" font-size="16" fill="#172b40">+IReadOnlyList&lt;DetallePedidoAdminDto&gt; detalles</text>
+<text x="1674" y="1541" font-family="Consolas,monospace" font-size="16" fill="#172b40">+IReadOnlyList&lt;VersionCotizacionAdminDto&gt;</text>
+<text x="1674" y="1564" font-family="Consolas,monospace" font-size="16" fill="#172b40">  versionesCotizacion</text>
+<text x="1674" y="1587" font-family="Consolas,monospace" font-size="16" fill="#172b40">+IReadOnlyList&lt;VersionDisenoAdminDto&gt; versionesDiseno</text>
+<text x="60" y="1726" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md.</text>
+</svg>
