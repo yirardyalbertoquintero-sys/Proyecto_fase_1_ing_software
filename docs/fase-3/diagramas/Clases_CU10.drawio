@@ -8,10 +8,10 @@
         <mxCell id="title" value="CU-10 · Aplicación y persistencia" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="edge0" value="" edge="1" parent="1" source="VistaPrototipoCU10" target="SesionController" style="exitX=0.3;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+        <mxCell id="edge0" value="" edge="1" parent="1" source="VistaGestionCU10" target="SesionController" style="exitX=0.3;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
@@ -19,21 +19,21 @@
         <mxCell id="label0" value="GET de&#10;sesion&#10;existente" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="466.0" y="386.0" width="116" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="edge1" value="" edge="1" parent="1" source="VistaPrototipoCU10" target="FronteraHttpCU10" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+        <mxCell id="edge1" value="" edge="1" parent="1" source="VistaGestionCU10" target="PedidosAdministracionController" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="label1" value="conexion&#10;pendiente" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
-          <mxGeometry x="862.0" y="159.5" width="116" height="40" as="geometry" />
+        <mxCell id="label1" value="HTTPS y CSRF" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="186.75" width="116" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="edge2" value="" edge="1" parent="1" source="FronteraHttpCU10" target="RevisionCotizacionAdminService" style="exitX=1.0;exitY=0.6000000000000001;exitPerimeter=0;entryX=0.0;entryY=0.2;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+        <mxCell id="edge2" value="" edge="1" parent="1" source="PedidosAdministracionController" target="RevisionCotizacionAdminService" style="exitX=1.0;exitY=0.6000000000000001;exitPerimeter=0;entryX=0.0;entryY=0.2;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="label2" value="orquestacion&#10;pendiente" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
-          <mxGeometry x="1542.0" y="197.10000000000002" width="116" height="40" as="geometry" />
+        <mxCell id="label2" value="llama al&#10;servicio" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="238.5" width="116" height="40" as="geometry" />
         </mxCell>
         <mxCell id="edge3" value="" edge="1" parent="1" source="RevisionCotizacionAdminService" target="IPedidoAdministracionRepository" style="exitX=0.0;exitY=0.8;exitPerimeter=0;entryX=0.8;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
           <mxGeometry relative="1" as="geometry">
@@ -93,11 +93,11 @@
         <mxCell id="label8" value="reloj&#10;inyectado" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2217.0" y="762.325" width="116" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VistaPrototipoCU10" value="&lt;b&gt;Vista HTML y JavaScript&lt;/b&gt;&lt;br&gt;«prototipo»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;-dibujarLista()&lt;br&gt;-dibujarExpediente()&lt;br&gt;-dibujarPrenda(...)&lt;br&gt;-dibujarPropuesta(...)&lt;br&gt;-dibujarArchivo(...)&lt;br&gt;-iniciar()&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#845b1c;">
+        <mxCell id="VistaGestionCU10" value="&lt;b&gt;Vista HTML y JavaScript&lt;/b&gt;&lt;br&gt;«vista_existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;-lista()&lt;br&gt;-dibujar()&lt;br&gt;-abrir(...)&lt;br&gt;-cargarExpediente(...)&lt;br&gt;-enviarEscritura(...)&lt;br&gt;-iniciar()&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
           <mxGeometry x="300" y="140" width="560" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="FronteraHttpCU10" value="&lt;b&gt;Controlador CU-10 pendiente&lt;/b&gt;&lt;br&gt;«pendiente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;Nombre&amp;nbsp;y&amp;nbsp;operaciones&amp;nbsp;por&amp;nbsp;acordar&lt;br&gt;Sin&amp;nbsp;rutas&amp;nbsp;HTTP&amp;nbsp;definidas&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#845b1c;">
-          <mxGeometry x="980" y="140" width="560" height="128" as="geometry" />
+        <mxCell id="PedidosAdministracionController" value="&lt;b&gt;PedidosAdministracionController&lt;/b&gt;&lt;br&gt;«controlador_existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+Listar(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Expediente(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Proponer(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+DecidirCotizacion(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+RegistrarTexto(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+RegistrarArchivo(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+DecidirDiseno(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Archivar(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="140" width="560" height="266" as="geometry" />
         </mxCell>
         <mxCell id="SesionController" value="&lt;b&gt;SesionController&lt;/b&gt;&lt;br&gt;«existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+Actual()&amp;nbsp;ActionResult&amp;lt;SesionDto&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
           <mxGeometry x="300" y="480" width="560" height="105" as="geometry" />
@@ -137,7 +137,7 @@
         <mxCell id="title" value="CU-10 · DTO existentes (miembros seleccionados)" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
         </mxCell>
         <mxCell id="edge0" value="" edge="1" parent="1" source="ProponerCotizacionDto" target="LineaCotizacionPropuestaDto" style="exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
@@ -206,7 +206,7 @@
         <mxCell id="title" value="CU-10 · Entidades, historial y proyección" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
         </mxCell>
         <mxCell id="edge0" value="" edge="1" parent="1" source="Pedido" target="DetallePedido" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">

@@ -14,6 +14,8 @@ El nombre de una rama no sustituye la autoría de sus cambios. Conservar el hist
 
 ## Orden de continuación
 
+Actualización del 31 de octubre: Yirardy autorizó completar su bloque administrativo ahora, con contratos propios y pruebas HTTP/SQL de pagos, para revisarlo al final. Ese acuerdo reemplaza el aplazamiento anterior de esas tareas. Los CU de Dylan se integrarán posteriormente; main y despliegue permanecen fuera de esta construcción. Ver [implementación administrativa](../fase-3/15-administracion-pedidos.md).
+
 1. Mantener los cuatro CU de acceso/catálogo de Yirardy y los servicios administrativos corregidos de Carlos como base.
 2. La siguiente unidad administrativa será CU-10, revisión/cotización; después CU-11, descarga autorizada. Cada CU se cierra con pantalla, API, persistencia y comprobaciones pertinentes, cuando sus dependencias y contratos estén disponibles.
 3. Dylan publica configuración/solicitud (CU-05/CU-06). Entonces se revisan contratos y necesidades reales de esquema. No generar migraciones por el solo hecho de cambiar de responsable.

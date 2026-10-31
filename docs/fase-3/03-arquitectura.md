@@ -1,5 +1,7 @@
 # Arquitectura de la aplicación
 
+Actualización del 31 de octubre de 2026: las operaciones administrativas de pedidos, archivos, pagos y producción están conectadas mediante PedidosAdministracionController y los servicios existentes. El contrato actual, los permisos y las pruebas están en [administración de pedidos](15-administracion-pedidos.md). Los contratos propuestos que aparecen como antecedentes deben contrastarse con ese documento al integrar los módulos de Dylan.
+
 ## Componentes y responsabilidades
 
 La aplicación mantiene HTML, CSS y JavaScript puro y ASP.NET Core Web API. Se propone publicar el frontend desde la misma aplicación para mantener un solo origen. El navegador envía HTTP al controlador; el controlador delega en servicios del modelo; los servicios aplican reglas y utilizan repositorios EF Core y almacenamiento privado. SQL Server conserva relaciones y restricciones.

@@ -4,7 +4,7 @@
 <marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1 6 L8 1 L15 6 L8 11 Z" fill="#42556b"/></marker></defs>
 <rect width="2340" height="1454" fill="white"/>
 <text x="60" y="51" text-anchor="start" font-family="Arial" font-size="28" font-weight="bold" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">CU-10 · Entidades, historial y proyección</text>
-<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes.</text>
+<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados.</text>
 <polyline points="860,212.25 980,212.25" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
 <text x="920.0" y="206.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">detalles</text>
 <text x="920.0" y="225.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 1..*</text>

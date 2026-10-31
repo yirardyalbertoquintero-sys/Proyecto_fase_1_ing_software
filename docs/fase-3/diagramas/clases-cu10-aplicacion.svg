@@ -4,17 +4,16 @@
 <marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1 6 L8 1 L15 6 L8 11 Z" fill="#42556b"/></marker></defs>
 <rect width="2340" height="1518" fill="white"/>
 <text x="60" y="51" text-anchor="start" font-family="Arial" font-size="28" font-weight="bold" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">CU-10 · Aplicación y persistencia</text>
-<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes.</text>
+<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados.</text>
 <polyline points="468.0,360 580.0,480" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
 <text x="524.0" y="404.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">GET de</text>
 <text x="524.0" y="423.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">sesion</text>
 <text x="524.0" y="442.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">existente</text>
-<polyline points="860,195.0 980,172.0" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
-<text x="920.0" y="177.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">conexion</text>
-<text x="920.0" y="196.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">pendiente</text>
-<polyline points="1540,216.8 1660,225.4" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
-<text x="1600.0" y="215.10000000000002" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">orquestacion</text>
-<text x="1600.0" y="234.10000000000002" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">pendiente</text>
+<polyline points="860,195.0 980,206.5" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="204.75" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">HTTPS y CSRF</text>
+<polyline points="1540,299.6 1660,225.4" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1600.0" y="256.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">llama al</text>
+<text x="1600.0" y="275.5" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">servicio</text>
 <polyline points="1660,481.6 1610,481.6 1610,700 1428.0,700 1428.0,765" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
 <text x="1610.0" y="594.8" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">inyeccion</text>
 <polyline points="860,810.3 980,837.9" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#triangle)" stroke-dasharray="7 5"/>
@@ -31,22 +30,28 @@
 <polyline points="2220,332.15 2275,332.15 2275,1240.5 2220,1240.5" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
 <text x="2275.0" y="780.325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">reloj</text>
 <text x="2275.0" y="799.325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">inyectado</text>
-<rect x="300" y="140" width="560" height="220" fill="#f7f9fc" stroke="#845b1c" stroke-width="1.5"/>
-<rect x="300" y="140" width="560" height="65" fill="#845b1c"/>
+<rect x="300" y="140" width="560" height="220" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="140" width="560" height="65" fill="#193c58"/>
 <text x="316" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Vista HTML y JavaScript</text>
-<text x="316" y="189" font-family="Arial" font-size="15" fill="white">«prototipo»</text>
-<text x="314" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarLista()</text>
-<text x="314" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarExpediente()</text>
-<text x="314" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarPrenda(...)</text>
-<text x="314" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarPropuesta(...)</text>
-<text x="314" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujarArchivo(...)</text>
+<text x="316" y="189" font-family="Arial" font-size="15" fill="white">«vista_existente»</text>
+<text x="314" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">-lista()</text>
+<text x="314" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">-dibujar()</text>
+<text x="314" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">-abrir(...)</text>
+<text x="314" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">-cargarExpediente(...)</text>
+<text x="314" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">-enviarEscritura(...)</text>
 <text x="314" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">-iniciar()</text>
-<rect x="980" y="140" width="560" height="128" fill="#f7f9fc" stroke="#845b1c" stroke-width="1.5"/>
-<rect x="980" y="140" width="560" height="65" fill="#845b1c"/>
-<text x="996" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Controlador CU-10 pendiente</text>
-<text x="996" y="189" font-family="Arial" font-size="15" fill="white">«pendiente»</text>
-<text x="994" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">Nombre y operaciones por acordar</text>
-<text x="994" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">Sin rutas HTTP definidas</text>
+<rect x="980" y="140" width="560" height="266" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="140" width="560" height="65" fill="#193c58"/>
+<text x="996" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">PedidosAdministracionController</text>
+<text x="996" y="189" font-family="Arial" font-size="15" fill="white">«controlador_existente»</text>
+<text x="994" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Listar(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Expediente(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Proponer(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DecidirCotizacion(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">+RegistrarTexto(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">+RegistrarArchivo(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="364" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DecidirDiseno(...) Task&lt;IActionResult&gt;</text>
+<text x="994" y="387" font-family="Consolas,monospace" font-size="16" fill="#172b40">+Archivar(...) Task&lt;IActionResult&gt;</text>
 <rect x="300" y="480" width="560" height="105" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
 <rect x="300" y="480" width="560" height="65" fill="#193c58"/>
 <text x="316" y="504" font-family="Arial" font-size="18" font-weight="bold" fill="white">SesionController</text>

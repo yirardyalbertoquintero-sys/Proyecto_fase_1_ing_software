@@ -19,7 +19,7 @@ FONT, LINE = 16, 23
 
 PAGES = [
     ("aplicacion", "CU-10 · Aplicación y persistencia", [
-        ["VistaPrototipoCU10", "FronteraHttpCU10", "RevisionCotizacionAdminService"],
+        ["VistaGestionCU10", "PedidosAdministracionController", "RevisionCotizacionAdminService"],
         ["PedidoAdministracionRepository", "IPedidoAdministracionRepository", "ReglasAdministrativasPedido"],
         ["ImpactoTextilDbContext", "ResultadoOperacionAdmin", "TimeProvider"],
     ]),
@@ -102,8 +102,8 @@ def route(sheet, edge, nodes, rows):
     if sheet == "aplicacion":
         specs = {
             "GET de sesion existente": ("B", "T", .3, .5, []),
-            "conexion pendiente": ("R", "L", .25, .25, []),
-            "orquestacion pendiente": ("R", "L", .6, .2, []),
+            "HTTPS y CSRF": ("R", "L", .25, .25, []),
+            "llama al servicio": ("R", "L", .6, .2, []),
             "inyeccion": ("L", "T", .8, .8, [(1370, s["y"]+s["h"]*.8), (1370, t["y"]-65), (t["x"]+CARD*.8, t["y"]-65)]),
             "implementa": ("R", "L", .3, .3, []),
             "consulta y persistencia": ("B", "T", .5, .5, []),
@@ -163,7 +163,7 @@ def generate():
             row_h = max(nodes[key]["h"] for key in row)
             if sheet == "aplicacion" and len(row_y) == 1:
                 session = nodes["SesionController"]
-                session.update(x=LEFT, y=y+nodes["VistaPrototipoCU10"]["h"]+120)
+                session.update(x=LEFT, y=y+nodes["VistaGestionCU10"]["h"]+120)
                 row_h = max(row_h, session["y"]+session["h"]-y)
             y += row_h+180
         height = y-70
@@ -188,7 +188,7 @@ def generate():
                 svg.append(f'<text x="{x+w/2 if center else x}" y="{y+size+3+j*(size+4)}" text-anchor="{"middle" if center else "start"}" font-family="Arial" font-size="{size}" font-weight="{"bold" if bold else "normal"}" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">{escape(line)}</text>')
 
         text("title", title, 60, 20, WIDTH-120, 35, 28, True)
-        text("subtitle", "Tipos y miembros del código al 30-10-2026. Controlador de CU-10 y conexión real pendientes.", 60, 66, WIDTH-120, 28)
+        text("subtitle", "Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados.", 60, 66, WIDTH-120, 28)
         for index, edge in enumerate(edges):
             points = route(sheet, edge, nodes, row_y)
             s, t = nodes[edge["source"]], nodes[edge["target"]]

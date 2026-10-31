@@ -1,20 +1,26 @@
 classDiagram
     direction TB
     %% Firmas de parametros abreviadas; inventario completo en 14-diseno-clases-cu10.md.
-    %% Las dos cajas de vista/frontera son roles de diseno, no clases C# implementadas.
-    class VistaPrototipoCU10["Vista HTML y JavaScript"] {
-        <<prototipo>>
-        -dibujarLista()
-        -dibujarExpediente()
-        -dibujarPrenda(...)
-        -dibujarPropuesta(...)
-        -dibujarArchivo(...)
+    %% La vista representa funciones JavaScript; el controlador es una clase C# existente.
+    class VistaGestionCU10["Vista HTML y JavaScript"] {
+        <<vista_existente>>
+        -lista()
+        -dibujar()
+        -abrir(...)
+        -cargarExpediente(...)
+        -enviarEscritura(...)
         -iniciar()
     }
-    class FronteraHttpCU10["Controlador CU-10 pendiente"] {
-        <<pendiente>>
-        Nombre y operaciones por acordar
-        Sin rutas HTTP definidas
+    class PedidosAdministracionController {
+        <<controlador_existente>>
+        +Listar(...) Task~IActionResult~
+        +Expediente(...) Task~IActionResult~
+        +Proponer(...) Task~IActionResult~
+        +DecidirCotizacion(...) Task~IActionResult~
+        +RegistrarTexto(...) Task~IActionResult~
+        +RegistrarArchivo(...) Task~IActionResult~
+        +DecidirDiseno(...) Task~IActionResult~
+        +Archivar(...) Task~IActionResult~
     }
     class SesionController {
         <<existente>>
@@ -69,9 +75,9 @@ classDiagram
         <<framework>>
         +GetUtcNow() DateTimeOffset
     }
-    VistaPrototipoCU10 --> SesionController : GET de sesion existente
-    VistaPrototipoCU10 ..> FronteraHttpCU10 : conexion pendiente
-    FronteraHttpCU10 ..> RevisionCotizacionAdminService : orquestacion pendiente
+    VistaGestionCU10 --> SesionController : GET de sesion existente
+    VistaGestionCU10 --> PedidosAdministracionController : HTTPS y CSRF
+    PedidosAdministracionController --> RevisionCotizacionAdminService : llama al servicio
     RevisionCotizacionAdminService --> IPedidoAdministracionRepository : inyeccion
     PedidoAdministracionRepository ..|> IPedidoAdministracionRepository : implementa
     PedidoAdministracionRepository --> ImpactoTextilDbContext : consulta y persistencia

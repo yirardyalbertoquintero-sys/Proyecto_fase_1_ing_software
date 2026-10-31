@@ -18,6 +18,7 @@ Esta entrega desarrolla el trabajo inicial de Yirardy: fuente e instrucciones co
 12. [Preparación de publicación y comprobación local en Production](12-preparacion-publicacion.md).
 13. [Prototipo navegable de CU-10: revisión y cotización con datos ficticios](13-prototipo-revision-pedidos.md).
 14. [Clases de diseño de CU-10, firmas existentes e historial](14-diseno-clases-cu10.md).
+15. [Administración conectada de pedidos, diseños, pagos y producción](15-administracion-pedidos.md).
 
 Los resultados ejecutados y sus límites están en el [registro de avance de Yirardy](../seguimiento/avance-yirardy.md).
 

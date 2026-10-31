@@ -6,7 +6,9 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Corrección del 30 de octubre de 2026:** el historial de Carlos vuelve a compartir la base de Yirardy sin reescribir commits anteriores. Hay servicios administrativos preparatorios, almacenamiento privado con validación de contenido y DTO monetarios coherentes con el catálogo. **Todavía no hay endpoints ni pantallas conectadas de pedidos, pagos o producción.** El prototipo de revisión disponible usa únicamente datos ficticios. Ver [correcciones y comprobaciones](docs/seguimiento/correcciones-carlos-2026-10-30.md).
+**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite completa pasó 83 pruebas sin omisiones. La revisión humana y la integración del recorrido del cliente de Dylan siguen pendientes. [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
+
+**Antecedente del 30 de octubre de 2026:** se reunieron las historias de Carlos y Yirardy conservando los commits anteriores, y se corrigieron servicios, almacenamiento privado y DTO monetarios. En ese cierre todavía faltaba la conexión administrativa, completada en la actualización del 31. Ver [correcciones y comprobaciones de ese cierre](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
 **Estado al 29 de octubre de 2026:** CU-01, CU-02, CU-04 y CU-09 implementados y probados localmente: registro, acceso/cierre, permisos, catálogo público y administración de variantes con fotos y baja lógica. La sesión vence tras 10 minutos de inactividad. Hay un comando controlado para crear el primer Administrador. Pedidos, pagos, producción y alojamiento en MonsterASP.NET siguen pendientes. Los hitos están en [CU-01](docs/fase-3/08-registro-clientes.md), [CU-02](docs/fase-3/09-acceso-sesiones.md), [CU-09](docs/fase-3/10-catalogo-administracion.md) y [CU-04](docs/fase-3/11-catalogo-publico.md). La revisión de Dylan y la integración en main siguen pendientes.
 
@@ -40,9 +42,13 @@ Se muestran las variantes activas y sus precios de referencia. Puedes buscar, fi
 
 ## Prototipo de revisión de pedidos
 
-En esta rama Carlos_Borrell, ejecutar con F5, iniciar sesión como Administrador y abrir **Gestionar catálogo → Pedidos · prototipo**. Permite recorrer solicitudes, versiones, propuestas y decisiones con datos ficticios. El aviso indica que las acciones son simulaciones en memoria: no guardan pedidos/acuerdos ni registran pagos. Al recargar se reinician. [Alcance, capturas y comprobaciones](docs/fase-3/13-prototipo-revision-pedidos.md). CU-10 sigue pendiente de conexión con la API y SQL cuando se revisen las solicitudes de Dylan y los contratos.
+El prototipo anterior sigue disponible en **Gestionar catálogo → Pedidos · prototipo**, con acciones ficticias en memoria que se reinician al recargar. Se conserva como antecedente: [alcance y capturas](docs/fase-3/13-prototipo-revision-pedidos.md). Para la implementación con persistencia, abrir **Gestionar pedidos**.
 
-El [diseño de clases de CU-10](docs/fase-3/14-diseno-clases-cu10.md) explica los tipos, operaciones, Repository/DTO y relaciones del historial. Incluye [tres páginas editables en draw.io](docs/fase-3/diagramas/Clases_CU10.drawio) y fuentes Mermaid. El controlador se señala como pendiente; las figuras no acreditan una conexión funcional de pedidos.
+El [diseño de clases de CU-10](docs/fase-3/14-diseno-clases-cu10.md) explica tipos, operaciones, Repository/DTO e historial. Incluye [tres páginas editables en draw.io](docs/fase-3/diagramas/Clases_CU10.drawio) y fuentes Mermaid, actualizadas con el controlador implementado. Las pruebas se documentan por separado del diseño.
+
+## Revisar los pedidos administrativos
+
+Con F5 y una sesión de Administrador, abrir **Gestionar pedidos**. Si la base está vacía, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear pedidos de demostracion**. Confirmar `DEMO` en esa terminal y volver a ejecutar con F5. Se agregan tres pedidos ficticios a la base local; repetir la tarea conserva las decisiones existentes. Requiere haber preparado la base y creado primero el Administrador. [Recorridos de evaluación y límites](docs/fase-3/15-administracion-pedidos.md).
 
 ## Preparar publicación
 
@@ -76,13 +82,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-La base heredada contiene 51 pruebas; esta rama añade 18 de archivos privados y serialización. El último cierre de esta rama ejecutó únicamente esas 18, todas aprobadas; la suite SQL completa queda para el paso posterior autorizado. Para ejecutar la suite completa con SQL Server cuando corresponda:
+La suite contiene 83 pruebas: 51 de la base, 18 de archivos privados/serialización y 14 nuevas del bloque administrativo. El cierre del 31 de octubre ejecutó las 83 con SQL Server real, sin fallos ni omisiones. Para repetir la suite:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin configurar SQL, las 39 pruebas de integración se omiten. Una prueba de integración también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe de correcciones incluye el comando filtrado que no ejecuta SQL ni pagos.
+Sin configurar SQL, las 53 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
@@ -139,4 +145,4 @@ El frontend se copia a `wwwroot` de la compilación y del paquete de publicació
 
 ## Próximo paso del bloque administrativo
 
-CU-01, CU-02, CU-09 y CU-04 ya están implementados en la base. Carlos debe conectar posteriormente sus servicios con controladores y pantallas autorizadas, en coordinación con las solicitudes de Dylan. El líder aplazó contratos, migraciones, pruebas funcionales de pagos, integración en main, alojamiento e informe final. Este cierre corrige únicamente la preparación existente. La política confirmada conserva contraseña mínima de 15 caracteres e inactividad de sesión de 10 minutos.
+Yirardy asumió y autorizó completar CU-10/CU-11/CU-13/CU-12 en esta rama, con contratos y pruebas funcionales administrativas. El bloque local está conectado; el siguiente hito es su revisión humana y posterior coordinación con las solicitudes, comprobantes y consulta de Dylan. Main, alojamiento e informe final continúan aplazados. La política confirmada conserva contraseña mínima de 15 caracteres e inactividad de sesión de 10 minutos.
