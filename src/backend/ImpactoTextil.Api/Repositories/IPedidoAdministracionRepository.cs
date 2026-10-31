@@ -12,6 +12,8 @@ public sealed record ReferenciaArchivoDiseno(
 
 public interface IPedidoAdministracionRepository
 {
+    Task<ReferenciaArchivoDiseno> ObtenerReferenciaComprobanteAsync(int pedidoId, int pagoId, CancellationToken cancelacion);
+    Task<bool> ArchivoDisenoReferenciadoAsync(string referencia, CancellationToken cancelacion);
     Task<Usuario?> ObtenerAdministradorActivoAsync(int usuarioId, CancellationToken cancelacion);
 
     Task<IReadOnlyList<ResumenPedidoAdminDto>> ListarPedidosAsync(

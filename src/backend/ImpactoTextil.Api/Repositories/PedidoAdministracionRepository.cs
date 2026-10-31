@@ -280,6 +280,16 @@ public sealed class PedidoAdministracionRepository(ImpactoTextilDbContext contex
                 $"diseno-{dato.codigo}-detalle-{dato.id}-v{dato.numeroVersion}");
     }
 
+    public async Task<ReferenciaArchivoDiseno> ObtenerReferenciaComprobanteAsync(int pedidoId, int pagoId, CancellationToken cancelacion)
+    {
+        var pago = await contexto.Pago.AsNoTracking().Where(p => p.pedido == pedidoId && p.id == pagoId)
+            .Select(p => new { p.id, p.comprobanteURL }).SingleOrDefaultAsync(cancelacion);
+        return new(pago is not null, pago?.comprobanteURL, null, $"comprobante-pedido-{pedidoId}-pago-{pagoId}");
+    }
+
+    public Task<bool> ArchivoDisenoReferenciadoAsync(string referencia, CancellationToken cancelacion) =>
+        contexto.VersionDiseno.AsNoTracking().AnyAsync(v => v.archivoURL == referencia, cancelacion);
+
     public async Task<ResultadoOperacionAdmin<T>> EjecutarEnPedidoBloqueadoAsync<T>(
         int pedidoId,
         Func<Pedido, Func<CancellationToken, Task>, CancellationToken, Task<ResultadoOperacionAdmin<T>>> operacion,

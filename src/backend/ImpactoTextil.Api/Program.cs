@@ -8,9 +8,10 @@ using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var crearAdministrador = args.Contains("--crear-administrador", StringComparer.Ordinal);
+var crearDemostracion = args.Contains("--crear-pedidos-demostracion", StringComparer.Ordinal);
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
-    Args = args.Where(a => a != "--crear-administrador").ToArray(),
+    Args = args.Where(a => a is not ("--crear-administrador" or "--crear-pedidos-demostracion")).ToArray(),
     WebRootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot")
 });
 builder.Services.AddControllers(opciones => opciones.Filters.Add<FiltroAntifalsificacion>())
@@ -68,6 +69,19 @@ builder.Services.AddScoped<RegistroClienteService>();
 builder.Services.AddScoped<AdministradorInicialService>();
 builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
 builder.Services.AddScoped<CatalogoService>();
+builder.Services.AddScoped<IPedidoAdministracionRepository, PedidoAdministracionRepository>();
+builder.Services.AddScoped<RevisionCotizacionAdminService>();
+builder.Services.AddScoped<DescargaDisenoAdminService>();
+builder.Services.AddScoped<DescargaComprobanteAdminService>();
+builder.Services.AddScoped<PagosAdminService>();
+builder.Services.AddScoped<ProduccionEntregaAdminService>();
+builder.Services.AddSingleton<IAlmacenArchivosPrivados>(servicios =>
+{
+    var entorno = servicios.GetRequiredService<IWebHostEnvironment>();
+    var configuracion = servicios.GetRequiredService<IConfiguration>();
+    return new AlmacenArchivosPrivadosLocal(configuracion["ArchivosPrivados:Carpeta"]
+        ?? Path.Combine(entorno.ContentRootPath, "storage", "privado"));
+});
 builder.Services.AddSingleton<ImagenCatalogoStore>();
 builder.Services.AddSingleton<IProtectorContrasena, ProtectorContrasena>();
 builder.Services.AddSingleton(TimeProvider.System);
@@ -100,6 +114,17 @@ builder.Services.AddAuthorization(opciones =>
 });
 
 var app = builder.Build();
+if (crearDemostracion)
+{
+    if (!app.Environment.IsDevelopment())
+    {
+        Console.Error.WriteLine("La preparación de datos ficticios solo está habilitada en Development.");
+        Environment.ExitCode = 1;
+        return;
+    }
+    Environment.ExitCode = await DemostracionAdministracion.EjecutarAsync(app.Services);
+    return;
+}
 if (crearAdministrador)
 {
     Environment.ExitCode = await InicializarAdministrador.EjecutarAsync(app.Services);

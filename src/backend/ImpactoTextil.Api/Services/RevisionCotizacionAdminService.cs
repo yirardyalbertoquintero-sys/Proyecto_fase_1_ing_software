@@ -171,7 +171,8 @@ public sealed class RevisionCotizacionAdminService(
 
             if (version.decision != "Pendiente")
             {
-                if (string.Equals(version.decision, decisionLimpia, StringComparison.Ordinal))
+                if (string.Equals(version.decision, decisionLimpia, StringComparison.Ordinal)
+                    && string.Equals(version.referenciaDecision, referenciaLimpia, StringComparison.Ordinal))
                 {
                     return ResultadoOperacionAdmin<ResultadoVersionDisenoAdminDto>.Exito(new ResultadoVersionDisenoAdminDto(
                         pedidoId: pedido.id,
@@ -354,7 +355,9 @@ public sealed class RevisionCotizacionAdminService(
 
             if (version.decision != "Propuesta")
             {
-                if (string.Equals(version.decision, decisionLimpia, StringComparison.Ordinal))
+                if (string.Equals(version.decision, decisionLimpia, StringComparison.Ordinal)
+                    && string.Equals(version.referenciaDecision, referenciaLimpia, StringComparison.Ordinal)
+                    && (solicitud.fechaEntregaAcordada is null || solicitud.fechaEntregaAcordada == pedido.fechaEntregaAcordada))
                 {
                     var vigenteIdempotente = CalcularResumenVigente(pedido);
                     return ResultadoOperacionAdmin<ResultadoCotizacionAdminDto>.Exito(new ResultadoCotizacionAdminDto(

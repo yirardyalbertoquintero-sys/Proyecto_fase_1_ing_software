@@ -65,7 +65,10 @@ public sealed class PagosAdminService(
             if (pago.estadoVerificacion != "Pendiente")
             {
                 var mismaDecision = string.Equals(pago.estadoVerificacion, decisionLimpia, StringComparison.Ordinal)
-                    && (decisionLimpia == "Rechazado" || string.Equals(pago.referencia, referenciaLimpia, StringComparison.OrdinalIgnoreCase));
+                    && (decisionLimpia == "Rechazado"
+                        ? referenciaLimpia is null || string.Equals(pago.referencia, referenciaLimpia, StringComparison.OrdinalIgnoreCase)
+                        : string.Equals(pago.referencia, referenciaLimpia, StringComparison.OrdinalIgnoreCase)
+                            && (solicitud.fechaCobroConfirmada is null || pago.fecha == RelojPedido.TruncarASegundosUtc(solicitud.fechaCobroConfirmada.Value)));
 
                 if (mismaDecision)
                 {
@@ -202,6 +205,7 @@ public sealed class PagosAdminService(
             {
                 var mismosDatos = existentePorConfirmacion.estadoVerificacion == "Verificado"
                     && existentePorConfirmacion.monto == solicitud.monto
+                    && existentePorConfirmacion.fecha == RelojPedido.TruncarASegundosUtc(solicitud.fecha)
                     && string.Equals(existentePorConfirmacion.medio, medioLimpio, StringComparison.Ordinal)
                     && string.Equals(existentePorConfirmacion.referencia, referenciaLimpia, StringComparison.OrdinalIgnoreCase);
 
