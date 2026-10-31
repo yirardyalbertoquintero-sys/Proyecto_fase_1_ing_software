@@ -35,12 +35,17 @@ function validar(datos) {
     errores.nombre = ['Escribe un nombre de entre 1 y 100 caracteres.'];
   if (!datos.correo || datos.correo.length > 150 || !/^[^\s@]+@[^\s@]+$/u.test(datos.correo))
     errores.correo = ['Escribe un correo electrónico válido.'];
-  if (!datos.contrasena.trim() || [...datos.contrasena].length < 15)
-    errores.contrasena = ['Usa al menos 15 caracteres. Puedes incluir espacios.'];
+  if (!datos.contrasena.trim() || [...datos.contrasena].length < 8)
+    errores.contrasena = ['Usa al menos 8 caracteres.'];
   else if (new TextEncoder().encode(datos.contrasena).length > 72)
     errores.contrasena = ['La contraseña supera el límite de 72 bytes. Las tildes y los emojis pueden ocupar más de uno.'];
   else if (/[\u0000-\u001f\u007f-\u009f]/u.test(datos.contrasena))
     errores.contrasena = ['La contraseña no puede contener saltos de línea ni caracteres de control.'];
+  else if (!/\p{Lu}/u.test(datos.contrasena)
+    || !/\p{Ll}/u.test(datos.contrasena)
+    || !/\p{Nd}/u.test(datos.contrasena)
+    || !/[\p{P}\p{S}]/u.test(datos.contrasena))
+    errores.contrasena = ['Incluye al menos una mayúscula, una minúscula, un número y un símbolo.'];
   if (datos.contrasena !== formulario.elements.confirmacion.value)
     errores.confirmacion = ['Las contraseñas no coinciden.'];
   if (!datos.aceptacionTerminos)

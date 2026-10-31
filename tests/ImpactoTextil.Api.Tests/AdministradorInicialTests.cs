@@ -10,12 +10,13 @@ public sealed class AdministradorInicialTests(BaseSqlPruebas datos) : IClassFixt
     [PruebaSql]
     public async Task InicializacionControlada_ValidaNoPromueveClientesYResisteDosCreacionesSimultaneas()
     {
-        const string clave = "contraseña ficticia de inicialización";
+        const string clave = "Contraseña ficticia de inicialización 2026!";
         var protector = new ProtectorContrasena();
         await using (var contexto = datos.CrearContexto())
         {
             var servicio = new AdministradorInicialService(contexto, protector);
-            await Assert.ThrowsAsync<ValidationException>(() => servicio.CrearAsync("Prueba", "admin@example.test", "corta", default));
+            foreach (var invalida in new[] { "corta", "textil8!", "TEXTIL8!", "Textil!!", "Textil88", "Textil 8" })
+                await Assert.ThrowsAsync<ValidationException>(() => servicio.CrearAsync("Prueba", "admin@example.test", invalida, default));
             Assert.Empty(await contexto.Usuario.ToListAsync());
             contexto.Usuario.Add(new Usuario { nombre = "Cliente ficticio", correo = "cliente@example.test", passwordHash = protector.CrearHash(clave),
                 activo = true, rol = "Cliente", aceptacionTerminos = true, fechaAceptacion = DateTimeOffset.UtcNow });

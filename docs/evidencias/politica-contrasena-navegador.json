@@ -1,0 +1,26 @@
+{
+  "tipo": "Validación de interfaz con endpoints de registro/CSRF interceptados; las pruebas HTTP/SQL reales se ejecutan en xUnit",
+  "resultados": [
+    "válida de 8",
+    "sin mayúscula",
+    "sin minúscula",
+    "sin número",
+    "sin símbolo",
+    "menos de 8",
+    "espacio no es símbolo",
+    "mayúscula acentuada",
+    "espacios permitidos",
+    "72 bytes ASCII",
+    "73 bytes ASCII",
+    "72 bytes UTF8",
+    "74 bytes UTF8",
+    "7 caracteres con emojis",
+    "8 caracteres con emojis",
+    "control",
+    "vacía",
+    "Seis envíos inválidos bloqueados por el formulario sin llamar al registro",
+    "Envío de 8 caracteres aceptado y pantalla de éxito con respuesta interceptada",
+    "Ayuda de política visible a 320 px sin desbordamiento horizontal"
+  ],
+  "errores": []
+}

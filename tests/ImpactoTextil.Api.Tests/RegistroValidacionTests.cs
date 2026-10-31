@@ -7,25 +7,39 @@ namespace ImpactoTextil.Api.Tests;
 public sealed class RegistroValidacionTests
 {
     [Theory]
-    [InlineData(14, false)]
-    [InlineData(15, true)]
+    [InlineData(7, false)]
+    [InlineData(8, true)]
     [InlineData(72, true)]
     [InlineData(73, false)]
     public void ContraseñasAscii_RespetanLosLimitesConfirmados(int longitud, bool valida)
     {
-        var errores = Validar(new string('a', longitud));
+        var errores = Validar("Aa1!" + new string('x', longitud - 4));
         Assert.Equal(valida, errores.Count == 0);
     }
 
     [Fact]
     public void Unicode_CuentaCaracteresYBytesSinRecortar()
     {
-        Assert.Empty(Validar(new string('á', 36))); // 36 caracteres, 72 bytes.
-        Assert.NotEmpty(Validar(new string('á', 37)));
-        Assert.NotEmpty(Validar(string.Concat(Enumerable.Repeat("🙂", 14)))); // No son 28 caracteres.
-        Assert.Empty(Validar("una frase con espacios"));
-        Assert.NotEmpty(Validar("               "));
+        Assert.Empty(Validar("Aa1!" + new string('á', 34))); // 38 caracteres, 72 bytes.
+        Assert.NotEmpty(Validar("Aa1!" + new string('á', 35)));
+        Assert.NotEmpty(Validar("Aa1!🙂🙂🙂")); // Siete caracteres Unicode.
+        Assert.Empty(Validar("Aa1!🙂🙂🙂🙂")); // Ocho caracteres Unicode.
+        Assert.Empty(Validar("Una frase con espacios1!"));
+        Assert.NotEmpty(Validar("        "));
+        Assert.NotEmpty(Validar("Aa1!abc\n"));
     }
+
+    [Theory]
+    [InlineData("Textil8!", true)]
+    [InlineData("textil8!", false)]
+    [InlineData("TEXTIL8!", false)]
+    [InlineData("Textil!!", false)]
+    [InlineData("Textil88", false)]
+    [InlineData("Tex8!", false)]
+    [InlineData("Textil 8", false)] // El espacio no es un símbolo.
+    [InlineData("Ábcdef1!", true)]
+    public void Composicion_ExigeMayusculaMinusculaNumeroYSimbolo(string clave, bool valida) =>
+        Assert.Equal(valida, Validar(clave).Count == 0);
 
     [Fact]
     public void BCrypt_GeneraSalesDistintasYVerificaLaContraseñaCompleta()

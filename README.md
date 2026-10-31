@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite completa pasó 83 pruebas sin omisiones. La revisión humana y la integración del recorrido del cliente de Dylan siguen pendientes. [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
+**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. La revisión humana y la integración del recorrido del cliente de Dylan siguen pendientes. [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
 
 **Antecedente del 30 de octubre de 2026:** se reunieron las historias de Carlos y Yirardy conservando los commits anteriores, y se corrigieron servicios, almacenamiento privado y DTO monetarios. En ese cierre todavía faltaba la conexión administrativa, completada en la actualización del 31. Ver [correcciones y comprobaciones de ese cierre](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
@@ -82,13 +82,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-La suite contiene 83 pruebas: 51 de la base, 18 de archivos privados/serialización y 14 nuevas del bloque administrativo. El cierre del 31 de octubre ejecutó las 83 con SQL Server real, sin fallos ni omisiones. Para repetir la suite:
+La suite contiene 92 pruebas: 51 de la base, 18 de archivos privados/serialización, 14 del bloque administrativo y 9 añadidas al actualizar la política de contraseñas. La ejecución posterior al cambio pasó las 92 con SQL Server real, sin fallos ni omisiones. Para repetir la suite:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin configurar SQL, las 53 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
+Sin configurar SQL, las 54 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
@@ -145,4 +145,4 @@ El frontend se copia a `wwwroot` de la compilación y del paquete de publicació
 
 ## Próximo paso del bloque administrativo
 
-Yirardy asumió y autorizó completar CU-10/CU-11/CU-13/CU-12 en esta rama, con contratos y pruebas funcionales administrativas. El bloque local está conectado; el siguiente hito es su revisión humana y posterior coordinación con las solicitudes, comprobantes y consulta de Dylan. Main, alojamiento e informe final continúan aplazados. La política confirmada conserva contraseña mínima de 15 caracteres e inactividad de sesión de 10 minutos.
+Yirardy asumió y autorizó completar CU-10/CU-11/CU-13/CU-12 en esta rama, con contratos y pruebas funcionales administrativas. El bloque local está conectado; el siguiente hito es su revisión humana y posterior coordinación con las solicitudes, comprobantes y consulta de Dylan. Main, alojamiento e informe final continúan aplazados. La política actualizada el 31 de octubre exige contraseña nueva de al menos 8 caracteres, con mayúscula, minúscula, número y símbolo; máximo 72 bytes UTF-8 sin recorte. La sesión conserva 10 minutos de inactividad y las cuentas anteriores siguen pudiendo entrar. Ver [cambio y comprobaciones](docs/seguimiento/politica-contrasena-2026-10-31.md).

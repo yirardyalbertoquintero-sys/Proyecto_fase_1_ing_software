@@ -14,6 +14,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Ejecutar y depurar | [VS Code](ejecutar-en-vscode.md) y [README del proyecto](../README.md). |
 | Registro de clientes y pruebas realizadas | [CU-01](fase-3/08-registro-clientes.md). |
 | Acceso, cierre, permisos y duración de sesión | [CU-02](fase-3/09-acceso-sesiones.md). |
+| Política vigente de contraseñas para Cliente y primer Administrador | [Actualización del 31 de octubre](seguimiento/politica-contrasena-2026-10-31.md). |
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
 | Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
 | Prototipo navegable de revisión y cotización, sin guardado real | [CU-10 en preparación](fase-3/13-prototipo-revision-pedidos.md). |

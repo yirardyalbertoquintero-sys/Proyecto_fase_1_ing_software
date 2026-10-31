@@ -15,7 +15,30 @@ namespace ImpactoTextil.Api.Tests;
 
 public sealed class RegistroSqlTests(BaseSqlPruebas datos) : IClassFixture<BaseSqlPruebas>
 {
-    private const string Clave = "frase ficticia para las pruebas";
+    private const string Clave = "Clave ficticia para las pruebas 2026!";
+
+    [PruebaSql]
+    public async Task PoliticaNueva_ExigeComposicionYPermiteRegistrarseEIngresarConOchoCaracteres()
+    {
+        using var servidor = CrearServidor();
+        using var cliente = await CrearCliente(servidor);
+        var correo = NuevoCorreo();
+        foreach (var clave in new[] { "textil8!", "TEXTIL8!", "Textil!!", "Textil88", "Textil 8", "Tex8!" })
+        {
+            var solicitud = Solicitud(correo);
+            solicitud["contrasena"] = clave;
+            var respuesta = await cliente.PostAsJsonAsync("/api/clientes", solicitud);
+            Assert.Equal(HttpStatusCode.BadRequest, respuesta.StatusCode);
+            Assert.Contains("contrasena", await respuesta.Content.ReadAsStringAsync());
+        }
+        await using (var contexto = datos.CrearContexto())
+            Assert.False(await contexto.Usuario.AnyAsync(u => u.correo == correo));
+
+        var valida = Solicitud(correo);
+        valida["contrasena"] = "Textil8!";
+        Assert.Equal(HttpStatusCode.Created, (await cliente.PostAsJsonAsync("/api/clientes", valida)).StatusCode);
+        Assert.Equal(HttpStatusCode.OK, (await cliente.PostAsJsonAsync("/api/sesion", new { correo, contrasena = "Textil8!" })).StatusCode);
+    }
 
     [PruebaSql]
     public async Task RegistroValido_PersisteClienteConsentimientoYHashSinDevolverSecretos()

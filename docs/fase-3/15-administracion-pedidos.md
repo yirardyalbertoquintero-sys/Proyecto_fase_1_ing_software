@@ -19,7 +19,7 @@ El [diseño de CU-10](14-diseno-clases-cu10.md) incluye sus tres páginas editab
 
 1. Abrir la única carpeta activa, `C:\proyectos\Proyecto_fase_1_ing_software`, y comprobar `Carlos_Borrell`.
 2. Detener la instancia anterior con Shift+F5. Ejecutar **Impacto Textil: ejecutar aplicación** con F5 para preparar la base y compilar el frontend actualizado.
-3. Si aún no existe Administrador, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear primer Administrador**. El comando solicita datos en la terminal, con contraseña mínima de 15 caracteres y máximo de 72 bytes UTF-8. No usa credenciales predeterminadas ni convierte Clientes. Volver a ejecutar con F5.
+3. Si aún no existe Administrador, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear primer Administrador**. El comando solicita datos en la terminal, con contraseña mínima de 8 caracteres, mayúscula, minúscula, número y símbolo, y máximo de 72 bytes UTF-8. Esta política fue actualizada por Yirardy el 31 de octubre de 2026. No usa credenciales predeterminadas ni convierte Clientes. Volver a ejecutar con F5.
 4. Iniciar sesión como Administrador y abrir **Gestionar pedidos**, desde Mi sesión o desde Gestionar catálogo.
 5. En una base sin solicitudes se muestra una lista vacía. Para revisar sin el trabajo de Dylan, usar expresamente la herramienta local de datos ficticios descrita debajo.
 

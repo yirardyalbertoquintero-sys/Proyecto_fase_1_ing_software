@@ -30,7 +30,7 @@ El [diagrama de clases del módulo en Mermaid](diagramas/clases-registro.mmd) re
 
 ## Decisiones confirmadas y límites
 
-Yirardy confirmó expresamente un mínimo de **15 caracteres** el 28 de octubre de 2026. Se admiten espacios y no se obliga a combinar símbolos. Se cuentan caracteres Unicode; el límite de BCrypt se comprueba por bytes UTF-8, hasta 72 inclusive. Se rechazan caracteres de control. BCrypt.Net-Next 4.2.0 genera una sal aleatoria con coste 12. [Documentación del paquete](https://www.nuget.org/packages/BCrypt.Net-Next/4.2.0).
+El 31 de octubre de 2026 Yirardy sustituyó expresamente la política anterior por un mínimo de **8 caracteres**, con al menos una mayúscula, una minúscula, un número y un símbolo o signo de puntuación. Los espacios están permitidos, pero no cumplen el requisito de símbolo. La decisión anterior del 28 de octubre (15 caracteres sin composición) se conserva como antecedente. Se cuentan caracteres Unicode; el límite de BCrypt se comprueba por bytes UTF-8, hasta 72 inclusive, sin recortar la clave. Se rechazan caracteres de control. La misma validación se utiliza al crear el primer Administrador. Las contraseñas existentes continúan funcionando al iniciar sesión. BCrypt.Net-Next 4.2.0 mantiene sal aleatoria y coste 12. [Documentación del paquete](https://www.nuget.org/packages/BCrypt.Net-Next/4.2.0).
 
 El cuerpo JSON del registro admite hasta 16 KiB. Se permiten 12 intentos por minuto y por IP observada, con respuesta 429 al superar el límite. En el alojamiento se debe revisar la configuración del proxy y reevaluar ese límite con las pruebas de concurrencia; no se marca RNF-05 como aprobado por esta implementación.
 
