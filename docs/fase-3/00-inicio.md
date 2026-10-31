@@ -16,6 +16,7 @@ Esta entrega desarrolla el trabajo inicial de Yirardy: fuente e instrucciones co
 10. [Administración del catálogo y creación controlada del Administrador](10-catalogo-administracion.md).
 11. [Catálogo público y detalle de variantes activas](11-catalogo-publico.md).
 12. [Preparación de publicación y comprobación local en Production](12-preparacion-publicacion.md).
+13. [Prototipo navegable de CU-10: revisión y cotización con datos ficticios](13-prototipo-revision-pedidos.md).
 
 Los resultados ejecutados y sus límites están en el [registro de avance de Yirardy](../seguimiento/avance-yirardy.md).
 

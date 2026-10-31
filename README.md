@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Corrección del 30 de octubre de 2026:** el historial de Carlos vuelve a compartir la base de Yirardy sin reescribir commits anteriores. Hay servicios administrativos preparatorios, almacenamiento privado con validación de contenido y DTO monetarios coherentes con el catálogo. **Todavía no hay endpoints ni pantallas de pedidos, pagos o producción.** Ver [correcciones y comprobaciones](docs/seguimiento/correcciones-carlos-2026-10-30.md).
+**Corrección del 30 de octubre de 2026:** el historial de Carlos vuelve a compartir la base de Yirardy sin reescribir commits anteriores. Hay servicios administrativos preparatorios, almacenamiento privado con validación de contenido y DTO monetarios coherentes con el catálogo. **Todavía no hay endpoints ni pantallas conectadas de pedidos, pagos o producción.** El prototipo de revisión disponible usa únicamente datos ficticios. Ver [correcciones y comprobaciones](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
 **Estado al 29 de octubre de 2026:** CU-01, CU-02, CU-04 y CU-09 implementados y probados localmente: registro, acceso/cierre, permisos, catálogo público y administración de variantes con fotos y baja lógica. La sesión vence tras 10 minutos de inactividad. Hay un comando controlado para crear el primer Administrador. Pedidos, pagos, producción y alojamiento en MonsterASP.NET siguen pendientes. Los hitos están en [CU-01](docs/fase-3/08-registro-clientes.md), [CU-02](docs/fase-3/09-acceso-sesiones.md), [CU-09](docs/fase-3/10-catalogo-administracion.md) y [CU-04](docs/fase-3/11-catalogo-publico.md). La revisión de Dylan y la integración en main siguen pendientes.
 
@@ -37,6 +37,10 @@ Puedes crear variantes, consultar y filtrar el listado, cambiar datos/precio/fot
 Ejecuta con **F5** y pulsa **Explorar el catálogo de prendas**, desde el registro o la pantalla de sesión. También aparece **Ver catálogo** en la administración. No necesitas cuenta para consultar. Si la versión anterior está abierta, detenla con **Shift+F5** antes de volver a ejecutar.
 
 Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. La configuración de prendas y el envío de solicitudes corresponden a CU-05/CU-06 y aún no están implementados.
+
+## Prototipo de revisión de pedidos
+
+En esta rama Carlos_Borrell, ejecutar con F5, iniciar sesión como Administrador y abrir **Gestionar catálogo → Pedidos · prototipo**. Permite recorrer solicitudes, versiones, propuestas y decisiones con datos ficticios. El aviso indica que las acciones son simulaciones en memoria: no guardan pedidos/acuerdos ni registran pagos. Al recargar se reinician. [Alcance, capturas y comprobaciones](docs/fase-3/13-prototipo-revision-pedidos.md). CU-10 sigue pendiente de conexión con la API y SQL cuando se revisen las solicitudes de Dylan y los contratos.
 
 ## Preparar publicación
 

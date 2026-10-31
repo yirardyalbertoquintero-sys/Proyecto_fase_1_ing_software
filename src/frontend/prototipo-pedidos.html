@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisión de pedidos · Prototipo · Impacto Textil</title>
+  <link rel="icon" type="image/svg+xml" href="/marca.svg">
+  <link rel="stylesheet" href="/estilos.css">
+  <link rel="stylesheet" href="/prototipo-pedidos.css">
+  <script src="/prototipo-pedidos.js" defer></script>
+</head>
+<body class="pedidos-prototipo">
+  <a class="saltar" href="#contenido">Ir a la revisión</a>
+  <header class="cabecera-pedidos">
+    <a class="marca" href="/acceso.html"><img src="/marca.svg" width="40" height="40" alt=""><span>IMPACTO<br><strong>TEXTIL</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="/administracion.html">Gestionar catálogo</a><a href="/acceso.html">Mi sesión</a></nav>
+  </header>
+  <main id="contenido">
+    <p class="ceja">ADMINISTRACIÓN · PROTOTIPO NAVEGABLE</p>
+    <h1>Del pedido al acuerdo.</h1>
+    <p class="introduccion">Revisa prendas, propuestas y versiones antes de autorizar la producción.</p>
+    <aside class="modo-demo" aria-label="Alcance de la demostración"><strong>Datos ficticios · Sin guardado real.</strong> Las acciones de esta pantalla solo simulan acuerdos en memoria. No registran pagos ni autorizan producción. Al recargar se reinicia la demostración.</aside>
+    <p id="estado-acceso" role="status">Comprobando la sesión…</p>
+    <section id="acceso-denegado" class="aviso" hidden><p>Necesitas una sesión de Administrador para abrir esta vista de demostración.</p><a href="/acceso.html">Ir a mi sesión</a></section>
+    <div id="resultado-prototipo" role="status" tabindex="-1" hidden></div>
+    <div id="espacio-pedidos" hidden>
+      <div class="barra-prototipo"><p>Explora dos solicitudes ficticias y comprueba su historial.</p><button id="reiniciar-demo" class="boton-secundario" type="button">Reiniciar demostración</button></div>
+      <div class="paneles-pedidos">
+        <section class="lista-pedidos" aria-labelledby="titulo-pedidos">
+          <h2 id="titulo-pedidos">Solicitudes</h2>
+          <div class="campo"><label for="buscar-pedido">Buscar por código o cliente</label><input id="buscar-pedido" type="search" autocomplete="off"></div>
+          <div class="campo"><label for="estado-pedido">Estado de producción</label><select id="estado-pedido"><option value="">Todos</option><option>Pendiente</option><option>En producción</option><option>Listo para entrega</option><option>Entregado</option></select></div>
+          <div class="campo"><label for="condicion-pedido">Condición administrativa</label><select id="condicion-pedido"><option>Activa</option><option>Archivada</option><option>Todas</option></select></div>
+          <p id="conteo-pedidos" role="status"></p>
+          <div id="pedidos-demo"></div>
+        </section>
+        <section id="expediente-demo" class="expediente" aria-live="polite"><p>Selecciona una solicitud para revisar sus prendas e historial.</p></section>
+      </div>
+    </div>
+  </main>
+  <footer>Impacto Textil · Demostración académica de revisión y cotización.</footer>
+</body>
+</html>
