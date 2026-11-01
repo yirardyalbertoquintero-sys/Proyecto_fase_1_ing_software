@@ -145,6 +145,7 @@ async function abrirDetalle(id) {
     for (const [etiqueta,campo] of [['Talla','talla'],['Color','color'],['Tela','tela']])
       caracteristicas.append(elemento('dt',etiqueta),elemento('dd',producto[campo]));
     document.getElementById('precio-detalle').textContent = moneda(producto.precioBase);
+    document.getElementById('configurar-desde-detalle').href = '/solicitud.html?producto=' + producto.id;
     mensaje.textContent = ''; contenido.hidden = false; titulo.focus();
   } catch (error) {
     if (operacion !== operacionDetalle || error.name === 'AbortError' || !dialogo.open) return;

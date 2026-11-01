@@ -75,6 +75,8 @@ builder.Services.AddScoped<DescargaDisenoAdminService>();
 builder.Services.AddScoped<DescargaComprobanteAdminService>();
 builder.Services.AddScoped<PagosAdminService>();
 builder.Services.AddScoped<ProduccionEntregaAdminService>();
+builder.Services.AddScoped<ISolicitudClienteRepository, SolicitudClienteRepository>();
+builder.Services.AddScoped<SolicitudClienteService>();
 builder.Services.AddSingleton<IAlmacenArchivosPrivados>(servicios =>
 {
     var entorno = servicios.GetRequiredService<IWebHostEnvironment>();

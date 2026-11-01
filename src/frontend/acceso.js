@@ -38,6 +38,7 @@ function mostrarCuenta(datos) {
   document.getElementById('nombre-cuenta').textContent = `Bienvenido, ${datos.nombre}.`;
   document.getElementById('rol-cuenta').textContent = `Acceso: ${datos.rol}.`;
   document.getElementById('opcion-administracion').hidden = datos.rol !== 'Administrador';
+  document.getElementById('opcion-solicitud').hidden = datos.rol !== 'Cliente';
   cuenta.focus();
 }
 
@@ -49,6 +50,7 @@ function mostrarFormulario() {
   document.getElementById('nombre-cuenta').textContent = '';
   document.getElementById('rol-cuenta').textContent = '';
   document.getElementById('opcion-administracion').hidden = true;
+  document.getElementById('opcion-solicitud').hidden = true;
 }
 
 async function token() {

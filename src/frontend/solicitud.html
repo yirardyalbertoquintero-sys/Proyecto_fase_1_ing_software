@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Solicitar cotización · Impacto Textil</title>
+    <link rel="icon" href="/marca.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/estilos.css" />
+    <link rel="stylesheet" href="/catalogo.css" />
+    <link rel="stylesheet" href="/solicitud.css" />
+    <script src="/solicitud.js" defer></script>
+  </head>
+  <body>
+    <a class="saltar" href="#solicitud">Ir a la solicitud</a>
+    <header class="cabecera-catalogo">
+      <a class="marca" href="/catalogo.html"
+        ><img src="/marca.svg" width="42" height="42" alt="" /><span
+          >IMPACTO<br /><strong>TEXTIL</strong></span
+        ></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="/catalogo.html">Catálogo</a><a href="/acceso.html">Mi sesión</a>
+      </nav>
+    </header>
+    <main id="solicitud" class="solicitud">
+      <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+      <h1>Prepara tu solicitud</h1>
+      <p>
+        Configura tus prendas y envíalas para cotizar. El precio definitivo y la entrega se acuerdan después
+        con Impacto Textil.
+      </p>
+      <p class="nota-referencia">
+        El carrito se conserva mientras esta página siga abierta. Recargar o cerrar la página descarta las
+        configuraciones y los archivos seleccionados.
+      </p>
+      <p id="identidad-solicitud" role="status">Comprobando tu sesión…</p>
+      <div id="mensaje-solicitud" class="resultado" role="alert" tabindex="-1" hidden></div>
+      <section id="acceso-solicitud" class="panel-solicitud" hidden aria-labelledby="titulo-acceso-solicitud">
+        <h2 id="titulo-acceso-solicitud">Accede sin perder tu carrito</h2>
+        <p>Inicia sesión como Cliente en esta misma página para continuar.</p>
+        <form id="acceso-en-pagina">
+          <div class="campo">
+            <label for="correo-solicitud">Correo electrónico</label
+            ><input
+              id="correo-solicitud"
+              name="correo"
+              type="email"
+              autocomplete="username"
+              maxlength="150"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="clave-solicitud">Contraseña</label
+            ><input
+              id="clave-solicitud"
+              name="contrasena"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <button class="boton-principal" type="submit">Iniciar sesión y continuar</button>
+        </form>
+        <p>
+          Si todavía no tienes cuenta,
+          <a href="/" target="_blank" rel="noopener">regístrate en otra pestaña</a> y vuelve aquí.
+        </p>
+      </section>
+      <button id="vaciar-otra-cuenta" class="boton-secundario" type="button" hidden>
+        Vaciar el carrito anterior para usar esta cuenta
+      </button>
+      <div id="contenido-solicitud" hidden>
+        <section class="panel-solicitud" aria-labelledby="titulo-configuracion">
+          <h2 id="titulo-configuracion">Configura una prenda</h2>
+          <p id="estado-variantes" role="status">Cargando variantes…</p>
+          <form id="configurar-prenda">
+            <div class="campo">
+              <label for="variante-solicitud">Variante disponible</label
+              ><select id="variante-solicitud" name="producto" required>
+                <option value="">Selecciona una variante</option>
+              </select>
+            </div>
+            <p id="referencia-variante"></p>
+            <div class="fila-solicitud">
+              <div class="campo">
+                <label for="cantidad-solicitud">Cantidad</label
+                ><input
+                  id="cantidad-solicitud"
+                  name="cantidad"
+                  type="number"
+                  min="1"
+                  max="2147483647"
+                  step="1"
+                  value="1"
+                  required
+                />
+              </div>
+              <div class="campo">
+                <label for="empaque-solicitud">Empaque</label
+                ><input id="empaque-solicitud" value="Bolsa estándar" readonly />
+              </div>
+            </div>
+            <div class="campo">
+              <label for="personalizacion">Tipo de prenda</label
+              ><select id="personalizacion" name="personalizacion">
+                <option value="personalizada">Personalizada</option>
+                <option value="basica">Sin personalización</option>
+              </select>
+            </div>
+            <div id="campos-diseno">
+              <div class="campo">
+                <label for="idea-solicitud">Idea de diseño</label
+                ><input
+                  id="idea-solicitud"
+                  name="ideaDiseno"
+                  maxlength="1000"
+                  placeholder="Describe tu idea si no adjuntas una imagen"
+                />
+              </div>
+              <div class="campo">
+                <label for="diseno-solicitud">Imagen JPG o PNG</label
+                ><input
+                  id="diseno-solicitud"
+                  name="diseno"
+                  type="file"
+                  accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                /><small>Hasta 10 MB por imagen. Puedes enviar una imagen, una idea o ambas.</small>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="observaciones-solicitud">Observaciones opcionales</label
+              ><input id="observaciones-solicitud" name="observaciones" maxlength="1000" />
+            </div>
+            <button class="boton-principal" type="submit">Agregar al carrito</button>
+          </form>
+        </section>
+        <section class="panel-solicitud" aria-labelledby="titulo-carrito">
+          <h2 id="titulo-carrito">Tu carrito</h2>
+          <p>Hasta 20 configuraciones por solicitud y 20 MB de imágenes en conjunto.</p>
+          <div id="carrito-solicitud"></div>
+          <p id="total-solicitud" class="precio-prenda">Referencia: C$0.00</p>
+          <button id="actualizar-carrito" class="boton-secundario" type="button">
+            Actualizar variantes y precios del carrito
+          </button>
+          <form id="enviar-solicitud">
+            <div class="campo">
+              <label for="modalidad-solicitud">Modalidad de entrega</label
+              ><select id="modalidad-solicitud" name="modalidadEntrega">
+                <option value="Retiro">Retiro</option>
+                <option value="Domicilio">Domicilio</option>
+              </select>
+            </div>
+            <div class="campo" id="campo-direccion" hidden>
+              <label for="direccion-solicitud">Dirección de entrega</label
+              ><input
+                id="direccion-solicitud"
+                name="direccionEntrega"
+                maxlength="250"
+                autocomplete="street-address"
+              />
+            </div>
+            <label class="confirmar-solicitud"
+              ><input id="confirmar-solicitud" type="checkbox" required /><span
+                >Revisé las configuraciones y el importe de referencia. Solicito una cotización; este importe
+                no es el precio definitivo.</span
+              ></label
+            >
+            <button id="registrar-solicitud" class="boton-principal" type="submit">
+              Enviar solicitud para cotizar
+            </button>
+          </form>
+        </section>
+      </div>
+      <section
+        id="solicitud-confirmada"
+        class="panel-solicitud"
+        tabindex="-1"
+        hidden
+        aria-labelledby="titulo-confirmacion"
+      >
+        <h2 id="titulo-confirmacion">Solicitud registrada</h2>
+        <p id="codigo-solicitud"></p>
+        <p id="resumen-solicitud"></p>
+        <p>
+          Guarda este código. Tu solicitud está Pendiente de revisión; todavía no hay cotización definitiva,
+          diseño aprobado ni fecha de entrega acordada.
+        </p>
+        <button id="nueva-solicitud" type="button" class="boton-secundario">Preparar otra solicitud</button>
+      </section>
+      <noscript><p>Activa JavaScript para preparar tu solicitud.</p></noscript>
+    </main>
+    <footer class="pie-catalogo">
+      <span>IMPACTO TEXTIL</span><a href="/aviso.html">Aviso de la demostración</a>
+    </footer>
+  </body>
+</html>
