@@ -1,0 +1,51 @@
+{
+  "fecha": "2026-11-01",
+  "objetivo": "Integrar tres ramas a main mediante PRs y merge normal conservando autorías y ramas",
+  "mainAntes": "8a1b321467b93061a249e03441af1be1c452f86d",
+  "ramasVerificadas": {
+    "Yirardy_Quintero": "a90020ec63aa3fd0f2d8b41f4889dd9220f207e3",
+    "Carlos_Borrell": "937cf6df5c25af68be15cecae45ac03d0a2a4bf4",
+    "Dylan_Ruiz": "7a2e12523cf4fba06cc21d0bcd64a0c876590a3a"
+  },
+  "pullRequests": {
+    "Yirardy_Quintero": 4,
+    "Carlos_Borrell": 5,
+    "Dylan_Ruiz": 6
+  },
+  "estadoFusiones": "El estado y el commit final de cada PR están registrados en GitHub; este archivo conserva la validación del árbol que se integra.",
+  "aplicacionValidada": "7a2e12523cf4fba06cc21d0bcd64a0c876590a3a",
+  "arbolesValidados": {
+    "src": "b9a69a19ca87d8c710e9f3e0fac3e66755d149f3",
+    "tests": "68a666843ebc7894fc92590a7121dce1a08a1d33",
+    "database": "458f3cf353388837734ff512f1bb15b6c6551ffb",
+    "scripts": "e1c556d3d842106470d34b3e0886145b4b8b8141"
+  },
+  "cambiosDelCierre": "Solo instrucciones y documentación de integración; código, pruebas, SQL y scripts coinciden con la aplicación validada.",
+  "comando": "./scripts/Test-Registro.ps1",
+  "configuracion": "Release",
+  "restore": "--locked-mode",
+  "total": 124,
+  "aprobadas": 124,
+  "fallidas": 0,
+  "omitidas": 0,
+  "conSqlReal": 86,
+  "trxLocal": "artifacts/pruebas/20261101T212134Z-8c97f5bc/resultado.trx",
+  "trxSha256": "6c1bcb873adfc55d58015f7cb621193e077db1afb7ad5b8e538e8e0ce9aace51",
+  "fuenteSha256": "9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821",
+  "antecedentesVerificados": 24,
+  "revisionEstatica": "Segundo asistente verificó ancestros, preservación documental, ausencia de secretos locales rastreados y evidencia; sin bloqueantes.",
+  "revisionManualYirardy": "Pendiente de ejecución y resultados de la revisión actual",
+  "revisionCruzadaDylan": "Pendiente de ejecución y dictamen humano",
+  "fueraDeGit": [
+    ".env.vscode",
+    "conexiones y certificados locales",
+    "archivos privados y bases del usuario",
+    "docs/seguimiento/Avances y pendientes.docx"
+  ],
+  "limites": [
+    "No acredita revisión humana ni aceptación comercial",
+    "No publica en MonsterASP.NET",
+    "No acredita RNF/SMART pendientes",
+    "Informe Word 0.1 requiere consolidación posterior"
+  ]
+}

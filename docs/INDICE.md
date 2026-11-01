@@ -10,6 +10,7 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Exigencias del docente | [Guías académicas](guias/README.md). |
 | Modelo, 3FN, arquitectura y decisiones | [Índice de fase 3](fase-3/00-inicio.md). |
 | Estado funcional por caso de uso | [Matriz de construcción](fase-3/05-trazabilidad.md). |
+| Integración de las tres ramas a main por PR y validación repetida | [Registro del 1 de noviembre](seguimiento/integracion-main-20261101.md) y [evidencia](evidencias/integracion-main-20261101.json). |
 | Correcciones del backend preparatorio de Carlos | [Correcciones del 30 de octubre](seguimiento/correcciones-carlos-2026-10-30.md). |
 | Ejecutar y depurar | [VS Code](ejecutar-en-vscode.md) y [README del proyecto](../README.md). |
 | Registro de clientes y pruebas realizadas | [CU-01](fase-3/08-registro-clientes.md). |
