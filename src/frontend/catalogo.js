@@ -1,5 +1,6 @@
 'use strict';
 
+const posicionPestana = window.crearPosicionPestana();
 const lista = document.getElementById('lista-prendas');
 const estado = document.getElementById('estado-catalogo');
 const errorCatalogo = document.getElementById('error-catalogo');
@@ -11,6 +12,7 @@ let consultaListado = null;
 let consultaDetalle = null;
 let operacionListado = 0;
 let operacionDetalle = 0;
+let revalidacion = 0;
 let detalleId = null;
 
 function elemento(tipo, texto, clase) {
@@ -146,7 +148,7 @@ async function abrirDetalle(id) {
       caracteristicas.append(elemento('dt',etiqueta),elemento('dd',producto[campo]));
     document.getElementById('precio-detalle').textContent = moneda(producto.precioBase);
     document.getElementById('configurar-desde-detalle').href = '/solicitud.html?producto=' + producto.id;
-    mensaje.textContent = ''; contenido.hidden = false; titulo.focus();
+    mensaje.textContent = ''; contenido.hidden = false; titulo.focus({ preventScroll: posicionPestana.pendiente });
   } catch (error) {
     if (operacion !== operacionDetalle || error.name === 'AbortError' || !dialogo.open) return;
     mensaje.textContent = ''; errorDetalle.textContent = error.message; errorDetalle.hidden = false;
@@ -164,7 +166,12 @@ document.getElementById('cerrar-detalle').addEventListener('click', () => dialog
 document.getElementById('actualizar-detalle').addEventListener('click', () => { if (detalleId) abrirDetalle(detalleId); });
 dialogo.addEventListener('close', () => { ++operacionDetalle; consultaDetalle?.abort(); detalleId = null; enlaceDetalle(null); });
 
-async function revalidar() { await cargarCatalogo(); if (dialogo.open && detalleId) await abrirDetalle(detalleId); }
+async function revalidar() {
+  const actual = ++revalidacion;
+  posicionPestana.guardar();
+  try { await cargarCatalogo(); if (actual === revalidacion && dialogo.open && detalleId) await abrirDetalle(detalleId); }
+  finally { if (actual === revalidacion) posicionPestana.restaurar(); }
+}
 document.addEventListener('visibilitychange', () => { if (!document.hidden) revalidar(); });
 window.addEventListener('pageshow', evento => { if (evento.persisted) revalidar(); });
 

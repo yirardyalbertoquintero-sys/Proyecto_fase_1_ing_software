@@ -1,5 +1,6 @@
 "use strict";
 (() => {
+    const posicionPestana = window.crearPosicionPestana();
     const base = "/api/administracion/pedidos";
     const $ = (id) => document.getElementById(id);
     let pedidos = [],
@@ -42,7 +43,7 @@
         e.textContent = texto;
         e.className = error ? "error" : "";
         e.hidden = false;
-        e.focus();
+        e.focus({ preventScroll: posicionPestana.pendiente });
     }
     function limpiarExpedientes() {
         ++secuencia;
@@ -815,6 +816,8 @@
     }
     async function revalidarAcceso() {
         if (validandoAcceso) return;
+        const identidadAnterior = identidadId;
+        posicionPestana.guardar();
         validandoAcceso = true;
         $("gestion").hidden = true;
         try {
@@ -835,6 +838,7 @@
             mensaje(error.message, true);
         } finally {
             validandoAcceso = false;
+            posicionPestana.restaurar(autorizado && identidadId === identidadAnterior && !$("gestion").hidden);
         }
     }
     window.addEventListener("pagehide", () => {
