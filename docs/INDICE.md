@@ -25,6 +25,10 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |
 | Historial de preparación y organización | `seguimiento/`. |
+| Informe revisable de diseño y construcción | [Fases 3 y 4 en Word](entrega/Informe_Fases_3_y_4_Impacto_Textil.docx) y [fuente textual](entrega/Informe_Fases_3_y_4_Impacto_Textil.md). |
+| Correspondencia con RUP | [Mapeo actualizado](entrega/mapeo-rup.md). |
+| Revisión cruzada para ejecutar por otro integrante | [Guía y registro RC-01 a RC-06](pruebas/revision-cruzada-administracion.md). |
+| Cierre de tareas independientes del líder | [Estado al 1 de noviembre](seguimiento/cierre-tareas-yirardy-20261101.md). |
 | Documentos anteriores y extracciones antiguas | [Archivo histórico](archivo/README.md). |
 
 El plan distribuye trabajo y las guías fijan criterios académicos; ninguno reemplaza los requisitos comerciales del DOCX. Los estados de implementación están en la matriz y sus evidencias, no en las versiones antiguas de planes o instrucciones.

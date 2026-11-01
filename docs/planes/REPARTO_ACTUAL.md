@@ -34,3 +34,7 @@ Se mantienen las decisiones del líder de aplazar contratos compartidos y migrac
 - Coordinar Program.cs, DbContext, migraciones, dependencias y estilos con Dylan antes de integrar cambios compartidos.
 - La aceptación humana debe realizarla alguien distinto de quien implementó el cambio. Si un revisor participó directamente, asignar la revisión al otro compañero según disponibilidad; no registrar una aceptación ficticia. La revisión de IA no sustituye esa aceptación.
 - Esta actualización no acredita CU adicionales terminados ni cambia el documento de requisitos aprobado.
+
+## Cierre independiente de Yirardy del 1 de noviembre
+
+Preparados diseño contrastado, informe de fases 3 y 4, mapeo RUP y guía de revisión cruzada. El [registro de cierre](../seguimiento/cierre-tareas-yirardy-20261101.md) conserva las tareas y las dependencias externas. Otro integrante debe aceptar realizar la revisión; no se asignan ni registran revisiones humanas ficticias. La implementación de CU-05/06/07/08 sigue a cargo de Dylan. El PR, main y despliegue permanecen aplazados.

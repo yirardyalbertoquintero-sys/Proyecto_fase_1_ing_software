@@ -146,3 +146,7 @@ El frontend se copia a `wwwroot` de la compilación y del paquete de publicació
 ## Próximo paso del bloque administrativo
 
 Yirardy asumió y autorizó completar CU-10/CU-11/CU-13/CU-12 en esta rama, con contratos y pruebas funcionales administrativas. El bloque local está conectado; el siguiente hito es su revisión humana y posterior coordinación con las solicitudes, comprobantes y consulta de Dylan. Main, alojamiento e informe final continúan aplazados. La política actualizada el 31 de octubre exige contraseña nueva de al menos 8 caracteres, con mayúscula, minúscula, número y símbolo; máximo 72 bytes UTF-8 sin recorte. La sesión conserva 10 minutos de inactividad y las cuentas anteriores siguen pudiendo entrar. Ver [cambio y comprobaciones](docs/seguimiento/politica-contrasena-2026-10-31.md).
+
+## Consolidación del 1 de noviembre
+
+El [informe de fases 3 y 4](docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.docx), su [fuente textual](docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.md) y el [mapeo RUP](docs/entrega/mapeo-rup.md) reúnen el corte técnico disponible. Los diagramas se contrastaron con el código y se corrigieron los estados obsoletos. [Cierre y pendientes](docs/seguimiento/cierre-tareas-yirardy-20261101.md). La [guía de revisión cruzada](docs/pruebas/revision-cruzada-administracion.md) está preparada, sin dictamen atribuido al compañero. El script Test-Registro reconciliado ejecutó 92 pruebas aprobadas sin omisiones en Release; los borradores y el Word aprobado siguen conservados. No se acredita integración del cliente, main ni alojamiento.
