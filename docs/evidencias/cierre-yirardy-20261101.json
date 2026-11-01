@@ -1,0 +1,15 @@
+{
+  "fecha": "2026-11-01",
+  "rama": "Carlos_Borrell",
+  "baseCommit": "8881159",
+  "comando": "./scripts/Test-Registro.ps1",
+  "configuracion": "Release",
+  "dependencias": "dotnet restore --locked-mode",
+  "total": 92,
+  "aprobadas": 92,
+  "fallidas": 0,
+  "omitidas": 0,
+  "trxLocal": "artifacts/pruebas/20261101T183536Z-c548ab22/resultado.trx",
+  "cambioValidado": "Reconciliacion del script de pruebas resguardado; sin cambios de esquema ni nuevas funciones",
+  "limite": "No acredita revision humana independiente, integracion con Dylan, alojamiento ni RNF de carga o disponibilidad"
+}
