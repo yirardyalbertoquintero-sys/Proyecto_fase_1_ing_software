@@ -1,0 +1,109 @@
+classDiagram
+    direction TB
+    classDef default fill:#f7f9fc,stroke:#193c58,color:#172b40
+    %% Clases existentes al 31-10-2026. Miembros seleccionados; parametros abreviados.
+    class PedidosAdministracionController {
+        <<controlador>>
+        +Original(...) Task~IActionResult~
+        +Version(...) Task~IActionResult~
+        +Comprobante(...) Task~IActionResult~
+        +ResolverPago(...) Task~IActionResult~
+        +Cobrar(...) Task~IActionResult~
+        +CambiarEstado(...) Task~IActionResult~
+        +AutorizarSublimacion(...) Task~IActionResult~
+    }
+    class DescargaDisenoAdminService {
+        <<servicio_CU11>>
+        +DescargarDisenoOriginalAsync(...) Task~ResultadoOperacionAdmin~ArchivoDescargaDto~~
+        +DescargarArchivoVersionDisenoAsync(...) Task~ResultadoOperacionAdmin~ArchivoDescargaDto~~
+    }
+    class DescargaComprobanteAdminService {
+        <<evidencia_CU13>>
+        +DescargarAsync(...) Task~ResultadoOperacionAdmin~ArchivoDescargaDto~~
+    }
+    class PagosAdminService {
+        <<servicio_CU13>>
+        +ResolverPagoPendienteAsync(...) Task~ResultadoOperacionAdmin~ResultadoPagoAdminDto~~
+        +RegistrarCobroDirectoAsync(...) Task~ResultadoOperacionAdmin~ResultadoPagoAdminDto~~
+    }
+    class ProduccionEntregaAdminService {
+        <<servicio_CU12>>
+        +AutorizarSublimacionAsync(...) Task~ResultadoOperacionAdmin~ResultadoAutorizacionSublimacionDto~~
+        +ActualizarEstadoAsync(...) Task~ResultadoOperacionAdmin~ResultadoEstadoProduccionDto~~
+    }
+    class IPedidoAdministracionRepository {
+        <<interface>>
+        +ObtenerAdministradorActivoAsync(...) Task~Usuario?~
+        +EjecutarEnPedidoBloqueadoAsync(...) Task~ResultadoOperacionAdmin~T~~
+        +ObtenerReferenciaDisenoOriginalAsync(...) Task~ReferenciaArchivoDiseno~
+        +ObtenerReferenciaVersionDisenoAsync(...) Task~ReferenciaArchivoDiseno~
+        +ObtenerReferenciaComprobanteAsync(...) Task~ReferenciaArchivoDiseno~
+    }
+    class IAlmacenArchivosPrivados {
+        <<interface>>
+        +GuardarAsync(...) Task~string~
+        +AbrirLecturaValidadaAsync(...) Task~ArchivoPrivadoAbierto?~
+        +EliminarSiExisteAsync(...) Task
+    }
+    class AlmacenArchivosPrivadosLocal {
+        <<almacen_privado>>
+        +GuardarAsync(...) Task~string~
+        +AbrirLecturaValidadaAsync(...) Task~ArchivoPrivadoAbierto?~
+        +EliminarSiExisteAsync(...) Task
+    }
+    class ResolverPagoPendienteDto {
+        <<entrada_CU13>>
+        +string? decision
+        +string? referencia
+        +DateTimeOffset? fechaCobroConfirmada
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class RegistrarCobroDirectoDto {
+        <<entrada_CU13>>
+        +decimal monto
+        +DateTimeOffset fecha
+        +string? medio
+        +string? referencia
+        +Guid confirmacion
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ActualizarEstadoProduccionDto {
+        <<entrada_CU12>>
+        +string? nuevoEstado
+        +string? referenciaConfirmacionEntrega
+        +Validate(ValidationContext) IEnumerable~ValidationResult~
+    }
+    class ArchivoDescargaDto {
+        <<salida_privada>>
+        +Stream contenido
+        +string tipoContenido
+        +string nombreDescarga
+        +long tamanoBytes
+    }
+    class ReglasAdministrativasPedido {
+        <<reglas_compartidas>>
+        +CalcularAnticipoExigible(decimal) decimal$
+        +CalcularSaldoPendiente(decimal, decimal) decimal$
+        +EvaluarInicioProduccion(...) ErrorOperacionAdmin?$
+        +EvaluarAutorizacionSublimacion(...) ErrorOperacionAdmin?$
+        +EvaluarPasoAListoParaEntrega(...) ErrorOperacionAdmin?$
+        +EvaluarEntrega(...) ErrorOperacionAdmin?$
+    }
+    PedidosAdministracionController --> DescargaDisenoAdminService : CU11
+    PedidosAdministracionController --> DescargaComprobanteAdminService : evidencia privada
+    PedidosAdministracionController --> PagosAdminService : CU13
+    PedidosAdministracionController --> ProduccionEntregaAdminService : CU12
+    DescargaDisenoAdminService --> IPedidoAdministracionRepository : pertenencia y rol
+    DescargaComprobanteAdminService --> IPedidoAdministracionRepository : pertenencia y rol
+    PagosAdminService --> IPedidoAdministracionRepository : pedido bloqueado
+    ProduccionEntregaAdminService --> IPedidoAdministracionRepository : pedido bloqueado
+    DescargaDisenoAdminService --> IAlmacenArchivosPrivados : lectura validada
+    DescargaComprobanteAdminService --> IAlmacenArchivosPrivados : lectura validada
+    AlmacenArchivosPrivadosLocal ..|> IAlmacenArchivosPrivados : implementa
+    PagosAdminService ..> ResolverPagoPendienteDto : recibe
+    PagosAdminService ..> RegistrarCobroDirectoDto : recibe
+    ProduccionEntregaAdminService ..> ActualizarEstadoProduccionDto : recibe
+    DescargaDisenoAdminService ..> ArchivoDescargaDto : devuelve
+    DescargaComprobanteAdminService ..> ArchivoDescargaDto : devuelve
+    PagosAdminService ..> ReglasAdministrativasPedido : importes
+    ProduccionEntregaAdminService ..> ReglasAdministrativasPedido : condiciones

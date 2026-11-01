@@ -6,7 +6,7 @@ Avance de Yirardy en su rama `Yirardy_Quintero`, 29 de octubre de 2026. Implemen
 
 1. Detener la ejecución anterior con **Shift+F5**. La base local debe estar preparada con la tarea normal de F5 o `scripts/Iniciar-Local.ps1 -SoloPreparar`.
 2. Ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear primer Administrador**. Alternativa en la terminal del proyecto: `./scripts/Crear-Administrador.ps1`; admite `-Servidor '.\SQLEXPRESS'` si corresponde.
-3. Escribir nombre, correo y una contraseña propia de al menos 15 caracteres; admite espacios y hasta 72 bytes UTF-8. La contraseña se solicita dos veces, no se muestra y no se pasa por argumentos ni se guarda en archivos.
+3. Escribir nombre, correo y una contraseña propia de al menos 8 caracteres, con mayúscula, minúscula, número y símbolo. Admite espacios (no cuentan como símbolo) y hasta 72 bytes UTF-8. La contraseña se solicita dos veces, no se muestra y no se pasa por argumentos ni se guarda en archivos. Política actualizada por Yirardy el 31 de octubre de 2026.
 4. Ejecutar con **F5**, pulsar **Inicia sesión** e ingresar con esa cuenta. Aparece el enlace **Gestionar catálogo**.
 5. Crear una variante con foto, revisar el listado y editar datos o disponibilidad. Cada combinación de talla, color y tela es un Producto independiente. Los precios se rotulan como referencia, no como una cotización aceptada.
 

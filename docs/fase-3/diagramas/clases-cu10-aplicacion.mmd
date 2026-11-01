@@ -1,0 +1,86 @@
+classDiagram
+    direction TB
+    %% Firmas de parametros abreviadas; inventario completo en 14-diseno-clases-cu10.md.
+    %% La vista representa funciones JavaScript; el controlador es una clase C# existente.
+    class VistaGestionCU10["Vista HTML y JavaScript"] {
+        <<vista_existente>>
+        -lista()
+        -dibujar()
+        -abrir(...)
+        -cargarExpediente(...)
+        -enviarEscritura(...)
+        -iniciar()
+    }
+    class PedidosAdministracionController {
+        <<controlador_existente>>
+        +Listar(...) Task~IActionResult~
+        +Expediente(...) Task~IActionResult~
+        +Proponer(...) Task~IActionResult~
+        +DecidirCotizacion(...) Task~IActionResult~
+        +RegistrarTexto(...) Task~IActionResult~
+        +RegistrarArchivo(...) Task~IActionResult~
+        +DecidirDiseno(...) Task~IActionResult~
+        +Archivar(...) Task~IActionResult~
+    }
+    class SesionController {
+        <<existente>>
+        +Actual() ActionResult~SesionDto~
+    }
+    class RevisionCotizacionAdminService {
+        <<servicio_existente>>
+        +ListarPedidosAsync(...) Task~ResultadoOperacionAdmin~IReadOnlyList~ResumenPedidoAdminDto~~~
+        +ObtenerExpedienteAsync(...) Task~ResultadoOperacionAdmin~ExpedientePedidoAdminDto~~
+        +IncorporarVersionDisenoAsync(...) Task~ResultadoOperacionAdmin~ResultadoVersionDisenoAdminDto~~
+        +DecidirVersionDisenoAsync(...) Task~ResultadoOperacionAdmin~ResultadoVersionDisenoAdminDto~~
+        +ProponerCotizacionAsync(...) Task~ResultadoOperacionAdmin~ResultadoCotizacionAdminDto~~
+        +DecidirCotizacionAsync(...) Task~ResultadoOperacionAdmin~ResultadoCotizacionAdminDto~~
+        +ArchivarSolicitudAsync(...) Task~ResultadoOperacionAdmin~ResultadoArchivoPedidoDto~~
+    }
+    class IPedidoAdministracionRepository {
+        <<interface>>
+        +ObtenerAdministradorActivoAsync(...) Task~Usuario?~
+        +ListarPedidosAsync(...) Task~IReadOnlyList~ResumenPedidoAdminDto~~
+        +ObtenerExpedienteAsync(...) Task~ExpedientePedidoAdminDto?~
+        +EjecutarEnPedidoBloqueadoAsync(...) Task~ResultadoOperacionAdmin~T~~
+    }
+    class PedidoAdministracionRepository {
+        <<Repository>>
+        -LeerExpedienteAsync(...) Task~ExpedientePedidoAdminDto?~
+        -MapearResumen(...) ResumenPedidoAdminDto$
+    }
+    class ImpactoTextilDbContext {
+        <<EF_Core>>
+        +DbSet~Pedido~ Pedido
+        +DbSet~DetallePedido~ DetallePedido
+        +DbSet~VersionCotizacion~ VersionCotizacion
+        +DbSet~DetalleCotizacion~ DetalleCotizacion
+        +DbSet~VersionDiseno~ VersionDiseno
+        +DbSet~vPedido~ vPedido
+    }
+    class ReglasAdministrativasPedido {
+        <<reglas_estaticas>>
+        +CalcularAnticipoExigible(decimal) decimal$
+        +CalcularSaldoPendiente(decimal, decimal) decimal$
+        +EvaluarArchivoAdministrativo(...) ErrorOperacionAdmin?$
+    }
+    class ResultadoOperacionAdmin~T~ {
+        <<resultado>>
+        +bool EsExito
+        +T? Valor
+        +ErrorOperacionAdmin? Error
+        +Exito(T) ResultadoOperacionAdmin~T~$
+        +Fallo(...) ResultadoOperacionAdmin~T~$
+    }
+    class TimeProvider {
+        <<framework>>
+        +GetUtcNow() DateTimeOffset
+    }
+    VistaGestionCU10 --> SesionController : GET de sesion existente
+    VistaGestionCU10 --> PedidosAdministracionController : HTTPS y CSRF
+    PedidosAdministracionController --> RevisionCotizacionAdminService : llama al servicio
+    RevisionCotizacionAdminService --> IPedidoAdministracionRepository : inyeccion
+    PedidoAdministracionRepository ..|> IPedidoAdministracionRepository : implementa
+    PedidoAdministracionRepository --> ImpactoTextilDbContext : consulta y persistencia
+    RevisionCotizacionAdminService ..> ReglasAdministrativasPedido : reglas del SRS
+    RevisionCotizacionAdminService ..> ResultadoOperacionAdmin : devuelve resultado
+    RevisionCotizacionAdminService --> TimeProvider : reloj inyectado

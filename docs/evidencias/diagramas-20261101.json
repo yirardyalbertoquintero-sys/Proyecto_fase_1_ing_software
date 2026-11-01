@@ -1,0 +1,56 @@
+{
+  "fecha": "2026-11-01",
+  "mermaid": "12.2.0",
+  "fuentes": [
+    {
+      "fuente": "arquitectura.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-acceso.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-administracion-operaciones.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-catalogo.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-cu10-aplicacion.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-cu10-dtos.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-cu10-historial.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "clases-registro.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "despliegue.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "mer-comprobaciones.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "mer-principal.mmd",
+      "sintaxis": "correcta"
+    },
+    {
+      "fuente": "mer-versiones.mmd",
+      "sintaxis": "correcta"
+    }
+  ],
+  "svgExportados": 8,
+  "comprobacion": "Fuentes Mermaid válidas; textos SVG dentro de sus límites. Revisión visual en el informe por separado."
+}

@@ -1,43 +1,44 @@
 classDiagram
     class CatalogoAdministracionController {
-        +Listar()
-        +Obtener(id)
-        +Crear(GuardarProductoDto)
-        +Editar(id, GuardarProductoDto)
+        +Listar(CancellationToken) Task~IActionResult~
+        +Obtener(int, CancellationToken) Task~IActionResult~
+        +Crear(GuardarProductoDto, CancellationToken) Task~IActionResult~
+        +Editar(int, GuardarProductoDto, CancellationToken) Task~IActionResult~
+        -Guardar(int?, GuardarProductoDto, CancellationToken) Task~IActionResult~
     }
     class CatalogoService {
-        +ListarAsync()
-        +ObtenerAsync(id)
-        +GuardarAsync(id, datos)
-        +ListarPublicosAsync()
-        +ObtenerPublicoAsync(id)
+        +ListarAsync(CancellationToken) Task~IReadOnlyList~ProductoDto~~
+        +ObtenerAsync(int, CancellationToken) Task~ProductoDto?~
+        +GuardarAsync(int?, GuardarProductoDto, CancellationToken) Task~ProductoDto?~
+        +ListarPublicosAsync(CancellationToken) Task~IReadOnlyList~ProductoPublicoDto~~
+        +ObtenerPublicoAsync(int, CancellationToken) Task~ProductoPublicoDto?~
     }
     class IProductoRepository {
         <<interface>>
-        +ListarAsync()
-        +ObtenerAsync(id)
-        +ListarActivosAsync()
-        +ObtenerActivoAsync(id)
-        +CrearAsync(Producto)
-        +ActualizarAsync(id, version, Producto)
-        +UsaImagenAsync(referencia)
+        +ListarAsync(CancellationToken) Task~IReadOnlyList~Producto~~
+        +ObtenerAsync(int, CancellationToken) Task~Producto?~
+        +ListarActivosAsync(CancellationToken) Task~IReadOnlyList~Producto~~
+        +ObtenerActivoAsync(int, CancellationToken) Task~Producto?~
+        +CrearAsync(Producto, CancellationToken) Task~Producto~
+        +ActualizarAsync(int, string, Producto, CancellationToken) Task~Producto?~
+        +UsaImagenAsync(string, CancellationToken) Task~bool~
     }
     class ProductoRepository
     class ProductoVersion {
         +Calcular(Producto) string
     }
     class ImagenCatalogoController {
-        +Subir(archivo)
-        +Ver(archivo)
+        +Subir(IFormFile?, CancellationToken) Task~IActionResult~
+        +Ver(string, CancellationToken) Task~IActionResult~
     }
     class ImagenCatalogoStore {
-        +GuardarAsync(archivo) string
-        +Existe(referencia) bool
-        +Ruta(referencia) string
+        +GuardarAsync(IFormFile, CancellationToken) Task~string~
+        +Existe(string) bool
+        +Ruta(string) string?
     }
     class ProductosController {
-        +Listar()
-        +Obtener(id)
+        +Listar(CancellationToken) Task~IActionResult~
+        +Obtener(int, CancellationToken) Task~IActionResult~
     }
     ProductosController --> CatalogoService
     ProductosController ..> ProductoPublicoDto

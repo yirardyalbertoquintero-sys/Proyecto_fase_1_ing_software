@@ -36,6 +36,15 @@
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
     },
     {
+      "label": "Impacto Textil: crear pedidos de demostracion",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-File", "${workspaceFolder}/scripts/Crear-PedidosDemostracion.ps1"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true }
+    },
+    {
       "label": "Impacto Textil: probar registro con SQL Server",
       "type": "process",
       "command": "powershell.exe",

@@ -1,0 +1,19 @@
+{
+  "tipo": "Chrome headless con API y SQL reales en base aislada",
+  "resultados": [
+    "Visitante denegado y expediente limpio",
+    "Inicio de sesión real y navegación a pedidos SQL",
+    "Cotización y aprobación guardadas; nueva versión conserva anterior y texto HTML inerte",
+    "Propuesta rechazada conserva acuerdo vigente",
+    "Subida de versión real y descarga privada con bytes originales",
+    "Historial persistente tras recarga",
+    "Verificación del mismo pago, inicio y bloqueo de sublimación por aumento de total",
+    "Respuesta perdida después del commit: reintento conserva confirmación y no duplica cobro",
+    "Producción, liquidación y entrega persistidas con confirmación",
+    "Interfaz a 320 px sin desbordamiento horizontal",
+    "Respuesta atrasada ignorada; escritura vinculada al pedido visible",
+    "Archivo administrativo preserva estado e historial",
+    "Restauración BFCache después de cerrar sesión limpia expediente y lista"
+  ],
+  "errores": []
+}

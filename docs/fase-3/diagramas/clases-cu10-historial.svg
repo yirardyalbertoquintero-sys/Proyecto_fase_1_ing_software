@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2340" height="1454" viewBox="0 0 2340 1454">
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse"><path d="M1 1 L10 6 L1 11" fill="none" stroke="#42556b"/></marker>
+<marker id="triangle" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M1 1 L12 7 L1 13 Z" fill="white" stroke="#42556b"/></marker>
+<marker id="diamond" markerWidth="16" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1 6 L8 1 L15 6 L8 11 Z" fill="#42556b"/></marker></defs>
+<rect width="2340" height="1454" fill="white"/>
+<text x="60" y="51" text-anchor="start" font-family="Arial" font-size="28" font-weight="bold" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">CU-10 · Entidades, historial y proyección</text>
+<text x="60" y="85" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados.</text>
+<polyline points="860,212.25 980,212.25" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="920.0" y="206.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">detalles</text>
+<text x="920.0" y="225.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 1..*</text>
+<polyline points="440.0,429 440.0,655" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="440.0" y="536.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">historial</text>
+<text x="440.0" y="555.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 0..*</text>
+<polyline points="1540,212.25 1660,223.75" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="1600.0" y="212.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">historial</text>
+<text x="1600.0" y="231.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 0..*</text>
+<polyline points="860,741.7 980,707.2" fill="none" stroke="#42556b" stroke-width="2" marker-start="url(#diamond)"/>
+<text x="920.0" y="718.45" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">importes</text>
+<text x="920.0" y="737.45" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 1..*</text>
+<polyline points="1148.0,655 1148.0,429" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1148.0" y="526.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">cantidad</text>
+<text x="1148.0" y="545.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">original</text>
+<text x="1148.0" y="564.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">0..* → 1</text>
+<polyline points="692.0,429 692.0,655" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="692.0" y="526.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">vigente</text>
+<text x="692.0" y="545.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">aceptada</text>
+<text x="692.0" y="564.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">0..1 → 0..1</text>
+<polyline points="1540,342.29999999999995 1660,374.5" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1600.0" y="342.4" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">vigente</text>
+<text x="1600.0" y="361.4" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">aprobada</text>
+<text x="1600.0" y="380.4" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">0..1 → 0..1</text>
+<polyline points="1540,686.32 1600,686.32 1600,570 1800.0,570 1800.0,475" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1700.0" y="554.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">arte</text>
+<text x="1700.0" y="573.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">cotizado</text>
+<text x="1700.0" y="592.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">0..* → 0..1</text>
+<polyline points="2063.2,655 2063.2,475" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="2063.2" y="559.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">registra</text>
+<text x="2063.2" y="578.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 0..*</text>
+<polyline points="1940.0,829 1940.0,1044 720.0,1044 720.0,944" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1330.0" y="1038.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">registra</text>
+<text x="1330.0" y="1057.0" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 0..*</text>
+<polyline points="300,342.29999999999995 260,342.29999999999995 260,1211.0 300,1211.0" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="120.0" y="770.65" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">consulta verificados</text>
+<text x="120.0" y="789.65" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">1 → 0..*</text>
+<polyline points="980,1289.0 900,1289.0 900,1079 245,1079 245,226.7 300,226.7" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="120.0" y="656.85" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">proyeccion</text>
+<polyline points="980,1179.0 860,1167.5" fill="none" stroke="#42556b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 5"/>
+<text x="920.0" y="1167.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">suma</text>
+<text x="920.0" y="1186.25" text-anchor="middle" font-family="Arial" font-size="15" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">verificados</text>
+<rect x="300" y="140" width="560" height="289" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="140" width="560" height="65" fill="#193c58"/>
+<text x="316" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pedido</text>
+<text x="316" y="189" font-family="Arial" font-size="15" fill="white">«entidad»</text>
+<text x="314" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="314" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string codigo</text>
+<text x="314" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int cliente</text>
+<text x="314" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string estado</text>
+<text x="314" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string condicionAdministrativa</text>
+<text x="314" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateOnly? fechaEntregaAcordada</text>
+<text x="314" y="364" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionCotizacionVigente</text>
+<text x="314" y="387" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ICollection&lt;DetallePedido&gt; DetallePedido</text>
+<text x="314" y="410" font-family="Consolas,monospace" font-size="16" fill="#172b40">+ICollection&lt;VersionCotizacion&gt; VersionCotizacion</text>
+<rect x="980" y="140" width="560" height="289" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="140" width="560" height="65" fill="#193c58"/>
+<text x="996" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">DetallePedido</text>
+<text x="996" y="189" font-family="Arial" font-size="15" fill="white">«entidad»</text>
+<text x="994" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="994" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedido</text>
+<text x="994" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int cantidad</text>
+<text x="994" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string talla</text>
+<text x="994" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string color</text>
+<text x="994" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string tela</text>
+<text x="994" y="364" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string empaque</text>
+<text x="994" y="387" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal precioBaseReferencia</text>
+<text x="994" y="410" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionDisenoVigente</text>
+<rect x="1660" y="140" width="560" height="335" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="140" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="164" font-family="Arial" font-size="18" font-weight="bold" fill="white">VersionDiseno</text>
+<text x="1676" y="189" font-family="Arial" font-size="15" fill="white">«historial»</text>
+<text x="1674" y="226" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="1674" y="249" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int detalle</text>
+<text x="1674" y="272" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int numeroVersion</text>
+<text x="1674" y="295" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? archivoURL</text>
+<text x="1674" y="318" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? descripcion</text>
+<text x="1674" y="341" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateTimeOffset fechaRegistro</text>
+<text x="1674" y="364" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int responsableRegistro</text>
+<text x="1674" y="387" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string decision</text>
+<text x="1674" y="410" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateTimeOffset? fechaDecision</text>
+<text x="1674" y="433" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? responsableDecision</text>
+<text x="1674" y="456" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? referenciaDecision</text>
+<rect x="300" y="655" width="560" height="289" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="655" width="560" height="65" fill="#193c58"/>
+<text x="316" y="679" font-family="Arial" font-size="18" font-weight="bold" fill="white">VersionCotizacion</text>
+<text x="316" y="704" font-family="Arial" font-size="15" fill="white">«historial»</text>
+<text x="314" y="741" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="314" y="764" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedido</text>
+<text x="314" y="787" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int numeroVersion</text>
+<text x="314" y="810" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateTimeOffset fechaRegistro</text>
+<text x="314" y="833" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int responsableRegistro</text>
+<text x="314" y="856" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string decision</text>
+<text x="314" y="879" font-family="Consolas,monospace" font-size="16" fill="#172b40">+DateTimeOffset? fechaDecision</text>
+<text x="314" y="902" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? responsableDecision</text>
+<text x="314" y="925" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string? referenciaDecision</text>
+<rect x="980" y="655" width="560" height="174" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="655" width="560" height="65" fill="#193c58"/>
+<text x="996" y="679" font-family="Arial" font-size="18" font-weight="bold" fill="white">DetalleCotizacion</text>
+<text x="996" y="704" font-family="Arial" font-size="15" fill="white">«entidad»</text>
+<text x="994" y="741" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int versionCotizacion</text>
+<text x="994" y="764" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int detalle</text>
+<text x="994" y="787" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal precioUnitarioAcordado</text>
+<text x="994" y="810" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int? versionDiseno</text>
+<rect x="1660" y="655" width="560" height="174" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="1660" y="655" width="560" height="65" fill="#193c58"/>
+<text x="1676" y="679" font-family="Arial" font-size="18" font-weight="bold" fill="white">Usuario</text>
+<text x="1676" y="704" font-family="Arial" font-size="15" fill="white">«contexto»</text>
+<text x="1674" y="741" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="1674" y="764" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string nombre</text>
+<text x="1674" y="787" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string rol</text>
+<text x="1674" y="810" font-family="Consolas,monospace" font-size="16" fill="#172b40">+bool activo</text>
+<rect x="300" y="1124" width="560" height="174" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="300" y="1124" width="560" height="65" fill="#193c58"/>
+<text x="316" y="1148" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pago</text>
+<text x="316" y="1173" font-family="Arial" font-size="15" fill="white">«consulta_CU10»</text>
+<text x="314" y="1210" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="314" y="1233" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int pedido</text>
+<text x="314" y="1256" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal monto</text>
+<text x="314" y="1279" font-family="Consolas,monospace" font-size="16" fill="#172b40">+string estadoVerificacion</text>
+<rect x="980" y="1124" width="560" height="220" fill="#f7f9fc" stroke="#193c58" stroke-width="1.5"/>
+<rect x="980" y="1124" width="560" height="65" fill="#193c58"/>
+<text x="996" y="1148" font-family="Arial" font-size="18" font-weight="bold" fill="white">vPedido</text>
+<text x="996" y="1173" font-family="Arial" font-size="15" fill="white">«vista_sin_clave»</text>
+<text x="994" y="1210" font-family="Consolas,monospace" font-size="16" fill="#172b40">+int id</text>
+<text x="994" y="1233" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? totalReferencial</text>
+<text x="994" y="1256" font-family="Consolas,monospace" font-size="16" fill="#172b40">+bool? cotizacionAceptada</text>
+<text x="994" y="1279" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? total</text>
+<text x="994" y="1302" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? anticipoExigible</text>
+<text x="994" y="1325" font-family="Consolas,monospace" font-size="16" fill="#172b40">+decimal? saldoPendiente</text>
+<text x="60" y="1418" text-anchor="start" font-family="Arial" font-size="16" font-weight="normal" fill="#172b40" stroke="white" stroke-width="5" paint-order="stroke">+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md.</text>
+</svg>

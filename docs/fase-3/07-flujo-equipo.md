@@ -48,3 +48,7 @@ Los tres completan clases de diseño, MER/3FN, arquitectura y despliegue, protot
 El mapeo RUP debe distinguir artefactos de Inicio, Elaboración, Construcción y Transición, y señalar su disciplina y evidencia. Consolidar el informe de fases 1–4, historial de cambios, declaración honesta de uso de IA y originalidad, pruebas y ensayo de defensa. La fecha efectiva de entrega todavía no está confirmada.
 
 Publicar y comprobar el sitio cuando exista acceso al alojamiento. Medir los RNF según sus criterios; la disponibilidad mensual necesita observación y no se acredita con una prueba aislada. Preparar también una demostración local reproducible y una copia de recuperación, conforme a lo permitido por la guía.
+
+## Estado y reparto posteriores
+
+Las rondas anteriores conservan la planificación inicial. La reasignación vigente está en [REPARTO_ACTUAL](../planes/REPARTO_ACTUAL.md): Yirardy continúa los cuatro CU administrativos, ya conectados y probados. La [guía RC-01 a RC-06](../pruebas/revision-cruzada-administracion.md) está lista para otro integrante. El [cierre independiente](../seguimiento/cierre-tareas-yirardy-20261101.md) contiene diseño, RUP e informe disponibles; integración con Dylan y revisión cruzada humana siguen pendientes. La autorización actual permite publicar la rama personal, pero mantiene aplazados PR y main.

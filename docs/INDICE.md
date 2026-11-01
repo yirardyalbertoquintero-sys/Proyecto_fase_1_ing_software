@@ -10,15 +10,27 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Exigencias del docente | [Guías académicas](guias/README.md). |
 | Modelo, 3FN, arquitectura y decisiones | [Índice de fase 3](fase-3/00-inicio.md). |
 | Estado funcional por caso de uso | [Matriz de construcción](fase-3/05-trazabilidad.md). |
+| Correcciones del backend preparatorio de Carlos | [Correcciones del 30 de octubre](seguimiento/correcciones-carlos-2026-10-30.md). |
 | Ejecutar y depurar | [VS Code](ejecutar-en-vscode.md) y [README del proyecto](../README.md). |
 | Registro de clientes y pruebas realizadas | [CU-01](fase-3/08-registro-clientes.md). |
 | Acceso, cierre, permisos y duración de sesión | [CU-02](fase-3/09-acceso-sesiones.md). |
+| Política vigente de contraseñas para Cliente y primer Administrador | [Actualización del 31 de octubre](seguimiento/politica-contrasena-2026-10-31.md). |
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
 | Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
+| Configurar prendas y enviar solicitud real como Cliente | [CU-05/CU-06, contrato y comprobaciones](fase-3/16-solicitudes-cliente.md). |
+| Avance del cliente y tareas restantes después del informe 0.1 | [Corte de solicitudes del 1 de noviembre](seguimiento/avance-cliente-20261101.md). |
+| Prototipo navegable de revisión y cotización, sin guardado real | [CU-10 en preparación](fase-3/13-prototipo-revision-pedidos.md). |
+| Clases de CU-10, tipos y correspondencia con el código | [Diseño y explicación](fase-3/14-diseno-clases-cu10.md) y [tres páginas draw.io](fase-3/diagramas/Clases_CU10.drawio). |
+| Ejecutar y revisar CU-10, CU-11, CU-13 y CU-12 con SQL | [Pantalla, API, demostración local y pruebas](fase-3/15-administracion-pedidos.md). |
+| Revisión manual, defectos corregidos, guía de revisión cruzada y preparación de integración | [Registro del 31 de octubre](pruebas/revision-manual-administracion-20261031.md). |
 | Preparar e instalar la publicación | [Paquete y pruebas](fase-3/12-preparacion-publicacion.md) y [guía de MonsterASP.NET](despliegue/INSTALAR-MONSTERASP.md). |
 | Figuras editables | [Archivo draw.io](fase-3/diagramas/Impacto_Textil_Fase_3.drawio). |
 | Capturas de funcionamiento | `evidencias/`. |
 | Historial de preparación y organización | `seguimiento/`. |
+| Informe revisable de diseño y construcción | [Fases 3 y 4 en Word](entrega/Informe_Fases_3_y_4_Impacto_Textil.docx) y [fuente textual](entrega/Informe_Fases_3_y_4_Impacto_Textil.md). |
+| Correspondencia con RUP | [Mapeo actualizado](entrega/mapeo-rup.md). |
+| Revisión cruzada para ejecutar por otro integrante | [Guía y registro RC-01 a RC-06](pruebas/revision-cruzada-administracion.md). |
+| Cierre de tareas independientes del líder | [Estado al 1 de noviembre](seguimiento/cierre-tareas-yirardy-20261101.md). |
 | Documentos anteriores y extracciones antiguas | [Archivo histórico](archivo/README.md). |
 
 El plan distribuye trabajo y las guías fijan criterios académicos; ninguno reemplaza los requisitos comerciales del DOCX. Los estados de implementación están en la matriz y sus evidencias, no en las versiones antiguas de planes o instrucciones.

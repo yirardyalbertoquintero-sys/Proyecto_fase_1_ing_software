@@ -1,10 +1,16 @@
 Proyecto ing software
 
-# Impacto Textil — inicio de las fases 3 y 4
+# Impacto Textil — fases 3 y 4, rama Carlos_Borrell
 
 Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
 
-**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`, rama `Yirardy_Quintero`. Abre esta carpeta completa en VS Code. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+
+**Actualización del 1 de noviembre de 2026:** Yirardy adelantó CU-05/CU-06: configurar prendas, carrito temporal y solicitud con archivos privados, pantalla/API/SQL y reintentos sin duplicados. Para solicitudes nuevas se ofrece únicamente **Bolsa estándar**, por su indicación expresa. Ejecutar con F5 y entrar como Cliente en **Mi sesión → Solicitar cotización**. La suite vigente tiene 107 pruebas; las evidencias y límites están en [CU-05/CU-06](docs/fase-3/16-solicitudes-cliente.md). CU-07/CU-08, revisión humana del nuevo recorrido, integración en main y alojamiento siguen pendientes. Las actualizaciones anteriores conservan su fecha y alcance.
+
+**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. Yirardy ya recorrió los escenarios manuales administrativos; la revisión cruzada del compañero y la integración del recorrido del cliente de Dylan siguen pendientes. Ver [revisión manual y preparación de integración](docs/pruebas/revision-manual-administracion-20261031.md). [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
+
+**Antecedente del 30 de octubre de 2026:** se reunieron las historias de Carlos y Yirardy conservando los commits anteriores, y se corrigieron servicios, almacenamiento privado y DTO monetarios. En ese cierre todavía faltaba la conexión administrativa, completada en la actualización del 31. Ver [correcciones y comprobaciones de ese cierre](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
 **Estado al 29 de octubre de 2026:** CU-01, CU-02, CU-04 y CU-09 implementados y probados localmente: registro, acceso/cierre, permisos, catálogo público y administración de variantes con fotos y baja lógica. La sesión vence tras 10 minutos de inactividad. Hay un comando controlado para crear el primer Administrador. Pedidos, pagos, producción y alojamiento en MonsterASP.NET siguen pendientes. Los hitos están en [CU-01](docs/fase-3/08-registro-clientes.md), [CU-02](docs/fase-3/09-acceso-sesiones.md), [CU-09](docs/fase-3/10-catalogo-administracion.md) y [CU-04](docs/fase-3/11-catalogo-publico.md). La revisión de Dylan y la integración en main siguen pendientes.
 
@@ -34,7 +40,17 @@ Puedes crear variantes, consultar y filtrar el listado, cambiar datos/precio/fot
 
 Ejecuta con **F5** y pulsa **Explorar el catálogo de prendas**, desde el registro o la pantalla de sesión. También aparece **Ver catálogo** en la administración. No necesitas cuenta para consultar. Si la versión anterior está abierta, detenla con **Shift+F5** antes de volver a ejecutar.
 
-Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. La configuración de prendas y el envío de solicitudes corresponden a CU-05/CU-06 y aún no están implementados.
+Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. **Solicitar cotización** abre CU-05/CU-06; el detalle permite configurar la variante consultada. El envío revalida sus características y precio antes de guardar.
+
+## Prototipo de revisión de pedidos
+
+El prototipo anterior sigue disponible en **Gestionar catálogo → Pedidos · prototipo**, con acciones ficticias en memoria que se reinician al recargar. Se conserva como antecedente: [alcance y capturas](docs/fase-3/13-prototipo-revision-pedidos.md). Para la implementación con persistencia, abrir **Gestionar pedidos**.
+
+El [diseño de clases de CU-10](docs/fase-3/14-diseno-clases-cu10.md) explica tipos, operaciones, Repository/DTO e historial. Incluye [tres páginas editables en draw.io](docs/fase-3/diagramas/Clases_CU10.drawio) y fuentes Mermaid, actualizadas con el controlador implementado. Las pruebas se documentan por separado del diseño.
+
+## Revisar los pedidos administrativos
+
+Con F5 y una sesión de Administrador, abrir **Gestionar pedidos**. Si la base está vacía, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear pedidos de demostracion**. Confirmar `DEMO` en esa terminal y volver a ejecutar con F5. Se agregan tres pedidos ficticios a la base local; repetir la tarea conserva las decisiones existentes. Requiere haber preparado la base y creado primero el Administrador. Los pedidos nuevos usan un comprobante ficticio legible; los existentes conservan sus archivos históricos, incluso la muestra anterior de 4 × 4 píxeles. [Recorridos de evaluación y límites](docs/fase-3/15-administracion-pedidos.md).
 
 ## Preparar publicación
 
@@ -68,13 +84,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-Para ejecutar **las 20 pruebas**, incluidas las 11 de integración con SQL Server:
+La suite vigente contiene 107 pruebas: las 92 del cierre anterior (51 de la base, 18 de archivos privados/serialización, 14 administrativas y 9 de contraseñas) más 15 de solicitudes del cliente. La evidencia de CU-05/CU-06 registra la ejecución completa con SQL real y el recorrido de navegador por separado. Para repetir la suite:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin ese script, las 11 pruebas que requieren SQL se muestran como omitidas. Una prueba de integración también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`.
+Sin configurar SQL, las 69 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
@@ -129,6 +145,10 @@ Generar el paquete no lo publica. La compatibilidad del alojamiento, HTTPS públ
 
 El frontend se copia a `wwwroot` de la compilación y del paquete de publicación. La API lo sirve desde el mismo origen. No necesita npm ni un framework de JavaScript.
 
-## Próxima tarea de Yirardy
+## Próximo paso del bloque administrativo
 
-Revisar CU-01 con el equipo y continuar con **CU-02: inicio y cierre de sesión**, acordando la duración de sesión pendiente en el SRS. Después CU-09 y CU-04. La contraseña mínima de 15 caracteres fue confirmada por Yirardy en esta conversación el 28 de octubre de 2026; el límite de BCrypt se valida sin recorte silencioso.
+Yirardy asumió y autorizó completar CU-10/CU-11/CU-13/CU-12 en esta rama, con contratos y pruebas funcionales administrativas. El bloque local está conectado; el siguiente hito es su revisión humana y posterior coordinación con las solicitudes, comprobantes y consulta de Dylan. Main, alojamiento e informe final continúan aplazados. La política actualizada el 31 de octubre exige contraseña nueva de al menos 8 caracteres, con mayúscula, minúscula, número y símbolo; máximo 72 bytes UTF-8 sin recorte. La sesión conserva 10 minutos de inactividad y las cuentas anteriores siguen pudiendo entrar. Ver [cambio y comprobaciones](docs/seguimiento/politica-contrasena-2026-10-31.md).
+
+## Consolidación del 1 de noviembre
+
+El [informe de fases 3 y 4](docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.docx), su [fuente textual](docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.md) y el [mapeo RUP](docs/entrega/mapeo-rup.md) reúnen el corte técnico disponible. Los diagramas se contrastaron con el código y se corrigieron los estados obsoletos. [Cierre y pendientes](docs/seguimiento/cierre-tareas-yirardy-20261101.md). La [guía de revisión cruzada](docs/pruebas/revision-cruzada-administracion.md) está preparada, sin dictamen atribuido al compañero. El script Test-Registro reconciliado ejecutó 92 pruebas aprobadas sin omisiones en Release; los borradores y el Word aprobado siguen conservados. No se acredita integración del cliente, main ni alojamiento.

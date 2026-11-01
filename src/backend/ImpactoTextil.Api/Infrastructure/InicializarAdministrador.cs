@@ -16,7 +16,7 @@ public static class InicializarAdministrador
         Console.WriteLine("Creación controlada del primer Administrador. No modifica cuentas existentes.");
         Console.Write("Nombre: "); var nombre = Console.ReadLine() ?? "";
         Console.Write("Correo: "); var correo = Console.ReadLine() ?? "";
-        Console.Write("Contraseña (mínimo 15 caracteres, no se mostrará): "); var clave = LeerClave();
+        Console.Write("Contraseña (mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo; no se mostrará): "); var clave = LeerClave();
         Console.Write("Repite la contraseña: "); var confirmacion = LeerClave();
         if (clave != confirmacion) { Console.Error.WriteLine("Las contraseñas no coinciden. No se creó la cuenta."); return 1; }
         try

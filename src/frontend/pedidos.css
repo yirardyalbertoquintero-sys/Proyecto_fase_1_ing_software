@@ -1,0 +1,218 @@
+.gestion-pedidos {
+    background: #faf8f4;
+    color: #203b3c;
+}
+.cabecera-gestion {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem 4vw;
+    border-bottom: 1px solid #d9ded8;
+}
+.cabecera-gestion nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.gestion-pedidos main {
+    max-width: 1500px;
+    margin: auto;
+    padding: 2rem 4vw;
+}
+.gestion-pedidos h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+.nota {
+    padding: 1rem 0;
+    border-block: 1px solid #d9ded8;
+    color: #5c6867;
+}
+.filtros-gestion {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+    margin: 2rem 0;
+}
+.columnas-gestion {
+    display: grid;
+    grid-template-columns: minmax(210px, 1fr) minmax(0, 3fr);
+    gap: 2rem;
+}
+.pedido-lista {
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    background: white;
+    color: #203b3c;
+    border: 1px solid #c9d2cc;
+    border-radius: 8px;
+}
+.pedido-lista[aria-current="true"] {
+    border: 2px solid #245953;
+}
+.pedido-lista span {
+    display: block;
+    margin-top: 0.4rem;
+    font-weight: normal;
+}
+#expediente {
+    min-width: 0;
+}
+#expediente section {
+    margin: 1.5rem 0;
+    padding: 1.4rem;
+    background: white;
+    border: 1px solid #d9ded8;
+    border-radius: 10px;
+}
+#expediente article {
+    border-top: 1px solid #dde2df;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+.resumen-importes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 1rem;
+}
+.resumen-importes div {
+    padding: 0.7rem 0;
+}
+.resumen-importes dt {
+    font-size: 0.9rem;
+    color: #566a68;
+}
+.resumen-importes dd {
+    margin: 0.4rem 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.gestion-pedidos form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: end;
+    margin: 1rem 0;
+}
+.gestion-pedidos form .campo {
+    flex: 1 1 180px;
+    min-width: 0;
+}
+.gestion-pedidos input,
+.gestion-pedidos select,
+.gestion-pedidos textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    border: 1px solid #bcc9c3;
+    border-radius: 6px;
+    color: #203b3c;
+    background: white;
+    font: inherit;
+}
+.gestion-pedidos textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+.gestion-pedidos label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+.gestion-pedidos button {
+    cursor: pointer;
+    max-width: 100%;
+    white-space: normal;
+}
+.gestion-pedidos button:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+.acciones {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+.alerta-pedido {
+    border-left: 4px solid #ad6b25;
+    padding: 0.8rem 1rem;
+    background: #fff6e6;
+}
+.gestion-pedidos p,
+.gestion-pedidos dd,
+.gestion-pedidos h2,
+.gestion-pedidos h3,
+.gestion-pedidos summary {
+    overflow-wrap: anywhere;
+}
+#resultado-pedidos {
+    padding: 1rem;
+    border: 1px solid #8faaa0;
+    background: #eef6f0;
+}
+#resultado-pedidos.error {
+    background: #fff1ec;
+    border-color: #b77a65;
+}
+.gestion-pedidos footer {
+    padding: 2rem 4vw;
+    border-top: 1px solid #d9ded8;
+}
+.gestion-pedidos [hidden] {
+    display: none !important;
+}
+.gestion-pedidos details {
+    margin: 0.8rem 0;
+}
+.gestion-pedidos summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+.gestion-pedidos :focus-visible {
+    outline: 3px solid #ad6b25;
+    outline-offset: 3px;
+}
+.gestion-pedidos .ceja {
+    color: #8b4d2c;
+}
+@media (max-width: 850px) {
+    .columnas-gestion {
+        grid-template-columns: 1fr;
+    }
+    .filtros-gestion {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cabecera-gestion {
+        align-items: flex-start;
+    }
+    .gestion-pedidos main {
+        padding: 1.5rem 5vw;
+    }
+}
+@media (max-width: 480px) {
+    .filtros-gestion {
+        grid-template-columns: 1fr;
+    }
+    .cabecera-gestion {
+        flex-direction: column;
+    }
+    .gestion-pedidos form {
+        align-items: stretch;
+    }
+    .gestion-pedidos form button {
+        width: 100%;
+    }
+    #expediente section {
+        padding: 1rem;
+    }
+    .resumen-importes {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -2,7 +2,7 @@
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#41556b"/></marker></defs>
 <rect width="1560" height="950" fill="white"/>
 <text x="40" y="40" font-family="Arial" font-size="27" font-weight="bold" fill="#172b40">Arquitectura de Impacto Textil</text>
-<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">MVC con servicios, repositorios y DTO. Implementados: registro y disponibilidad; los demás módulos están pendientes.</text>
+<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">Implementados localmente: acceso, catálogo y administración de pedidos. CU-05 a CU-08 pendientes de integración.</text>
 <polyline points="360,190 600,190" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
 <text x="480" y="175" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">HTTPS · JSON / archivos</text>
 <polyline points="920,190 1160,190" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
@@ -55,4 +55,4 @@
 <text x="614" y="784" font-family="Arial" font-size="18" font-weight="bold" fill="white">Almacenamiento privado</text>
 <text x="614" y="817" font-family="Arial" font-size="16" fill="#172b40">Fuera del contenido público</text>
 <text x="614" y="840" font-family="Arial" font-size="16" fill="#172b40">Originales y comprobantes</text>
-<text x="40" y="926" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>
+<text x="40" y="926" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Diseño contrastado con la rama Carlos_Borrell · 1 de noviembre de 2026</text></svg>

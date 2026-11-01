@@ -41,6 +41,6 @@
 <rect x="40" y="780" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
 <rect x="40" y="780" width="320" height="36" rx="5" fill="#193c58"/>
 <text x="54" y="804" font-family="Arial" font-size="18" font-weight="bold" fill="white">Estación de desarrollo</text>
-<text x="54" y="837" font-family="Arial" font-size="16" fill="#172b40">Git; rama Yirardy_Quintero</text>
+<text x="54" y="837" font-family="Arial" font-size="16" fill="#172b40">Git; rama Carlos_Borrell</text>
 <text x="54" y="860" font-family="Arial" font-size="16" fill="#172b40">SDK .NET 10; SQL Server local</text>
-<text x="40" y="976" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>
+<text x="40" y="976" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Diseño contrastado con la rama Carlos_Borrell · 1 de noviembre de 2026</text></svg>

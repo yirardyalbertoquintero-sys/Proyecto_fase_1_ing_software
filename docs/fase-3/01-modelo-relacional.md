@@ -39,7 +39,7 @@ Las últimas dos tablas materializan el registro exigido en 4.6: la comprobació
 | --- | --- |
 | Pedido.totalReferencial | `vPedido`: suma de cantidad por precioBaseReferencia de los detalles originales. |
 | Pedido.total | Total de `versionCotizacionVigente`, calculado desde sus líneas. NULL antes de aceptar. |
-| Pedido.porcentajeAnticipo | Valor constante 50.00 en la vista y en la futura lógica de dominio. |
+| Pedido.porcentajeAnticipo | Valor constante 50.00 en la vista y en las reglas administrativas implementadas. |
 | Pedido.anticipoExigible | `CEILING(total * 50) / 100`; por ejemplo 100.01 genera 50.01. |
 | Pedido.saldoPendiente | Total aceptado menos suma de pagos Verificados. NULL sin cotización aceptada. |
 | Pedido.cotizacionAceptada | Existencia de una referencia vigente a una versión propia y Aceptada. |
@@ -67,11 +67,11 @@ Las constancias de cobro directo se conservan en Pago.referencia, con responsabl
 - Correo: índice único sin distinguir mayúsculas, con normalización de espacios en el servicio y rechazo de espacios exteriores en la base. La sintaxis del correo se valida en el servidor.
 - Archivos: referencias privadas o públicas según el diccionario, no contenido binario en SQL ni rutas privadas expuestas al navegador.
 
-## Integridad y transacciones pendientes de implementación
+## Integridad implementada y contrato pendiente de integración
 
-El prototipo prueba claves únicas, referencias, rangos, metadatos de decisiones, pertenencia de las versiones vigentes y preservación de versiones resueltas. Las versiones correlativas se reservarán bloqueando su pedido o detalle; no se calculará MAX(numeroVersion)+1 sin control concurrente.
+El prototipo prueba claves únicas, referencias, rangos, metadatos de decisiones, pertenencia de las versiones vigentes y preservación de versiones resueltas. Los servicios administrativos reservan las versiones correlativas tras bloquear el Pedido dentro de una transacción; no calculan MAX(numeroVersion)+1 sin control concurrente.
 
-Los servicios deben completar las reglas que abarcan varios registros: cliente y administradores con roles correctos; productos activos; cobertura de todas las líneas al aceptar; total no inferior a pagos recibidos; saldo no negativo; archivo solo sin acuerdos ni cobros; producción con todos los diseños aprobados; entrega bajo la política documentada. No basta con ejecutar INSERT o UPDATE sobre una tabla.
+Los servicios administrativos ya comprueban roles, cobertura de líneas, total no inferior a pagos verificados, saldo no negativo, archivo sin acuerdos ni cobros, aprobación de todos los diseños y entrega bajo la política documentada. Estas operaciones se probaron por HTTP/SQL. La revalidación de productos activos y la solicitud atómica del cliente se verificarán al integrar CU-06. No basta con ejecutar INSERT o UPDATE sobre una tabla.
 
 Para pagos y nueva cotización, bloquear primero el Pedido de la operación dentro de una transacción y después releer cotización, pagos y versiones. Conservar ese orden en todos los servicios, confirmar una sola vez y manejar conflictos con respuesta comprensible. `controlConcurrencia` permite detectar cambios de una pantalla desactualizada; no reemplaza la serialización de los cálculos agregados.
 

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Gestión de pedidos · Impacto Textil</title>
+        <link rel="icon" type="image/svg+xml" href="/marca.svg" />
+        <link rel="stylesheet" href="/estilos.css" />
+        <link rel="stylesheet" href="/pedidos.css" />
+        <script src="/pedidos.js" defer></script>
+    </head>
+    <body class="gestion-pedidos">
+        <a class="saltar" href="#contenido">Ir a los pedidos</a>
+        <header class="cabecera-gestion">
+            <a class="marca" href="/acceso.html"
+                ><img src="/marca.svg" width="40" height="40" alt="" /><span
+                    >IMPACTO<br /><strong>TEXTIL</strong></span
+                ></a
+            >
+            <nav aria-label="Navegación principal">
+                <a href="/administracion.html">Gestionar catálogo</a
+                ><a href="/acceso.html">Mi sesión</a>
+            </nav>
+        </header>
+        <main id="contenido">
+            <p class="ceja">ADMINISTRACIÓN</p>
+            <h1>Gestión de pedidos</h1>
+            <p>
+                Revisa acuerdos, diseños, cobros y avance de producción. Los
+                cambios confirmados se conservan en el expediente.
+            </p>
+            <p class="nota">
+                Demostración académica · Utiliza datos ficticios. La
+                verificación de un pago requiere comprobar su recepción fuera de
+                esta aplicación.
+            </p>
+            <p id="estado-acceso" role="status">Comprobando la sesión…</p>
+            <section id="acceso-denegado" hidden>
+                <p>
+                    Inicia sesión con una cuenta de Administrador para gestionar
+                    pedidos.
+                </p>
+                <a href="/acceso.html">Ir a mi sesión</a>
+            </section>
+            <p id="resultado-pedidos" role="status" tabindex="-1" hidden></p>
+            <div id="gestion" hidden>
+                <div class="filtros-gestion">
+                    <div class="campo">
+                        <label for="buscar">Código o cliente</label
+                        ><input id="buscar" type="search" maxlength="150" />
+                    </div>
+                    <div class="campo">
+                        <label for="estado">Estado</label
+                        ><select id="estado">
+                            <option value="">Todos</option>
+                            <option>Pendiente</option>
+                            <option>En producción</option>
+                            <option>Listo para entrega</option>
+                            <option>Entregado</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="condicion">Condición administrativa</label
+                        ><select id="condicion">
+                            <option>Activa</option>
+                            <option>Archivada</option>
+                            <option>Todas</option>
+                        </select>
+                    </div>
+                    <button
+                        id="actualizar"
+                        type="button"
+                        class="boton-secundario"
+                    >
+                        Actualizar pedidos
+                    </button>
+                </div>
+                <div class="columnas-gestion">
+                    <section aria-labelledby="titulo-lista">
+                        <h2 id="titulo-lista">Pedidos</h2>
+                        <p id="estado-lista" role="status"></p>
+                        <div id="lista-pedidos"></div>
+                    </section>
+                    <section id="expediente" aria-label="Expediente del pedido">
+                        <p>Selecciona un pedido para revisar su expediente.</p>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>Impacto Textil · Administración de pedidos</footer>
+    </body>
+</html>

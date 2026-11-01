@@ -1,0 +1,30 @@
+[
+  {
+    "evidencia": "01-cotizaciones.png",
+    "origen": "codex-clipboard-e0b09dcc-ca2f-4afc-bb28-f0445908a0a2.png",
+    "sha256_origen": "03bf47f909476a0f3564710f3812288e18c7230cefdec3463b1621f3e57d7416",
+    "sha256_evidencia": "86a0a05872b416872593edc1cf21f25fbfc93843ef33ec1603046f429c9ca2f1",
+    "tratamiento": "Recorte de la zona de contenido sin alterar sus datos"
+  },
+  {
+    "evidencia": "02-entregado.png",
+    "origen": "codex-clipboard-e7484c2f-9c3a-46e6-aa65-451b99ccf52d.png",
+    "sha256_origen": "a73d04f226bb7828d04d4ab6fa8c3134fe8cb231bfb776ebe45880fa4f0a9bb0",
+    "sha256_evidencia": "c4640b9caf839623d3b5dda6f14632de89e27a686beeae12a1ecc21539792f5f",
+    "tratamiento": "Recorte de la zona de contenido sin alterar sus datos"
+  },
+  {
+    "evidencia": "03-archivada.png",
+    "origen": "codex-clipboard-a98f776f-405a-4a9e-95be-c95c1524f2af.png",
+    "sha256_origen": "5c16dc3963c05e10c9a19fe25ac1decabbcb6da48e3777a9a279bf6f46f847c7",
+    "sha256_evidencia": "a56d74f416d5496785bb9cbac7c6d6c009b2d9fede57cebce6c4c432a10e0c5a",
+    "tratamiento": "Recorte de la zona de contenido sin alterar sus datos"
+  },
+  {
+    "evidencia": "def01-comprobante-anterior.png",
+    "origen": "codex-clipboard-4753b74b-8caa-4585-872b-5c8a3a1c8ed5.png",
+    "sha256_origen": "7c7da42a4cc123ad0e98ca75b2fdef434ebf4bed663a8f1f5ed1751b805c04c0",
+    "sha256_evidencia": "7c7da42a4cc123ad0e98ca75b2fdef434ebf4bed663a8f1f5ed1751b805c04c0",
+    "tratamiento": "Imagen original de 4 x 4 píxeles"
+  }
+]

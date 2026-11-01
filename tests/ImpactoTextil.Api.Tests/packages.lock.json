@@ -559,6 +559,15 @@
         "resolved": "13.0.3",
         "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
       },
+      "PDFsharp": {
+        "type": "Transitive",
+        "resolved": "6.2.4",
+        "contentHash": "GhTr9F1uOYXHCIEOB5PXIgqn5a8WLsJL2m0eewTA0IvY1j6N4HGXHKKmEyB90/N6vrjmYamf41V9zbmdW2HY3g==",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        }
+      },
       "StbImageSharp": {
         "type": "Transitive",
         "resolved": "2.30.16",
@@ -656,6 +665,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "[4.2.0, )",
           "Microsoft.EntityFrameworkCore.SqlServer": "[10.0.14, )",
+          "PDFsharp": "[6.2.4, )",
           "StbImageSharp": "[2.30.16, )",
           "System.Security.Cryptography.Pkcs": "[10.0.14, )"
         }

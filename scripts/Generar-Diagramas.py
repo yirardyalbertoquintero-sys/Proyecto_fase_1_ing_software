@@ -69,7 +69,7 @@ pages = [
         edge('u','c','responsable: 1 → 0..*',[(760,600),(760,260)],(890,420)),
         edge('vd','d','versión: 1 → 0..*',[(1320,600),(1320,215)],(1410,420)),
     ]),
-    dict(name='arquitectura',title='Arquitectura de Impacto Textil',subtitle='MVC con servicios, repositorios y DTO. Implementados: registro y disponibilidad; los demás módulos están pendientes.',width=1560,height=950,
+    dict(name='arquitectura',title='Arquitectura de Impacto Textil',subtitle='Implementados localmente: acceso, catálogo y administración de pedidos. CU-05 a CU-08 pendientes de integración.',width=1560,height=950,
     nodes=[
         node('b','Vista en el navegador',40,140,['HTML, CSS y JavaScript','Cliente o Administrador','Mismo origen; interfaz adaptable']),
         node('c','Controladores ASP.NET Core',600,140,['DTO de entrada y salida','Autenticación y autorización','Errores comprensibles']),
@@ -93,7 +93,7 @@ pages = [
         node('w','Aplicación publicada',1160,150,['ASP.NET Core y frontend','Runtime .NET 10 por comprobar']),
         node('sql','SQL Server del proveedor',1160,520,['Conexión configurada como secreto','Cuota y compatibilidad por probar']),
         node('f','Ruta privada del proveedor',600,520,['Persistencia por comprobar','Acceso desde la aplicación']),
-        node('dev','Estación de desarrollo',40,780,['Git; rama Yirardy_Quintero','SDK .NET 10; SQL Server local']),
+        node('dev','Estación de desarrollo',40,780,['Git; rama Carlos_Borrell','SDK .NET 10; SQL Server local']),
     ],edges=[
         edge('n','h','HTTPS',[(360,195),(600,195)],(480,180)),
         edge('h','w','Mismo origen',[(920,195),(1160,195)],(1040,180)),
@@ -123,7 +123,7 @@ for page in pages:
         SubElement(cell, 'mxGeometry', x=str(x), y=str(y), width=str(w), height=str(h), **{'as':'geometry'})
     text_cell('title', page['title'], 40, 12, width-80, 34, 27, True)
     text_cell('subtitle', page['subtitle'], 40, 48, width-80, 30)
-    footer = 'Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026'
+    footer = 'Impacto Textil · Diseño contrastado con la rama Carlos_Borrell · 1 de noviembre de 2026'
     text_cell('footer', footer, 40, height-44, width-80, 28, 14)
     by_key = {n['key']: n for n in page['nodes']}
     for number, e in enumerate(page['edges']):

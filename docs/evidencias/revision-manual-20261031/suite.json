@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-31",
+  "rama": "Carlos_Borrell",
+  "baseCommit": "03694db",
+  "cambiosValidados": "comprobante ficticio legible y HTTP 201/200 de cobros; pruebas existentes de idempotencia y concurrencia actualizadas",
+  "comando": "dotnet test ImpactoTextil.slnx -c Release --no-build --logger \"trx;LogFileName=cierre.trx\" --results-directory artifacts/revision-manual-20261031",
+  "SQL": "IMPACTOTEXTIL_PRUEBAS_SQL configurada para SQL Server local; fixtures con bases temporales propias",
+  "total": 92,
+  "aprobadas": 92,
+  "fallidas": 0,
+  "omitidas": 0,
+  "trxLocal": "artifacts/revision-manual-20261031/cierre.trx",
+  "limite": "No sustituye revisión cruzada humana ni integración con los CU de Dylan"
+}

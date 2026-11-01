@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-01",
+  "documento": "docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.docx",
+  "sha256": "dc0e545247de329dbac5b0d628ed8a2ee91c4f24b7e09b00ffd262e45dfad889",
+  "fuente": "docs/entrega/Informe_Fases_3_y_4_Impacto_Textil.md",
+  "sha256_fuente": "25cdaae441783cfcf8c607aa34a2ac95e1bcdb9af0fdf60ccba1cb81a77c3a29",
+  "renderizador": "Exportación PDF de Microsoft Word y rasterización Poppler; render_docx.py diagnosticó ausencia de LibreOffice",
+  "paginas": 19,
+  "revisionVisual": "19 páginas inspeccionadas; portada sin borde decorativo, índice actualizado, tablas legibles, pies y figuras completas",
+  "anexos": "8 figuras ampliadas con fuentes editables",
+  "alcance": "Informe revisable de F3/F4; no acredita integración del cliente ni aceptación humana independiente"
+}

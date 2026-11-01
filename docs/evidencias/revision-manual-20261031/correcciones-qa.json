@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-31",
+  "entorno": "Development; SQL aislado y Chrome headless",
+  "comprobaciones": [
+    {
+      "resultado": "PASS",
+      "descripcion": "Descarga real desde pedidos.html con sesión Administrador; bytes iguales al recurso legible",
+      "sha256": "780eee36e34e1a333ff84bd24e24d03ff26ff21dc7f67120d00783f2b8c7ad42"
+    },
+    {
+      "resultado": "PASS",
+      "descripcion": "Repetir la herramienta conserva los tres expedientes completos y todos sus archivos privados"
+    }
+  ],
+  "dimensionPng": [
+    1000,
+    700
+  ],
+  "baseDelUsuarioModificada": false
+}

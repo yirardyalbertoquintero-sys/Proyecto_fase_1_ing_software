@@ -1,8 +1,8 @@
 classDiagram
     class RegistrarClienteDto {
-        +string nombre
-        +string correo
-        +string contrasena
+        +string? nombre
+        +string? correo
+        +string? contrasena
         +bool aceptacionTerminos
         +Validate(ValidationContext) IEnumerable~ValidationResult~
     }
@@ -14,7 +14,7 @@ classDiagram
         +Registrar(RegistrarClienteDto, CancellationToken) Task~IActionResult~
     }
     class RegistroClienteService {
-        +RegistrarAsync(RegistrarClienteDto, CancellationToken) Task~ClienteCreadoDto~
+        +RegistrarAsync(RegistrarClienteDto, CancellationToken) Task~ClienteCreadoDto?~
     }
     class IUsuarioRepository {
         <<interface>>
@@ -37,7 +37,7 @@ classDiagram
         +string rol
         +bool activo
         +bool aceptacionTerminos
-        +DateTimeOffset fechaAceptacion
+        +DateTimeOffset? fechaAceptacion
     }
     ClientesController ..> RegistrarClienteDto : recibe
     ClientesController --> RegistroClienteService : invoca

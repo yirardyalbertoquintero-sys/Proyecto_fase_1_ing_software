@@ -1,0 +1,357 @@
+{
+  "fecha": "2026-10-31",
+  "rama": "Carlos_Borrell",
+  "configuracion": "Release; HTTP de prueba y SQL Server real en bases temporales propias",
+  "contadores": {
+    "total": "83",
+    "executed": "83",
+    "passed": "83",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "pruebas": [
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.CookieManipulada_NoAutentica_YNoSePuedeCambiarCuentaConSesionAbierta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.ImagenDisponibleSoloSiEsPublicaYReferenciada_NoAceptaRutasPrivadasOExternas",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.DisponibilidadTests.ConexionDisponible_Responde200SinDatosInternos",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.IntentosExcesivos_Responden429SinBloquearLaCuenta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.SesionExpiraTrasDiezMinutosSinUso_YLaActividadRenuevaElPlazo",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.PngRealDeDiezMillonesDeBytes_SeConservaYUnByteAdicionalSeRechaza",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.ReferenciasAnterioresPrivadasOExternas_NoSeExponenPorElCatalogoPublico",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.RolInyectado_EsRechazadoSinCrearCuenta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.ContraseñasAscii_RespetanLosLimitesConfirmados(longitud: 15, valida: True)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.AccesoSinTokenODatosInyectados_NoCreaSesion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Produccion_AumentoExige200Adicionales_YEntregaConConstanciaYSaldoCero",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Repositorio_FalloTrasGuardarPasoRevierteTodosLosCambios",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Permisos_Csrf_DatosDesconocidos_YFiltrosSeValidanEnServidor",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.AccesoNormalizaCorreo_CookieSeguraNoPersistente_SinSecretos",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.ArchivoAlteradoEnDisco_NoSeEntregaComoImagenValida",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AlmacenSesionesTests.ConsultaConcurrente_ReleeLaRenovacionAntesDeDeclararVencidaLaSesion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.RutaFueraDelAlmacen_YRaizPublica_SeDeniegan",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.EvidenciaPendiente_SeResuelveElMismoPago_SinDoblesCreditosNiReescrituras",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.ContraseñasAscii_RespetanLosLimitesConfirmados(longitud: 73, valida: False)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.FirmaCorrectaConContenidoFalsoOTruncado_NoSeGuarda(bytes: [255, 216, 255, 217], tipo: DisenoCliente)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.ImagenFalsaDanadaYFormatoEquivocado_SeRechazanSinGuardar",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.PagoSinRespaldoOMontoSuperior_SeDeniega_SinModificarSaldo",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.FirmaCorrectaConContenidoFalsoOTruncado_NoSeGuarda(bytes: [37, 80, 68, 70, 45, ···], tipo: ComprobantePago)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.PermisosSeTomanDeLaCuenta_ClienteNoAdminYViceversa",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.DosEvidenciasConcurrentes_SeRevalidaSaldoDentroDeLaTransaccion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministradorInicialTests.InicializacionControlada_ValidaNoPromueveClientesYResisteDosCreacionesSimultaneas",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.TokenDeOtroNavegador_EsRechazadoYCookiesSonSeguras",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.CambiarCatalogoNoReescribeLaConfiguracionNiImportesDelPedido",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.BCrypt_GeneraSalesDistintasYVerificaLaContraseñaCompleta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.MuchosIntentos_Reciben429SinCrearRegistros",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.FormatoImportesAdminTests.Cotizacion_ConservaCentavosGrandesSinConvertirIdentificadoresEnTexto",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.DesactivarCambiarRolOClave_InvalidaLaSesionYaAbierta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.ClaveIncorrectaCorreoAusenteEInactivo_MismaDenegacionSinSesion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.VisitanteClienteYAdministrador_PuedenConsultarSinConcederAdministracionPublica",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.Administrador_CreaConsultaEditaYDesactiva_SinEliminarLaVariante",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.SinTokenAntifalsificacion_NoSeAceptaElRegistro",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.FormatoImportesAdminTests.PrecioEntrante_AdmiteImporteExactoComoTextoONumero(valor: \"\\\"9999999999999999.99\\\"\")",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.PreciosEnteros_ConservanVersionValidaAlVolverDeSql",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.PdfReal_ConservaOriginalYNoSeAceptaComoDiseno",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Anticipo_RedondeaArriba_YConstanciaSinPersonalizacionNoExigeImagen",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.DosAdministradores_CobrosConcurrentesNoGeneranSaldoNegativo",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.CobroDirecto_IdempotenciaExacta_ReferenciasDuplicadas_YFechaDiferente",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AlmacenSesionesTests.LimpiezaConcurrente_NoBorraUnaSesionQueAcabaDeRenovarse",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.FirmaCorrectaConContenidoFalsoOTruncado_NoSeGuarda(bytes: [37, 80, 68, 70, 45, ···], tipo: ComprobantePago)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.CerrarSesion_ExigeTokenYRevocaInclusoLaCookieAnterior",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoVacioSqlTests.SinProductos_RespondeListadoVacioRealConEstado200",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Cotizaciones_Historial_DecisionesInmutables_YConsultaDesdeOtraSesion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.FirmaCorrectaConContenidoFalsoOTruncado_NoSeGuarda(bytes: [137, 80, 78, 71, 13, ···], tipo: DisenoCliente)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.Archivos_OriginalYVersion_SeDescarganExactos_ConPertenenciaYContenidoValidado",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.PersistenciaNoDisponible_NoConfirmaCreacionNiExponeConexion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.CamposInvalidosYSinCsrf_NoCreanProducto",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.FormatoImportesAdminTests.PrecioEntrante_AdmiteImporteExactoComoTextoONumero(valor: \"9999999999999999.99\")",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.FaltaDeConsentimiento_NoPersisteCuenta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.DosRegistrosSimultaneos_MismoCorreoCreanSoloUnaCuenta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.RutasPublicas_NoAdmitenEscriturasNiBorrado",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.FalloDeConsulta_NoSimulaUnCatalogoVacioNiExponeElServidor",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.ArchivoVacio_NoSeGuarda",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AlmacenSesionesTests.RenovacionDespuesDelCierre_NoResucitaLaSesion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.RegistroValido_PersisteClienteConsentimientoYHashSinDevolverSecretos",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.ContraseñaUnicodeDeMasDe72Bytes_EsRechazadaSinTruncarse",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.DisponibilidadTests.BaseNoDisponible_Responde503YMensajeComprensible",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.CabeceraSeparadaYDimensionesExcesivas_NoBastanParaDeclararValidez",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.VisitanteYCliente_NoAdministranNiSubenImagenes",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.Migracion_ConservaLas29ComprobacionesYNoTieneCambiosPendientes",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.DetalleReconsultaDisponibilidadYPrecio_NoOfreceUnaVarianteDesactivada",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.EdicionConcurrente_ConservaUnSoloCambioYRechazaVersionObsoleta",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.FirmaCorrectaConContenidoFalsoOTruncado_NoSeGuarda(bytes: [137, 80, 78, 71, 13, ···], tipo: DisenoCliente)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.JpegReal_ConservaElOriginalYSuTipo",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroSqlTests.DatosInvalidosSeRechazanEnServidorSinDependerDeJavaScript",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.ImagenJpegReal_SeValidaYGuardaConNombreGenerado",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.ContraseñasAscii_RespetanLosLimitesConfirmados(longitud: 14, valida: False)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoSqlTests.ImagenRespetaLimiteInclusivoDeDiezMillonesDeBytes",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.PdfTruncado_NoSeGuardaAunqueConserveLaCabecera",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.CatalogoPublicoSqlTests.ListadoPublico_DevuelveSoloActivosSinCamposAdministrativosNiPerdidaDeCentavos",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.FormatoImportesAdminTests.CotizacionPropuesta_SinAcuerdoVigente_ConservaValoresPendientes",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.ArchivoAdministrativo_ConservaPedidoEHistorial_YBloqueaOperacionesPosteriores",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.DisponibilidadTests.FalloInesperado_NoExponeLaExcepcion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.SesionSqlTests.FalloSql_NoCreaSesionNiExponeErroresInternos",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.RevisionDiseno_ConservaVigenteAnterior_YExigeNuevaComprobacion",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.ContraseñasAscii_RespetanLosLimitesConfirmados(longitud: 72, valida: True)",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.AdministracionSqlTests.DosAdministradores_MismaConfirmacionConcurrenteCreaUnSoloCobro",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.ArchivosPrivadosTests.PngReal_ConservaTodosLosBytesYFlujoDesdeElInicio",
+      "resultado": "Passed"
+    },
+    {
+      "nombre": "ImpactoTextil.Api.Tests.RegistroValidacionTests.Unicode_CuentaCaracteresYBytesSinRecortar",
+      "resultado": "Passed"
+    }
+  ]
+}

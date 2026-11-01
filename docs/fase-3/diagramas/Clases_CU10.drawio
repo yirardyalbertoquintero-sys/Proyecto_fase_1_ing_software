@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="clases-cu10-aplicacion" name="CU-10 · Aplicación y persistencia">
+    <mxGraphModel page="1" pageWidth="2340" pageHeight="1518" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="CU-10 · Aplicación y persistencia" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" edge="1" parent="1" source="VistaGestionCU10" target="SesionController" style="exitX=0.3;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label0" value="GET de&#10;sesion&#10;existente" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="466.0" y="386.0" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" edge="1" parent="1" source="VistaGestionCU10" target="PedidosAdministracionController" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label1" value="HTTPS y CSRF" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="186.75" width="116" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" edge="1" parent="1" source="PedidosAdministracionController" target="RevisionCotizacionAdminService" style="exitX=1.0;exitY=0.6000000000000001;exitPerimeter=0;entryX=0.0;entryY=0.2;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label2" value="llama al&#10;servicio" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="238.5" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" edge="1" parent="1" source="RevisionCotizacionAdminService" target="IPedidoAdministracionRepository" style="exitX=0.0;exitY=0.8;exitPerimeter=0;entryX=0.8;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1610" y="481.6" />
+              <mxPoint x="1610" y="700" />
+              <mxPoint x="1428.0" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label3" value="inyeccion" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1552.0" y="576.8" width="116" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" edge="1" parent="1" source="PedidoAdministracionRepository" target="IPedidoAdministracionRepository" style="exitX=1.0;exitY=0.2999999999999997;exitPerimeter=0;entryX=0.0;entryY=0.29999999999999993;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=block;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label4" value="implementa" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="810.0999999999999" width="116" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" edge="1" parent="1" source="PedidoAdministracionRepository" target="ImpactoTextilDbContext" style="exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label5" value="consulta y&#10;persistencia" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="522.0" y="1028.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="" edge="1" parent="1" source="RevisionCotizacionAdminService" target="ReglasAdministrativasPedido" style="exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label6" value="reglas del&#10;SRS" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1882.0" y="642.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="" edge="1" parent="1" source="RevisionCotizacionAdminService" target="ResultadoOperacionAdmin" style="exitX=0.0;exitY=0.94;exitPerimeter=0;entryX=1.0;entryY=0.6000000000000002;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1585" y="541.38" />
+              <mxPoint x="1585" y="1306.2" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label7" value="devuelve&#10;resultado" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1527.0" y="899.79" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="" edge="1" parent="1" source="RevisionCotizacionAdminService" target="TimeProvider" style="exitX=1.0;exitY=0.44999999999999996;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2275" y="332.15" />
+              <mxPoint x="2275" y="1240.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label8" value="reloj&#10;inyectado" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="2217.0" y="762.325" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VistaGestionCU10" value="&lt;b&gt;Vista HTML y JavaScript&lt;/b&gt;&lt;br&gt;«vista_existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;-lista()&lt;br&gt;-dibujar()&lt;br&gt;-abrir(...)&lt;br&gt;-cargarExpediente(...)&lt;br&gt;-enviarEscritura(...)&lt;br&gt;-iniciar()&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="140" width="560" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="PedidosAdministracionController" value="&lt;b&gt;PedidosAdministracionController&lt;/b&gt;&lt;br&gt;«controlador_existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+Listar(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Expediente(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Proponer(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+DecidirCotizacion(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+RegistrarTexto(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+RegistrarArchivo(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+DecidirDiseno(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;br&gt;+Archivar(...)&amp;nbsp;Task&amp;lt;IActionResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="140" width="560" height="266" as="geometry" />
+        </mxCell>
+        <mxCell id="SesionController" value="&lt;b&gt;SesionController&lt;/b&gt;&lt;br&gt;«existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+Actual()&amp;nbsp;ActionResult&amp;lt;SesionDto&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="480" width="560" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="RevisionCotizacionAdminService" value="&lt;b&gt;RevisionCotizacionAdminService&lt;/b&gt;&lt;br&gt;«servicio_existente»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+ListarPedidosAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperacionAdmin&amp;lt;I&lt;br&gt;&amp;nbsp;&amp;nbsp;ReadOnlyList&amp;lt;ResumenPedidoAdminDto&amp;gt;&amp;gt;&amp;gt;&lt;br&gt;+ObtenerExpedienteAsync(...)&lt;br&gt;&amp;nbsp;&amp;nbsp;Task&amp;lt;ResultadoOperacionAdmin&amp;lt;ExpedientePedidoAdminDto&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;gt;&amp;gt;&lt;br&gt;+IncorporarVersionDisenoAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperac&lt;br&gt;&amp;nbsp;&amp;nbsp;ionAdmin&amp;lt;ResultadoVersionDisenoAdminDto&amp;gt;&amp;gt;&lt;br&gt;+DecidirVersionDisenoAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperacion&lt;br&gt;&amp;nbsp;&amp;nbsp;Admin&amp;lt;ResultadoVersionDisenoAdminDto&amp;gt;&amp;gt;&lt;br&gt;+ProponerCotizacionAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperacionAd&lt;br&gt;&amp;nbsp;&amp;nbsp;min&amp;lt;ResultadoCotizacionAdminDto&amp;gt;&amp;gt;&lt;br&gt;+DecidirCotizacionAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperacionAdm&lt;br&gt;&amp;nbsp;&amp;nbsp;in&amp;lt;ResultadoCotizacionAdminDto&amp;gt;&amp;gt;&lt;br&gt;+ArchivarSolicitudAsync(...)&amp;nbsp;Task&amp;lt;ResultadoOperacionAdm&lt;br&gt;&amp;nbsp;&amp;nbsp;in&amp;lt;ResultadoArchivoPedidoDto&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="140" width="560" height="427" as="geometry" />
+        </mxCell>
+        <mxCell id="IPedidoAdministracionRepository" value="&lt;b&gt;IPedidoAdministracionRepository&lt;/b&gt;&lt;br&gt;«interface»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+ObtenerAdministradorActivoAsync(...)&amp;nbsp;Task&amp;lt;Usuario?&amp;gt;&lt;br&gt;+ListarPedidosAsync(...)&lt;br&gt;&amp;nbsp;&amp;nbsp;Task&amp;lt;IReadOnlyList&amp;lt;ResumenPedidoAdminDto&amp;gt;&amp;gt;&lt;br&gt;+ObtenerExpedienteAsync(...)&lt;br&gt;&amp;nbsp;&amp;nbsp;Task&amp;lt;ExpedientePedidoAdminDto?&amp;gt;&lt;br&gt;+EjecutarEnPedidoBloqueadoAsync(...)&lt;br&gt;&amp;nbsp;&amp;nbsp;Task&amp;lt;ResultadoOperacionAdmin&amp;lt;T&amp;gt;&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="765" width="560" height="243" as="geometry" />
+        </mxCell>
+        <mxCell id="PedidoAdministracionRepository" value="&lt;b&gt;PedidoAdministracionRepository&lt;/b&gt;&lt;br&gt;«Repository»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;-LeerExpedienteAsync(...)&lt;br&gt;&amp;nbsp;&amp;nbsp;Task&amp;lt;ExpedientePedidoAdminDto?&amp;gt;&lt;br&gt;-MapearResumen(...)&amp;nbsp;ResumenPedidoAdminDto&amp;nbsp;[static]&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="765" width="560" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="ImpactoTextilDbContext" value="&lt;b&gt;ImpactoTextilDbContext&lt;/b&gt;&lt;br&gt;«EF_Core»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+DbSet&amp;lt;Pedido&amp;gt;&amp;nbsp;Pedido&lt;br&gt;+DbSet&amp;lt;DetallePedido&amp;gt;&amp;nbsp;DetallePedido&lt;br&gt;+DbSet&amp;lt;VersionCotizacion&amp;gt;&amp;nbsp;VersionCotizacion&lt;br&gt;+DbSet&amp;lt;DetalleCotizacion&amp;gt;&amp;nbsp;DetalleCotizacion&lt;br&gt;+DbSet&amp;lt;VersionDiseno&amp;gt;&amp;nbsp;VersionDiseno&lt;br&gt;+DbSet&amp;lt;vPedido&amp;gt;&amp;nbsp;vPedido&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="1188" width="560" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ReglasAdministrativasPedido" value="&lt;b&gt;ReglasAdministrativasPedido&lt;/b&gt;&lt;br&gt;«reglas_estaticas»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+CalcularAnticipoExigible(decimal)&amp;nbsp;decimal&amp;nbsp;[static]&lt;br&gt;+CalcularSaldoPendiente(decimal,&amp;nbsp;decimal)&amp;nbsp;decimal&lt;br&gt;&amp;nbsp;&amp;nbsp;[static]&lt;br&gt;+EvaluarArchivoAdministrativo(...)&amp;nbsp;ErrorOperacionAdmin?&lt;br&gt;&amp;nbsp;&amp;nbsp;[static]&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="765" width="560" height="197" as="geometry" />
+        </mxCell>
+        <mxCell id="ResultadoOperacionAdmin" value="&lt;b&gt;ResultadoOperacionAdmin&amp;lt;T&amp;gt;&lt;/b&gt;&lt;br&gt;«resultado»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+bool&amp;nbsp;EsExito&lt;br&gt;+T?&amp;nbsp;Valor&lt;br&gt;+ErrorOperacionAdmin?&amp;nbsp;Error&lt;br&gt;+Exito(T)&amp;nbsp;ResultadoOperacionAdmin&amp;lt;T&amp;gt;&amp;nbsp;[static]&lt;br&gt;+Fallo(...)&amp;nbsp;ResultadoOperacionAdmin&amp;lt;T&amp;gt;&amp;nbsp;[static]&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="1188" width="560" height="197" as="geometry" />
+        </mxCell>
+        <mxCell id="TimeProvider" value="&lt;b&gt;TimeProvider&lt;/b&gt;&lt;br&gt;«framework»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+GetUtcNow()&amp;nbsp;DateTimeOffset&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="1188" width="560" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="1463" width="2220" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="clases-cu10-dtos" name="CU-10 · DTO existentes (miembros seleccionados)">
+    <mxGraphModel page="1" pageWidth="2340" pageHeight="1762" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="CU-10 · DTO existentes (miembros seleccionados)" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" edge="1" parent="1" source="ProponerCotizacionDto" target="LineaCotizacionPropuestaDto" style="exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label0" value="lineas&#10;validas&#10;1 → 1..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="193.0" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" edge="1" parent="1" source="ExpedientePedidoAdminDto" target="ResumenPedidoAdminDto" style="exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label1" value="cabecera&#10;1 → 1" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="1472.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FiltroPedidosAdminDto" value="&lt;b&gt;FiltroPedidosAdminDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+string?&amp;nbsp;estado&lt;br&gt;+string?&amp;nbsp;condicionAdministrativa&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="140" width="560" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="ProponerCotizacionDto" value="&lt;b&gt;ProponerCotizacionDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+IReadOnlyList&amp;lt;LineaCotizacionPropuestaDto&amp;gt;?&amp;nbsp;lineas&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="140" width="560" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="LineaCotizacionPropuestaDto" value="&lt;b&gt;LineaCotizacionPropuestaDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;detalle&lt;br&gt;+decimal&amp;nbsp;precioUnitarioAcordado&lt;br&gt;+int?&amp;nbsp;versionDiseno&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="140" width="560" height="197" as="geometry" />
+        </mxCell>
+        <mxCell id="DecidirCotizacionDto" value="&lt;b&gt;DecidirCotizacionDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+string?&amp;nbsp;decision&lt;br&gt;+string?&amp;nbsp;referenciaDecision&lt;br&gt;+DateOnly?&amp;nbsp;fechaEntregaAcordada&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="517" width="560" height="197" as="geometry" />
+        </mxCell>
+        <mxCell id="DecidirVersionDisenoDto" value="&lt;b&gt;DecidirVersionDisenoDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+string?&amp;nbsp;decision&lt;br&gt;+string?&amp;nbsp;referenciaDecision&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="517" width="560" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="RegistrarVersionDisenoTextoDto" value="&lt;b&gt;RegistrarVersionDisenoTextoDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+string?&amp;nbsp;descripcion&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="517" width="560" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="ArchivarPedidoDto" value="&lt;b&gt;ArchivarPedidoDto&lt;/b&gt;&lt;br&gt;«DTO_entrada»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+string?&amp;nbsp;motivoArchivo&lt;br&gt;+Validate(ValidationContext)&lt;br&gt;&amp;nbsp;&amp;nbsp;IEnumerable&amp;lt;ValidationResult&amp;gt;&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="894" width="560" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="ResultadoCotizacionAdminDto" value="&lt;b&gt;ResultadoCotizacionAdminDto&lt;/b&gt;&lt;br&gt;«DTO_salida»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;pedidoId&lt;br&gt;+int&amp;nbsp;versionCotizacionId&lt;br&gt;+int&amp;nbsp;numeroVersion&lt;br&gt;+string&amp;nbsp;decision&lt;br&gt;+decimal&amp;nbsp;totalPropuesto&lt;br&gt;+int?&amp;nbsp;versionCotizacionVigente&lt;br&gt;+decimal?&amp;nbsp;totalVigente&lt;br&gt;+decimal?&amp;nbsp;anticipoExigible&lt;br&gt;+decimal?&amp;nbsp;saldoPendiente&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="894" width="560" height="289" as="geometry" />
+        </mxCell>
+        <mxCell id="ResultadoVersionDisenoAdminDto" value="&lt;b&gt;ResultadoVersionDisenoAdminDto&lt;/b&gt;&lt;br&gt;«DTO_salida»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;pedidoId&lt;br&gt;+int&amp;nbsp;detalleId&lt;br&gt;+int&amp;nbsp;versionDisenoId&lt;br&gt;+int&amp;nbsp;numeroVersion&lt;br&gt;+string&amp;nbsp;decision&lt;br&gt;+int?&amp;nbsp;versionDisenoVigente&lt;br&gt;+bool&amp;nbsp;disenoAprobado&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="894" width="560" height="243" as="geometry" />
+        </mxCell>
+        <mxCell id="ResultadoArchivoPedidoDto" value="&lt;b&gt;ResultadoArchivoPedidoDto&lt;/b&gt;&lt;br&gt;«DTO_salida»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;pedidoId&lt;br&gt;+string&amp;nbsp;codigo&lt;br&gt;+string&amp;nbsp;estado&lt;br&gt;+string&amp;nbsp;condicionAdministrativa&lt;br&gt;+string&amp;nbsp;motivoArchivo&lt;br&gt;+DateTimeOffset&amp;nbsp;fechaArchivo&lt;br&gt;+int&amp;nbsp;responsableArchivo&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="1363" width="560" height="243" as="geometry" />
+        </mxCell>
+        <mxCell id="ResumenPedidoAdminDto" value="&lt;b&gt;ResumenPedidoAdminDto&lt;/b&gt;&lt;br&gt;«DTO_salida»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+string&amp;nbsp;codigo&lt;br&gt;+string&amp;nbsp;estado&lt;br&gt;+string&amp;nbsp;condicionAdministrativa&lt;br&gt;+decimal&amp;nbsp;totalReferencial&lt;br&gt;+bool&amp;nbsp;cotizacionAceptada&lt;br&gt;+decimal?&amp;nbsp;total&lt;br&gt;+decimal?&amp;nbsp;anticipoExigible&lt;br&gt;+decimal?&amp;nbsp;saldoPendiente&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="1363" width="560" height="289" as="geometry" />
+        </mxCell>
+        <mxCell id="ExpedientePedidoAdminDto" value="&lt;b&gt;ExpedientePedidoAdminDto&lt;/b&gt;&lt;br&gt;«DTO_salida»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+ResumenPedidoAdminDto&amp;nbsp;pedido&lt;br&gt;+int?&amp;nbsp;versionCotizacionVigente&lt;br&gt;+decimal&amp;nbsp;pagosVerificadosAcumulados&lt;br&gt;+IReadOnlyList&amp;lt;DetallePedidoAdminDto&amp;gt;&amp;nbsp;detalles&lt;br&gt;+IReadOnlyList&amp;lt;VersionCotizacionAdminDto&amp;gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;versionesCotizacion&lt;br&gt;+IReadOnlyList&amp;lt;VersionDisenoAdminDto&amp;gt;&amp;nbsp;versionesDiseno&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="1363" width="560" height="243" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="1707" width="2220" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="clases-cu10-historial" name="CU-10 · Entidades, historial y proyección">
+    <mxGraphModel page="1" pageWidth="2340" pageHeight="1454" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="CU-10 · Entidades, historial y proyección" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=28;fontColor=#172B40;fontStyle=1;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="20" width="2220" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Tipos y miembros del código al 31-10-2026. Vista, controlador, servicios y persistencia conectados." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="66" width="2220" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="" edge="1" parent="1" source="Pedido" target="DetallePedido" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label0" value="detalles&#10;1 → 1..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="188.25" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" edge="1" parent="1" source="Pedido" target="VersionCotizacion" style="exitX=0.25;exitY=1.0;exitPerimeter=0;entryX=0.25;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label1" value="historial&#10;1 → 0..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="382.0" y="518.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" edge="1" parent="1" source="DetallePedido" target="VersionDiseno" style="exitX=1.0;exitY=0.25;exitPerimeter=0;entryX=0.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label2" value="historial&#10;1 → 0..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="194.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" edge="1" parent="1" source="VersionCotizacion" target="DetalleCotizacion" style="exitX=1.0;exitY=0.30000000000000016;exitPerimeter=0;entryX=0.0;entryY=0.30000000000000027;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=diamond;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label3" value="importes&#10;1 → 1..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="700.45" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" edge="1" parent="1" source="DetalleCotizacion" target="DetallePedido" style="exitX=0.3;exitY=0.0;exitPerimeter=0;entryX=0.3;entryY=1.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label4" value="cantidad&#10;original&#10;0..* → 1" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1090.0" y="508.0" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" edge="1" parent="1" source="Pedido" target="VersionCotizacion" style="exitX=0.7;exitY=1.0;exitPerimeter=0;entryX=0.7;entryY=0.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label5" value="vigente&#10;aceptada&#10;0..1 → 0..1" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="634.0" y="508.0" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="" edge="1" parent="1" source="DetallePedido" target="VersionDiseno" style="exitX=1.0;exitY=0.6999999999999998;exitPerimeter=0;entryX=0.0;entryY=0.7;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label6" value="vigente&#10;aprobada&#10;0..1 → 0..1" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1542.0" y="324.4" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="" edge="1" parent="1" source="DetalleCotizacion" target="VersionDiseno" style="exitX=1.0;exitY=0.1800000000000003;exitPerimeter=0;entryX=0.25;entryY=1.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="686.32" />
+              <mxPoint x="1600" y="570" />
+              <mxPoint x="1800.0" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label7" value="arte&#10;cotizado&#10;0..* → 0..1" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1642.0" y="536.0" width="116" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="" edge="1" parent="1" source="Usuario" target="VersionDiseno" style="exitX=0.7200000000000001;exitY=0.0;exitPerimeter=0;entryX=0.7200000000000001;entryY=1.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label8" value="registra&#10;1 → 0..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="2005.1999999999998" y="541.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" value="" edge="1" parent="1" source="Usuario" target="VersionCotizacion" style="exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.75;entryY=1.0;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1940.0" y="1044" />
+              <mxPoint x="720.0" y="1044" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label9" value="registra&#10;1 → 0..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="1272.0" y="1020.0" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" value="" edge="1" parent="1" source="Pedido" target="Pago" style="exitX=0.0;exitY=0.6999999999999998;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=0;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="342.29999999999995" />
+              <mxPoint x="260" y="1211.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label10" value="consulta verificados&#10;1 → 0..*" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="20.0" y="752.65" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" value="" edge="1" parent="1" source="vPedido" target="Pedido" style="exitX=0.0;exitY=0.75;exitPerimeter=0;entryX=0.0;entryY=0.29999999999999993;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="1289.0" />
+              <mxPoint x="900" y="1079" />
+              <mxPoint x="245" y="1079" />
+              <mxPoint x="245" y="226.7" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label11" value="proyeccion" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="20.0" y="638.85" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" value="" edge="1" parent="1" source="vPedido" target="Pago" style="exitX=0.0;exitY=0.25;exitPerimeter=0;entryX=1.0;entryY=0.25;entryPerimeter=0;edgeStyle=segmentEdgeStyle;rounded=0;html=1;strokeColor=#42556B;dashed=1;startArrow=none;endArrow=open;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label12" value="suma&#10;verificados" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=15;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="862.0" y="1149.25" width="116" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Pedido" value="&lt;b&gt;Pedido&lt;/b&gt;&lt;br&gt;«entidad»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+string&amp;nbsp;codigo&lt;br&gt;+int&amp;nbsp;cliente&lt;br&gt;+string&amp;nbsp;estado&lt;br&gt;+string&amp;nbsp;condicionAdministrativa&lt;br&gt;+DateOnly?&amp;nbsp;fechaEntregaAcordada&lt;br&gt;+int?&amp;nbsp;versionCotizacionVigente&lt;br&gt;+ICollection&amp;lt;DetallePedido&amp;gt;&amp;nbsp;DetallePedido&lt;br&gt;+ICollection&amp;lt;VersionCotizacion&amp;gt;&amp;nbsp;VersionCotizacion&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="140" width="560" height="289" as="geometry" />
+        </mxCell>
+        <mxCell id="DetallePedido" value="&lt;b&gt;DetallePedido&lt;/b&gt;&lt;br&gt;«entidad»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+int&amp;nbsp;pedido&lt;br&gt;+int&amp;nbsp;cantidad&lt;br&gt;+string&amp;nbsp;talla&lt;br&gt;+string&amp;nbsp;color&lt;br&gt;+string&amp;nbsp;tela&lt;br&gt;+string&amp;nbsp;empaque&lt;br&gt;+decimal&amp;nbsp;precioBaseReferencia&lt;br&gt;+int?&amp;nbsp;versionDisenoVigente&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="140" width="560" height="289" as="geometry" />
+        </mxCell>
+        <mxCell id="VersionDiseno" value="&lt;b&gt;VersionDiseno&lt;/b&gt;&lt;br&gt;«historial»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+int&amp;nbsp;detalle&lt;br&gt;+int&amp;nbsp;numeroVersion&lt;br&gt;+string?&amp;nbsp;archivoURL&lt;br&gt;+string?&amp;nbsp;descripcion&lt;br&gt;+DateTimeOffset&amp;nbsp;fechaRegistro&lt;br&gt;+int&amp;nbsp;responsableRegistro&lt;br&gt;+string&amp;nbsp;decision&lt;br&gt;+DateTimeOffset?&amp;nbsp;fechaDecision&lt;br&gt;+int?&amp;nbsp;responsableDecision&lt;br&gt;+string?&amp;nbsp;referenciaDecision&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="140" width="560" height="335" as="geometry" />
+        </mxCell>
+        <mxCell id="VersionCotizacion" value="&lt;b&gt;VersionCotizacion&lt;/b&gt;&lt;br&gt;«historial»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+int&amp;nbsp;pedido&lt;br&gt;+int&amp;nbsp;numeroVersion&lt;br&gt;+DateTimeOffset&amp;nbsp;fechaRegistro&lt;br&gt;+int&amp;nbsp;responsableRegistro&lt;br&gt;+string&amp;nbsp;decision&lt;br&gt;+DateTimeOffset?&amp;nbsp;fechaDecision&lt;br&gt;+int?&amp;nbsp;responsableDecision&lt;br&gt;+string?&amp;nbsp;referenciaDecision&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="655" width="560" height="289" as="geometry" />
+        </mxCell>
+        <mxCell id="DetalleCotizacion" value="&lt;b&gt;DetalleCotizacion&lt;/b&gt;&lt;br&gt;«entidad»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;versionCotizacion&lt;br&gt;+int&amp;nbsp;detalle&lt;br&gt;+decimal&amp;nbsp;precioUnitarioAcordado&lt;br&gt;+int?&amp;nbsp;versionDiseno&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="655" width="560" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="Usuario" value="&lt;b&gt;Usuario&lt;/b&gt;&lt;br&gt;«contexto»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+string&amp;nbsp;nombre&lt;br&gt;+string&amp;nbsp;rol&lt;br&gt;+bool&amp;nbsp;activo&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="1660" y="655" width="560" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="Pago" value="&lt;b&gt;Pago&lt;/b&gt;&lt;br&gt;«consulta_CU10»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+int&amp;nbsp;pedido&lt;br&gt;+decimal&amp;nbsp;monto&lt;br&gt;+string&amp;nbsp;estadoVerificacion&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="300" y="1124" width="560" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="vPedido" value="&lt;b&gt;vPedido&lt;/b&gt;&lt;br&gt;«vista_sin_clave»&lt;hr&gt;&lt;div style=&quot;font-family:Consolas,monospace;font-size:16px;line-height:23px&quot;&gt;+int&amp;nbsp;id&lt;br&gt;+decimal?&amp;nbsp;totalReferencial&lt;br&gt;+bool?&amp;nbsp;cotizacionAceptada&lt;br&gt;+decimal?&amp;nbsp;total&lt;br&gt;+decimal?&amp;nbsp;anticipoExigible&lt;br&gt;+decimal?&amp;nbsp;saldoPendiente&lt;/div&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;fontSize=18;fillColor=#F7F9FC;strokeColor=#193c58;">
+          <mxGeometry x="980" y="1124" width="560" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="+ público · − privado · [static] estático · ? admite null · … parámetros abreviados. Ver 14-diseno-clases-cu10.md." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#172B40;fontStyle=0;fillColor=#FFFFFF;strokeColor=none;">
+          <mxGeometry x="60" y="1399" width="2220" height="32" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

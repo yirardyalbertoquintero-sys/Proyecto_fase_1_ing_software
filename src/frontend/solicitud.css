@@ -1,0 +1,93 @@
+.solicitud {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: #203c3c;
+}
+.solicitud h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+.solicitud h2 {
+  font-size: 1.6rem;
+}
+.panel-solicitud {
+  background: #fff;
+  border: 1px solid #c8d3d0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.solicitud .campo {
+  margin-bottom: 1.1rem;
+}
+.solicitud select,
+.solicitud input:not([type='checkbox']) {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.solicitud button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.fila-solicitud {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.confirmar-solicitud {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 1.4rem 0;
+}
+.confirmar-solicitud input {
+  flex: 0 0 auto;
+  min-width: 20px;
+  min-height: 20px;
+  margin-top: 0.2rem;
+}
+.linea-carrito {
+  border-bottom: 1px solid #d9e0db;
+  padding: 1rem 0;
+  overflow-wrap: anywhere;
+}
+.linea-carrito h3 {
+  margin: 0.3rem 0;
+}
+.solicitud p,
+.solicitud small {
+  overflow-wrap: anywhere;
+}
+.solicitud .resultado {
+  background: #fff1d9;
+}
+.solicitud .error-variante {
+  color: #94340f;
+}
+.solicitud [hidden] {
+  display: none !important;
+}
+.solicitud input:focus-visible,
+.solicitud select:focus-visible,
+.solicitud button:focus-visible {
+  outline: 3px solid #aa652e;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .fila-solicitud {
+    grid-template-columns: 1fr;
+  }
+  .panel-solicitud {
+    padding: 1rem;
+  }
+  .solicitud {
+    padding: 1.25rem 0.75rem 3rem;
+  }
+  .solicitud .boton-principal,
+  .solicitud .boton-secundario {
+    width: 100%;
+  }
+}

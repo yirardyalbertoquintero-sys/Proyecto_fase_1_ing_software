@@ -4,6 +4,8 @@ Fecha: 30 de octubre de 2026. Por indicación expresa de Yirardy, se actualiza l
 
 ## Responsabilidad actual
 
+**Actualización posterior, 1 de noviembre:** Yirardy indicó avanzar el trabajo de Dylan para no seguir esperando. En Carlos_Borrell adelantó CU-05/CU-06 completos; ver [solicitudes del cliente](../fase-3/16-solicitudes-cliente.md). CU-07/CU-08 siguen pendientes. El reparto original de la tabla se conserva como antecedente de asignación; no atribuir este código como contribución de Dylan ni inferir que no tenga cambios locales sin publicar. Su rama no se modifica. No se autoriza PR/main/despliegue.
+
 | Integrante | Implementación a su cargo desde este acuerdo |
 | --- | --- |
 | Yirardy | Sus CU-01, CU-02, CU-04 y CU-09, más la continuación de CU-10, CU-11, CU-12 y CU-13 a partir de los avances de Carlos. Mantiene coordinación de datos, arquitectura, integración y entrega. Puede trabajar expresamente en Yirardy_Quintero y Carlos_Borrell. |
@@ -12,7 +14,13 @@ Fecha: 30 de octubre de 2026. Por indicación expresa de Yirardy, se actualiza l
 
 El nombre de una rama no sustituye la autoría de sus cambios. Conservar el historial, registrar quién realiza cada entrega y mantener una descripción veraz de las contribuciones.
 
-## Orden de continuación
+## Estado posterior al recorrido administrativo
+
+El 31 de octubre quedaron implementados localmente los ocho CU a cargo de Yirardy. Los escenarios administrativos que él recorrió, sus límites, los defectos corregidos y la guía de revisión cruzada constan en el [registro manual](../pruebas/revision-manual-administracion-20261031.md). La revisión del compañero, la integración con Dylan, main y despliegue siguen pendientes. El orden descrito debajo conserva la planificación anterior; las pruebas administrativas de pagos ya se ejecutaron con la autorización posterior.
+
+## Orden de continuación (antecedente de planificación)
+
+Actualización del 31 de octubre: Yirardy autorizó completar su bloque administrativo ahora, con contratos propios y pruebas HTTP/SQL de pagos, para revisarlo al final. Ese acuerdo reemplaza el aplazamiento anterior de esas tareas. Los CU de Dylan se integrarán posteriormente; main y despliegue permanecen fuera de esta construcción. Ver [implementación administrativa](../fase-3/15-administracion-pedidos.md).
 
 1. Mantener los cuatro CU de acceso/catálogo de Yirardy y los servicios administrativos corregidos de Carlos como base.
 2. La siguiente unidad administrativa será CU-10, revisión/cotización; después CU-11, descarga autorizada. Cada CU se cierra con pantalla, API, persistencia y comprobaciones pertinentes, cuando sus dependencias y contratos estén disponibles.
@@ -28,3 +36,7 @@ Se mantienen las decisiones del líder de aplazar contratos compartidos y migrac
 - Coordinar Program.cs, DbContext, migraciones, dependencias y estilos con Dylan antes de integrar cambios compartidos.
 - La aceptación humana debe realizarla alguien distinto de quien implementó el cambio. Si un revisor participó directamente, asignar la revisión al otro compañero según disponibilidad; no registrar una aceptación ficticia. La revisión de IA no sustituye esa aceptación.
 - Esta actualización no acredita CU adicionales terminados ni cambia el documento de requisitos aprobado.
+
+## Cierre independiente de Yirardy del 1 de noviembre
+
+Preparados diseño contrastado, informe de fases 3 y 4, mapeo RUP y guía de revisión cruzada. El [registro de cierre](../seguimiento/cierre-tareas-yirardy-20261101.md) conserva las tareas y las dependencias externas. Otro integrante debe aceptar realizar la revisión; no se asignan ni registran revisiones humanas ficticias. La implementación de CU-05/06/07/08 sigue a cargo de Dylan. El PR, main y despliegue permanecen aplazados.
