@@ -25,6 +25,14 @@ public sealed record ResultadoValidacionArchivo(
 
 public static class ValidadorArchivosPrivados
 {
+    internal static SemaphoreSlim TurnoValidacion { get; } = new(1, 1);
+    public static async Task<ResultadoValidacionArchivo> ValidarAcotadoAsync(byte[] contenido,
+        TipoArchivoPrivado tipo, CancellationToken ct)
+    {
+        await TurnoValidacion.WaitAsync(ct);
+        try { return ValidarContenido(contenido, contenido.LongLength, tipo); }
+        finally { TurnoValidacion.Release(); }
+    }
     public const long MaximoBytesInclusivo = 10_000_000L;
     // Presupuesto técnico de decodificación, separado del límite de bytes del SRS.
     public const long MaximoPixelesDecodificacion = 12_000_000L;
@@ -131,7 +139,6 @@ public interface IAlmacenArchivosPrivados
 
 public sealed class AlmacenArchivosPrivadosLocal : IAlmacenArchivosPrivados
 {
-    private static readonly SemaphoreSlim validador = new(1, 1);
     private readonly string raizCompleta;
 
     public AlmacenArchivosPrivadosLocal(string rutaRaizPrivada)
@@ -236,7 +243,7 @@ public sealed class AlmacenArchivosPrivadosLocal : IAlmacenArchivosPrivados
         var tamano = flujo.Length;
         if (tamano is <= 0 or > ValidadorArchivosPrivados.MaximoBytesInclusivo)
             return ValidadorArchivosPrivados.ValidarContenido([], tamano, tipo);
-        await validador.WaitAsync(cancelacion);
+        await ValidadorArchivosPrivados.TurnoValidacion.WaitAsync(cancelacion);
         try
         {
             var bytes = new byte[(int)tamano];
@@ -244,7 +251,7 @@ public sealed class AlmacenArchivosPrivadosLocal : IAlmacenArchivosPrivados
             flujo.Position = 0;
             return ValidadorArchivosPrivados.ValidarContenido(bytes, tamano, tipo);
         }
-        finally { validador.Release(); }
+        finally { ValidadorArchivosPrivados.TurnoValidacion.Release(); }
     }
 
     public Task EliminarSiExisteAsync(string referenciaRelativa, CancellationToken cancelacion)

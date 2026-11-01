@@ -27,6 +27,8 @@ public partial class Pago
 
     public Guid confirmacion { get; set; }
 
+    public byte[]? huellaComprobante { get; set; }
+
     public byte[] controlConcurrencia { get; set; } = null!;
 
     public virtual Pedido pedidoNavigation { get; set; } = null!;

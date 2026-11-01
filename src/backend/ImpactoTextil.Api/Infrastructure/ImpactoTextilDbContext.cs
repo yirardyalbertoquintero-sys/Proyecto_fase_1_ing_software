@@ -183,6 +183,7 @@ public partial class ImpactoTextilDbContext : DbContext
                 .HasFilter("([estadoVerificacion]=N'Verificado')");
 
             entity.Property(e => e.comprobanteURL).HasMaxLength(2048);
+            entity.Property(e => e.huellaComprobante).HasMaxLength(32);
             entity.Property(e => e.controlConcurrencia)
                 .IsRowVersion()
                 .IsConcurrencyToken();

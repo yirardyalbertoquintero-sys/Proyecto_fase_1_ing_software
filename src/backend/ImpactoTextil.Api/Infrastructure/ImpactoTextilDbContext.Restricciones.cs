@@ -30,6 +30,7 @@ public partial class ImpactoTextilDbContext
         modelBuilder.Entity<Pago>().ToTable("Pago", tabla =>
         {
             tabla.HasCheckConstraint("CK_Pago_monto", "([monto]>(0))");
+            tabla.HasCheckConstraint("CK_Pago_huellaComprobante", "([huellaComprobante] IS NULL OR DATALENGTH([huellaComprobante]) = 32)");
             tabla.HasCheckConstraint("CK_Pago_medio", "([medio]=N'Tarjeta' OR [medio]=N'Depósito' OR [medio]=N'Transferencia' OR [medio]=N'Efectivo')");
             tabla.HasCheckConstraint("CK_Pago_resolucion", "([estadoVerificacion]=N'Pendiente' AND [fechaVerificacion] IS NULL AND [responsableVerificacion] IS NULL AND [comprobanteURL] IS NOT NULL AND len(Trim([comprobanteURL]))>(0) OR ([estadoVerificacion]=N'Rechazado' OR [estadoVerificacion]=N'Verificado') AND [fechaVerificacion] IS NOT NULL AND [responsableVerificacion] IS NOT NULL)");
             tabla.HasCheckConstraint("CK_Pago_referencia", "([estadoVerificacion]<>N'Verificado' OR [referencia] IS NOT NULL AND len(Trim([referencia]))>(0))");
