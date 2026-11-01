@@ -222,7 +222,8 @@ public sealed class RegistroSqlTests(BaseSqlPruebas datos) : IClassFixture<BaseS
         await using var contexto = datos.CrearContexto();
         Assert.False(contexto.Database.HasPendingModelChanges());
         await contexto.Database.MigrateAsync(); // Una segunda aplicación no recrea el esquema.
-        Assert.Single(await contexto.Database.GetAppliedMigrationsAsync());
+        Assert.Equal(new[] { "20261028165048_Inicial", "20261101194643_HuellaComprobanteCliente" },
+            (await contexto.Database.GetAppliedMigrationsAsync()).ToArray());
     }
 
     private WebApplicationFactory<Program> CrearServidor(string? conexion = null) =>

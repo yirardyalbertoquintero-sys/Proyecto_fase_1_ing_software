@@ -1,5 +1,7 @@
 # CU-05 y CU-06: configurar prendas y registrar la solicitud
 
+**Rama de continuación actual:** `Dylan_Ruiz`, por indicación posterior de Yirardy del 1 de noviembre. Se incorporó el historial completo y la base funcional de Carlos_Borrell sin forzar cambios ni perder commits. La implementación y evidencia descritas debajo se generaron originalmente en Carlos_Borrell y conservan esa procedencia; el código de la aplicación no cambia por trasladar la rama de trabajo.
+
 Corte: 1 de noviembre de 2026. Yirardy autorizó avanzar estos dos CU del reparto original de Dylan, sin esperar su publicación. Implementación en `Carlos_Borrell`; no se modifica la rama de Dylan ni main. La fuente sigue siendo el DOCX aprobado, conservado intacto. RF-04/RF-05/RF-06/RF-15 se materializan mediante carrito temporal, confirmación, archivos privados y persistencia del expediente inicial. La consulta posterior del cliente (CU-08) y sus comprobantes (CU-07) continúan pendientes.
 
 ## Recorrido desde VS Code

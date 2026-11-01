@@ -1,5 +1,7 @@
 # Mapeo de Impacto Textil a RUP
 
+Iteración posterior del cliente, mismo 1 de noviembre: CU-07/CU-08 se incorporaron en Dylan_Ruiz, con huella técnica persistida, migración y pruebas de actualización desde una base existente. La Construcción local alcanza los doce CU previstos; 124 pruebas completas y 13 recorridos navegador en el nuevo bloque. Ver [documento 17](../fase-3/17-pedidos-comprobantes-cliente.md). La tabla y el Word 0.1 conservan su corte anterior; Transición y aceptación humana permanecen pendientes.
+
 Corte: 1 de noviembre de 2026. Reconciliado manualmente desde el borrador resguardado del 30 de octubre; no se aplicó el stash completo. Referencias: plan docente, página 4, y guía ampliada, página 7, en [guías](../guias/README.md).
 
 Actualización posterior del mismo día: este cuadro conserva el corte del informe Word 0.1. La iteración siguiente de Construcción incorpora CU-05/CU-06 adelantados por Yirardy, con 15 nuevas pruebas SQL y recorrido Chrome/API/SQL. Ver [contrato y evidencia](../fase-3/16-solicitudes-cliente.md). El estado posterior es diez CU locales; CU-07/CU-08, revisión humana e integración permanecen pendientes.

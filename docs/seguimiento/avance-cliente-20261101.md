@@ -1,5 +1,7 @@
 # Avance de solicitudes del cliente — 1 de noviembre de 2026
 
+**Corte posterior:** CU-07/CU-08 también quedaron implementados y comprobados en `Dylan_Ruiz`. La suite completa pasó 124 pruebas, incluidas 17 nuevas, y 13 comprobaciones de navegador del nuevo bloque. Ver [documento 17](../fase-3/17-pedidos-comprobantes-cliente.md). Las tareas de construcción CU-07/CU-08 de la tabla inferior y el recuento de diez CU conservan el corte previo de CU-05/CU-06; ahora son doce CU locales. Revisión humana, consolidación final, PR/main y alojamiento siguen pendientes.
+
 Yirardy autorizó adelantar trabajo del reparto original de Dylan. Se completaron localmente CU-05 y CU-06 en Carlos_Borrell, conservando la fuente de requisitos y los avances anteriores. No se modificó la rama de Dylan; el nombre de la rama de trabajo tampoco cambia la autoría de Yirardy. El [documento 16](../fase-3/16-solicitudes-cliente.md) contiene ejecución desde VS Code, contrato, decisiones y límites.
 
 ## Entrega de este bloque

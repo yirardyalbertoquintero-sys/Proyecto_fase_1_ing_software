@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mis pedidos · Impacto Textil</title>
+    <link rel="icon" href="/marca.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/estilos.css" />
+    <link rel="stylesheet" href="/catalogo.css" />
+    <link rel="stylesheet" href="/solicitud.css" />
+    <link rel="stylesheet" href="/mis-pedidos.css" />
+    <script src="/mis-pedidos.js" defer></script>
+  </head>
+  <body>
+    <a class="saltar" href="#mis-pedidos">Ir a mis pedidos</a>
+    <header class="cabecera-catalogo">
+      <a class="marca" href="/catalogo.html"
+        ><img src="/marca.svg" width="42" height="42" alt="" /><span
+          >IMPACTO<br /><strong>TEXTIL</strong></span
+        ></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="/solicitud.html">Solicitar cotización</a><a href="/acceso.html">Mi sesión</a>
+      </nav>
+    </header>
+    <main id="mis-pedidos" class="solicitud">
+      <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+      <h1>Mis pedidos</h1>
+      <p>
+        Consulta el avance y los acuerdos de tus pedidos. Los comprobantes se revisan antes de acreditar
+        dinero.
+      </p>
+      <p id="identidad-pedidos" role="status">Comprobando tu sesión…</p>
+      <div id="mensaje-cliente" class="resultado" role="alert" tabindex="-1" hidden></div>
+      <section id="acceso-cliente" class="panel-solicitud" hidden>
+        <h2>Accede a tus pedidos</h2>
+        <p>
+          Si tu sesión venció, entra aquí con la misma cuenta para conservar el comprobante que estás
+          preparando. Recargar o cerrar esta página descarta el formulario sin enviar.
+        </p>
+        <form id="login-cliente">
+          <div class="campo">
+            <label for="correo-cliente">Correo electrónico</label
+            ><input
+              id="correo-cliente"
+              name="correo"
+              type="email"
+              autocomplete="username"
+              required
+              maxlength="150"
+            />
+          </div>
+          <div class="campo">
+            <label for="clave-cliente">Contraseña</label
+            ><input
+              id="clave-cliente"
+              name="contrasena"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <button class="boton-principal" type="submit">Iniciar sesión y continuar</button>
+        </form>
+      </section>
+      <div id="contenido-cliente" hidden>
+        <button id="actualizar-mis-pedidos" type="button" class="boton-secundario">
+          Actualizar mis pedidos
+        </button>
+        <div class="pedidos-cliente-grid">
+          <section class="panel-solicitud" aria-labelledby="titulo-lista-cliente">
+            <h2 id="titulo-lista-cliente">Tus solicitudes</h2>
+            <p>Se incluyen las archivadas y su historial.</p>
+            <p id="estado-lista-cliente" role="status"></p>
+            <div id="lista-cliente"></div>
+          </section>
+          <div>
+            <section id="expediente-cliente" class="panel-solicitud" aria-live="polite">
+              <p>Selecciona un pedido para consultar su expediente.</p>
+            </section>
+            <section id="panel-comprobante" class="panel-solicitud" hidden>
+              <h2>Aportar comprobante</h2>
+              <p>
+                Esta carga registra una evidencia Pendiente. Solo la verificación administrativa descuenta
+                saldo; no inicia producción ni procesa pagos bancarios.
+              </p>
+              <form id="form-comprobante">
+                <div class="campo">
+                  <label for="monto-cliente">Monto declarado (C$)</label
+                  ><input
+                    id="monto-cliente"
+                    name="monto"
+                    inputmode="decimal"
+                    maxlength="19"
+                    required
+                    placeholder="500.00"
+                  />
+                </div>
+                <div class="campo">
+                  <label for="medio-cliente">Medio del cobro externo</label
+                  ><select id="medio-cliente" name="medio">
+                    <option>Transferencia</option>
+                    <option>Depósito</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta</option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="referencia-cliente">Referencia del cobro</label
+                  ><input id="referencia-cliente" name="referencia" maxlength="100" required /><small
+                    >No incluyas claves bancarias ni números completos de tarjeta.</small
+                  >
+                </div>
+                <div class="campo">
+                  <label for="fecha-cliente">Fecha y hora del cobro</label
+                  ><input id="fecha-cliente" name="fecha" type="datetime-local" required />
+                </div>
+                <div class="campo">
+                  <label for="archivo-cliente">Comprobante JPG, PNG o PDF</label
+                  ><input
+                    id="archivo-cliente"
+                    name="archivo"
+                    type="file"
+                    accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"
+                  /><small id="archivo-conservado">Hasta 10 MB (10 000 000 bytes).</small>
+                </div>
+                <button id="enviar-comprobante" class="boton-principal" type="submit">
+                  Enviar comprobante para revisión
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+      <noscript><p>Activa JavaScript para consultar tus pedidos.</p></noscript>
+    </main>
+    <footer class="pie-catalogo">
+      <span>IMPACTO TEXTIL</span><a href="/aviso.html">Aviso de la demostración</a>
+    </footer>
+  </body>
+</html>

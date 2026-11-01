@@ -361,6 +361,10 @@ formulario.addEventListener('submit', async (e) => {
       dudoso = true;
       await sesion();
       mensaje('Tu sesión venció. Accede aquí con la misma cuenta y reintenta; el carrito sigue en memoria.');
+    } else if (r.status === 400 && b?.codigo === 'formulario_vencido') {
+      dudoso = true;
+      await sesion();
+      mensaje('La sesión cambió o la protección venció. Accede con la misma cuenta y reintenta la solicitud conservada.');
     } else if (r.status === 400 || r.status === 413 || (r.status === 409 && b?.campo === 'catalogo')) {
       envio = null;
       dudoso = false;

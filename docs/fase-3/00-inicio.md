@@ -20,6 +20,7 @@ Esta entrega desarrolla el trabajo inicial de Yirardy: fuente e instrucciones co
 14. [Clases de diseño de CU-10, firmas existentes e historial](14-diseno-clases-cu10.md).
 15. [Administración conectada de pedidos, diseños, pagos y producción](15-administracion-pedidos.md).
 16. [Configuración y solicitud del cliente conectadas, con bolsa estándar y archivos privados](16-solicitudes-cliente.md).
+17. [Comprobantes privados y consulta de pedidos propios, con revisión administrativa del mismo pago](17-pedidos-comprobantes-cliente.md).
 
 Los resultados ejecutados y sus límites están en el [registro de avance de Yirardy](../seguimiento/avance-yirardy.md).
 
@@ -35,7 +36,7 @@ La carpeta `diagramas` contiene código Mermaid y diagramas editables en draw.io
 - CU-04: consulta pública de variantes activas, búsqueda/filtros y detalle revalidado; precios de referencia, manejo de catálogo vacío y errores de consulta o imagen.
 - Entidades y migración inicial EF Core con las restricciones, vistas y disparadores del prototipo; script de distribución generado e idempotente.
 
-Los controles SQL son parte de la integridad. Autorización, importe máximo de abono, aceptación atómica, estados, diseños y archivo ya están conectados a los servicios administrativos y comprobados por HTTP/SQL; los resultados están en el registro manual y el documento 15. El documento 16 incorpora CU-05/CU-06 y comprueba solicitudes reales visibles en administración; CU-07/CU-08 y la revisión humana del recorrido integrado permanecen pendientes. Las claves foráneas por sí solas no prueban esas reglas.
+Los controles SQL son parte de la integridad. Autorización, importe máximo de abono, aceptación atómica, estados, diseños y archivo ya están conectados a los servicios administrativos y comprobados por HTTP/SQL; los resultados están en el registro manual y el documento 15. Los documentos 16 y 17 incorporan CU-05/CU-06/CU-07/CU-08 y comprueban el recorrido cliente-administrador. Quedan revisión humana e integración en main. Las claves foráneas por sí solas no prueban esas reglas.
 
 ## Estado posterior de revisión
 

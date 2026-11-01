@@ -306,6 +306,10 @@ namespace ImpactoTextil.Api.Migrations
                         .HasPrecision(0)
                         .HasColumnType("datetimeoffset(0)");
 
+                    b.Property<byte[]>("huellaComprobante")
+                        .HasMaxLength(32)
+                        .HasColumnType("varbinary(32)");
+
                     b.Property<string>("medio")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -344,6 +348,8 @@ namespace ImpactoTextil.Api.Migrations
                     b.ToTable("Pago", null, t =>
                         {
                             t.HasTrigger("TR_Pago_decisionUnica");
+
+                            t.HasCheckConstraint("CK_Pago_huellaComprobante", "([huellaComprobante] IS NULL OR DATALENGTH([huellaComprobante]) = 32)");
 
                             t.HasCheckConstraint("CK_Pago_medio", "([medio]=N'Tarjeta' OR [medio]=N'Depósito' OR [medio]=N'Transferencia' OR [medio]=N'Efectivo')");
 

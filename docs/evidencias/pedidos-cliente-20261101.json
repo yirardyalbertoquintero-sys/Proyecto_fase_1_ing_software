@@ -1,0 +1,89 @@
+{
+  "fecha": "2026-11-01",
+  "rama": "Dylan_Ruiz",
+  "baseCommit": "b1f0d85c5562622b6950f52184e359e7de523d86",
+  "alcance": "CU-07/CU-08 completados por Yirardy continuando la asignación original de Dylan; revisión humana pendiente",
+  "comandoSuite": "./scripts/Test-Registro.ps1",
+  "configuracion": "Release",
+  "dependencias": "restore --locked-mode; sin paquetes nuevos",
+  "total": 124,
+  "aprobadas": 124,
+  "fallidas": 0,
+  "omitidas": 0,
+  "conSqlReal": 86,
+  "trxLocal": "artifacts/pruebas/20261101T200037Z-6cfaaec7/resultado.trx",
+  "trxSha256": "e038275341908241f9e5f3a2b9b36fc38e59a862d3ffb13f666bac5deaba3be0",
+  "pruebasNuevas": [
+    "ImpactoTextil.Api.Tests.MigracionComprobanteSqlTests.ActualizarBaseExistente_ConservaPagoResueltoSinRellenarHuella",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.MismaConfirmacionDistintosClientesNoCompartePagosNiArchivos",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.Permisos_Csrf_YTitularidadEnListaDetalleCargaYDescarga",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.FormularioDeOtraCuenta_DatosDesconocidos_YDatosInvalidosNoPersisten",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.SinAcuerdo_ImportesNulos_ArchivoVisibleSoloAlTitular_SinRutasNiResponsables",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.EvidenciaCreaPendiente_VerificacionResuelveMismoPago_YAmbosVenSaldoConsistente",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.CuatroMediosExternos_NoProcesanDineroNiExigenAnticipoPorEvidencia",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.LimiteInclusivoDiezMb_YUnByteAdicionalNoPersiste",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.FalloSqlTrasInsertar_ReviertePagoYLimpiaArchivoNuevo",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.CabeceraDeCuentaDesactualizada_NoDevuelveListaNiExpediente",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.RechazoNoAcredita_YNuevaEvidenciaNoSobrescribeRechazo",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.CambiosAdministrativosDeCotizacionYProduccion_SeReflejanEnCliente",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.ReenviosConcurrentes_CreanUnPagoUnArchivo_YDuplicadoConOtraClaveSeDeniega",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.HuellaAusenteEnCobroHistorico_NoSeConfundeConReintentoCliente",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.ErrorTrasCommit_NoBorraComprobanteConfirmado_YReintentoRecuperaMismoPago",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.JpgPngPdf_ContenidoCompleto_YExtensionesConcordantes",
+    "ImpactoTextil.Api.Tests.PedidosClienteSqlTests.ReintentoTrasCorreccionAdministrativa_ConservaHuellaOriginalYNoDuplica"
+  ],
+  "navegador": {
+    "fecha": "2026-11-01",
+    "tipo": "Chrome headless, sesiones/API/SQL reales; pérdida deliberada de respuesta y lecturas retardadas",
+    "resultados": [
+      "Consulta con sesión Cliente y lista exclusiva del titular",
+      "Sin cotización: importes y fecha pendientes, sin formulario de comprobante",
+      "Pedido archivado conserva consulta e historial para su titular",
+      "Revocación y acceso dentro de la página conservan datos y File sin revelar el expediente",
+      "Pantalla completa de pedidos y comprobante a 1440 y 320 px sin desbordamiento",
+      "Respuesta perdida después de guardar: Pago Pendiente real sin cambiar saldo",
+      "Reintento tras corregir fecha y referencia devuelve el mismo Pago Verificado y saldo 500",
+      "Descarga del titular conserva bytes originales y archivo privado",
+      "Cambio administrativo de producción se refleja en la consulta Cliente",
+      "Cuenta cambiada entre confirmar y POST: servidor rechaza y no muestra el expediente anterior",
+      "Volver al titular recupera el borrador exacto; referencia con HTML se muestra como texto",
+      "Una lectura atrasada de otro pedido no sustituye al seleccionado",
+      "Recarga conserva pagos SQL y descarta formulario temporal sin duplicaciones"
+    ],
+    "errores": []
+  },
+  "capturas": [
+    {
+      "archivo": "docs/evidencias/pedidos-cliente-escritorio.png",
+      "sha256": "4bcc403f718432d4916256a1f7658e6a915464e4ee8b33ea5db486cd674bc1f1"
+    },
+    {
+      "archivo": "docs/evidencias/pedidos-cliente-movil-320.png",
+      "sha256": "9f0e7110f7e4687b664684658870d91806d41f0f52afc736eddd436da587fb55"
+    }
+  ],
+  "qaVisual": "Escritorio 1440 px y móvil 320 px inspeccionados, controles legibles y sin desbordamiento horizontal.",
+  "revisionCodigo": "Segundo asistente revisó titularidad, huella, reintentos y sesión. Se compartió el semáforo de decodificación y se corrigió recuperación ante CSRF de una cuenta anterior.",
+  "migracion": {
+    "id": "20261101194643_HuellaComprobanteCliente",
+    "cambio": "Pago.huellaComprobante varbinary(32) nullable + CHECK de longitud; históricos/directos conservan NULL",
+    "baseExistente": "Prueba independiente degrada únicamente su base temporal a Inicial con pago Verificado preexistente, actualiza y verifica conservación, NULL e idempotencia",
+    "sqlGenerado": "database/003_comprobantes_cliente.sql",
+    "sqlSha256": "ae776e699c602d0552ccf06f14fdb6261c33edf477576043aea508fdc0a0838a",
+    "reaplicacionSql": "Script generado reaplicado dos veces en QA ya migrada, sin errores",
+    "esquemaObservado": {
+      "tablas": 11,
+      "vistas": 5,
+      "check": 31
+    }
+  },
+  "fuenteSha256": "9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821",
+  "datos": "Todos ficticios. Navegador, sesiones y operaciones usan API/SQL reales en base aislada; únicamente se aborta una respuesta ya confirmada y se retardan lecturas para verificar recuperación/concurrencia visual.",
+  "limites": [
+    "No acredita revisión humana ni aceptación comercial",
+    "No acredita PR/main, alojamiento ni RNF de carga/disponibilidad",
+    "Informe Word 0.1 y figuras generales requieren consolidación con documentos 16/17",
+    "No procesa cobros bancarios ni valida automáticamente autenticidad de una transferencia"
+  ],
+  "limpiezaQa": "Base exclusiva del navegador eliminada tras las comprobaciones; la base ImpactoTextil del usuario no se modifica. Los fixtures retiran sus propias bases."
+}

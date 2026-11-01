@@ -207,7 +207,7 @@ public sealed class SolicitudesClienteSqlTests(BaseSqlPruebas datos) : IClassFix
         { var r = await inner.RegistrarAsync(id, d, huella, construir, ct); if (r.EsExito && r.Valor!.esCreacionNueva && fallar()) throw new IOException("Respuesta de QA perdida tras commit"); return r; }
         public Task<bool> ArchivoReferenciadoAsync(string r, CancellationToken ct) => inner.ArchivoReferenciadoAsync(r, ct);
     }
-    private static byte[] PngConTamano(int tamano)
+    internal static byte[] PngConTamano(int tamano)
     {
         var relleno = tamano - Png.Length - 12; var b = new byte[tamano]; Png.AsSpan(0, 33).CopyTo(b);
         BinaryPrimitives.WriteInt32BigEndian(b.AsSpan(33, 4), relleno); "caNd"u8.CopyTo(b.AsSpan(37, 4));

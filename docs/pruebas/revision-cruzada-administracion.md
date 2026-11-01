@@ -34,3 +34,16 @@ Revisor: **pendiente**. Fecha: **pendiente**. Commit: **pendiente**. Entorno y b
 | RC-06 | Pendiente | Pendiente | Pendiente |
 
 Dictamen: **sin emitir**. El revisor indica aprobado, aprobado con observaciones o requiere correcciones, y explica el alcance. Yirardy registra la corrección y la repetición afectada. Esta guía no sustituye la prueba cliente→administrador con Dylan, ni las pruebas de carga, alojamiento o aceptación comercial.
+
+## Ampliación para el recorrido real del cliente en Dylan_Ruiz
+
+Usar la rama `Dylan_Ruiz` y la [guía CU-07/CU-08](../fase-3/17-pedidos-comprobantes-cliente.md), aplicando las migraciones con F5. Crear dos Clientes ficticios y solicitudes propias mediante CU-06; no reasignar los pedidos DEMO a cuentas reales. La automatización ya recorrió estos escenarios; el registro de abajo sigue pendiente de una persona distinta de quien implementó.
+
+| Caso | Comprobación | Resultado esperado | Registro humano |
+| --- | --- | --- | --- |
+| RC-07 | Consultar pedidos con dos Clientes y modificar el id de pedido/pago en la consulta. | Cada Cliente solo ve los suyos; un registro ajeno no se revela. | Pendiente |
+| RC-08 | Consultar solicitud sin acuerdo y luego archivarla desde administración. | Importes/fecha definitivos pendientes; el titular conserva expediente e historial archivado. | Pendiente |
+| RC-09 | Acordar cotización y enviar un JPG/PNG/PDF con datos de cobro; revisar desde administración. | Un solo Pago Pendiente, descarga correcta y saldo sin descuento. | Pendiente |
+| RC-10 | Verificar ese Pago y confirmar una referencia/fecha; actualizar Mis pedidos. | Mismo id de pago, saldo descontado una vez y estado de producción independiente. Rechazo no descuenta. | Pendiente |
+| RC-11 | Preparar un comprobante, salir de sesión y acceder de nuevo dentro de la misma página; cambiar de cuenta en otra pestaña. | Datos/archivo recuperables para el mismo titular; no se muestran ni envían con la otra cuenta. | Pendiente |
+| RC-12 | Iniciar producción autorizada, aceptar aumento de total y actualizar Mis pedidos; comprobar móvil. | Estado, fecha y saldo coinciden con administración; nueva cotización e historial conservados; controles legibles. | Pendiente |

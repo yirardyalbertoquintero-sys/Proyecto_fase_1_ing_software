@@ -1,0 +1,44 @@
+classDiagram
+direction TB
+class MisPedidosController {
+  -Cliente int
+  -CuentaCoincide bool
+  +Listar(CancellationToken ct) Task~IActionResult~
+  +Obtener(int pedidoId, CancellationToken ct) Task~IActionResult~
+  +Registrar(int pedidoId, CancellationToken ct) Task~IActionResult~
+  +Descargar(int pedidoId, int pagoId, CancellationToken ct) Task~IActionResult~
+}
+class ComprobanteClienteService {
+  +RegistrarAsync(int cliente, int pedidoId, RegistrarComprobanteDto datos, IFormFile archivo, CancellationToken ct) Task~ResultadoOperacionAdmin_ComprobanteRecibidoDto~
+}
+class IPedidoClienteRepository {
+  <<interface>>
+  +ListarAsync(int cliente, CancellationToken ct) Task~IReadOnlyList_ResumenPedidoClienteDto~
+  +EsPropioAsync(int cliente, int pedido, CancellationToken ct) Task~bool~
+  +ObtenerAsync(int cliente, int pedido, CancellationToken ct) Task~ExpedientePedidoClienteDto_nullable~
+  +ReferenciaComprobanteAsync(int cliente, int pedido, int pago, CancellationToken ct) Task~string_nullable~
+  +ArchivoReferenciadoAsync(string referencia, CancellationToken ct) Task~bool~
+}
+class PedidoClienteRepository
+class IPedidoAdministracionRepository {
+  <<interface>>
+}
+class IAlmacenArchivosPrivados {
+  <<interface>>
+}
+class Pago {
+  +id int
+  +pedido int
+  +confirmacion Guid
+  +huellaComprobante byte_array_nullable
+  +estadoVerificacion string
+}
+MisPedidosController --> IPedidoClienteRepository
+MisPedidosController --> ComprobanteClienteService
+MisPedidosController --> IAlmacenArchivosPrivados
+ComprobanteClienteService --> IPedidoClienteRepository
+ComprobanteClienteService --> IPedidoAdministracionRepository
+ComprobanteClienteService --> IAlmacenArchivosPrivados
+ComprobanteClienteService --> Pago : crea Pendiente
+PedidoClienteRepository ..|> IPedidoClienteRepository
+PedidoClienteRepository --> IPedidoAdministracionRepository : lectura consistente

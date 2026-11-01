@@ -1,0 +1,54 @@
+.pedidos-cliente-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+#lista-cliente button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  border: 1px solid #aabfba;
+  background: #fff;
+  border-radius: 8px;
+  color: #203c3c;
+}
+#lista-cliente button[aria-pressed='true'] {
+  border: 3px solid #245850;
+}
+.resumen-cliente {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.resumen-cliente dt {
+  font-size: 0.9rem;
+}
+.resumen-cliente dd {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+#expediente-cliente details {
+  border-top: 1px solid #dae1de;
+  padding: 1rem 0;
+}
+#expediente-cliente h2 {
+  overflow-wrap: anywhere;
+}
+#expediente-cliente button {
+  margin: 0.5rem 0;
+}
+#form-comprobante {
+  margin-top: 1rem;
+}
+@media (max-width: 750px) {
+  .pedidos-cliente-grid {
+    grid-template-columns: 1fr;
+  }
+  .resumen-cliente {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,7 @@
 # Preparación del informe y la defensa
 
+**Corte posterior de construcción:** CU-07/CU-08 ya están implementados y comprobados en Dylan_Ruiz; ver [documento 17](../fase-3/17-pedidos-comprobantes-cliente.md). El Word 0.1 conserva el corte previo de ocho CU y debe consolidarse con los documentos 16 y 17, la migración nueva y sus figuras/evidencias antes de una entrega final. No se ha reemplazado ni reescrito ese informe en este avance de programación.
+
 **Alcance del Word actual:** versión 0.1, corte de ocho CU anterior a la incorporación de CU-05/CU-06 del mismo 1 de noviembre. Se conserva como informe revisable e histórico de ese corte. El estado posterior, sus contratos, pruebas y pendientes están en [solicitudes del cliente](../fase-3/16-solicitudes-cliente.md) y [seguimiento](../seguimiento/avance-cliente-20261101.md). Al consolidar la entrega deberá incorporarse este nuevo bloque al Word y a las figuras; no presentar la versión 0.1 como fotografía completa de la aplicación posterior.
 
 El [informe de fases 3 y 4 en Word](Informe_Fases_3_y_4_Impacto_Textil.docx) reúne el trabajo disponible con corte al 1 de noviembre de 2026. La [fuente textual](Informe_Fases_3_y_4_Impacto_Textil.md) permite revisar y versionar su contenido; las figuras editables están en `../fase-3/diagramas`. El [mapeo RUP](mapeo-rup.md) es un artefacto independiente para incorporar al informe integrador.
