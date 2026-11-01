@@ -36,6 +36,10 @@ La carpeta `diagramas` contiene código Mermaid y diagramas editables en draw.io
 
 Los controles del prototipo SQL son una parte de la integridad. Autorización, importe máximo de un abono, aceptación atómica de una cotización completa, transición de estados, cobertura de todos los diseños y condiciones de archivo se implementarán en los servicios correspondientes y se probarán por API. No se atribuye su cumplimiento a las claves foráneas por sí solas.
 
+## Estado posterior de revisión
+
+El [registro manual del 31 de octubre](../pruebas/revision-manual-administracion-20261031.md) recoge los escenarios administrativos observados, defectos corregidos y la preparación mínima de integración. La revisión cruzada humana continúa pendiente. Los informes anteriores conservan la fecha y el alcance de su construcción.
+
 ## Siguiente revisión del equipo
 
 Dylan revisa que el modelo permita mostrar todas las pantallas previstas. Carlos revisa versiones, cotizaciones, pagos y los servicios administrativos. La migración inicial ya está preparada y probada; las observaciones posteriores deben incorporarse mediante nuevas migraciones coordinadas. Los tres revisan los contratos y las decisiones pendientes antes de integrar los siguientes módulos.

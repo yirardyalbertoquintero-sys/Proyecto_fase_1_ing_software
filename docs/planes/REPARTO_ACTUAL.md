@@ -12,7 +12,11 @@ Fecha: 30 de octubre de 2026. Por indicación expresa de Yirardy, se actualiza l
 
 El nombre de una rama no sustituye la autoría de sus cambios. Conservar el historial, registrar quién realiza cada entrega y mantener una descripción veraz de las contribuciones.
 
-## Orden de continuación
+## Estado posterior al recorrido administrativo
+
+El 31 de octubre quedaron implementados localmente los ocho CU a cargo de Yirardy. Los escenarios administrativos que él recorrió, sus límites, los defectos corregidos y la guía de revisión cruzada constan en el [registro manual](../pruebas/revision-manual-administracion-20261031.md). La revisión del compañero, la integración con Dylan, main y despliegue siguen pendientes. El orden descrito debajo conserva la planificación anterior; las pruebas administrativas de pagos ya se ejecutaron con la autorización posterior.
+
+## Orden de continuación (antecedente de planificación)
 
 Actualización del 31 de octubre: Yirardy autorizó completar su bloque administrativo ahora, con contratos propios y pruebas HTTP/SQL de pagos, para revisarlo al final. Ese acuerdo reemplaza el aplazamiento anterior de esas tareas. Los CU de Dylan se integrarán posteriormente; main y despliegue permanecen fuera de esta construcción. Ver [implementación administrativa](../fase-3/15-administracion-pedidos.md).
 

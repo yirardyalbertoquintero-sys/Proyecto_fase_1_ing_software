@@ -6,7 +6,7 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
-**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. La revisión humana y la integración del recorrido del cliente de Dylan siguen pendientes. [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
+**Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. Yirardy ya recorrió los escenarios manuales administrativos; la revisión cruzada del compañero y la integración del recorrido del cliente de Dylan siguen pendientes. Ver [revisión manual y preparación de integración](docs/pruebas/revision-manual-administracion-20261031.md). [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
 
 **Antecedente del 30 de octubre de 2026:** se reunieron las historias de Carlos y Yirardy conservando los commits anteriores, y se corrigieron servicios, almacenamiento privado y DTO monetarios. En ese cierre todavía faltaba la conexión administrativa, completada en la actualización del 31. Ver [correcciones y comprobaciones de ese cierre](docs/seguimiento/correcciones-carlos-2026-10-30.md).
 
@@ -48,7 +48,7 @@ El [diseño de clases de CU-10](docs/fase-3/14-diseno-clases-cu10.md) explica ti
 
 ## Revisar los pedidos administrativos
 
-Con F5 y una sesión de Administrador, abrir **Gestionar pedidos**. Si la base está vacía, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear pedidos de demostracion**. Confirmar `DEMO` en esa terminal y volver a ejecutar con F5. Se agregan tres pedidos ficticios a la base local; repetir la tarea conserva las decisiones existentes. Requiere haber preparado la base y creado primero el Administrador. [Recorridos de evaluación y límites](docs/fase-3/15-administracion-pedidos.md).
+Con F5 y una sesión de Administrador, abrir **Gestionar pedidos**. Si la base está vacía, detener la aplicación y ejecutar **Terminal → Ejecutar tarea → Impacto Textil: crear pedidos de demostracion**. Confirmar `DEMO` en esa terminal y volver a ejecutar con F5. Se agregan tres pedidos ficticios a la base local; repetir la tarea conserva las decisiones existentes. Requiere haber preparado la base y creado primero el Administrador. Los pedidos nuevos usan un comprobante ficticio legible; los existentes conservan sus archivos históricos, incluso la muestra anterior de 4 × 4 píxeles. [Recorridos de evaluación y límites](docs/fase-3/15-administracion-pedidos.md).
 
 ## Preparar publicación
 

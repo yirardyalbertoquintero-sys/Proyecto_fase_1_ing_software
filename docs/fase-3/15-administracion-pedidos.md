@@ -1,6 +1,6 @@
 # Pedidos administrativos conectados a SQL Server
 
-Fecha de construcción: 31 de octubre de 2026. Rama: Carlos_Borrell. Yirardy autorizó completar CU-10, CU-11, CU-13 y CU-12 sin esperar la publicación de Dylan. La autorización incluye contratos administrativos y pruebas funcionales de pagos; main y despliegue continúan aplazados. La revisión humana la realizará el líder después de esta entrega.
+Fecha de construcción: 31 de octubre de 2026. Rama: Carlos_Borrell. Yirardy autorizó completar CU-10, CU-11, CU-13 y CU-12 sin esperar la publicación de Dylan. La autorización incluye contratos administrativos y pruebas funcionales de pagos; main y despliegue continúan aplazados. Yirardy realizó después el recorrido manual descrito en el [registro de pruebas y defectos](../pruebas/revision-manual-administracion-20261031.md); la revisión cruzada humana continúa pendiente.
 
 La pantalla **Gestionar pedidos**, en `pedidos.html`, utiliza la API y SQL Server reales. `prototipo-pedidos.html` se conserva como antecedente con sus datos simulados en memoria. La fuente comercial permanece intacta: [DOCX vigente](../Impacto%20textil%20fase%201%20y%202.docx), SHA-256 `9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821`.
 
@@ -39,7 +39,7 @@ Solicita escribir `DEMO` para agregar hasta tres pedidos a la base local `Impact
 | DEMO-ADMIN-02 | Total aceptado C$1,000, diseño aprobado y comprobante Pendiente de C$500. Verificarlo, iniciar producción, proponer C$700 por cada una de las dos prendas para alcanzar C$1,400 y observar el faltante de C$200. |
 | DEMO-ADMIN-03 | Solicitud sin cotización aceptada, para probar archivo administrativo y conservación del historial. |
 
-La herramienta conserva los códigos ya existentes y sus decisiones; repetirla no reinicia la demostración. Crea un Cliente ficticio inactivo sin contraseña compartida y una variante ficticia inactiva; esa variante no aparece en el catálogo público. Los archivos son muestras ficticias, no comprobantes de dinero recibido. No ejecuta flujos del cliente ni acredita la implementación de Dylan. La opción de consola se rechaza fuera de Development y no existe endpoint para sembrar datos. Si falla un commit, los archivos privados se conservan para revisión; no se borran archivos que puedan haber quedado referenciados.
+La herramienta conserva los códigos ya existentes y sus decisiones; repetirla no reinicia la demostración. Crea un Cliente ficticio inactivo sin contraseña compartida y una variante ficticia inactiva; esa variante no aparece en el catálogo público. Los archivos son muestras ficticias, no comprobantes de dinero recibido. Para pedidos nuevos el comprobante es una imagen legible de 1000 × 700; la herramienta no sustituye la imagen anterior de los pedidos existentes ni sus decisiones. No ejecuta flujos del cliente ni acredita la implementación de Dylan. La opción de consola se rechaza fuera de Development y no existe endpoint para sembrar datos. Si falla un commit, los archivos privados se conservan para revisión; no se borran archivos que puedan haber quedado referenciados.
 
 ## Contrato de la API administrativa
 
@@ -63,7 +63,7 @@ Prefijo: `/api/administracion/pedidos`. Todas las operaciones requieren sesión 
 | POST `/{pedidoId}/produccion` | ActualizarEstadoProduccionDto | ResultadoEstadoProduccionDto |
 | POST `/{pedidoId}/sublimacion` | Sin datos de negocio; la interfaz envía `{}` | ResultadoAutorizacionSublimacionDto |
 
-Las confirmaciones devuelven 200; `esCreacionNueva` diferencia creación de cobro de reintento. Los importes C# decimal viajan como cadenas JSON, conservando centavos. Identificadores y cantidades son enteros. Las descargas usan Content-Disposition attachment, Cache-Control no-store y nosniff, sin incluir rutas físicas en los DTO.
+Las confirmaciones devuelven 200, excepto un cobro directo nuevo, que devuelve 201 según el SRS. Su reintento devuelve 200 y el mismo pago; `esCreacionNueva` diferencia ambos resultados. Los importes C# decimal viajan como cadenas JSON, conservando centavos. Identificadores y cantidades son enteros. Las descargas usan Content-Disposition attachment, Cache-Control no-store y nosniff, sin incluir rutas físicas en los DTO.
 
 Errores: 400 para entradas inválidas o CSRF, 401 sin sesión válida, 403 por permisos, 404 para registros/archivos inexistentes, 409 ante un estado incompatible, decisión diferente o conflicto de concurrencia. Los límites HTTP pueden responder 413 antes del controlador. Errores inesperados se traducen al ProblemDetails general, con referencia de diagnóstico y sin excepción cruda.
 
@@ -82,7 +82,7 @@ Los cuerpos JSON administrativos pequeños tienen límite técnico de 16 KiB; la
 
 ## Comprobación y límites de la entrega
 
-Las pruebas HTTP/SQL se encuentran en `tests/ImpactoTextil.Api.Tests/AdministracionSqlTests.cs`. La suite completa de esta entrega ejecutó **83 pruebas, todas aprobadas y ninguna omitida**, incluidas 14 administrativas nuevas. Cada fixture crea y retira su propia base temporal; no elimina la base local ImpactoTextil del desarrollador. Los resultados locales están en `artifacts/administracion-20261031/completa.trx` y `administracion.trx`.
+Las pruebas HTTP/SQL se encuentran en `tests/ImpactoTextil.Api.Tests/AdministracionSqlTests.cs`. La suite del cierre administrativo inicial ejecutó **83 pruebas, todas aprobadas y ninguna omitida**, incluidas 14 administrativas nuevas. Cada fixture crea y retira su propia base temporal; no elimina la base local ImpactoTextil del desarrollador. Los resultados locales están en `artifacts/administracion-20261031/completa.trx` y `administracion.trx`.
 
 Comando reproducible desde PowerShell, para localhost con autenticación Windows:
 
@@ -97,4 +97,4 @@ Se comprobaron además **13 recorridos de interfaz con Chrome headless, API y SQ
 
 Evidencias conservadas: [resultados de navegador](../evidencias/administracion-pedidos-navegador.json), [83 resultados SQL/HTTP](../evidencias/administracion-suite-sql.json), [captura de escritorio](../evidencias/administracion-pedidos-escritorio.png) y [captura móvil](../evidencias/administracion-pedidos-movil-320.png). Las capturas utilizan identidades y archivos ficticios. Las pruebas automatizadas y la revisión de IA no sustituyen la revisión humana que realizará el líder.
 
-La revisión del líder y del compañero todavía no se atribuye como realizada. Tampoco se acredita aquí la integración con los CU de Dylan, main, alojamiento público, carga de 50 usuarios, disponibilidad mensual ni medición SMART. El cierre de tu bloque local y el cierre del proyecto integrado son hitos distintos.
+Actualización posterior: la suite vigente de **92 pruebas pasó sin fallos ni omisiones** después de corregir los estados HTTP de cobro nuevo/reintento; se verificó también la descarga del nuevo comprobante y la conservación de expedientes al repetir la herramienta. Ver [registro y evidencias](../pruebas/revision-manual-administracion-20261031.md). El recorrido manual observado de Yirardy está registrado; la revisión independiente del compañero sigue pendiente. Tampoco se acredita aquí la integración con los CU de Dylan, main, alojamiento público, carga de 50 usuarios, disponibilidad mensual ni medición SMART. El cierre de tu bloque local y el cierre del proyecto integrado son hitos distintos.
