@@ -2,6 +2,8 @@
 
 Corte: 1 de noviembre de 2026. Reconciliado manualmente desde el borrador resguardado del 30 de octubre; no se aplicó el stash completo. Referencias: plan docente, página 4, y guía ampliada, página 7, en [guías](../guias/README.md).
 
+Actualización posterior del mismo día: este cuadro conserva el corte del informe Word 0.1. La iteración siguiente de Construcción incorpora CU-05/CU-06 adelantados por Yirardy, con 15 nuevas pruebas SQL y recorrido Chrome/API/SQL. Ver [contrato y evidencia](../fase-3/16-solicitudes-cliente.md). El estado posterior es diez CU locales; CU-07/CU-08, revisión humana e integración permanecen pendientes.
+
 Las fases del curso no equivalen automáticamente a las fases RUP. Esta tabla relaciona los artefactos según su propósito y disciplina; no atribuye al equipo ceremonias ni aprobaciones que no hayan ocurrido.
 
 | Fase RUP | Disciplina | Artefactos y evidencia | Estado al corte |

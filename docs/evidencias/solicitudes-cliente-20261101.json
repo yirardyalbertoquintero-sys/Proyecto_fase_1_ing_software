@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-11-01",
+  "rama": "Carlos_Borrell",
+  "baseCommit": "0e813cf5e9833625d6e2d3f7bfbcafad509ebeb9",
+  "alcance": "CU-05/CU-06 adelantados por Yirardy; solo Bolsa estándar en solicitudes nuevas",
+  "comandoSuite": "./scripts/Test-Registro.ps1",
+  "configuracion": "Release",
+  "restore": "--locked-mode",
+  "total": 107,
+  "aprobadas": 107,
+  "fallidas": 0,
+  "omitidas": 0,
+  "conSqlReal": 69,
+  "limpiezaQa": "Base exclusiva del navegador eliminada tras las pruebas; base ImpactoTextil conservada. Las pruebas xUnit retiran sus propias bases.",
+  "trxLocal": "artifacts/pruebas/20261101T193229Z-c875e147/resultado.trx",
+  "trxSha256": "579694bcdb376627c29d84227ea71a7c95181a42380a8703dfd458da665655d6",
+  "pruebasNuevas": [
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.Permisos_Csrf_CamposDesconocidos_YAdjuntosAjenosSeRechazan",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.SegundoArchivoInvalido_RevierteTodoYLimpiaSoloSusArchivos",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.ExtensionNoAdmitidaOFalsa_SeRechazaAunqueLosBytesSeanPngReal",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.DosImagenesDeDiezMb_SeAceptanEnElLimite_YUnByteAdicionalSeRechaza",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.FormularioDeOtraCuenta_NoPuedeCrearPedidoBajoLaSesionActual",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.SolicitudVariasPrendas_Pendiente_SinCotizacion_VisibleEnAdministracion_YOriginalExacto",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.ReenvioRecuperaElMismoPedidoAunqueDespuesCambieElCatalogo_YConservaArchivo",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.ClientesDistintos_PuedenUsarLaMismaConfirmacionSinCompartirPedido",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.PreciosPorLineaSeComparanAunqueElTotalNoCambie",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.CantidadDireccionDisenoYEmpaque_SeValidanAntesDeCrear",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.CatalogoCambiadoEnPrecioVarianteOActivo_ExigeNuevaConfirmacion_SinGuardarArchivos",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.DosReenviosSimultaneos_CreanUnaSolaSolicitudYUnSoloArchivo",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.ErrorDespuesDelCommit_ConservaArchivo_YReintentoRecuperaSolicitud",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.FalloSqlTrasInsertarPedidoYDetalle_RevierteSolicitudYArchivos",
+    "ImpactoTextil.Api.Tests.SolicitudesClienteSqlTests.MismaConfirmacionDistintoContenido_NoCreaOtroPedido"
+  ],
+  "navegador": {
+    "fecha": "2026-11-01",
+    "tipo": "Chrome headless, API y SQL reales en base aislada",
+    "resultados": [
+      "Login en la página y configuración básica solo en memoria, sin pedido ni archivo en servidor",
+      "Imagen e idea conservadas en memoria, texto HTML inerte y solo bolsa estándar",
+      "Sesión revocada y recuperada en la misma página sin perder dos configuraciones ni el File seleccionado",
+      "Precio cambiado rechaza sin guardar, conserva el carrito y exige revisar la nueva referencia",
+      "Pantalla con carrito a 320 px sin desbordamiento horizontal",
+      "Cambiar de cuenta antes del reintento oculta el carrito y bloquea su envío con la identidad ajena",
+      "Respuesta perdida tras commit: reintento 200, una solicitud y archivo exacto descargable desde administración",
+      "El carrito se vacía únicamente tras la confirmación de guardado",
+      "Recargar descarta el carrito temporal y conserva la solicitud ya persistida"
+    ],
+    "errores": []
+  },
+  "capturas": [
+    {
+      "archivo": "docs/evidencias/solicitudes-escritorio.png",
+      "sha256": "e7c86410887bb40348ffc20e68b5165b224c63b8523bbcf261d02bdbdbf40eca"
+    },
+    {
+      "archivo": "docs/evidencias/solicitudes-movil-320.png",
+      "sha256": "d3342180a8b3a9b7c3cc82ac78c7ba71679cdd376be56af7a40099d9496aa1cc"
+    }
+  ],
+  "qaVisual": "Escritorio 1440 px y móvil 320 px inspeccionados; texto legible, controles completos, sin desbordamiento horizontal.",
+  "revisionCodigo": "Segundo asistente revisó extensión/firma, identidad del formulario y ciclo de revalidación; observaciones corregidas. No es revisión humana.",
+  "fuenteSha256": "9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821",
+  "datos": "Exclusivamente ficticios; SQL y archivos de navegador aislados de la base local ImpactoTextil. La respuesta de un POST confirmado se abortó deliberadamente para comprobar el reintento; el resto usa backend y SQL reales.",
+  "limites": [
+    "No acredita CU-07/CU-08",
+    "Revisión funcional humana del nuevo recorrido y revisión cruzada pendientes",
+    "No acredita PR/main ni alojamiento",
+    "Topes agregados técnicos sujetos a cuotas reales del alojamiento",
+    "Informe Word 0.1 conserva el corte anterior y requiere consolidación posterior"
+  ]
+}

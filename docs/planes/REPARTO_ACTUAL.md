@@ -4,6 +4,8 @@ Fecha: 30 de octubre de 2026. Por indicación expresa de Yirardy, se actualiza l
 
 ## Responsabilidad actual
 
+**Actualización posterior, 1 de noviembre:** Yirardy indicó avanzar el trabajo de Dylan para no seguir esperando. En Carlos_Borrell adelantó CU-05/CU-06 completos; ver [solicitudes del cliente](../fase-3/16-solicitudes-cliente.md). CU-07/CU-08 siguen pendientes. El reparto original de la tabla se conserva como antecedente de asignación; no atribuir este código como contribución de Dylan ni inferir que no tenga cambios locales sin publicar. Su rama no se modifica. No se autoriza PR/main/despliegue.
+
 | Integrante | Implementación a su cargo desde este acuerdo |
 | --- | --- |
 | Yirardy | Sus CU-01, CU-02, CU-04 y CU-09, más la continuación de CU-10, CU-11, CU-12 y CU-13 a partir de los avances de Carlos. Mantiene coordinación de datos, arquitectura, integración y entrega. Puede trabajar expresamente en Yirardy_Quintero y Carlos_Borrell. |

@@ -17,6 +17,8 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 | Política vigente de contraseñas para Cliente y primer Administrador | [Actualización del 31 de octubre](seguimiento/politica-contrasena-2026-10-31.md). |
 | Primer Administrador y gestión del catálogo | [CU-09](fase-3/10-catalogo-administracion.md). |
 | Catálogo público, variantes activas y detalle | [CU-04](fase-3/11-catalogo-publico.md). |
+| Configurar prendas y enviar solicitud real como Cliente | [CU-05/CU-06, contrato y comprobaciones](fase-3/16-solicitudes-cliente.md). |
+| Avance del cliente y tareas restantes después del informe 0.1 | [Corte de solicitudes del 1 de noviembre](seguimiento/avance-cliente-20261101.md). |
 | Prototipo navegable de revisión y cotización, sin guardado real | [CU-10 en preparación](fase-3/13-prototipo-revision-pedidos.md). |
 | Clases de CU-10, tipos y correspondencia con el código | [Diseño y explicación](fase-3/14-diseno-clases-cu10.md) y [tres páginas draw.io](fase-3/diagramas/Clases_CU10.drawio). |
 | Ejecutar y revisar CU-10, CU-11, CU-13 y CU-12 con SQL | [Pantalla, API, demostración local y pruebas](fase-3/15-administracion-pedidos.md). |

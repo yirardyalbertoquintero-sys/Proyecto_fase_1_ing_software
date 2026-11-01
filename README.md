@@ -6,6 +6,8 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
+**Actualización del 1 de noviembre de 2026:** Yirardy adelantó CU-05/CU-06: configurar prendas, carrito temporal y solicitud con archivos privados, pantalla/API/SQL y reintentos sin duplicados. Para solicitudes nuevas se ofrece únicamente **Bolsa estándar**, por su indicación expresa. Ejecutar con F5 y entrar como Cliente en **Mi sesión → Solicitar cotización**. La suite vigente tiene 107 pruebas; las evidencias y límites están en [CU-05/CU-06](docs/fase-3/16-solicitudes-cliente.md). CU-07/CU-08, revisión humana del nuevo recorrido, integración en main y alojamiento siguen pendientes. Las actualizaciones anteriores conservan su fecha y alcance.
+
 **Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. Yirardy ya recorrió los escenarios manuales administrativos; la revisión cruzada del compañero y la integración del recorrido del cliente de Dylan siguen pendientes. Ver [revisión manual y preparación de integración](docs/pruebas/revision-manual-administracion-20261031.md). [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
 
 **Antecedente del 30 de octubre de 2026:** se reunieron las historias de Carlos y Yirardy conservando los commits anteriores, y se corrigieron servicios, almacenamiento privado y DTO monetarios. En ese cierre todavía faltaba la conexión administrativa, completada en la actualización del 31. Ver [correcciones y comprobaciones de ese cierre](docs/seguimiento/correcciones-carlos-2026-10-30.md).
@@ -38,7 +40,7 @@ Puedes crear variantes, consultar y filtrar el listado, cambiar datos/precio/fot
 
 Ejecuta con **F5** y pulsa **Explorar el catálogo de prendas**, desde el registro o la pantalla de sesión. También aparece **Ver catálogo** en la administración. No necesitas cuenta para consultar. Si la versión anterior está abierta, detenla con **Shift+F5** antes de volver a ejecutar.
 
-Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. La configuración de prendas y el envío de solicitudes corresponden a CU-05/CU-06 y aún no están implementados.
+Se muestran las variantes activas y sus precios de referencia. Puedes buscar, filtrar por talla/color/tela y pulsar **Ver prenda** para consultar sus características. El catálogo se alimenta de lo guardado en administración; si todavía no hay variantes activas, se informa sin inventar productos. **Solicitar cotización** abre CU-05/CU-06; el detalle permite configurar la variante consultada. El envío revalida sus características y precio antes de guardar.
 
 ## Prototipo de revisión de pedidos
 
@@ -82,13 +84,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-La suite contiene 92 pruebas: 51 de la base, 18 de archivos privados/serialización, 14 del bloque administrativo y 9 añadidas al actualizar la política de contraseñas. La ejecución posterior al cambio pasó las 92 con SQL Server real, sin fallos ni omisiones. Para repetir la suite:
+La suite vigente contiene 107 pruebas: las 92 del cierre anterior (51 de la base, 18 de archivos privados/serialización, 14 administrativas y 9 de contraseñas) más 15 de solicitudes del cliente. La evidencia de CU-05/CU-06 registra la ejecución completa con SQL real y el recorrido de navegador por separado. Para repetir la suite:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin configurar SQL, las 54 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
+Sin configurar SQL, las 69 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 
