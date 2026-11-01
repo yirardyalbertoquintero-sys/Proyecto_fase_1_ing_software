@@ -78,3 +78,7 @@ Para pagos y nueva cotización, bloquear primero el Pedido de la operación dent
 `confirmacion` y `huellaSolicitud` son apoyos técnicos a la idempotencia de CU-06. La misma clave y el mismo contenido semántico devuelven el pedido existente; la misma clave con datos distintos se rechaza. El hash incluye campos normalizados y hashes de archivos, no el separador aleatorio de multipart. La unicidad se limita al cliente para evitar mezclar confirmaciones de usuarios distintos.
 
 La referencia de un pago Verificado tiene unicidad por pedido y medio, complementada por la revisión de la evidencia. No se presume que todas las entidades bancarias tengan referencias globalmente únicas.
+
+## Extensión técnica de CU-07 del 1 de noviembre
+
+La migración `20261101194643_HuellaComprobanteCliente` incorpora `Pago.huellaComprobante`, varbinary(32) nullable, con CHECK de longitud. Permite identificar el contenido original del envío aunque CU-13 confirme otra fecha o referencia. No es una nueva entidad comercial, no duplica dinero ni altera la relación Pedido/Pago. Históricos y cobros directos conservan NULL; no se modifican decisiones resueltas. Las once tablas y cinco vistas permanecen; el total de CHECK pasa de 30 a 31. Ver [contrato, actualización probada y SQL generado](17-pedidos-comprobantes-cliente.md).

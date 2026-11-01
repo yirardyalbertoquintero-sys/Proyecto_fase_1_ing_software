@@ -8,7 +8,9 @@ Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance
 
 La rama remota de Dylan solo tenía el commit inicial al comprobarla. Se avanzó su historial sin forzarlo ni eliminar commits. Carlos_Borrell conserva su cierre anterior; los nuevos cambios del cliente se harán en Dylan_Ruiz. El nombre de la rama no cambia la autoría de las contribuciones y main permanece fuera de esta operación.
 
-**Actualización del 1 de noviembre de 2026:** Yirardy adelantó CU-05/CU-06: configurar prendas, carrito temporal y solicitud con archivos privados, pantalla/API/SQL y reintentos sin duplicados. Para solicitudes nuevas se ofrece únicamente **Bolsa estándar**, por su indicación expresa. Ejecutar con F5 y entrar como Cliente en **Mi sesión → Solicitar cotización**. La suite vigente tiene 107 pruebas; las evidencias y límites están en [CU-05/CU-06](docs/fase-3/16-solicitudes-cliente.md). CU-07/CU-08, revisión humana del nuevo recorrido, integración en main y alojamiento siguen pendientes. Las actualizaciones anteriores conservan su fecha y alcance.
+**Último avance del 1 de noviembre:** CU-07 y CU-08 están conectados: **Mi sesión → Mis pedidos** permite consultar solo pedidos propios (incluidos los archivados), aportar comprobantes privados y ver su revisión/saldo. La evidencia crea Pago Pendiente y CU-13 resuelve ese mismo registro. Suite completa: **124 pruebas aprobadas, cero fallos/omisiones**, más 13 comprobaciones de navegador reales. Para ejecutar, Shift+F5 y F5 aplica la migración técnica de huella sin rellenar ni alterar pagos históricos. Ver [guía, contrato y límites](docs/fase-3/17-pedidos-comprobantes-cliente.md). Los doce CU previstos tienen implementación local; faltan revisión humana, consolidación de entrega, PR/main y alojamiento. Las cifras y pendientes de los cortes anteriores conservan su fecha y alcance.
+
+**Corte anterior de CU-05/CU-06, 1 de noviembre de 2026:** Yirardy adelantó configuración de prendas, carrito temporal y solicitud con archivos privados, pantalla/API/SQL y reintentos sin duplicados. Para solicitudes nuevas se ofrece únicamente **Bolsa estándar**, por su indicación expresa. Ejecutar con F5 y entrar como Cliente en **Mi sesión → Solicitar cotización**. En ese corte se ejecutaron 107 pruebas; sus evidencias y límites están en [CU-05/CU-06](docs/fase-3/16-solicitudes-cliente.md). Entonces faltaban CU-07/CU-08, completados en el avance posterior descrito arriba. Revisión humana, main y alojamiento siguen pendientes.
 
 **Actualización del 31 de octubre de 2026:** el bloque administrativo CU-10/CU-11/CU-13/CU-12 está conectado a pantalla, API y SQL Server. Desde Mi sesión o Gestionar catálogo, abrir **Gestionar pedidos**. Incluye cotizaciones y diseños con historial, descargas privadas, comprobantes/cobros y producción/entrega. La suite actual, incluida la nueva política de contraseñas, pasó 92 pruebas sin omisiones. Yirardy ya recorrió los escenarios manuales administrativos; la revisión cruzada del compañero y la integración del recorrido del cliente de Dylan siguen pendientes. Ver [revisión manual y preparación de integración](docs/pruebas/revision-manual-administracion-20261031.md). [Cómo revisar, contratos y evidencias](docs/fase-3/15-administracion-pedidos.md).
 
@@ -86,13 +88,13 @@ dotnet test ImpactoTextil.slnx --no-build
 dotnet list ImpactoTextil.slnx package --vulnerable --include-transitive
 ```
 
-La suite vigente contiene 107 pruebas: las 92 del cierre anterior (51 de la base, 18 de archivos privados/serialización, 14 administrativas y 9 de contraseñas) más 15 de solicitudes del cliente. La evidencia de CU-05/CU-06 registra la ejecución completa con SQL real y el recorrido de navegador por separado. Para repetir la suite:
+La suite vigente contiene 124 pruebas: las 92 del cierre anterior (51 de la base, 18 de archivos privados/serialización, 14 administrativas y 9 de contraseñas), 15 de solicitudes y 17 de comprobantes/consulta/migración del cliente. Las evidencias de los documentos 16 y 17 registran los cortes y recorridos de navegador por separado. Para repetir la suite:
 
 ```powershell
 .\scripts\Test-Registro.ps1
 ```
 
-Sin configurar SQL, las 69 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por la migración; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
+Sin configurar SQL, las 86 pruebas de integración se omiten. Una de ellas también ejecuta las 29 comprobaciones del modelo sobre una base creada por las migraciones; no son 29 pruebas xUnit adicionales. Cada ejecución retira únicamente su propia base temporal; no borra `ImpactoTextil`. El informe histórico de correcciones conserva su comando filtrado de archivos/serialización.
 
 Los archivos `packages.lock.json` fijan también las dependencias transitivas. Si se cambia intencionalmente una dependencia, regenerar el bloqueo, revisar el cambio y repetir las comprobaciones. `Directory.Build.props` trata las alertas de vulnerabilidad moderada, alta o crítica como errores de restauración.
 

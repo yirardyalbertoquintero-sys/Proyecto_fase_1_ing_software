@@ -1,5 +1,7 @@
 # Arquitectura de la aplicación
 
+Estado posterior del 1 de noviembre: CU-07/CU-08 conectan `mis-pedidos.html/js`, `MisPedidosController`, `ComprobanteClienteService` y `IPedidoClienteRepository/PedidoClienteRepository`. Se reutiliza la lectura administrativa consistente con comprobación de titularidad y DTO propio, y el bloqueo del Pedido para subir evidencia Pendiente. El almacén comparte el límite de decodificación entre prevalidación y guardado. [Documento 17](17-pedidos-comprobantes-cliente.md) registra contratos y la migración técnica de huella; las menciones anteriores a estos CU pendientes son históricas.
+
 Actualización del 31 de octubre de 2026: las operaciones administrativas de pedidos, archivos, pagos y producción están conectadas mediante PedidosAdministracionController y los servicios existentes. El contrato actual, los permisos y las pruebas están en [administración de pedidos](15-administracion-pedidos.md). Los contratos propuestos que aparecen como antecedentes deben contrastarse con ese documento al integrar los módulos de Dylan.
 
 Actualización posterior del 1 de noviembre: CU-05/CU-06 conectan `solicitud.html/js`, `SolicitudesClienteController`, `SolicitudClienteService` y `ISolicitudClienteRepository/SolicitudClienteRepository`. Reutilizan EF Core y el almacén privado, sin migraciones adicionales. El [contrato implementado](16-solicitudes-cliente.md) sustituye la propuesta de CU-06 conservada debajo como antecedente. POST `/api/solicitudes` comprueba al Cliente autenticado, su identidad confirmada y el catálogo dentro de la transacción. CU-07/CU-08 siguen pendientes; no interpretar las menciones anteriores a cuatro CU pendientes como estado posterior.
@@ -54,6 +56,9 @@ El registro, las tres operaciones de sesión y las consultas públicas y adminis
 | POST /api/imagenes-catalogo | Subida de foto pública validada; solo Administrador y CSRF. Implementado. |
 | GET /api/imagenes-catalogo/{archivo} | Foto pública existente y referenciada por un Producto; sin acceso a archivos privados. Implementado. |
 | POST /api/solicitudes | CU-06; Cliente y CSRF, multipart completo, revalidación y confirmación idempotente. Implementado; contrato en documento 16. |
+| GET /api/mis-pedidos y /api/mis-pedidos/{id} | CU-08; lista y expediente del titular, incluidos archivados. Implementado; sin rutas ni metadatos internos. |
+| POST /api/mis-pedidos/{id}/comprobantes | CU-07; evidencia privada como Pago Pendiente, Cliente/CSRF, huella original y bloqueo del Pedido. Implementado. |
+| GET /api/mis-pedidos/{id}/pagos/{pagoId}/comprobante | Descarga del titular, pertenencia doble y contenido validado. Implementado. |
 
 GET /api/seguridad/token entrega el token antifalsificación; el navegador lo conserva durante el envío y lo devuelve en X-CSRF-TOKEN, junto con una cookie técnica Secure, HttpOnly y SameSite=Strict. No se guarda el token en almacenamiento local. Los contratos de las rutas restantes deben coordinarse antes de conectar sus pantallas; no cambian los identificadores CU ni RF.
 
