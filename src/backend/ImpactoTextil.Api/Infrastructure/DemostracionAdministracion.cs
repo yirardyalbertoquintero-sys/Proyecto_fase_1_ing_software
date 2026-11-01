@@ -109,7 +109,10 @@ public static class DemostracionAdministracion
             detalle.versionDisenoVigente = diseno.id; pedido.versionCotizacionVigente = cotizacion.id;
             pedido.fechaEntregaAcordada = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(7));
             await c.SaveChangesAsync();
-            await using var evidencia = new MemoryStream(Png);
+            // Solo se usa al crear el pedido; nunca reemplaza evidencias históricas.
+            await using var evidencia = typeof(DemostracionAdministracion).Assembly.GetManifestResourceStream(
+                "ImpactoTextil.Api.Infrastructure.Muestras.comprobante-ficticio.png")
+                ?? throw new InvalidOperationException("No se encontró el comprobante ficticio de demostración.");
             var comprobante = await almacen.GuardarAsync(evidencia, TipoArchivoPrivado.ComprobantePago, CancellationToken.None);
             c.Add(new Pago
             {

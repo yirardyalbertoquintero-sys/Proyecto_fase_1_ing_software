@@ -127,7 +127,16 @@ public sealed class AdministracionSqlTests(BaseSqlPruebas datos) : IClassFixture
     public async Task CobroDirecto_IdempotenciaExacta_ReferenciasDuplicadas_YFechaDiferente()
     {
         using var s = Servidor(); using var admin = await Actor(s); var p = await CrearSolicitud(s); await Aceptar(admin, p, await Cotizar(admin, p, "500"));
-        var id = Guid.NewGuid(); await Cobrar(admin, p, "500", id, "Recibo 1"); await Cobrar(admin, p, "500", id, "Recibo 1");
+        var id = Guid.NewGuid();
+        var nuevo = await admin.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("500", id, "Recibo 1"));
+        Assert.Equal(HttpStatusCode.Created, nuevo.StatusCode);
+        var creado = (await nuevo.Content.ReadFromJsonAsync<ResultadoPagoAdminDto>())!;
+        Assert.True(creado.esCreacionNueva);
+        var repetido = await admin.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("500", id, "Recibo 1"));
+        Assert.Equal(HttpStatusCode.OK, repetido.StatusCode);
+        var recuperado = (await repetido.Content.ReadFromJsonAsync<ResultadoPagoAdminDto>())!;
+        Assert.False(recuperado.esCreacionNueva);
+        Assert.Equal(creado.pagoId, recuperado.pagoId);
         Assert.Equal(HttpStatusCode.Conflict, (await admin.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("500", id, "Recibo 1", FechaCobro.AddDays(1)))).StatusCode);
         Assert.Equal(HttpStatusCode.Conflict, (await admin.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("100", Guid.NewGuid(), "Recibo 1"))).StatusCode);
         Assert.Equal(HttpStatusCode.BadRequest, (await admin.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("-1", Guid.NewGuid(), "Negativo"))).StatusCode);
@@ -139,7 +148,7 @@ public sealed class AdministracionSqlTests(BaseSqlPruebas datos) : IClassFixture
     {
         using var s = Servidor(); using var a = await Actor(s); using var b = await Actor(s); var p = await CrearSolicitud(s); await Aceptar(a, p, await Cotizar(a, p, "500"));
         var respuestas = await Task.WhenAll(a.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("700", Guid.NewGuid(), "A")), b.PostAsJsonAsync(Ruta(p, "cobros"), Cobro("700", Guid.NewGuid(), "B")));
-        Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.OK); Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.Conflict);
+        Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.Created); Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.Conflict);
         var x = await Expediente(a, p); Assert.Single(x.pagos); Assert.Equal(300m, x.pedido.saldoPendiente);
     }
 
@@ -149,7 +158,9 @@ public sealed class AdministracionSqlTests(BaseSqlPruebas datos) : IClassFixture
         using var s = Servidor(); using var a = await Actor(s); using var b = await Actor(s); var p = await CrearSolicitud(s); await Aceptar(a, p, await Cotizar(a, p, "500"));
         var cobro = Cobro("500", Guid.NewGuid(), "Mismo recibo");
         var respuestas = await Task.WhenAll(a.PostAsJsonAsync(Ruta(p, "cobros"), cobro), b.PostAsJsonAsync(Ruta(p, "cobros"), cobro));
-        Assert.All(respuestas, r => Assert.Equal(HttpStatusCode.OK, r.StatusCode)); var x = await Expediente(a, p); Assert.Single(x.pagos); Assert.Equal(500m, x.pedido.saldoPendiente);
+        Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.Created);
+        Assert.Single(respuestas, r => r.StatusCode == HttpStatusCode.OK);
+        var x = await Expediente(a, p); Assert.Single(x.pagos); Assert.Equal(500m, x.pedido.saldoPendiente);
     }
 
     [PruebaSql]

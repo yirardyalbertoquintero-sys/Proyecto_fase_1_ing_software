@@ -114,8 +114,13 @@ public sealed class PedidosAdministracionController(
     }
 
     [HttpPost("{pedidoId:int:min(1)}/cobros"), RequestSizeLimit(16_384)]
-    public async Task<IActionResult> Cobrar(int pedidoId, RegistrarCobroDirectoDto solicitud, CancellationToken ct) =>
-        Responder(await pagos.RegistrarCobroDirectoAsync(AdministradorId, pedidoId, solicitud, ct));
+    public async Task<IActionResult> Cobrar(int pedidoId, RegistrarCobroDirectoDto solicitud, CancellationToken ct)
+    {
+        var resultado = await pagos.RegistrarCobroDirectoAsync(AdministradorId, pedidoId, solicitud, ct);
+        if (resultado.EsExito && resultado.Valor!.esCreacionNueva)
+            return StatusCode(StatusCodes.Status201Created, resultado.Valor);
+        return Responder(resultado);
+    }
 
     [HttpPost("{pedidoId:int:min(1)}/produccion"), RequestSizeLimit(16_384)]
     public async Task<IActionResult> CambiarEstado(int pedidoId, ActualizarEstadoProduccionDto solicitud, CancellationToken ct) =>
