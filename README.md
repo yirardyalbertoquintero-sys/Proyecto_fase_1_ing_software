@@ -1,10 +1,12 @@
 Proyecto ing software
 
-# Impacto Textil — fases 3 y 4, rama Carlos_Borrell
+# Impacto Textil — fases 3 y 4, rama Dylan_Ruiz
 
 Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
 
-**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Esta rama es `Carlos_Borrell`; la base de acceso/catálogo procede de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+**Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. La rama activa para continuar el cliente es `Dylan_Ruiz`, por indicación de Yirardy del 1 de noviembre. Incorpora la base funcional de `Carlos_Borrell`, incluido CU-05/CU-06, y conserva la procedencia de acceso/catálogo de `Yirardy_Quintero`. Abre la carpeta completa en VS Code y comprueba la rama antes de editar. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
+
+La rama remota de Dylan solo tenía el commit inicial al comprobarla. Se avanzó su historial sin forzarlo ni eliminar commits. Carlos_Borrell conserva su cierre anterior; los nuevos cambios del cliente se harán en Dylan_Ruiz. El nombre de la rama no cambia la autoría de las contribuciones y main permanece fuera de esta operación.
 
 **Actualización del 1 de noviembre de 2026:** Yirardy adelantó CU-05/CU-06: configurar prendas, carrito temporal y solicitud con archivos privados, pantalla/API/SQL y reintentos sin duplicados. Para solicitudes nuevas se ofrece únicamente **Bolsa estándar**, por su indicación expresa. Ejecutar con F5 y entrar como Cliente en **Mi sesión → Solicitar cotización**. La suite vigente tiene 107 pruebas; las evidencias y límites están en [CU-05/CU-06](docs/fase-3/16-solicitudes-cliente.md). CU-07/CU-08, revisión humana del nuevo recorrido, integración en main y alojamiento siguen pendientes. Las actualizaciones anteriores conservan su fecha y alcance.
 

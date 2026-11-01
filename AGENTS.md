@@ -22,6 +22,8 @@ Aplicación web de pedidos de camisetas personalizadas por sublimación. Proyect
 
 ## Organización y alcance
 
+- Instrucción más reciente del líder, 1 de noviembre de 2026: continuar el bloque del cliente en Dylan_Ruiz. Se trasladó allí la base funcional completa de Carlos_Borrell mediante avance del historial, conservando todos los commits y autorías. La comprobación remota encontró únicamente el commit inicial en Dylan_Ruiz y ningún cambio exclusivo; no se sobreescriben ni se atribuyen aportes no publicados de Dylan. Esta indicación sustituye la restricción anterior de no modificar su rama. Carlos_Borrell se conserva; PR, main y despliegue continúan aplazados. Usar Dylan_Ruiz para CU-07/CU-08 y el trabajo posterior del cliente.
+
 - Actualización expresa del líder, 1 de noviembre de 2026: adelantar CU-05/CU-06 del reparto original de Dylan en la carpeta y rama autorizadas Carlos_Borrell. Yirardy realiza esta implementación; no atribuirla como aporte publicado por Dylan ni modificar su rama. CU-07/CU-08 permanecen pendientes. Para nuevas solicitudes, Yirardy confirmó exclusivamente Bolsa estándar, sin premium ni Sin empaque; conservar valores históricos y DOCX aprobado. Ver docs/fase-3/16-solicitudes-cliente.md. Continúan aplazados PR, main y despliegue.
 
 - Autorización posterior del líder, 31 de octubre de 2026: completar ahora su bloque CU-10/CU-11/CU-13/CU-12 en Carlos_Borrell, incluidas conexiones HTTP, contratos administrativos y pruebas funcionales/SQL de pagos, sin esperar los cambios de Dylan. Esta instrucción reemplaza el aplazamiento de esas tareas descrito más abajo. Mantener fuera main y despliegue; el líder realizará la revisión humana al final. Los datos de demostración son una herramienta local y no implementan los CU de Dylan.

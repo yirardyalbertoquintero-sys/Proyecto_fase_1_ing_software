@@ -4,6 +4,8 @@ Fecha: 30 de octubre de 2026. Por indicación expresa de Yirardy, se actualiza l
 
 ## Responsabilidad actual
 
+**Ubicación de trabajo vigente, indicación posterior del 1 de noviembre:** continuar el bloque cliente en `Dylan_Ruiz`. Se incorpora la base funcional completa de Carlos_Borrell, necesaria para CU-05/CU-06 y su conexión administrativa, sin reescribir historial. Al comprobar origin/Dylan_Ruiz solo existía el commit inicial y ningún cambio exclusivo. Carlos_Borrell conserva sus commits publicados. Yirardy continúa implementando los avances autorizados; esta operación no convierte el código existente en autoría de Dylan. CU-07/CU-08 siguen pendientes, ahora con Dylan_Ruiz como rama de continuación. PR/main/despliegue permanecen aplazados.
+
 **Actualización posterior, 1 de noviembre:** Yirardy indicó avanzar el trabajo de Dylan para no seguir esperando. En Carlos_Borrell adelantó CU-05/CU-06 completos; ver [solicitudes del cliente](../fase-3/16-solicitudes-cliente.md). CU-07/CU-08 siguen pendientes. El reparto original de la tabla se conserva como antecedente de asignación; no atribuir este código como contribución de Dylan ni inferir que no tenga cambios locales sin publicar. Su rama no se modifica. No se autoriza PR/main/despliegue.
 
 | Integrante | Implementación a su cargo desde este acuerdo |
