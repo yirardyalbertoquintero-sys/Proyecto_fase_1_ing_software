@@ -1,0 +1,42 @@
+erDiagram
+    Pedido ||--o{ VersionCotizacion : versiones
+    VersionCotizacion o|--o| Pedido : vigente
+    DetallePedido ||--o{ VersionDiseno : versiones
+    VersionDiseno o|--o| DetallePedido : vigente
+    VersionCotizacion ||--|{ DetalleCotizacion : importes
+    DetallePedido ||--o{ DetalleCotizacion : linea_historica
+    VersionDiseno o|--o{ DetalleCotizacion : arte_pertinente
+    Usuario ||--o{ VersionCotizacion : responsableRegistro
+    Usuario o|--o{ VersionCotizacion : responsableDecision
+    Usuario ||--o{ VersionDiseno : responsableRegistro
+    Usuario o|--o{ VersionDiseno : responsableDecision
+    VersionCotizacion {
+        int id PK
+        int pedido FK
+        int numeroVersion
+        datetimeoffset fechaRegistro
+        int responsableRegistro FK
+        nvarchar decision
+        datetimeoffset fechaDecision
+        int responsableDecision FK
+        nvarchar referenciaDecision
+    }
+    VersionDiseno {
+        int id PK
+        int detalle FK
+        int numeroVersion
+        nvarchar archivoURL
+        nvarchar descripcion
+        datetimeoffset fechaRegistro
+        int responsableRegistro FK
+        nvarchar decision
+        datetimeoffset fechaDecision
+        int responsableDecision FK
+        nvarchar referenciaDecision
+    }
+    DetalleCotizacion {
+        int versionCotizacion PK,FK
+        int detalle PK,FK
+        decimal precioUnitarioAcordado
+        int versionDiseno FK
+    }

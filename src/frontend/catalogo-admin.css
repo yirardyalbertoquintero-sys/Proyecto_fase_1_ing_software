@@ -1,0 +1,52 @@
+.admin { background: #f7f7f1; }
+.cabecera-admin { background: #173b3c; color: #fff9ee; padding: 22px max(24px, calc((100% - 1280px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.cabecera-admin nav a { color: #fff9ee; font-size: 14px; white-space: nowrap; }
+.cabecera-admin nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+.contenido-admin { max-width: 1328px; margin: 0 auto; padding: 38px 24px; }
+.contenido-admin h1 { font-size: clamp(30px, 4vw, 43px); margin-bottom: 12px; }
+.contenido-admin h2 { font-size: 24px; letter-spacing: -.6px; }
+.resumen-catalogo { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 30px; }
+.resumen-catalogo p { margin: 0; padding: 18px 22px; border: 1px solid #d7ddd1; border-radius: 9px; background: #fffefa; display: flex; align-items: baseline; gap: 12px; }
+.resumen-catalogo strong { font-size: 28px; color: #234f49; }
+.resumen-catalogo span { font-size: 13px; color: #63716a; }
+.distribucion-catalogo { display: grid; grid-template-columns: minmax(0,1fr) minmax(310px,385px); gap: 30px; align-items: start; }
+.titulo-listado { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.titulo-listado h2 { margin: 0; }
+.titulo-listado button { margin: 0; white-space: nowrap; }
+.filtros-catalogo { display: grid; grid-template-columns: minmax(0,1fr) 155px; gap: 16px; }
+select { width: 100%; min-height: 48px; padding: 10px; border: 1px solid #c9cfc5; border-radius: 7px; background: #fffefa; color: #233a3b; font: inherit; font-size: 14px; }
+#estado-listado { font-size: 13px; line-height: 1.6; color: #63716a; }
+.lista-variantes { display: grid; gap: 14px; }
+.variante { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 18px; padding: 18px; border: 1px solid #d7ddd1; border-radius: 10px; background: #fffefa; }
+.variante > img { width: 100%; height: 128px; object-fit: contain; border-radius: 6px; background: #ecefe8; }
+.variante h3 { font-size: 18px; margin: 8px 0; overflow-wrap: anywhere; }
+.variante p { font-size: 13px; line-height: 1.6; margin: 6px 0; overflow-wrap: anywhere; }
+.variante .precio { font-size: 17px; font-weight: 650; }
+.variante .precio span { font-size: 11px; color: #63716a; font-weight: normal; margin-left: 7px; }
+.etiqueta-estado { font-size: 11px; border-radius: 20px; background: #e5eee3; color: #28574e; padding: 4px 9px; display: inline-block; }
+.etiqueta-estado.inactiva { background: #eee7df; color: #775b49; }
+.variante .boton-secundario { padding: 9px 16px; margin-top: 8px; font-size: 13px; }
+.editor-catalogo { padding: 25px; background: #fffefa; border: 1px solid #d7ddd1; border-radius: 10px; }
+.editor-catalogo .ceja { font-size: 9px; line-height: 1.6; }
+.editor-catalogo .introduccion { font-size: 13px; margin-bottom: 22px; }
+.campos-pareados { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.vista-imagen { display: block; width: 100%; max-height: 200px; object-fit: contain; margin-top: 15px; border-radius: 5px; background: #ecefe8; }
+.disponibilidad { margin: 24px 0 10px; font-size: 13px; }
+.editor-catalogo .boton-principal { margin-top: 20px; }
+input[type=file] { font-size: 12px; padding: 12px 5px; }
+@media (max-width: 1000px) { .distribucion-catalogo { grid-template-columns: 1fr; } .editor-catalogo { max-width: 600px; } }
+@media (max-width: 500px) {
+  .cabecera-admin { padding: 18px; gap: 12px; }
+  .cabecera-admin .marca { font-size: 9px; letter-spacing: 1px; gap: 8px; }
+  .cabecera-admin .marca strong { font-size: 15px; letter-spacing: 2px; }
+  .cabecera-admin nav a { font-size: 12px; }
+  .contenido-admin { padding: 28px 18px; }
+  .resumen-catalogo { gap: 7px; }
+  .resumen-catalogo p { padding: 12px 6px; gap: 4px; flex-direction: column; align-items: center; }
+  .resumen-catalogo span { font-size: 11px; }
+  .titulo-listado { align-items: flex-start; flex-direction: column; }
+  .filtros-catalogo { grid-template-columns: 1fr; gap: 0; }
+  .variante { grid-template-columns: 65px minmax(0,1fr); padding: 12px; gap: 12px; }
+  .variante > img { height: 95px; }
+  .editor-catalogo { padding: 20px 16px; }
+}

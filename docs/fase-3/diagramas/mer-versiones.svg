@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1120" viewBox="0 0 1560 1120">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#41556b"/></marker></defs>
+<rect width="1560" height="1120" fill="white"/>
+<text x="40" y="40" font-family="Arial" font-size="27" font-weight="bold" fill="#172b40">Modelo relacional 2 de 3</text>
+<text x="40" y="70" font-family="Arial" font-size="16" fill="#425466">Historial y elección de versiones. Las cantidades originales se conservan por referencia inmutable.</text>
+<polyline points="360,140 600,140" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="125" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">pedido: 1 → 0..*</text>
+<polyline points="600,180 360,180" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="208" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">vigente: 0..1 ↔ 0..1</text>
+<polyline points="920,150 1160,150" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="135" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">1 → 1..* importes</text>
+<polyline points="1320,240 1320,710" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1400" y="475" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">detalle: 0..* → 1</text>
+<polyline points="1160,755 920,755" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="740" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">detalle: 1 → 0..*</text>
+<polyline points="920,800 1160,800" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1040" y="825" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">vigente: 0..1 ↔ 0..1</text>
+<polyline points="920,880 1070,880 1070,210 1160,210" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1070" y="550" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">arte: 0..1 → 0..*</text>
+<polyline points="360,750 450,750 450,290 600,290" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="455" y="495" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">registro 1 / decisión 0..1 → 0..*</text>
+<polyline points="360,800 600,800" fill="none" stroke="#41556b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="480" y="850" text-anchor="middle" font-family="Arial" font-size="15" fill="#172b40" stroke="white" stroke-width="6" paint-order="stroke">registro 1 / decisión 0..1 → 0..*</text>
+<rect x="40" y="100" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pedido · contexto</text>
+<text x="54" y="157" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
+<text x="54" y="180" font-family="Arial" font-size="16" fill="#172b40">FK versionCotizacionVigente</text>
+<rect x="600" y="100" width="320" height="209" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">VersionCotizacion</text>
+<text x="614" y="157" font-family="Arial" font-size="16" fill="#172b40">PK id; FK pedido</text>
+<text x="614" y="180" font-family="Arial" font-size="16" fill="#172b40">UK pedido + numeroVersion</text>
+<text x="614" y="203" font-family="Arial" font-size="16" fill="#172b40">fechaRegistro</text>
+<text x="614" y="226" font-family="Arial" font-size="16" fill="#172b40">FK responsableRegistro</text>
+<text x="614" y="249" font-family="Arial" font-size="16" fill="#172b40">decision; fechaDecision</text>
+<text x="614" y="272" font-family="Arial" font-size="16" fill="#172b40">FK responsableDecision</text>
+<text x="614" y="295" font-family="Arial" font-size="16" fill="#172b40">referenciaDecision</text>
+<rect x="1160" y="100" width="320" height="140" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="100" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="124" font-family="Arial" font-size="18" font-weight="bold" fill="white">DetalleCotizacion</text>
+<text x="1174" y="157" font-family="Arial" font-size="16" fill="#172b40">PK/FK versionCotizacion</text>
+<text x="1174" y="180" font-family="Arial" font-size="16" fill="#172b40">PK/FK detalle</text>
+<text x="1174" y="203" font-family="Arial" font-size="16" fill="#172b40">precioUnitarioAcordado</text>
+<text x="1174" y="226" font-family="Arial" font-size="16" fill="#172b40">FK versionDiseno (opcional)</text>
+<rect x="40" y="710" width="320" height="94" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="40" y="710" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="54" y="734" font-family="Arial" font-size="18" font-weight="bold" fill="white">Usuario · contexto</text>
+<text x="54" y="767" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
+<text x="54" y="790" font-family="Arial" font-size="16" fill="#172b40">rol</text>
+<rect x="600" y="710" width="320" height="232" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="710" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="614" y="734" font-family="Arial" font-size="18" font-weight="bold" fill="white">VersionDiseno</text>
+<text x="614" y="767" font-family="Arial" font-size="16" fill="#172b40">PK id; FK detalle</text>
+<text x="614" y="790" font-family="Arial" font-size="16" fill="#172b40">UK detalle + numeroVersion</text>
+<text x="614" y="813" font-family="Arial" font-size="16" fill="#172b40">archivoURL; descripcion</text>
+<text x="614" y="836" font-family="Arial" font-size="16" fill="#172b40">fechaRegistro</text>
+<text x="614" y="859" font-family="Arial" font-size="16" fill="#172b40">FK responsableRegistro</text>
+<text x="614" y="882" font-family="Arial" font-size="16" fill="#172b40">decision; fechaDecision</text>
+<text x="614" y="905" font-family="Arial" font-size="16" fill="#172b40">FK responsableDecision</text>
+<text x="614" y="928" font-family="Arial" font-size="16" fill="#172b40">referenciaDecision</text>
+<rect x="1160" y="710" width="320" height="117" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="1160" y="710" width="320" height="36" rx="5" fill="#193c58"/>
+<text x="1174" y="734" font-family="Arial" font-size="18" font-weight="bold" fill="white">DetallePedido · contexto</text>
+<text x="1174" y="767" font-family="Arial" font-size="16" fill="#172b40">PK id; FK pedido</text>
+<text x="1174" y="790" font-family="Arial" font-size="16" fill="#172b40">cantidad original inmutable</text>
+<text x="1174" y="813" font-family="Arial" font-size="16" fill="#172b40">FK versionDisenoVigente</text>
+<text x="40" y="1096" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Fase 3 · Diseño inicial para revisión del equipo · 28 de octubre de 2026</text></svg>

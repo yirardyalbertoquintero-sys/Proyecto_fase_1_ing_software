@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Catálogo de prendas · Impacto Textil</title>
+  <link rel="icon" type="image/svg+xml" href="/marca.svg">
+  <link rel="stylesheet" href="/estilos.css">
+  <link rel="stylesheet" href="/catalogo.css">
+  <script src="/catalogo.js" defer></script>
+</head>
+<body class="catalogo-publico">
+  <a class="saltar" href="#prendas">Ir a las prendas</a>
+  <header class="cabecera-catalogo">
+    <a class="marca" href="/catalogo.html" aria-label="Impacto Textil, catálogo"><img src="/marca.svg" width="42" height="42" alt=""><span>IMPACTO<br><strong>TEXTIL</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="/">Crear cuenta</a><a href="/acceso.html">Mi sesión <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="portada-catalogo" aria-labelledby="titulo-catalogo">
+      <div class="portada-interior">
+        <p class="ceja">HECHO PARA TUS IDEAS</p>
+        <h1 id="titulo-catalogo">Encuentra la prenda.<br><span>Imagina lo que sigue.</span></h1>
+        <p>Explora las tallas, colores y telas disponibles en Impacto Textil.</p>
+        <a class="enlace-prendas" href="#prendas">Ver prendas <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="detalle-portada" aria-hidden="true"><span>EL PUNTO<br>DE PARTIDA<br>ES TU IDEA.</span></div>
+    </section>
+    <section id="prendas" class="seccion-prendas" aria-labelledby="titulo-prendas">
+      <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+      <div class="titulo-prendas"><div><p class="ceja ceja-oscura">ELIGE TU BASE</p><h2 id="titulo-prendas">Prendas disponibles</h2></div><button id="actualizar-catalogo" class="boton-secundario" type="button">Actualizar catálogo</button></div>
+      <p class="nota-referencia">Los importes son precios de referencia. El precio final se acuerda en la cotización del pedido.</p>
+      <form id="filtros-catalogo" class="filtros-publicos" role="search" aria-label="Buscar prendas">
+        <div class="campo buscar-publico"><label for="buscar">Buscar prenda o característica</label><input id="buscar" type="search" placeholder="Nombre, color, talla o tela" maxlength="150"></div>
+        <div class="campo"><label for="talla">Talla</label><select id="talla"><option value="">Todas</option></select></div>
+        <div class="campo"><label for="color">Color</label><select id="color"><option value="">Todos</option></select></div>
+        <div class="campo"><label for="tela">Tela</label><select id="tela"><option value="">Todas</option></select></div>
+        <button id="limpiar-filtros" class="limpiar-filtros" type="button">Limpiar filtros</button>
+      </form>
+      <div id="error-catalogo" class="resultado" role="alert" tabindex="-1" hidden></div>
+      <p id="estado-catalogo" class="estado-catalogo" role="status">Cargando prendas…</p>
+      <div id="lista-prendas" class="lista-prendas" aria-live="off"></div>
+      <noscript><p class="aviso">Activa JavaScript para consultar las prendas y sus características.</p></noscript>
+    </section>
+  </main>
+  <dialog id="detalle-prenda" class="detalle-prenda" aria-labelledby="titulo-detalle">
+    <div class="barra-detalle"><p class="ceja ceja-oscura">CONOCE LA PRENDA</p><button id="cerrar-detalle" class="cerrar-detalle" type="button" aria-label="Cerrar detalle">Cerrar <span aria-hidden="true">×</span></button></div>
+    <h2 id="titulo-detalle" tabindex="-1">Detalle de la prenda</h2>
+    <p id="estado-detalle" role="status">Cargando características…</p>
+    <div id="error-detalle" class="resultado" role="alert" hidden></div>
+    <div id="contenido-detalle" class="contenido-detalle" hidden>
+      <div id="foto-detalle" class="foto-detalle"></div>
+      <div><p class="disponible">Disponible en catálogo</p><dl id="caracteristicas-detalle"></dl><p id="precio-detalle" class="precio-detalle"></p><p class="nota-detalle">Precio de referencia de esta variante. La personalización y el importe definitivo se acuerdan al cotizar.</p></div>
+    </div>
+    <button id="actualizar-detalle" class="boton-secundario" type="button">Volver a consultar</button>
+  </dialog>
+  <footer class="pie-catalogo"><span>IMPACTO TEXTIL</span><p>Ideas con identidad. Prendas con tu estilo.</p><a href="/aviso.html">Aviso de la demostración</a></footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/backend/">
+    <Project Path="src/backend/ImpactoTextil.Api/ImpactoTextil.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ImpactoTextil.Api.Tests/ImpactoTextil.Api.Tests.csproj" />
+  </Folder>
+</Solution>

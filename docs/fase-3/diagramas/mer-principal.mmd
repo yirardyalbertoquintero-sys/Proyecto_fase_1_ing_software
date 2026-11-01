@@ -1,0 +1,85 @@
+erDiagram
+    Usuario ||--o{ Pedido : cliente
+    Usuario o|--o{ Pago : responsableVerificacion
+    Usuario o|--o{ Pedido : responsableArchivo
+    Producto ||--o{ DetallePedido : producto
+    Pedido ||--|{ DetallePedido : contiene
+    Pedido ||--o{ Pago : recibe
+    Pedido ||--o{ ConstanciaEntrega : conserva
+    Usuario ||--o{ ConstanciaEntrega : registra
+    Usuario {
+        int id PK
+        nvarchar correo UK
+        nvarchar nombre
+        varchar passwordHash
+        nvarchar rol
+        bit activo
+        bit aceptacionTerminos
+        datetimeoffset fechaAceptacion
+    }
+    Producto {
+        int id PK
+        nvarchar nombre
+        nvarchar talla
+        nvarchar color
+        nvarchar tela
+        nvarchar imagenURL
+        decimal precioBase
+        bit activo
+    }
+    Pedido {
+        int id PK
+        nvarchar codigo UK
+        int cliente FK
+        int versionCotizacionVigente FK
+        nvarchar estado
+        nvarchar condicionAdministrativa
+        datetimeoffset fechaOrden
+        date fechaEntregaAcordada
+        datetimeoffset fechaEntregaReal
+        nvarchar modalidadEntrega
+        nvarchar direccionEntrega
+        nvarchar motivoArchivo
+        datetimeoffset fechaArchivo
+        int responsableArchivo FK
+        uniqueidentifier confirmacion
+        binary huellaSolicitud
+        rowversion controlConcurrencia
+    }
+    DetallePedido {
+        int id PK
+        int pedido FK
+        int producto FK
+        int cantidad
+        nvarchar talla
+        nvarchar color
+        nvarchar tela
+        nvarchar empaque
+        nvarchar observaciones
+        nvarchar ideaDiseno
+        nvarchar archivoDisenoURL
+        decimal precioBaseReferencia
+        int versionDisenoVigente FK
+    }
+    Pago {
+        int id PK
+        int pedido FK
+        decimal monto
+        datetimeoffset fecha
+        nvarchar medio
+        nvarchar referencia
+        nvarchar estadoVerificacion
+        nvarchar comprobanteURL
+        datetimeoffset fechaVerificacion
+        int responsableVerificacion FK
+        uniqueidentifier confirmacion
+        rowversion controlConcurrencia
+    }
+    ConstanciaEntrega {
+        int id PK
+        int pedido FK
+        bit decision
+        datetimeoffset fecha
+        int responsable FK
+        nvarchar referencia
+    }
