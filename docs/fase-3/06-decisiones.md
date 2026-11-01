@@ -8,7 +8,7 @@
 | D-04 | Totales, saldo y anticipo en vistas o consultas calculadas. | Evita copias divergentes; probado en SQL. |
 | D-05 | Detalle original inmutable y cantidad recuperada por referencia en cada cotización. | Preserva la fotografía y evita dependencia parcial; probado y pendiente de revisión conjunta. |
 | D-06 | Constancia lógica de cotización proyectada desde su decisión; entrega persistida aparte. | Conserva los campos del SRS sin duplicar decisiones; probado y pendiente de revisión conjunta. |
-| D-07 | Dos relaciones para registrar contexto de una comprobación de sublimación. | Materializa el registro de 4.6; no agrega estado ni CU. Servicio pendiente. |
+| D-07 | Dos relaciones para registrar contexto de una comprobación de sublimación. | Materializa el registro de 4.6; no agrega estado ni CU. Servicio administrativo conectado y probado; revisión cruzada pendiente. |
 | D-08 | Clave de confirmación y hash semántico para CU-06. | Prevención de duplicados solicitada por RF-05; unicidad probada, flujo HTTP pendiente. |
 | D-09 | .NET 10, SDK 10.0.402 y paquetes fijados en los proyectos. | Compatible con el entorno local observado; falta validación del alojamiento. |
 | D-10 | Fuente SQL de fase 3 conservada como prototipo de integridad. | EF Core es ahora la secuencia de cambios. La migración Inicial conserva 11 tablas, 30 CHECK, 5 vistas y 12 disparadores; desde ella se genera el SQL de distribución. |

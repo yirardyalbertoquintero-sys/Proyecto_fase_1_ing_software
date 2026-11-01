@@ -34,7 +34,7 @@ La carpeta `diagramas` contiene código Mermaid y diagramas editables en draw.io
 - CU-04: consulta pública de variantes activas, búsqueda/filtros y detalle revalidado; precios de referencia, manejo de catálogo vacío y errores de consulta o imagen.
 - Entidades y migración inicial EF Core con las restricciones, vistas y disparadores del prototipo; script de distribución generado e idempotente.
 
-Los controles del prototipo SQL son una parte de la integridad. Autorización, importe máximo de un abono, aceptación atómica de una cotización completa, transición de estados, cobertura de todos los diseños y condiciones de archivo se implementarán en los servicios correspondientes y se probarán por API. No se atribuye su cumplimiento a las claves foráneas por sí solas.
+Los controles SQL son parte de la integridad. Autorización, importe máximo de abono, aceptación atómica, estados, diseños y archivo ya están conectados a los servicios administrativos y comprobados por HTTP/SQL; los resultados están en el registro manual y el documento 15. La integración del cliente permanece pendiente. Las claves foráneas por sí solas no prueban esas reglas.
 
 ## Estado posterior de revisión
 
@@ -43,3 +43,7 @@ El [registro manual del 31 de octubre](../pruebas/revision-manual-administracion
 ## Siguiente revisión del equipo
 
 Dylan revisa que el modelo permita mostrar todas las pantallas previstas. Carlos revisa versiones, cotizaciones, pagos y los servicios administrativos. La migración inicial ya está preparada y probada; las observaciones posteriores deben incorporarse mediante nuevas migraciones coordinadas. Los tres revisan los contratos y las decisiones pendientes antes de integrar los siguientes módulos.
+
+## Consolidación de diseño del 1 de noviembre
+
+MER/3FN y clases del bloque existente se contrastaron con DbContext y código; arquitectura y despliegue ya reflejan el almacenamiento y las operaciones implementadas. Los fuentes Mermaid y exportaciones vigentes están en diagramas. El [informe de fases 3 y 4](../entrega/Informe_Fases_3_y_4_Impacto_Textil.docx) y el [mapeo RUP](../entrega/mapeo-rup.md) reúnen este corte. Completar las clases y navegación del cliente cuando se integren los avances de Dylan; no marcar el diseño de todo el sistema como aceptado todavía.

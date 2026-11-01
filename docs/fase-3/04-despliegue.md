@@ -15,7 +15,7 @@ El diagrama de despliegue distingue la estación de desarrollo del alojamiento o
 
 ## Configuración de la aplicación
 
-La aplicación lee `ConnectionStrings__ImpactoTextil` desde el entorno, o el secreto equivalente del proveedor. No existe una cadena real en appsettings del repositorio. Para la futura persistencia privada se acordará una variable como `Almacenamiento__RaizPrivada`, fuera del contenido servido públicamente. Ese componente aún no está implementado.
+La aplicación lee `ConnectionStrings__ImpactoTextil` desde el entorno, o el secreto equivalente del proveedor. No existe una cadena real en appsettings del repositorio. El almacenamiento privado está implementado mediante `IAlmacenArchivosPrivados` y `AlmacenArchivosPrivadosLocal`: lee `ArchivosPrivados:Carpeta`, configurable como variable `ArchivosPrivados__Carpeta`, y utiliza por defecto `storage/privado` bajo la raíz de la aplicación, fuera de wwwroot. Las fotos públicas del catálogo utilizan por separado `Catalogo:CarpetaImagenes` y `storage/catalogo`. Comprobar estas rutas y su persistencia en el proveedor sigue pendiente.
 
 El entorno publicado usará Production y HTTPS. En desarrollo se puede emplear el certificado local de dotnet. La aceptación de certificados de prueba en las comprobaciones locales no debe trasladarse al certificado público del alojamiento.
 

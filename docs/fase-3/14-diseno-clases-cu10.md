@@ -14,7 +14,7 @@ La correspondencia inicial se revisó sobre `e6569da` y se actualizó con la con
 
 | Lámina | Contenido | Fuente Mermaid | Vista vectorial |
 | --- | --- | --- | --- |
-| Aplicación y persistencia | Vista, frontera pendiente, servicio, Repository, EF Core y resultado de operación | [Aplicación](diagramas/clases-cu10-aplicacion.mmd) | [SVG](diagramas/clases-cu10-aplicacion.svg) |
+| Aplicación y persistencia | Vista, controlador implementado, servicio, Repository, EF Core y resultado de operación | [Aplicación](diagramas/clases-cu10-aplicacion.mmd) | [SVG](diagramas/clases-cu10-aplicacion.svg) |
 | DTO existentes | Entradas con validación y salidas de consulta, versiones y archivo | [DTO](diagramas/clases-cu10-dtos.mmd) | [SVG](diagramas/clases-cu10-dtos.svg) |
 | Historial | Entidades, relaciones entre versiones y referencias vigentes, pagos como contexto de consulta y vista calculada | [Historial](diagramas/clases-cu10-historial.mmd) | [SVG](diagramas/clases-cu10-historial.svg) |
 

@@ -1,35 +1,35 @@
 classDiagram
     class SesionController {
-        +Iniciar(IniciarSesionDto) IActionResult
-        +Actual() SesionDto
-        +Cerrar() IActionResult
+        +Iniciar(IniciarSesionDto, CancellationToken) Task~IActionResult~
+        +Actual() ActionResult~SesionDto~
+        +Cerrar() Task~IActionResult~
     }
     class AccesoService {
-        +AutenticarAsync(IniciarSesionDto) Usuario
+        +AutenticarAsync(IniciarSesionDto, CancellationToken) Task~Usuario?~
     }
     class IUsuarioRepository {
         <<interface>>
-        +BuscarPorCorreoAsync(correo) Usuario
-        +BuscarPorIdAsync(id) Usuario
-        +IntentarCrearAsync(Usuario) bool
+        +BuscarPorCorreoAsync(string, CancellationToken) Task~Usuario?~
+        +BuscarPorIdAsync(int, CancellationToken) Task~Usuario?~
+        +IntentarCrearAsync(Usuario, CancellationToken) Task~bool~
     }
     class IProtectorContrasena {
         <<interface>>
-        +CrearHash(contrasena) string
-        +Verificar(contrasena, hash) bool
+        +CrearHash(string) string
+        +Verificar(string, string) bool
     }
     class ValidarSesion {
         +ValidatePrincipal(context) Task
     }
     class AlmacenSesiones {
-        +StoreAsync(ticket) string
-        +RetrieveAsync(clave) AuthenticationTicket
-        +RenewAsync(clave, ticket) Task
-        +RemoveAsync(clave) Task
+        +StoreAsync(AuthenticationTicket) Task~string~
+        +RetrieveAsync(string) Task~AuthenticationTicket?~
+        +RenewAsync(string, AuthenticationTicket) Task
+        +RemoveAsync(string) Task
     }
     class IniciarSesionDto {
-        +string correo
-        +string contrasena
+        +string? correo
+        +string? contrasena
     }
     class SesionDto {
         +int id
