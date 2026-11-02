@@ -60,7 +60,7 @@
 <text x="54" y="797" font-family="Arial" font-size="16" fill="#172b40">PK id</text>
 <text x="54" y="820" font-family="Arial" font-size="16" fill="#172b40">nombre; color; talla; tela</text>
 <text x="54" y="843" font-family="Arial" font-size="16" fill="#172b40">imagenURL; precioBase; activo</text>
-<rect x="600" y="740" width="320" height="232" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
+<rect x="600" y="740" width="320" height="255" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
 <rect x="600" y="740" width="320" height="36" rx="5" fill="#193c58"/>
 <text x="614" y="764" font-family="Arial" font-size="18" font-weight="bold" fill="white">Pago</text>
 <text x="614" y="797" font-family="Arial" font-size="16" fill="#172b40">PK id; FK pedido</text>
@@ -70,7 +70,8 @@
 <text x="614" y="889" font-family="Arial" font-size="16" fill="#172b40">fechaVerificacion</text>
 <text x="614" y="912" font-family="Arial" font-size="16" fill="#172b40">FK responsableVerificacion</text>
 <text x="614" y="935" font-family="Arial" font-size="16" fill="#172b40">confirmacion</text>
-<text x="614" y="958" font-family="Arial" font-size="16" fill="#172b40">controlConcurrencia</text>
+<text x="614" y="958" font-family="Arial" font-size="16" fill="#172b40">huellaComprobante (NULL o 32 B)</text>
+<text x="614" y="981" font-family="Arial" font-size="16" fill="#172b40">controlConcurrencia</text>
 <rect x="1160" y="740" width="320" height="140" rx="5" fill="#f7f9fc" stroke="#70859b" stroke-width="1.5"/>
 <rect x="1160" y="740" width="320" height="36" rx="5" fill="#193c58"/>
 <text x="1174" y="764" font-family="Arial" font-size="18" font-weight="bold" fill="white">ConstanciaEntrega</text>
@@ -78,4 +79,4 @@
 <text x="1174" y="820" font-family="Arial" font-size="16" fill="#172b40">decision; fecha</text>
 <text x="1174" y="843" font-family="Arial" font-size="16" fill="#172b40">FK responsable</text>
 <text x="1174" y="866" font-family="Arial" font-size="16" fill="#172b40">referencia</text>
-<text x="40" y="1176" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Diseño contrastado con la rama Carlos_Borrell · 1 de noviembre de 2026</text></svg>
+<text x="40" y="1176" font-family="Arial" font-size="14" fill="#425466">Impacto Textil · Diseño contrastado con la rama Yirardy_Quintero · 2 de noviembre de 2026</text></svg>

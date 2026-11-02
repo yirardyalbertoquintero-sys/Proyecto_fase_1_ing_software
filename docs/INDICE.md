@@ -4,6 +4,8 @@ La carpeta de trabajo es `C:\proyectos\Proyecto_fase_1_ing_software`. El equipo 
 
 | Necesidad | Documento o carpeta |
 | --- | --- |
+| Cierre funcional del líder y estado al 2 de noviembre | [Cierre de construcción](seguimiento/cierre-funcional-20261102.md) y [evidencia de la suite repetida](evidencias/cierre-funcional-20261102.json). |
+| Informe vigente de fases 3 y 4 con doce CU | [Word actualizado 0.2](entrega/Informe_Fases_3_y_4_Impacto_Textil_Actualizado_20261102.docx) y [fuente textual](entrega/Informe_Fases_3_y_4_Impacto_Textil_Actualizado_20261102.md). |
 | Requisitos aprobados del negocio | [Impacto textil fase 1 y 2.docx](Impacto%20textil%20fase%201%20y%202.docx). |
 | Identificar versión y procedencia | [FUENTE_VIGENTE.md](FUENTE_VIGENTE.md). |
 | Plan y reparto acordado como base de trabajo | [Plan de fases 3 y 4](planes/Plan_Fases_3_y_4_Impacto_Textil.md). |

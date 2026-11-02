@@ -2,7 +2,9 @@ Proyecto ing software
 
 # Impacto Textil — fases 3 y 4
 
-Aplicación de pedidos de camisetas personalizadas por sublimación. Este avance prepara la parte inicial de **Yirardy**: diseño de datos, normalización, arquitectura, entorno común y comprobación técnica de la API.
+Aplicación de pedidos de camisetas personalizadas por sublimación, con doce casos de uso del mínimo declarado implementados y conectados a SQL Server.
+
+**Cierre funcional del líder, 2 de noviembre de 2026:** Yirardy confirmó que realizó las pruebas necesarias y que funcionalmente el sistema está bien. Fue el único revisor humano; la revisión independiente de Dylan continúa pendiente. Se repitió la suite completa: **124 aprobadas, cero fallidas y cero omitidas**, incluidas 86 SQL. La corrección del desplazamiento tiene 25 comprobaciones de interfaz separadas con API ficticia. [Cierre y límites](docs/seguimiento/cierre-funcional-20261102.md) · [Informe actualizado 0.2 en Word](docs/entrega/Informe_Fases_3_y_4_Impacto_Textil_Actualizado_20261102.docx). La publicación y la aceptación comercial siguen pendientes. Los cortes fechados debajo conservan el estado de cada momento.
 
 **Carpeta única de trabajo:** `C:\proyectos\Proyecto_fase_1_ing_software`. Por indicación de Yirardy del 1 de noviembre, la base común se integra a `main` mediante los PR [#4](https://github.com/yirardyalbertoquintero-sys/Proyecto_fase_1_ing_software/pull/4), [#5](https://github.com/yirardyalbertoquintero-sys/Proyecto_fase_1_ing_software/pull/5) y [#6](https://github.com/yirardyalbertoquintero-sys/Proyecto_fase_1_ing_software/pull/6). Se conservan `Yirardy_Quintero`, `Carlos_Borrell` y `Dylan_Ruiz`, sus commits y autorías. Revisar la entrega consolidada en main; construir cambios posteriores en una rama personal. La carpeta adicional `Impacto_Textil_Yirardy` ya no se utiliza.
 
