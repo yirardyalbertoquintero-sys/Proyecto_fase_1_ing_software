@@ -1,5 +1,6 @@
 'use strict';
 
+const posicionPestana = window.crearPosicionPestana();
 const $ = (id) => document.getElementById(id);
 const configuracion = $('configurar-prenda'),
   formulario = $('enviar-solicitud');
@@ -40,7 +41,7 @@ function mensaje(texto) {
   const m = $('mensaje-solicitud');
   m.textContent = texto;
   m.hidden = !texto;
-  if (texto) m.focus();
+  if (texto) m.focus({ preventScroll: posicionPestana.pendiente });
 }
 function mismaCuenta() {
   return cliente && (propietario === null || propietario === cliente.id);
@@ -68,6 +69,7 @@ async function csrf() {
   return (await r.json()).token;
 }
 async function sesion() {
+  const identidadAnterior = cliente?.id;
   const numero = ++consultaSesion;
   $('contenido-solicitud').hidden = true;
   $('carrito-solicitud').replaceChildren();
@@ -103,7 +105,10 @@ async function sesion() {
       $('identidad-solicitud').textContent = 'No pudimos comprobar tu sesión. El carrito sigue en memoria.';
     }
   } finally {
-    if (numero === consultaSesion) controles();
+    if (numero === consultaSesion) {
+      controles();
+      posicionPestana.restaurar(!!cliente && cliente.id === identidadAnterior && mismaCuenta());
+    }
   }
 }
 function dibujarCarrito() {

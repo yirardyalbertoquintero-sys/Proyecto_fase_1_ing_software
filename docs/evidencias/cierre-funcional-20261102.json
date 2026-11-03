@@ -1,0 +1,36 @@
+{
+  "fecha": "2026-11-02",
+  "codigoRevisado": "c718d09eaedcf23c1d69d83b3e2f8b98f0ea83bf",
+  "revisorHumano": "Yirardy",
+  "dictamen": "Funcionalmente satisfactorio según declaración general del líder",
+  "revisionIndependienteDylan": "Pendiente",
+  "coberturaManualIndividual": "Capturas y mensajes del pedido A; sin nuevo desglose individual de los pasos 15 a 18",
+  "suite": {
+    "trx": "artifacts/pruebas/20261102T224758Z-f780ae22/resultado.trx",
+    "sha256": "5cd2cc26d568345a125a4e7c40f8c010513c22659cf3fa6eb6f213c8e1230c94",
+    "total": 124,
+    "aprobadas": 124,
+    "fallidas": 0,
+    "omitidas": 0,
+    "sql": 86
+  },
+  "interfazSeparada": {
+    "casos": 25,
+    "api": "Ficticia",
+    "referencia": "docs/evidencias/correccion-posicion-pestana-20261101.json"
+  },
+  "fuenteAprobadaSha256": "9178a494dc4ddaf62b7882d9d8203351ceb8260515c34f85e0988107ba424821",
+  "wordAnteriorSha256": "dc0e545247de329dbac5b0d628ed8a2ee91c4f24b7e09b00ffd262e45dfad889",
+  "publicacion": "Pendiente",
+  "autorizacionComercial": "Pendiente",
+  "informeActualizado": {
+    "ruta": "docs/entrega/Informe_Fases_3_y_4_Impacto_Textil_Actualizado_20261102.docx",
+    "version": "0.2",
+    "sha256": "662c0c9eed64628e9341b82af085376cfb7e8d60e9291ce31eb84115c97ad81b",
+    "paginas": 22,
+    "render": "Microsoft Word COM; PDF y PNG de comprobación local",
+    "verificacionVisual": "22 páginas revisadas; figuras de MER y arquitectura actualizadas; sin recortes bloqueantes",
+    "originalesPreservados": true
+  },
+  "revisionTecnicaIA": "Segundo asistente verificó figuras y originales; no sustituye revisión humana de Dylan."
+}

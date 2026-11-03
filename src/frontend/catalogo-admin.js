@@ -1,5 +1,6 @@
 'use strict';
 
+const posicionPestana = window.crearPosicionPestana();
 const formulario = document.getElementById('formulario-producto');
 const resultado = document.getElementById('resultado');
 const guardar = document.getElementById('guardar-producto');
@@ -8,6 +9,8 @@ let actual = null;
 let ocupado = false;
 let imagenSubida = null;
 let vistaLocal = null;
+let revalidarPendiente = false;
+let inicioActual = 0;
 
 function aviso(texto, errores = {}) {
   resultado.textContent = texto;
@@ -21,7 +24,7 @@ function aviso(texto, errores = {}) {
       formulario.elements.namedItem(nombre === 'imagenURL' ? 'imagen' : nombre)?.setAttribute('aria-invalid', 'true');
     }
   }
-  if (texto) resultado.focus();
+  if (texto) resultado.focus({ preventScroll: posicionPestana.pendiente });
 }
 
 function denegar() {
@@ -157,7 +160,10 @@ formulario.addEventListener('submit', async evento => {
     aviso('La variante se guardó correctamente.');
     await cargar();
   } catch (error) { aviso(error.message || 'No pudimos confirmar el guardado. Actualiza el listado antes de reintentar.', error.errores); }
-  finally { ocupado = false; controles.forEach(c => { c.disabled = false; }); guardar.textContent = actual ? 'Guardar cambios' : 'Crear variante'; }
+  finally {
+    ocupado = false; controles.forEach(c => { c.disabled = false; }); guardar.textContent = actual ? 'Guardar cambios' : 'Crear variante';
+    if (revalidarPendiente) { revalidarPendiente = false; await iniciar(); }
+  }
 });
 
 document.getElementById('nueva-variante').addEventListener('click', limpiar);
@@ -167,15 +173,21 @@ document.getElementById('filtro-estado').addEventListener('change', dibujar);
 document.getElementById('recargar').addEventListener('click', () => { if (!ocupado) cargar().catch(e => aviso(e.message)); });
 
 async function iniciar() {
+  const turno = ++inicioActual;
   try {
     const sesion = await enviar('/api/sesion');
     if (sesion.rol !== 'Administrador') { denegar(); return; }
     document.getElementById('espacio-catalogo').hidden = false;
     await cargar();
   } catch (error) { aviso(error.message || 'No se pudo cargar el catálogo.'); }
+  finally { if (turno === inicioActual) posicionPestana.restaurar(!document.getElementById('espacio-catalogo').hidden); }
 }
 iniciar();
-document.addEventListener('visibilitychange', () => { if (!document.hidden && !ocupado) iniciar(); });
+function revalidarAlVolver() {
+  if (ocupado) { revalidarPendiente = true; return; }
+  return iniciar();
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) revalidarAlVolver(); });
 window.addEventListener('pageshow', evento => {
-  if (evento.persisted) { document.getElementById('espacio-catalogo').hidden = true; iniciar(); }
+  if (evento.persisted) { document.getElementById('espacio-catalogo').hidden = true; revalidarAlVolver(); }
 });

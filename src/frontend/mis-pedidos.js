@@ -1,5 +1,6 @@
 'use strict';
 (() => {
+  const posicionPestana = window.crearPosicionPestana();
   const $ = (id) => document.getElementById(id),
     base = '/api/mis-pedidos',
     borradores = new Map();
@@ -44,7 +45,7 @@
   function mensaje(t) {
     $('mensaje-cliente').textContent = t;
     $('mensaje-cliente').hidden = !t;
-    if (t) $('mensaje-cliente').focus();
+    if (t) $('mensaje-cliente').focus({ preventScroll: posicionPestana.pendiente });
   }
   function controles() {
     const d = clave() ? borradores.get(clave()) : null;
@@ -126,6 +127,7 @@
     controles();
   }
   async function sesion() {
+    const identidadAnterior = titularPagina;
     const g = ++generacion;
     ++lectura;
     ocultar();
@@ -158,6 +160,8 @@
       }
     } finally {
       controles();
+      if (g === generacion)
+        posicionPestana.restaurar(!!cliente && cliente.id === identidadAnterior);
     }
   }
   async function abrir(id, g = generacion) {
@@ -213,6 +217,7 @@
     panel.append(nodo('h3', 'Prendas e historial'));
     for (const d of e.detalles) {
       const x = nodo('details');
+      x.dataset.vista = 'prenda-' + p.id + '-' + d.id;
       x.append(
         nodo('summary', 'Prenda ' + d.id + ' · ' + d.cantidad + ' unidades'),
         nodo('p', d.talla + ' · ' + d.color + ' · ' + d.tela + ' · ' + d.empaque),
@@ -238,6 +243,7 @@
     }
     for (const v of e.versionesCotizacion) {
       const x = nodo('details');
+      x.dataset.vista = 'cotizacion-' + p.id + '-' + v.id;
       x.append(
         nodo(
           'summary',

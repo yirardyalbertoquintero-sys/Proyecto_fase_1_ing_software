@@ -1,5 +1,6 @@
 'use strict';
 
+const posicionPestana = window.crearPosicionPestana();
 const formulario = document.getElementById('formulario-acceso');
 const resultado = document.getElementById('resultado');
 const cuenta = document.getElementById('cuenta');
@@ -7,6 +8,8 @@ const entrar = document.getElementById('iniciar-sesion');
 const cerrar = document.getElementById('cerrar-sesion');
 const contrasena = document.getElementById('contrasena');
 let ocupado = true;
+let revalidarPendiente = false;
+let consultaActual = 0;
 
 function mensaje(texto, errores = {}) {
   resultado.textContent = texto;
@@ -39,7 +42,7 @@ function mostrarCuenta(datos) {
   document.getElementById('rol-cuenta').textContent = `Acceso: ${datos.rol}.`;
   document.getElementById('opcion-administracion').hidden = datos.rol !== 'Administrador';
   document.getElementById('opcion-solicitud').hidden = datos.rol !== 'Cliente';
-  cuenta.focus();
+  cuenta.focus({ preventScroll: posicionPestana.pendiente });
 }
 
 function mostrarFormulario() {
@@ -79,6 +82,8 @@ formulario.addEventListener('submit', async evento => {
       || /[\u0000-\u001f\u007f-\u009f]/u.test(datos.contrasena))
     errores.contrasena = ['Escribe tu contraseña completa, sin superar 72 bytes.'];
   if (Object.keys(errores).length) { mensaje('Revisa los campos indicados.', errores); return; }
+  ++consultaActual;
+  revalidarPendiente = revalidarPendiente || posicionPestana.pendiente;
   ocupado = true;
   entrar.disabled = true;
   entrar.textContent = 'Iniciando sesión…';
@@ -94,11 +99,16 @@ formulario.addEventListener('submit', async evento => {
     else mensaje([400, 401, 429].includes(respuesta.status) && cuerpo?.title
       ? cuerpo.title : 'No pudimos iniciar sesión. Inténtalo en unos momentos.', cuerpo?.errors);
   } catch { mensaje('No pudimos confirmar el acceso. Comprueba tu conexión y vuelve a intentarlo.'); }
-  finally { ocupado = false; entrar.disabled = false; entrar.textContent = 'Entrar a mi cuenta ↗'; }
+  finally {
+    ocupado = false; entrar.disabled = false; entrar.textContent = 'Entrar a mi cuenta ↗';
+    if (revalidarPendiente) await revalidarAlVolver();
+  }
 });
 
 cerrar.addEventListener('click', async () => {
   if (ocupado) return;
+  ++consultaActual;
+  revalidarPendiente = revalidarPendiente || posicionPestana.pendiente;
   ocupado = true;
   cerrar.disabled = true;
   mensaje('');
@@ -110,21 +120,41 @@ cerrar.addEventListener('click', async () => {
       mostrarFormulario(); mensaje('Tu sesión se ha cerrado.');
     } else mensaje('No pudimos cerrar la sesión. Vuelve a intentarlo.');
   } catch { mensaje('No pudimos confirmar el cierre. Comprueba tu conexión y vuelve a intentarlo.'); }
-  finally { ocupado = false; cerrar.disabled = false; }
+  finally {
+    ocupado = false; cerrar.disabled = false;
+    if (revalidarPendiente) await revalidarAlVolver();
+  }
 });
 
 async function consultar() {
-  const respuesta = await fetch('/api/sesion', { credentials: 'same-origin', cache: 'no-store' });
-  if (respuesta.ok) mostrarCuenta(await respuesta.json());
-  else if (respuesta.status === 401) { mostrarFormulario(); }
-  else throw new Error('No se pudo consultar la sesión');
+  const turno = ++consultaActual;
+  try {
+    const respuesta = await fetch('/api/sesion', { credentials: 'same-origin', cache: 'no-store' });
+    const datos = respuesta.ok ? await respuesta.json() : null;
+    if (turno !== consultaActual) return;
+    if (respuesta.ok) mostrarCuenta(datos);
+    else if (respuesta.status === 401) { mostrarFormulario(); }
+    else throw new Error('No se pudo consultar la sesión');
+  } catch (error) {
+    if (turno === consultaActual) throw error;
+  } finally { if (turno === consultaActual) posicionPestana.restaurar(); }
+}
+
+function revalidarAlVolver() {
+  if (ocupado) { revalidarPendiente = true; return; }
+  revalidarPendiente = false;
+  return consultar().catch(() => { mostrarFormulario(); mensaje('No pudimos comprobar tu sesión.'); });
 }
 
 entrar.disabled = true;
 consultar().catch(() => mensaje('No pudimos consultar tu sesión. Comprueba tu conexión e inténtalo de nuevo.'))
-  .finally(() => { ocupado = false; entrar.disabled = false; });
+  .finally(async () => {
+    ocupado = false; entrar.disabled = false;
+    if (revalidarPendiente) await revalidarAlVolver();
+  });
 // Revalidar al volver a la pestaña evita conservar datos visibles de una sesión cerrada en otra.
-window.addEventListener('pageshow', evento => { if (evento.persisted) consultar().catch(() => mostrarFormulario()); });
+window.addEventListener('pageshow', evento => { if (evento.persisted) revalidarAlVolver(); });
 document.addEventListener('visibilitychange', () => {
-  if (!document.hidden && !ocupado) consultar().catch(() => { mostrarFormulario(); mensaje('No pudimos comprobar tu sesión.'); });
+  if (document.hidden) ++consultaActual;
+  else revalidarAlVolver();
 });
