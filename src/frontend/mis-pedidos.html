@@ -12,7 +12,7 @@
     <script src="/posicion-pestana.js" defer></script>
     <script src="/mis-pedidos.js" defer></script>
   </head>
-  <body class="espacio-cliente">
+  <body>
     <a class="saltar" href="#mis-pedidos">Ir a mis pedidos</a>
     <header class="cabecera-catalogo">
       <a class="marca" href="/catalogo.html"
@@ -26,14 +26,11 @@
     </header>
     <main id="mis-pedidos" class="solicitud">
       <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
-      <div class="encabezado-cliente">
-      <p class="ceja ceja-oscura">TU ESPACIO</p>
       <h1>Mis pedidos</h1>
       <p>
         Consulta el avance y los acuerdos de tus pedidos. Los comprobantes se revisan antes de acreditar
         dinero.
       </p>
-      </div>
       <p id="identidad-pedidos" role="status">Comprobando tu sesión…</p>
       <div id="mensaje-cliente" class="resultado" role="alert" tabindex="-1" hidden></div>
       <section id="acceso-cliente" class="panel-solicitud" hidden>
@@ -72,7 +69,7 @@
           Actualizar mis pedidos
         </button>
         <div class="pedidos-cliente-grid">
-          <section class="panel-solicitud panel-lista-cliente" aria-labelledby="titulo-lista-cliente">
+          <section class="panel-solicitud" aria-labelledby="titulo-lista-cliente">
             <h2 id="titulo-lista-cliente">Tus solicitudes</h2>
             <p>Se incluyen las archivadas y su historial.</p>
             <p id="estado-lista-cliente" role="status"></p>

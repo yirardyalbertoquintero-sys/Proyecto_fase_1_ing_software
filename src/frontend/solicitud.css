@@ -1,55 +1,93 @@
-/* Espacio del cliente: paneles ligeros y controles compartidos. */
-.espacio-cliente { background: var(--fondo, #f3f6f5); }
-.solicitud { width: min(100%, 1200px); margin: 0 auto; padding: 30px 28px 64px; color: var(--tinta, #182e32); }
-.encabezado-cliente { max-width: 790px; margin-bottom: 20px; }
-.encabezado-cliente .ceja { margin-bottom: 10px; }
-.solicitud h1 { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.12; letter-spacing: -1.2px; }
-.solicitud h2 { font-size: 21px; letter-spacing: -.55px; line-height: 1.25; }
-.solicitud h3 { font-size: 17px; letter-spacing: -.2px; }
-.solicitud p { font-size: 14px; line-height: 1.7; }
-.encabezado-cliente > p:not(.ceja) { color: var(--muted, #617579); margin: 12px 0 0; }
-.encabezado-cliente .nota-referencia { padding-left: 14px; border-left: 2px solid var(--borde, #dce6e2); font-size: 12px; line-height: 1.65; }
-#identidad-solicitud, #identidad-pedidos { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; margin: 0 0 12px; background: #e5efeb; color: var(--marca-oscura, #123d38); border: 1px solid #d5e4de; border-radius: 9px; font-size: 12px; font-weight: 600; overflow-wrap: anywhere; max-width: 100%; }
-#contenido-solicitud { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: 24px; align-items: start; }
-.panel-solicitud { min-width: 0; background: var(--superficie, #fff); border: 1px solid var(--borde, #dce6e2); border-radius: var(--radio, 16px); padding: 26px; margin: 12px 0 0; box-shadow: 0 4px 18px #173c3505; }
-.titulo-panel-cliente { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.titulo-panel-cliente h2 { margin: 0; }
-.numero-panel { display: grid; place-items: center; flex: 0 0 34px; height: 34px; font-size: 11px; font-weight: 750; border: 1px solid #d8e6e0; border-radius: 10px; color: var(--marca, #12675d); background: #f0f6f3; }
-.panel-carrito { border-top: 3px solid var(--marca, #12675d); }
-.panel-carrito > p, #estado-variantes { color: var(--muted, #617579); font-size: 12px; line-height: 1.65; }
-.solicitud .campo { min-width: 0; margin-bottom: 16px; }
-.solicitud .campo > label { display: block; font-size: 12px; margin-bottom: 7px; font-weight: 650; }
-.solicitud small { display: block; margin-top: 7px; color: var(--muted, #617579); font-size: 11px; line-height: 1.6; }
-.solicitud select, .solicitud input:not([type='checkbox']) { width: 100%; min-width: 0; max-width: 100%; min-height: 44px; font-size: 14px; border: 1px solid #cad8d2; background: #fff; color: var(--tinta, #182e32); border-radius: 9px; padding: 11px 12px; box-sizing: border-box; }
-.solicitud input[readonly] { background: #f4f7f5; color: #5e716e; }
-.solicitud input[type='file'] { font-size: 12px; padding: 8px; background: #fafcfa; }
-.solicitud input[type='file']::file-selector-button { min-height: 30px; margin-right: 9px; border: 0; background: #e6efe9; color: var(--marca-oscura, #123d38); border-radius: 6px; padding: 5px 10px; font: inherit; font-weight: 600; cursor: pointer; }
-.solicitud button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
-.solicitud .boton-principal, .solicitud .boton-secundario { min-height: 44px; font-size: 13px; line-height: 1.4; }
-.fila-solicitud { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
-#referencia-variante:not(:empty) { margin: 0 0 18px; padding: 10px 12px; background: #f0f6f3; border: 1px solid #dfebe5; border-radius: 8px; color: var(--marca, #12675d); font-size: 12px; font-weight: 600; }
-#campos-diseno { padding: 15px; margin: 2px 0 16px; background: #f7f9f7; border: 1px dashed #d1ddd5; border-radius: 10px; }
-#campos-diseno > .campo:last-child { margin-bottom: 0; }
-.confirmar-solicitud { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; color: var(--muted, #617579); font-size: 12px; line-height: 1.65; }
-.confirmar-solicitud input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--marca, #12675d); }
-#carrito-solicitud > p:only-child { padding: 22px 16px; margin: 18px 0; border: 1px dashed #d0ddd5; border-radius: 10px; background: #fafcfb; color: var(--muted, #617579); text-align: center; font-size: 13px; }
-.linea-carrito { border: 1px solid var(--borde, #dce6e2); border-radius: 10px; background: #fbfcfb; padding: 15px; margin: 12px 0; overflow-wrap: anywhere; }
-.linea-carrito h3 { margin: 0 0 8px; font-size: 15px; }
-.linea-carrito p { font-size: 12px; color: var(--muted, #617579); line-height: 1.6; margin: 6px 0; }
-.linea-carrito .quitar-configuracion { min-height: 34px; margin-top: 8px; padding: 6px 10px; font-size: 11px; color: #95543a; border-color: #e6d6ca; background: #fff; }
-#total-solicitud { margin: 20px 0 8px; padding: 18px 16px; background: #edf5ef; color: var(--marca-oscura, #123d38); border: 1px solid #d7e5db; border-radius: 10px; font-size: clamp(19px, 2vw, 24px); line-height: 1.3; letter-spacing: -.5px; font-weight: 750; font-variant-numeric: tabular-nums; }
-#actualizar-carrito { margin: 0 0 20px; font-size: 11px; width: 100%; }
-#enviar-solicitud { padding-top: 18px; border-top: 1px solid var(--borde, #dce6e2); }
-#acceso-solicitud, #acceso-cliente { max-width: 620px; margin-bottom: 24px; }
-#solicitud-confirmada { max-width: 760px; padding-top: 28px; border-top: 3px solid var(--marca, #12675d); }
-#codigo-solicitud { padding: 14px; background: #f0f6f2; border: 1px solid #dce8df; border-radius: 9px; font-weight: 700; font-size: 13px; }
-.solicitud p, .solicitud small { overflow-wrap: anywhere; }
-.solicitud .resultado { background: #fff4e7; }
-.solicitud .error-variante { color: #9c391f; }
-.solicitud [hidden] { display: none !important; }
-.solicitud input:focus-visible, .solicitud select:focus-visible, .solicitud button:focus-visible { outline: 3px solid #c57743; outline-offset: 3px; }
-@media (max-width: 900px) { #contenido-solicitud { grid-template-columns: 1fr; gap: 8px; } .solicitud { padding-inline: 22px; } }
-@media (max-width: 560px) { .solicitud { padding: 24px 16px 42px; } .panel-solicitud { padding: 20px 16px; border-radius: 12px; } .solicitud h2 { font-size: 19px; } .fila-solicitud { gap: 12px; } .solicitud input:not([type='checkbox']), .solicitud select { font-size: 16px; } .solicitud .boton-principal, .solicitud .boton-secundario { width: 100%; } #campos-diseno { padding: 12px; } }
-@media (max-width: 359px) { .fila-solicitud { grid-template-columns: 1fr; gap: 0; } }
-
-@media(max-width:600px) {.linea-carrito .quitar-configuracion {min-height:44px}}
+.solicitud {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  color: #203c3c;
+}
+.solicitud h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+.solicitud h2 {
+  font-size: 1.6rem;
+}
+.panel-solicitud {
+  background: #fff;
+  border: 1px solid #c8d3d0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.solicitud .campo {
+  margin-bottom: 1.1rem;
+}
+.solicitud select,
+.solicitud input:not([type='checkbox']) {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.solicitud button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.fila-solicitud {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.confirmar-solicitud {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 1.4rem 0;
+}
+.confirmar-solicitud input {
+  flex: 0 0 auto;
+  min-width: 20px;
+  min-height: 20px;
+  margin-top: 0.2rem;
+}
+.linea-carrito {
+  border-bottom: 1px solid #d9e0db;
+  padding: 1rem 0;
+  overflow-wrap: anywhere;
+}
+.linea-carrito h3 {
+  margin: 0.3rem 0;
+}
+.solicitud p,
+.solicitud small {
+  overflow-wrap: anywhere;
+}
+.solicitud .resultado {
+  background: #fff1d9;
+}
+.solicitud .error-variante {
+  color: #94340f;
+}
+.solicitud [hidden] {
+  display: none !important;
+}
+.solicitud input:focus-visible,
+.solicitud select:focus-visible,
+.solicitud button:focus-visible {
+  outline: 3px solid #aa652e;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .fila-solicitud {
+    grid-template-columns: 1fr;
+  }
+  .panel-solicitud {
+    padding: 1rem;
+  }
+  .solicitud {
+    padding: 1.25rem 0.75rem 3rem;
+  }
+  .solicitud .boton-principal,
+  .solicitud .boton-secundario {
+    width: 100%;
+  }
+}
