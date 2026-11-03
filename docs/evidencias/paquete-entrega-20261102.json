@@ -1,0 +1,101 @@
+{
+  "paquete": "artifacts/entregas/20261103T025640Z-12b4e3a-17ecc259",
+  "commit": "12b4e3a377f9ea8fa13e821e8978e0817c680ab8",
+  "sitioZipSha256": "7e11575b21853cf33be015e8a5c1e8da1c3822e044ee3afb2dbb35f9b6184db7",
+  "sqlSha256": "2b99426ce0fc0d7d5beb27ce3a45f88691b3eed0f66f523a65cda05f60da0450",
+  "trxSha256": "55909b1f2dca7580cb7f7eb7bac10073c6b6f21968f0268553f480c32db24362",
+  "archivosVerificados": 100,
+  "archivosAplicacion": 95,
+  "zipIntegro": true,
+  "interfazAnteriorConservada": true,
+  "sqlContieneAmbasMigraciones": true,
+  "arranque": "Production local; certificado de desarrollo aceptado solo en esta comprobación; sin escrituras. No acredita alojamiento ni HTTPS público.",
+  "lecturas": [
+    {
+      "ruta": "/",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/solicitud.html",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/mis-pedidos.html",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/pedidos.html",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/posicion-pestana.js",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/api/disponibilidad",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/api/productos",
+      "esperado": 200,
+      "observado": 200
+    },
+    {
+      "ruta": "/api/sesion",
+      "esperado": 401,
+      "observado": 401
+    },
+    {
+      "ruta": "/api/mis-pedidos",
+      "esperado": 401,
+      "observado": 401
+    },
+    {
+      "ruta": "/api/administracion/pedidos",
+      "esperado": 401,
+      "observado": 401
+    },
+    {
+      "ruta": "/appsettings.json",
+      "esperado": 404,
+      "observado": 404
+    },
+    {
+      "ruta": "/database/actualizar.sql",
+      "esperado": 404,
+      "observado": 404
+    }
+  ],
+  "alojamientoValidado": false,
+  "fechaLocal": "2026-11-02",
+  "responsableDespliegue": "Yirardy",
+  "alcance": [
+    "CU-01",
+    "CU-02",
+    "CU-04",
+    "CU-05",
+    "CU-06",
+    "CU-07",
+    "CU-08",
+    "CU-09",
+    "CU-10",
+    "CU-11",
+    "CU-12",
+    "CU-13"
+  ],
+  "pruebas": {
+    "total": 124,
+    "aprobadas": 124,
+    "fallidas": 0,
+    "omitidas": 0
+  },
+  "cambiosLocales": false,
+  "guiaSha256": "171602ec39d6030a368c20b9c49e1b755be5d10b8a80a29e1c4c34dfb28bef28",
+  "marcadorPreparacionIncompleta": false
+}
