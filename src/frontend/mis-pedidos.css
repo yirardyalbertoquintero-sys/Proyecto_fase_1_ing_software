@@ -1,54 +1,47 @@
-.pedidos-cliente-grid {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
-  gap: 1.2rem;
-  align-items: start;
-}
-#lista-cliente button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin: 0.6rem 0;
-  padding: 0.8rem;
-  border: 1px solid #aabfba;
-  background: #fff;
-  border-radius: 8px;
-  color: #203c3c;
-}
-#lista-cliente button[aria-pressed='true'] {
-  border: 3px solid #245850;
-}
-.resumen-cliente {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-.resumen-cliente dt {
-  font-size: 0.9rem;
-}
-.resumen-cliente dd {
-  margin: 0.2rem 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-#expediente-cliente details {
-  border-top: 1px solid #dae1de;
-  padding: 1rem 0;
-}
-#expediente-cliente h2 {
-  overflow-wrap: anywhere;
-}
-#expediente-cliente button {
-  margin: 0.5rem 0;
-}
-#form-comprobante {
-  margin-top: 1rem;
-}
-@media (max-width: 750px) {
-  .pedidos-cliente-grid {
-    grid-template-columns: 1fr;
-  }
-  .resumen-cliente {
-    grid-template-columns: 1fr;
-  }
-}
+/* El expediente conserva toda su información con una jerarquía más compacta. */
+#mis-pedidos { max-width: 1300px; }
+.pedidos-cliente-grid { display: grid; grid-template-columns: minmax(220px, .75fr) minmax(0, 2fr); gap: 24px; align-items: start; }
+.pedidos-cliente-grid > div { min-width: 0; }
+#actualizar-mis-pedidos { margin: 0 0 10px; padding-inline: 15px; font-size: 12px; }
+.panel-lista-cliente { padding: 22px 18px; }
+.panel-lista-cliente h2 { margin-bottom: 6px; font-size: 19px; }
+.panel-lista-cliente > p { font-size: 12px; color: var(--muted, #617579); margin: 8px 0; }
+#estado-lista-cliente { padding-top: 12px; border-top: 1px solid var(--borde, #dce6e2); }
+#lista-cliente { margin-top: 14px; }
+#lista-cliente button { display: block; width: 100%; min-height: 66px; text-align: left; white-space: normal; overflow-wrap: anywhere; line-height: 1.7; margin: 10px 0; padding: 14px 15px; border: 1px solid var(--borde, #dce6e2); background: #fafcfb; border-radius: 10px; color: var(--tinta, #182e32); font-size: 12px; font-weight: 600; transition: border-color .15s, background-color .15s; }
+#lista-cliente button:hover { border-color: #b4cec0; background: #f2f7f3; }
+#lista-cliente button[aria-pressed='true'] { border: 1px solid var(--marca, #12675d); background: #edf5ef; box-shadow: inset 3px 0 var(--marca, #12675d); color: var(--marca-oscura, #123d38); }
+#expediente-cliente { padding: 26px; }
+#expediente-cliente > h2 { font-size: clamp(17px, 2vw, 23px); line-height: 1.4; letter-spacing: -.45px; padding-bottom: 16px; margin-bottom: 14px; border-bottom: 1px solid var(--borde, #dce6e2); overflow-wrap: anywhere; }
+#expediente-cliente > h2 + p { display: inline-block; margin: 0 0 8px; padding: 5px 10px; border-radius: 6px; background: #edf4ef; color: var(--marca, #12675d); font-size: 12px; font-weight: 650; }
+#expediente-cliente > p { color: var(--muted, #617579); font-size: 12px; }
+.resumen-cliente { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; margin: 20px 0 28px; font-variant-numeric: tabular-nums; }
+.resumen-cliente dt { padding: 13px 14px 4px; margin-top: 12px; border: 1px solid var(--borde, #dce6e2); border-bottom: 0; border-radius: 9px 9px 0 0; background: #f7f9f7; font-size: 11px; color: var(--muted, #617579); }
+.resumen-cliente dd { padding: 0 14px 14px; margin: 0; border: 1px solid var(--borde, #dce6e2); border-top: 0; border-radius: 0 0 9px 9px; background: #f7f9f7; font-size: clamp(16px, 1.8vw, 22px); line-height: 1.35; font-weight: 750; letter-spacing: -.4px; overflow-wrap: anywhere; }
+.resumen-cliente dt:nth-of-type(1) { grid-area: 1 / 1; }
+.resumen-cliente dd:nth-of-type(1) { grid-area: 2 / 1; }
+.resumen-cliente dt:nth-of-type(2) { grid-area: 1 / 2; }
+.resumen-cliente dd:nth-of-type(2) { grid-area: 2 / 2; }
+.resumen-cliente dt:nth-of-type(3) { grid-area: 3 / 1; }
+.resumen-cliente dd:nth-of-type(3) { grid-area: 4 / 1; }
+.resumen-cliente dt:nth-of-type(4) { grid-area: 3 / 2; background: #edf5ef; border-color: #d5e5d9; }
+.resumen-cliente dd:nth-of-type(4) { grid-area: 4 / 2; background: #edf5ef; border-color: #d5e5d9; color: var(--marca-oscura, #123d38); }
+#expediente-cliente h3 { font-size: 16px; margin: 26px 0 12px; }
+#expediente-cliente details { border: 1px solid var(--borde, #dce6e2); border-radius: 9px; margin: 9px 0; padding: 0 14px; background: #fff; }
+#expediente-cliente details[open] { background: #fafcfb; }
+#expediente-cliente summary { cursor: pointer; padding: 13px 0; font-size: 12px; line-height: 1.6; font-weight: 650; overflow-wrap: anywhere; }
+#expediente-cliente summary::marker { color: var(--marca, #12675d); }
+#expediente-cliente details p { font-size: 12px; color: var(--muted, #617579); padding-left: 2px; margin: 9px 0 13px; }
+#expediente-cliente button { margin: 6px 0; }
+#panel-comprobante { margin-top: 22px; border-top: 3px solid var(--marca, #12675d); }
+#panel-comprobante > h2 { margin-bottom: 10px; }
+#panel-comprobante > p { font-size: 12px; color: var(--muted, #617579); max-width: 650px; }
+#form-comprobante { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 16px; margin-top: 22px; }
+#form-comprobante > .campo:nth-last-of-type(1), #enviar-comprobante { grid-column: 1 / -1; }
+#enviar-comprobante { margin-top: 5px; }
+@media (max-width: 850px) { .pedidos-cliente-grid { grid-template-columns: 1fr; gap: 8px; } #lista-cliente { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } #lista-cliente button { margin: 0; } .panel-lista-cliente { padding: 20px; } }
+@media (max-width: 560px) { #expediente-cliente { padding: 20px 16px; } #form-comprobante { grid-template-columns: 1fr; gap: 0; } #lista-cliente { grid-template-columns: 1fr; } #lista-cliente button { min-height: 54px; padding: 12px; } #expediente-cliente details { padding-inline: 12px; } .resumen-cliente { column-gap: 8px; } .resumen-cliente dt { padding: 11px 10px 4px; } .resumen-cliente dd { padding: 0 10px 12px; } }
+
+#expediente-cliente article {padding:16px 0;border-top:1px solid var(--borde)}
+#expediente-cliente article h4 {margin:0 0 10px;font-size:14px}
+#expediente-cliente article p {font-size:13px;color:var(--muted);margin:8px 0}

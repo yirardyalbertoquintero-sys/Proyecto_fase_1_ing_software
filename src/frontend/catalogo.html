@@ -15,7 +15,7 @@
   <a class="saltar" href="#prendas">Ir a las prendas</a>
   <header class="cabecera-catalogo">
     <a class="marca" href="/catalogo.html" aria-label="Impacto Textil, catálogo"><img src="/marca.svg" width="42" height="42" alt=""><span>IMPACTO<br><strong>TEXTIL</strong></span></a>
-    <nav aria-label="Navegación principal"><a href="/solicitud.html">Solicitar cotización</a><a href="/">Crear cuenta</a><a href="/acceso.html">Mi sesión <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Navegación principal"><a class="nav-cotizar" href="/solicitud.html">Solicitar cotización</a><a href="/">Crear cuenta</a><a href="/acceso.html">Mi sesión <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main>
     <section class="portada-catalogo" aria-labelledby="titulo-catalogo">
@@ -25,7 +25,24 @@
         <p>Explora las tallas, colores y telas disponibles en Impacto Textil.</p>
         <a class="enlace-prendas" href="#prendas">Ver prendas <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="detalle-portada" aria-hidden="true"><span>EL PUNTO<br>DE PARTIDA<br>ES TU IDEA.</span></div>
+      <div class="detalle-portada" aria-hidden="true">
+        <svg class="ilustracion-prenda" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <circle cx="174" cy="151" r="119" fill="#ffffff" fill-opacity=".05"/>
+          <circle cx="174" cy="151" r="98" fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-dasharray="3 7"/>
+          <g transform="rotate(7 174 151)">
+            <path d="M129 47 89 65 50 115 87 143 105 122 105 253Q173 268 242 253L242 122 260 143 297 115 258 65 218 47Q174 70 129 47Z" fill="#f0e4ce"/>
+            <path d="M129 47Q174 90 218 47L205 43Q174 61 142 43Z" fill="#d3c1a0"/>
+            <path d="M105 122 103 82M242 122 244 82M111 246Q174 257 235 246" fill="none" stroke="#d3c1a0" stroke-width="2"/>
+            <rect x="137" y="109" width="74" height="94" rx="2" fill="#12675d"/>
+            <path d="M137 162 173 109 211 162Z" fill="#e3bd79"/>
+            <circle cx="174" cy="171" r="22" fill="#c96a46"/>
+            <path d="M148 190H200" stroke="#f0e4ce" stroke-width="3"/>
+          </g>
+          <circle cx="273" cy="51" r="6" fill="#e3bd79"/>
+          <path d="M57 218v14M50 225h14" stroke="#9ac9b7" stroke-width="2"/>
+        </svg>
+        <span class="leyenda-portada">EL PUNTO DE PARTIDA<br><strong>ES TU IDEA.</strong></span>
+      </div>
     </section>
     <section id="prendas" class="seccion-prendas" aria-labelledby="titulo-prendas">
       <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>

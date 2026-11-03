@@ -11,7 +11,7 @@
     <script src="/posicion-pestana.js" defer></script>
     <script src="/solicitud.js" defer></script>
   </head>
-  <body>
+  <body class="espacio-cliente">
     <a class="saltar" href="#solicitud">Ir a la solicitud</a>
     <header class="cabecera-catalogo">
       <a class="marca" href="/catalogo.html"
@@ -25,6 +25,8 @@
     </header>
     <main id="solicitud" class="solicitud">
       <p class="indicador"><span></span> Demostración académica · Usa datos ficticios</p>
+      <div class="encabezado-cliente">
+      <p class="ceja ceja-oscura">TUS IDEAS, TU ESTILO</p>
       <h1>Prepara tu solicitud</h1>
       <p>
         Configura tus prendas y envíalas para cotizar. El precio definitivo y la entrega se acuerdan después
@@ -34,6 +36,7 @@
         El carrito se conserva mientras esta página siga abierta. Recargar o cerrar la página descarta las
         configuraciones y los archivos seleccionados.
       </p>
+      </div>
       <p id="identidad-solicitud" role="status">Comprobando tu sesión…</p>
       <div id="mensaje-solicitud" class="resultado" role="alert" tabindex="-1" hidden></div>
       <section id="acceso-solicitud" class="panel-solicitud" hidden aria-labelledby="titulo-acceso-solicitud">
@@ -72,8 +75,8 @@
         Vaciar el carrito anterior para usar esta cuenta
       </button>
       <div id="contenido-solicitud" hidden>
-        <section class="panel-solicitud" aria-labelledby="titulo-configuracion">
-          <h2 id="titulo-configuracion">Configura una prenda</h2>
+        <section class="panel-solicitud panel-configuracion" aria-labelledby="titulo-configuracion">
+          <div class="titulo-panel-cliente"><span class="numero-panel" aria-hidden="true">01</span><h2 id="titulo-configuracion">Configura una prenda</h2></div>
           <p id="estado-variantes" role="status">Cargando variantes…</p>
           <form id="configurar-prenda">
             <div class="campo">
@@ -136,8 +139,8 @@
             <button class="boton-principal" type="submit">Agregar al carrito</button>
           </form>
         </section>
-        <section class="panel-solicitud" aria-labelledby="titulo-carrito">
-          <h2 id="titulo-carrito">Tu carrito</h2>
+        <section class="panel-solicitud panel-carrito" aria-labelledby="titulo-carrito">
+          <div class="titulo-panel-cliente"><span class="numero-panel" aria-hidden="true">02</span><h2 id="titulo-carrito">Tu carrito</h2></div>
           <p>Hasta 20 configuraciones por solicitud y 20 MB de imágenes en conjunto.</p>
           <div id="carrito-solicitud"></div>
           <p id="total-solicitud" class="precio-prenda">Referencia: C$0.00</p>
