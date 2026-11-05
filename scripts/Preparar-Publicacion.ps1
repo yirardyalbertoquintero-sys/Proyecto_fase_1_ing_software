@@ -11,7 +11,7 @@ try {
     $commit = (git rev-parse HEAD).Trim()
     if ($LASTEXITCODE -ne 0) { throw 'No se pudo identificar la version del repositorio.' }
     $rama = (git branch --show-current).Trim()
-    $rutasConstruccion = @('src','tests','scripts','docs/despliegue','docs/FUENTE_VIGENTE.md','docs/Impacto textil fase 1 y 2.docx','ImpactoTextil.slnx','Directory.Build.props','global.json','dotnet-tools.json','.gitignore')
+    $rutasConstruccion = @('src','tests','scripts','docs/despliegue','docs/FUENTE_VIGENTE.md','docs/Impacto textil fase 1 y 2.docx','ImpactoTextil.slnx','Directory.Build.props','global.json','dotnet-tools.json','THIRD_PARTY_NOTICES.md','.gitignore')
     $cambios = @(git status --porcelain -- @rutasConstruccion)
     if ($cambios.Count -gt 0 -and !$PermitirCambiosLocales) {
         throw 'Hay cambios de construccion sin guardar en Git. Guarda el avance o usa -PermitirCambiosLocales para un ensayo identificado como tal.'
@@ -48,7 +48,17 @@ try {
     $app = Join-Path $salida 'app'
     dotnet publish src/backend/ImpactoTextil.Api -c Release --no-build --no-restore -o $app
     if ($LASTEXITCODE -ne 0) { throw 'No se pudo generar la publicacion.' }
-    $exigidos = @('web.config','ImpactoTextil.Api.dll','ImpactoTextil.Api.runtimeconfig.json','wwwroot/index.html','wwwroot/catalogo.html','wwwroot/catalogo.js','wwwroot/administracion.html')
+    $exigidos = @(
+        'web.config','appsettings.json','ImpactoTextil.Api.dll','ImpactoTextil.Api.runtimeconfig.json',
+        'THIRD_PARTY_NOTICES.md',
+        'wwwroot/index.html','wwwroot/registro.js','wwwroot/acceso.html','wwwroot/acceso.js',
+        'wwwroot/aviso.html','wwwroot/marca.svg','wwwroot/estilos.css','wwwroot/posicion-pestana.js',
+        'wwwroot/catalogo.html','wwwroot/catalogo.js','wwwroot/catalogo.css',
+        'wwwroot/administracion.html','wwwroot/catalogo-admin.js','wwwroot/catalogo-admin.css',
+        'wwwroot/solicitud.html','wwwroot/solicitud.js','wwwroot/solicitud.css',
+        'wwwroot/mis-pedidos.html','wwwroot/mis-pedidos.js','wwwroot/mis-pedidos.css',
+        'wwwroot/pedidos.html','wwwroot/pedidos.js','wwwroot/pedidos.css'
+    )
     foreach ($archivo in $exigidos) {
         if (!(Test-Path -LiteralPath (Join-Path $app $archivo) -PathType Leaf)) { throw "Falta un archivo requerido: $archivo" }
     }
@@ -77,7 +87,9 @@ try {
         formato = 1; creadoUtc = [DateTime]::UtcNow.ToString('o'); commit = $commit; rama = $rama
         cambiosLocales = ($cambios.Count -gt 0 -or $cambiosFinales.Count -gt 0); sdk = $sdk; framework = 'net10.0'
         fuenteSha256 = $huellaFuente; pruebas = [ordered]@{ total = [int]$contadores.total; aprobadas = [int]$contadores.passed; fallidas = 0; omitidas = 0 }
-        alcance = @('CU-01','CU-02','CU-04','CU-09'); alojamientoValidado = $false
+        alcance = @('CU-01','CU-02','CU-04','CU-05','CU-06','CU-07','CU-08','CU-09','CU-10','CU-11','CU-12','CU-13')
+        responsableDespliegue = 'Yirardy'
+        alojamientoValidado = $false
     }
     [IO.File]::WriteAllText((Join-Path $salida 'manifiesto.json'), ($manifiesto | ConvertTo-Json -Depth 5), (New-Object Text.UTF8Encoding($false)))
     Copy-Item -LiteralPath (Join-Path $raizProyecto 'docs/despliegue/INSTALAR-MONSTERASP.md') -Destination (Join-Path $salida 'LEEME-INSTALAR.md')
